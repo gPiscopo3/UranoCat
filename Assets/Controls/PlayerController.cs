@@ -19,13 +19,10 @@ public class PlayerController : MonoBehaviour
         if (status.IsMoving)
         {
             movement.z = status.Movement.z*Time.deltaTime;
+            movement.x = status.Movement.x*Time.deltaTime;
         }
         movement = transform.TransformDirection(movement);
-        characterController.SimpleMove(movement);
-        if (status.IsRotating)
-        {
-            transform.Rotate(0, status.Rotation.y, 0);
-        }
+        characterController.Move(movement);
     }
 
 }

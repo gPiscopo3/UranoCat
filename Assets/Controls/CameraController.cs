@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour
 {
 
     [SerializeField] private float sens = 1.0f;
+    [SerializeField] private Transform player;
 
     private CameraControls cameraControls;
     private Vector2 lookInput;
@@ -45,6 +46,7 @@ public class CameraController : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+        player.rotation = Quaternion.Euler(0, yRotation, 0);
     }
 
     private void OnLookCanceled(InputAction.CallbackContext context)
@@ -57,5 +59,4 @@ public class CameraController : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
-
 }
