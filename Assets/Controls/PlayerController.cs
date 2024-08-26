@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
             movement.x = status.Movement.x*Time.deltaTime;
         }
         movement = transform.TransformDirection(movement);
-        characterController.Move(movement);
+        characterController.SimpleMove(movement);
     }
 
 }
