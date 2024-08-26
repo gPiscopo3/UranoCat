@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ItemCollection>
+    <Items>
+        <Item name = "Small">
+            <Description>"Una semplice scatola di crocchette piccole"</Description>
+            <Price>5.00</Price>
+        </Item>
+        <Item name = "Medium">
+            <Description>"Una semplice scatola di crocchette medie"</Description>
+            <Price>10.0</Price>
+        </Item>
+        <Item name = "Pig">
+            <Description>"Una semplice scatola di crocchette grandi"</Description>
+            <Price>15.0</Price>
+        </Item>
+    </Items>
+</ItemCollection>
