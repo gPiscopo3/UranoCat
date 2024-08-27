@@ -4,7 +4,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using UnityEngine;
 
-public class Bar
+public class Feature
 {
     
     [XmlAttribute("name")]
