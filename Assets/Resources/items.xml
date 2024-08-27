@@ -1,17 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ItemCollection>
     <Items>
-        <Item name = "Small">
-            <Description>"Una semplice scatola di crocchette piccole"</Description>
-            <Price>5.00</Price>
+        <Item>
+            <tag>1</tag>
+            <name>"Crocchette"</name>
+            <Features>
+                <Feature>
+                    <name>"Durability"</name>
+                    <currentValue>100</currentValue>
+                    <maxValue>100</maxValue>
+                </Feature>
+            </Features>
+            <Modifiers>
+                <Modifier>
+                    <FeatureType>"FOOD"</FeatureType>
+                    <value>5</value>
+                </Modifier>
+                <Modifier>
+                    <FeatureType>"FUNNY"</FeatureType>
+                    <value>0.1</value>
+                </Modifier>
+            </Modifiers>
         </Item>
-        <Item name = "Medium">
-            <Description>"Una semplice scatola di crocchette medie"</Description>
-            <Price>10.0</Price>
+
+        <Item>
+            <tag>2</tag>
+            <name>"Pesce"</name>
+            <Features>
+                <Feature>
+                    <name>"Durability"</name>
+                    <currentValue>10</currentValue>
+                    <maxValue>10</maxValue>
+                </Feature>
+            </Features>
+            <Modifiers>
+                <Modifier>
+                    <FeatureType>"FOOD"</FeatureType>
+                    <value>10</value>
+                </Modifier>
+                <Modifier>
+                    <FeatureType>"HAPPINESS"</FeatureType>
+                    <value>1</value>
+                </Modifier>
+            </Modifiers>
         </Item>
-        <Item name = "Pig">
-            <Description>"Una semplice scatola di crocchette grandi"</Description>
-            <Price>15.0</Price>
+
+        <Item>
+            <tag>3</tag>
+            <name>"Topo giocattolo"</name>
+            <Features>
+                <Feature>
+                    <name>"Durability"</name>
+                    <currentValue>10</currentValue>
+                    <maxValue>10</maxValue>
+                </Feature>
+            </Features>
+            <Modifiers>
+                <Modifier>
+                    <FeatureType>"FOOD"</FeatureType>
+                    <value>10</value>
+                </Modifier>
+                <Modifier>
+                    <FeatureType>"HAPPINESS"</FeatureType>
+                    <value>1</value>
+                </Modifier>
+            </Modifiers>
         </Item>
+
     </Items>
 </ItemCollection>

@@ -6,7 +6,7 @@ public class ItemLoader: MonoBehaviour
 {
 
     public const string path = "items";
-    public List<Item> items = new List<Item>();
+    List<Item> items = new List<Item>();
 
     // Start is called before the first frame update
     void Awake()

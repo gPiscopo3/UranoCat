@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
 
 public class Modifier
 {
-
+    
     public FType featureType;
     public float value;
 
@@ -15,9 +14,4 @@ public class Modifier
         this.value = value; 
     }
 
-}
-
-public enum FType { 
-    AAA,
-    BBB
 }
