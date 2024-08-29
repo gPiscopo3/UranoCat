@@ -14,7 +14,7 @@ public class ItemLoader: MonoBehaviour
         
         ItemContainer ic = ItemContainer.Load(path);
 
-        foreach(Item item in ic.items){
+        foreach(Item item in ic.GetItems()){
             items.Add(item);
         }
 

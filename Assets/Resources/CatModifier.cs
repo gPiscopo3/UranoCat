@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Item
+public class CatModifier
 {
-
-    public string tag;
-    public string name; 
     
+    public CatTag targetStat;
+    public float value; 
+
 }
+

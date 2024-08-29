@@ -6,7 +6,7 @@
             <name>"Crocchette"</name>
             <Features>
                 <Feature>
-                    <name>"Durability"</name>
+                    <name>"DURABILITY"</name>
                     <currentValue>100</currentValue>
                     <maxValue>100</maxValue>
                 </Feature>
@@ -28,7 +28,7 @@
             <name>"Pesce"</name>
             <Features>
                 <Feature>
-                    <name>"Durability"</name>
+                    <name>"USE_DURABILITY"</name>
                     <currentValue>10</currentValue>
                     <maxValue>10</maxValue>
                 </Feature>
@@ -50,19 +50,15 @@
             <name>"Topo giocattolo"</name>
             <Features>
                 <Feature>
-                    <name>"Durability"</name>
+                    <name>"USE_DURABILITY"</name>
                     <currentValue>10</currentValue>
                     <maxValue>10</maxValue>
                 </Feature>
             </Features>
             <Modifiers>
                 <Modifier>
-                    <FeatureType>"FOOD"</FeatureType>
+                    <FeatureType>"FUN"</FeatureType>
                     <value>10</value>
-                </Modifier>
-                <Modifier>
-                    <FeatureType>"HAPPINESS"</FeatureType>
-                    <value>1</value>
                 </Modifier>
             </Modifiers>
         </Item>

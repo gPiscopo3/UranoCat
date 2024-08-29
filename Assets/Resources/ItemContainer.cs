@@ -24,9 +24,15 @@ public class ItemContainer
         ItemContainer items = serializer.Deserialize(reader) as ItemContainer;
 
         reader.Close();
-
+        
         return items;
 
     }
+
+    public List<Item> GetItems(){
+        return this.items;
+    }
+
+
 
 }
