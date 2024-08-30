@@ -27,7 +27,7 @@ public class CharacterStatus : MonoBehaviour
     public void OnMove(InputValue value){
         Vector3 inputs = value.Get<Vector3>();
         movement.z = inputs.y*walkSpeed;
-        movement.x = (inputs.x*walkSpeed)/2;
+        movement.x = inputs.x*walkSpeed/2;
     }
 
 }
