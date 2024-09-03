@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,9 +9,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] protected CharacterController characterController;
     [SerializeField] protected GameObject inventory;
 
+    [SerializeField] protected Transform interactorSource;
+    [SerializeField] protected float interactRange;
+
     protected CharacterStatus status;
     private PlayerControls playerControls;
+
     private InputAction toggleInventoryAction;
+    private InputAction interact;
+
     private bool isInventoryActive;
     
 
@@ -21,9 +28,12 @@ public class PlayerController : MonoBehaviour
 
        playerControls = new PlayerControls();
        toggleInventoryAction = playerControls.Player.ToggleInventory;
+       interact = playerControls.Player.Interact;
+
        isInventoryActive = false;
 
        toggleInventoryAction.performed += ToggleMenu;
+       interact.performed += Interact;
     }
 
     private void FixedUpdate()
@@ -41,11 +51,13 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         toggleInventoryAction.Enable();
+        interact.Enable();
     }
 
     private void OnDisable()
     {
         toggleInventoryAction.Disable();
+        interact.Disable();
     }
 
     private void ToggleMenu(InputAction.CallbackContext context)
@@ -60,6 +72,19 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 1; 
         }
 
+    }
+
+    // TO DO: Refactor del metodo
+    private void Interact(InputAction.CallbackContext context)
+    {
+        Ray r = new Ray(interactorSource.position, interactorSource.forward);
+        if (Physics.Raycast(r, out RaycastHit hitInfo, interactRange)) 
+        {
+            if (hitInfo.collider.gameObject.TryGetComponent(out InteractableObject intercatObj))
+            {
+                intercatObj.Interact();
+            }
+        }
     }
 
 }

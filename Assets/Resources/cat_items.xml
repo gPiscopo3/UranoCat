@@ -1,0 +1,31 @@
+<CatItemList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <CatItem>
+      <tag>TAG001</tag>
+      <name>Giocattolo Gatto</name>
+      <durability>100</durability>
+      <CatModifier>
+        <targetStat>FELICITA</targetStat>
+        <value>5</value>
+      </CatModifier>
+      <CatModifier>
+        <targetStat>DIVERTIMENTO</targetStat>
+        <value>15.0</value>
+      </CatModifier>
+      <itemType>DIVERTIMENTO</itemType>
+    </CatItem>
+    <CatItem>
+      <tag>TAG002</tag>
+      <name>Cibo per Gatti</name>
+      <durability>50</durability>
+      <CatModifier>
+        <targetStat>FELICITA</targetStat>
+        <value>15.0</value>
+      </CatModifier>
+      <CatModifier>
+        <targetStat>SAZIETA</targetStat>
+        <value>7.5</value>
+      </CatModifier>
+      <itemType>CIBO</itemType>
+    </CatItem>
+  </CatItemList>
+  

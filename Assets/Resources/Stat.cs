@@ -12,6 +12,8 @@ public class Stat
     public float maxValue;
     public CatTag catTag;
 
+    public Stat() {}
+
     public Stat(int currentValue, int maxValue, CatTag catTag)
     {
 

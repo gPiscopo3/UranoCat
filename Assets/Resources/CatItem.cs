@@ -1,14 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class CatItem : Item
 {
     
     public int durability;
+
+    [XmlElement("CatModifier")]
     public List<CatModifier> catModifiers;
     public ItemType itemType;
+
+    public CatItem() {}
 
     public CatItem(string tag, string name, int durability, List<CatModifier> catModifiers, ItemType itemType)
     {
@@ -35,5 +40,4 @@ public enum ItemType
     CIBO, 
     DIVERTIMENTO, 
     POSIZIONABILE
-
 }

@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Xml.Serialization;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Cat
 {
-    
+
+    [XmlElement("Stat")]
     public List<Stat> stats;
 
     public Cat(){
-        // TO DO: Load da file delle statistiche
+        stats = new List<Stat>();
     }
 
 }

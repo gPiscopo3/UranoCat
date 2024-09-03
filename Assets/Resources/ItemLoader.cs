@@ -5,17 +5,23 @@ using UnityEngine;
 public class ItemLoader: MonoBehaviour
 {
 
-    public const string path = "items";
-    List<Item> items = new List<Item>();
-
-    // Start is called before the first frame update
+    public const string path = "Assets/Resources/cat_items.xml";
+    ItemContainer catItemList { get; set;}
+    
     void Awake()
     {
         
-        ItemContainer ic = ItemContainer.Load(path);
+        catItemList = ItemContainer.LoadFromXml(path);
+        Debug.Log($"Lista di CatItem deserializzata. Numero di oggetti: {catItemList.items.Count}");
 
-        foreach(Item item in ic.GetItems()){
-            items.Add(item);
+        // Stampa i dettagli degli oggetti deserializzati
+        foreach (var catItem in catItemList.items)
+        {
+            Debug.Log($"Tag = {catItem.tag}, Nome = {catItem.name}, Durability = {catItem.durability}, Tipo = {catItem.itemType}");
+            foreach (var modifier in catItem.catModifiers)
+            {
+                Debug.Log($"\tTargetStat = {modifier.targetStat}, Valore = {modifier.value}");
+            }
         }
 
     }

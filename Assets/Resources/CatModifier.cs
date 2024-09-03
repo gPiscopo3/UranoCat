@@ -7,6 +7,7 @@ public class CatModifier
     
     public CatTag targetStat;
     public float value; 
+    public CatModifier() {}
 
 }
 

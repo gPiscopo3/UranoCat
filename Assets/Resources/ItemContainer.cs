@@ -5,12 +5,12 @@ using System.IO;
 using UnityEngine;
 using System;
 
-[XmlRoot("ItemCollection")]
+[XmlRoot("CatItemList")]
 public class ItemContainer
 {
-    [XmlArray("Items")]
-    [XmlArrayItem("Item")]
-    List<Item> items = new List<Item>();
+    
+    [XmlElement("CatItem")]
+    public List<CatItem> items { get; set; }
 
     public static ItemContainer Load(string path)
     {
@@ -29,10 +29,24 @@ public class ItemContainer
 
     }
 
-    public List<Item> GetItems(){
-        return this.items;
+    public static ItemContainer LoadFromXml(string filePath)
+    {   
+        XmlSerializer serializer = new XmlSerializer(typeof(ItemContainer));
+
+        using (StreamReader reader = new StreamReader(filePath))
+        {
+            return (ItemContainer)serializer.Deserialize(reader);
+        }
+    }   
+
+    public static void SaveToXml(ItemContainer catItemList, string filePath)
+    {
+        XmlSerializer serializer = new XmlSerializer(typeof(ItemContainer));
+
+        using (StreamWriter writer = new StreamWriter(filePath))
+        {
+            serializer.Serialize(writer, catItemList);
+        }
     }
-
-
 
 }
