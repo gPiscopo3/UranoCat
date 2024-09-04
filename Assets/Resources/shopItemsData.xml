@@ -1,0 +1,20 @@
+<ArrayOfShopItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ShopItem tag="ITEM001">
+      <Name>Spada Lunga</Name>
+      <Description>Una spada lunga e affilata.</Description>
+      <Price>1500</Price>
+      <MinLevelRequired>5</MinLevelRequired>
+    </ShopItem>
+    <ShopItem tag="ITEM002">
+      <Name>Scudo Robusto</Name>
+      <Description>Uno scudo resistente.</Description>
+      <Price>1200</Price>
+      <MinLevelRequired>4</MinLevelRequired>
+    </ShopItem>
+    <ShopItem tag="ITEM003">
+      <Name>Pozione Curativa</Name>
+      <Description>Una pozione che ripristina la salute.</Description>
+      <Price>300</Price>
+      <MinLevelRequired>1</MinLevelRequired>
+    </ShopItem>
+  </ArrayOfShopItem>

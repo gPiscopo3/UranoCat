@@ -4,6 +4,7 @@ using System.Xml.Serialization;
 using UnityEngine;
 
 [XmlInclude(typeof(CatItem))]
+[XmlInclude(typeof(KeyItem))]
 public abstract class Item
 {
 

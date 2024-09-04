@@ -1,0 +1,24 @@
+<Player xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <level>10</level>
+    <followers>150</followers>
+    <money>5000</money>
+    <Item xsi:type="CatItem">
+      <tag>TAG001</tag>
+      <name>Giocattolo Gatto</name>
+      <durability>100</durability>
+      <CatModifier>
+        <targetStat>FELICITA</targetStat>
+        <value>10.5</value>
+      </CatModifier>
+      <CatModifier>
+        <targetStat>DIVERTIMENTO</targetStat>
+        <value>5.0</value>
+      </CatModifier>
+      <itemType>DIVERTIMENTO</itemType>
+    </Item>
+    <Item xsi:type="KeyItem">
+      <tag>TAG002</tag>
+      <name>Chiave d'Oro</name>
+      <keyItemType>UTENSILE</keyItemType>
+    </Item>
+  </Player>
