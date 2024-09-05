@@ -7,39 +7,30 @@ using UnityEngine;
 public class CatItem : Item
 {
     
-    public int durability;
+    public int numUses;
 
     [XmlElement("CatModifier")]
     public List<CatModifier> catModifiers;
-    public ItemType itemType;
 
     public CatItem(string v) {}
 
-    public CatItem(string tag, string name, int durability, List<CatModifier> catModifiers, ItemType itemType)
+    public CatItem(string tag, string name, int numUses, List<CatModifier> catModifiers)
     {
         this.tag = tag;
         this.name = name;
-        this.durability = durability; 
+        this.numUses = numUses; 
         this.catModifiers = catModifiers;
-        this.itemType = itemType;
-    }
-
-    public CatItem(string tag, string name, int durability, List<CatModifier> catModifiers, string itemType)
-    {
-        this.tag = tag;
-        this.name = name;
-        this.durability = durability; 
-        this.catModifiers = catModifiers;
-        this.itemType = (ItemType) Enum.Parse(typeof(ItemType), itemType, true);
     }
 
     public CatItem() {}
 
+    public void useItem(){
+        numUses --;
+    }
+
+    public bool isUsable(){
+        return (numUses > 0);
+    }
+
 }
 
-public enum ItemType
-{
-    CIBO, 
-    DIVERTIMENTO, 
-    POSIZIONABILE
-}

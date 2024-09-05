@@ -6,7 +6,7 @@ public class PlayerLoader : MonoBehaviour
 {
     
     public const string path = "Assets/Resources/playerData.xml";
-    Player player;
+    public Player player;
 
     void Awake(){
 
