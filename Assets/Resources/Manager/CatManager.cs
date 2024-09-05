@@ -11,6 +11,12 @@ public class CatManager : MonoBehaviour
 
     private static CatManager _instance;
 
+    private float timer = 0f;
+
+    [SerializeField] private float hungerRate;
+    [SerializeField] private float enjoymentRate;
+    [SerializeField] private float happinessRate;
+
     // Private constructor to prevent instantiation from outside
     private CatManager() { }
 
@@ -34,6 +40,22 @@ public class CatManager : MonoBehaviour
 
     void Update()
     {
+        timer += Time.deltaTime;
+
+        if (timer > 10f)
+        {
+            // da decidere la funzione di aggiornamento delle statistiche
+            cat.setStat((CatTag.SAZIETA),cat.getStat(CatTag.SAZIETA).currentValue * hungerRate);
+            cat.setStat((CatTag.DIVERTIMENTO), cat.getStat(CatTag.DIVERTIMENTO).currentValue * enjoymentRate);
+            cat.setStat((CatTag.FELICITA), cat.getStat(CatTag.FELICITA).currentValue * happinessRate);
+
+            timer = 0f;
+
+            Debug.Log($"statistiche aggiornate: {cat.getStat(CatTag.SAZIETA).currentValue} {cat.getStat(CatTag.DIVERTIMENTO).currentValue} {cat.getStat(CatTag.FELICITA).currentValue}");
+        }
+
+
+        /*
         this.player = new Player(1,1,1); // Ad ogni Update ti prendi le informazioni per calcolare le statistiche
 
         // Successivamente dovrebbe essere per ogni oggetto attivo nell'inventario del giocatore. 
@@ -65,7 +87,7 @@ public class CatManager : MonoBehaviour
         this.cat.stats.Find(obj => obj.catTag == CatTag.SAZIETA).currentValue += partialFame; 
         this.cat.stats.Find(obj => obj.catTag == CatTag.DIVERTIMENTO).currentValue += partialDiverimento;
         this.cat.stats.Find(obj => obj.catTag == CatTag.FELICITA).currentValue += partialFelicita;
-    
+    */
     }
 
     public void onInteract(CatModifier catModifier)

@@ -26,6 +26,8 @@ public class CatController : MonoBehaviour, InteractableObject
 
     [SerializeField] public LayerMask mask;
 
+
+
     CatManager catManager;
 
     void Start()

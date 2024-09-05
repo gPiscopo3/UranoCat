@@ -14,5 +14,20 @@ public class Cat
     public Cat(){
         stats = new List<Stat>();
     }
-
+    public Stat getStat(CatTag tag)
+    {
+        return this.stats.Find(obj => obj.catTag == tag);
+    }
+    public void setStat(CatTag tag, float value)
+    {
+        Stat stat = this.stats.Find(obj => obj.catTag == tag);
+        if (value >= stat.maxValue)
+        {
+            stat.currentValue = stat.maxValue;
+        }
+        else
+        {
+            stat.currentValue = value;
+        }
+    }
 }
