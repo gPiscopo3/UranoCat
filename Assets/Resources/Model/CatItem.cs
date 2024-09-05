@@ -13,7 +13,7 @@ public class CatItem : Item
     public List<CatModifier> catModifiers;
     public ItemType itemType;
 
-    public CatItem() {}
+    public CatItem(string v) {}
 
     public CatItem(string tag, string name, int durability, List<CatModifier> catModifiers, ItemType itemType)
     {
@@ -32,6 +32,8 @@ public class CatItem : Item
         this.catModifiers = catModifiers;
         this.itemType = (ItemType) Enum.Parse(typeof(ItemType), itemType, true);
     }
+
+    public CatItem() {}
 
 }
 

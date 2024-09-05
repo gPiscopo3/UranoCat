@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class CatManager : MonoBehaviour, InteractableObject
+public class CatController : MonoBehaviour, InteractableObject
 {
 
     Cat cat;
@@ -25,13 +26,16 @@ public class CatManager : MonoBehaviour, InteractableObject
 
     [SerializeField] public LayerMask mask;
 
-
+    CatManager catManager;
 
     void Start()
     {
-        this.cat = new Cat();
+        this.cat = FindObjectOfType<CatLoader>().cat;
+        Stat stat = cat.stats.FirstOrDefault(obj => obj.catTag == CatTag.FELICITA);
+
         catAnimator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        catManager = CatManager.GetIstance();
 
         isRunning = false;
         isWalking = true;
@@ -63,13 +67,19 @@ public class CatManager : MonoBehaviour, InteractableObject
 
     public void Interact()
     {
+        
         Debug.Log("Miao!");
 
         idle = true;
         catAnimator.SetBool("isIdle", idle);
         agent.speed = 0f;
         transform.LookAt(player.position);
+
+        CatModifier catModifier = new CatModifier(CatTag.FELICITA, 10);
+        catManager.onInteract(catModifier);
+
     }
+    
     void GotoNextPoint()
     {
         // Returns if no points have been set up

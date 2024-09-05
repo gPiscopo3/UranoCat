@@ -9,5 +9,11 @@ public class CatModifier
     public float value; 
     public CatModifier() {}
 
+    public CatModifier(CatTag targetStat, float value)
+    {
+        this.targetStat = targetStat;
+        this.value = value;
+    }
+
 }
 
