@@ -5,7 +5,7 @@ using UnityEngine;
 public class CatLoader : MonoBehaviour
 {
     public const string path = "Assets/Resources/catStats.xml";
-    public Cat cat;
+    Cat cat;
 
     void Awake(){
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorControls : MonoBehaviour, InteractableObject
+public class DoorManager : MonoBehaviour, InteractableObject
 {
     
     Animation doorAnimation; 

@@ -13,7 +13,7 @@ public class CatItem : Item
     public List<CatModifier> catModifiers;
     public ItemType itemType;
 
-    public CatItem(string v) {}
+    public CatItem() {}
 
     public CatItem(string tag, string name, int durability, List<CatModifier> catModifiers, ItemType itemType)
     {
