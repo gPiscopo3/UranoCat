@@ -7,15 +7,23 @@ public class CatManager : MonoBehaviour
 
     Cat cat;    
     Player player;
-    List<CatModifier> modifiers = new List<CatModifier>();
+   
 
     private static CatManager _instance;
 
     private float timer = 0f;
 
+    bool lockUpdate = false;
+
     [SerializeField] private float hungerRate;
     [SerializeField] private float enjoymentRate;
     [SerializeField] private float happinessRate;
+
+    
+    void Start()
+    {
+        this.cat = FindObjectOfType<CatLoader>().cat;
+    }
 
     // Private constructor to prevent instantiation from outside
     private CatManager() { }
@@ -32,11 +40,7 @@ public class CatManager : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        this.cat = FindObjectOfType<CatLoader>().cat;
-        modifiers = new List<CatModifier>();
-    }
+    
 
     void Update()
     {
@@ -44,15 +48,25 @@ public class CatManager : MonoBehaviour
 
         if (timer > 10f)
         {
+
+        
+            timer = 0f;
+
+            lockUpdate = true;
             // da decidere la funzione di aggiornamento delle statistiche
             cat.setStat((CatTag.SAZIETA),cat.getStat(CatTag.SAZIETA).currentValue * hungerRate);
             cat.setStat((CatTag.DIVERTIMENTO), cat.getStat(CatTag.DIVERTIMENTO).currentValue * enjoymentRate);
             cat.setStat((CatTag.FELICITA), cat.getStat(CatTag.FELICITA).currentValue * happinessRate);
+            
 
-            timer = 0f;
+            lockUpdate = false;
 
             Debug.Log($"statistiche aggiornate: {cat.getStat(CatTag.SAZIETA).currentValue} {cat.getStat(CatTag.DIVERTIMENTO).currentValue} {cat.getStat(CatTag.FELICITA).currentValue}");
         }
+        
+
+       
+
 
 
         /*
@@ -88,11 +102,24 @@ public class CatManager : MonoBehaviour
         this.cat.stats.Find(obj => obj.catTag == CatTag.DIVERTIMENTO).currentValue += partialDiverimento;
         this.cat.stats.Find(obj => obj.catTag == CatTag.FELICITA).currentValue += partialFelicita;
     */
+
+
     }
 
-    public void onInteract(CatModifier catModifier)
+    public void ApplyModifier(CatModifier catModifier)
     {
-        modifiers.Add(catModifier);
+        while(lockUpdate);
+      
+    
+        
+        cat.setStat(catModifier.targetStat,cat.getStat(catModifier.targetStat).currentValue + catModifier.value);
+
+        Debug.Log($"statistiche aggiornate: {cat.getStat(CatTag.SAZIETA).currentValue} {cat.getStat(CatTag.DIVERTIMENTO).currentValue} {cat.getStat(CatTag.FELICITA).currentValue}");
+
+        
+       
     }
+
+
 
 }

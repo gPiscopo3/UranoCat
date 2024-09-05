@@ -37,7 +37,7 @@ public class CatController : MonoBehaviour, InteractableObject
 
         catAnimator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        catManager = CatManager.GetIstance();
+        catManager = FindObjectOfType<CatManager>();
 
         isRunning = false;
         isWalking = true;
@@ -78,7 +78,7 @@ public class CatController : MonoBehaviour, InteractableObject
         transform.LookAt(player.position);
 
         CatModifier catModifier = new CatModifier(CatTag.FELICITA, 10);
-        catManager.onInteract(catModifier);
+        catManager.ApplyModifier(catModifier);
 
     }
     
