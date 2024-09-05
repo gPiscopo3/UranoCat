@@ -68,8 +68,11 @@ public class PlayerController : MonoBehaviour
 
         if (isInventoryActive) {
             Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+            
         } else {
-            Time.timeScale = 1; 
+            Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
         }
 
     }
