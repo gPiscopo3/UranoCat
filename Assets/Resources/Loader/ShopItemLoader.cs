@@ -6,9 +6,9 @@ public class ShopItemLoader : MonoBehaviour
 {
     
     public const string path = "Assets/Resources/shopItemsData.xml";
-    List<ShopItem> shopItems; 
+    public List<ShopItem> shopItems; 
 
-    void Awake()
+    public void Awake()
     {
         
         this.shopItems =  XMLHelper.LoadShopItemsFromXml(path);
