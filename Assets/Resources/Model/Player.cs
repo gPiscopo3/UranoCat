@@ -11,15 +11,14 @@ public class Player
     public int followers;
     public long money; 
 
-    public CatItem equippedItem;
-    
+    [XmlIgnore]
+    public InventoryItem equippedItem;
 
-    [XmlElement("inventory")]
     public Inventory inventory; 
     public Player() {}   
 
-    public void equip(String tag){
-        equippedItem = (CatItem)inventory.GetItem(tag);
+    public void equip(InventoryItem item){
+        equippedItem = item;
     }
 
     public void unequip(){

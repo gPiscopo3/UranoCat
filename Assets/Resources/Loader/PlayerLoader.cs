@@ -12,9 +12,15 @@ public class PlayerLoader : MonoBehaviour
     void Awake(){
 
         this.player = XMLHelper.LoadFromXml<Player>(path);
-        if(player.inventory == null)
-            player.inventory = new Inventory();
-            
+        Debug.Log(player.inventory);
+        if(player.inventory == null){
+            player.inventory = new Inventory
+            {
+                items = new List<InventoryItem>()
+            };
+        }
+
+
 
         Debug.Log($"Oggetto Player deserializzato. Livello: {this.player.level}, Followers: {this.player.followers}, Money: {this.player.money}");
         

@@ -7,30 +7,24 @@ using UnityEngine;
 public class CatItem : Item
 {
     
-    public int numUses;
+   
 
     [XmlElement("CatModifier")]
     public List<CatModifier> catModifiers;
 
     public CatItem(string v) {}
 
-    public CatItem(string tag, string name, int numUses, List<CatModifier> catModifiers)
+    public CatItem(string tag, string name, int durability, List<CatModifier> catModifiers)
     {
         this.tag = tag;
         this.name = name;
-        this.numUses = numUses; 
+        this.durability = durability; 
         this.catModifiers = catModifiers;
     }
 
     public CatItem() {}
 
-    public void useItem(){
-        numUses --;
-    }
-
-    public bool isUsable(){
-        return (numUses > 0);
-    }
+    
 
 }
 

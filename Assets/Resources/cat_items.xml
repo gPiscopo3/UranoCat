@@ -2,7 +2,7 @@
     <CatItem>
       <tag>TAG001</tag>
       <name>Giocattolo Gatto</name>
-      <numUses>100</numUses>
+      <durability>100</durability>
       <CatModifier>
         <targetStat>FELICITA</targetStat>
         <value>5</value>
@@ -16,7 +16,7 @@
     <CatItem>
       <tag>TAG002</tag>
       <name>Cibo per Gatti</name>
-      <numUses>10</numUses>
+      <durability>10</durability>
       <CatModifier>
         <targetStat>FELICITA</targetStat>
         <value>15.0</value>

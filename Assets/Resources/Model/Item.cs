@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -10,15 +11,16 @@ public abstract class Item
 
     public string tag;
     public string name; 
-    public int numUses;
+    public int durability;
 
-    public void useItem(){
-        numUses --;
+    public Type type;
+
+    public enum Type{
+        CAT,
+        SHIP
+
     }
 
-    public bool isUsable(){
-        return (numUses > 0);
-    }
     
     
 }

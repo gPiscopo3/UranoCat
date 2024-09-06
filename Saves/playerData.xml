@@ -3,17 +3,62 @@
   <level>10</level>
   <followers>150</followers>
   <money>5000</money>
-  <equippedItem>
-    <tag>TAG001</tag>
-    <name>Giocattolo Gatto</name>
-    <numUses>72</numUses>
-    <CatModifier>
-      <targetStat>FELICITA</targetStat>
-      <value>5</value>
-    </CatModifier>
-    <CatModifier>
-      <targetStat>DIVERTIMENTO</targetStat>
-      <value>15</value>
-    </CatModifier>
-  </equippedItem>
+  <inventory>
+    <items>
+      <InventoryItem>
+        <ID>7a17faea-edf3-46fe-84a4-b663186d443d</ID>
+        <item xsi:type="CatItem">
+          <tag>TAG001</tag>
+          <name>Giocattolo Gatto</name>
+          <durability>100</durability>
+          <type>CAT</type>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>15</value>
+          </CatModifier>
+        </item>
+        <numUses>33</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>9d779e25-833e-4be4-bb5d-8e09a74a01d6</ID>
+        <item xsi:type="CatItem">
+          <tag>TAG001</tag>
+          <name>Giocattolo Gatto</name>
+          <durability>100</durability>
+          <type>CAT</type>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>15</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>7d4b08dd-7155-4b15-8c56-36d0ecc4cc6a</ID>
+        <item xsi:type="CatItem">
+          <tag>TAG001</tag>
+          <name>Giocattolo Gatto</name>
+          <durability>100</durability>
+          <type>CAT</type>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>15</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+    </items>
+  </inventory>
 </Player>

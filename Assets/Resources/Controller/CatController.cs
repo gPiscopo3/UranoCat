@@ -79,13 +79,17 @@ public class CatController : MonoBehaviour, InteractableObject
         agent.speed = 0f;
         transform.LookAt(playerTransform.position);
 
-        CatItem item = player.equippedItem;
+        InventoryItem item = player.equippedItem;
 
-        if(item != null){
-            foreach(CatModifier modifier in item.catModifiers)
+        Debug.Log(item.item.tag);
+
+
+        if(item != null && item.item.GetType() == typeof(CatItem)){
+            CatItem catItem = (CatItem)item.item;
+            foreach(CatModifier modifier in catItem.catModifiers)
                 catManager.ApplyModifier(modifier);
             
-            item.useItem();
+            player.inventory.useItem(item);
             if(!item.isUsable())
                 player.unequip();
             
@@ -93,6 +97,15 @@ public class CatController : MonoBehaviour, InteractableObject
 
         
 
+    }
+
+    
+    // override object.GetHashCode
+    public override int GetHashCode()
+    {
+        // TODO: write your implementation of GetHashCode() here
+        throw new System.NotImplementedException();
+        return base.GetHashCode();
     }
     
     void GotoNextPoint()

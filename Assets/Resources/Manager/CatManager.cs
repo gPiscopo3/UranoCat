@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CatManager : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class CatManager : MonoBehaviour
     [SerializeField] private float hungerRate;
     [SerializeField] private float enjoymentRate;
     [SerializeField] private float happinessRate;
+
+    [SerializeField] private Slider hungerSlider;
+    [SerializeField] private Slider enjoymentSlider;
+    [SerializeField] private Slider happinessSlider;
+
 
     
     void Start()
@@ -42,9 +48,13 @@ public class CatManager : MonoBehaviour
 
             lockUpdate = false;
 
-            Debug.Log($"statistiche aggiornate: {cat.getStat(CatTag.SAZIETA).currentValue} {cat.getStat(CatTag.DIVERTIMENTO).currentValue}" + 
+            Debug.Log($"statistiche aggiornate: {cat.getStat(CatTag.SAZIETA).currentValue} {cat.getStat(CatTag.DIVERTIMENTO).currentValue} " + 
                 $"{cat.getStat(CatTag.FELICITA).currentValue}");
         }
+
+        hungerSlider.value = cat.getStat(CatTag.SAZIETA).currentValue;
+        enjoymentSlider.value = cat.getStat(CatTag.DIVERTIMENTO).currentValue;
+        happinessSlider.value = cat.getStat(CatTag.FELICITA).currentValue;
         
 
 
@@ -58,7 +68,7 @@ public class CatManager : MonoBehaviour
         
         cat.setStat(catModifier.targetStat,cat.getStat(catModifier.targetStat).currentValue + catModifier.value);
 
-        Debug.Log($"statistiche aggiornate: {cat.getStat(CatTag.SAZIETA).currentValue} {cat.getStat(CatTag.DIVERTIMENTO).currentValue}" + 
+        Debug.Log($"statistiche aggiornate: {cat.getStat(CatTag.SAZIETA).currentValue} {cat.getStat(CatTag.DIVERTIMENTO).currentValue} " + 
             $"{cat.getStat(CatTag.FELICITA).currentValue}");
         
        
