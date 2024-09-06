@@ -10,5 +10,15 @@ public abstract class Item
 
     public string tag;
     public string name; 
+    public int numUses;
+
+    public void useItem(){
+        numUses --;
+    }
+
+    public bool isUsable(){
+        return (numUses > 0);
+    }
+    
     
 }

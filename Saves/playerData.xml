@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <level>10</level>
+  <followers>150</followers>
+  <money>5000</money>
+  <equippedItem>
+    <tag>TAG001</tag>
+    <name>Giocattolo Gatto</name>
+    <numUses>72</numUses>
+    <CatModifier>
+      <targetStat>FELICITA</targetStat>
+      <value>5</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>DIVERTIMENTO</targetStat>
+      <value>15</value>
+    </CatModifier>
+  </equippedItem>
+</Player>
