@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class CatManager : MonoBehaviour
 {
 
@@ -15,7 +16,7 @@ public class CatManager : MonoBehaviour
 
     [SerializeField] private float hungerRate;
     [SerializeField] private float enjoymentRate;
-    [SerializeField] private float happinessRate;
+    [SerializeField] private float happinessRateIterations;
 
     [SerializeField] private Slider hungerSlider;
     [SerializeField] private Slider enjoymentSlider;
@@ -43,6 +44,10 @@ public class CatManager : MonoBehaviour
             // da decidere la funzione di aggiornamento delle statistiche
             cat.setStat((CatTag.SAZIETA),cat.getStat(CatTag.SAZIETA).currentValue * hungerRate);
             cat.setStat((CatTag.DIVERTIMENTO), cat.getStat(CatTag.DIVERTIMENTO).currentValue * enjoymentRate);
+
+            float happinessRate = 
+                1 + ((cat.getStat(CatTag.SAZIETA).currentValue + cat.getStat(CatTag.DIVERTIMENTO).currentValue )/cat.getStat(CatTag.FELICITA).currentValue - 1)/happinessRateIterations;
+                
             cat.setStat((CatTag.FELICITA), cat.getStat(CatTag.FELICITA).currentValue * happinessRate);
             
 
