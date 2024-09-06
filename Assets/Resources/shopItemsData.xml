@@ -9,12 +9,41 @@
       <Name>Scudo Robusto</Name>
       <Description>Uno scudo resistente.</Description>
       <Price>1200</Price>
-      <MinLevelRequired>4</MinLevelRequired>
+      <MinLevelRequired>1</MinLevelRequired>
     </ShopItem>
     <ShopItem tag="ITEM003">
-      <Name>Pozione Curativa</Name>
+      <Name>Pozione Curativa1</Name>
       <Description>Una pozione che ripristina la salute.</Description>
       <Price>300</Price>
       <MinLevelRequired>1</MinLevelRequired>
     </ShopItem>
+    <ShopItem tag="ITEM003">
+      <Name>Pozione Curativa2</Name>
+      <Description>Una pozione che ripristina la salute.</Description>
+      <Price>300</Price>
+      <MinLevelRequired>1</MinLevelRequired>
+    </ShopItem>
+    <ShopItem tag="ITEM003">
+      <Name>Pozione Curativa3</Name>
+      <Description>Una pozione che ripristina la salute.</Description>
+      <Price>300</Price>
+      <MinLevelRequired>1</MinLevelRequired>
+    </ShopItem>
+    <ShopItem tag="ITEM003">
+      <Name>Pozione Curativa4</Name>
+      <Description>Una pozione che ripristina la salute.</Description>
+      <Price>300</Price>
+      <MinLevelRequired>1</MinLevelRequired>
+    </ShopItem>
+    <ShopItem tag="ITEM003">
+      <Name>Pozione Curativa5</Name>
+      <Description>Una pozione che ripristina la salute.</Description>
+      <Price>300</Price>
+      <MinLevelRequired>1</MinLevelRequired>
+    </ShopItem>
+
+
+
+
+
   </ArrayOfShopItem>
