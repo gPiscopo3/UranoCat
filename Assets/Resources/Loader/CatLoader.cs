@@ -18,13 +18,13 @@ public class CatLoader : MonoBehaviour
         string path;
 
         if(save == null){
-            //this.cat = XMLHelper.LoadFromXml<Cat>(pathDefault);
-            this.cat = new Cat();
+            this.cat = XMLHelper.LoadFromXml<Cat>(pathDefault);
+            /*this.cat = new Cat();
             List<CatStat> stats = new List<CatStat>();
             stats.Add(new CatStat(50, 100, CatTag.SAZIETA));
             stats.Add(new CatStat(50, 100, CatTag.DIVERTIMENTO));
             stats.Add(new CatStat(50, 100, CatTag.FELICITA));
-            this.cat.stats = stats;
+            this.cat.stats = stats;*/
         }
         else{
             path = "Saves/" + profile + "/" + save + "/" + saveFileName;

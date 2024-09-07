@@ -2,8 +2,8 @@
 <ArrayOfCatItem xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <CatItem>
     <tag>ITEM001</tag>
-    <name>Piccola porzione di crocchette. Utilizzabile 10 volte</name>
-    <descrizione>Crocchette Piccole</descrizione>
+    <name>Crocchette Piccole</name>
+    <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
     <durability>10</durability>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
@@ -16,8 +16,8 @@
   </CatItem>
   <CatItem>
     <tag>ITEM002</tag>
-    <name>Un bel merluzzo da mangiare</name>
-    <descrizione>Pesce</descrizione>
+    <name>Pesce</name>
+    <descrizione>Un bel merluzzo da mangiare</descrizione>
     <durability>1</durability>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
@@ -34,8 +34,8 @@
   </CatItem>
   <CatItem>
     <tag>ITEM003</tag>
-    <name>Un topo con cui giocare. Attenzione, fa venire fame!</name>
-    <descrizione>Topo di gomma</descrizione>
+    <name>Topo di gomma</name>
+    <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
     <durability>30</durability>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>

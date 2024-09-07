@@ -14,7 +14,7 @@ public class CatItem : Item
 
     public CatItem(string v) {}
 
-    public CatItem(string tag, string descrizione, string name, int durability, List<CatModifier> catModifiers)
+    public CatItem(string tag,string name,  string descrizione,  int durability, List<CatModifier> catModifiers)
     {
         this.tag = tag;
         this.name = name;

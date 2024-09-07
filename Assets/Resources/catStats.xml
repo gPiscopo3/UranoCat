@@ -5,12 +5,12 @@
       <catTag>SAZIETA</catTag>
     </Stat>
     <Stat>
-      <currentValue>30</currentValue>
+      <currentValue>50</currentValue>
       <maxValue>100</maxValue>
       <catTag>DIVERTIMENTO</catTag>
     </Stat>
     <Stat>
-      <currentValue>70</currentValue>
+      <currentValue>50</currentValue>
       <maxValue>100</maxValue>
       <catTag>FELICITA</catTag>
     </Stat>

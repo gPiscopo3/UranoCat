@@ -50,7 +50,7 @@ public class TestManager : MonoBehaviour
         {
             new ShopItem("ITEM001", 5, 1),
             new ShopItem("ITEM002", 5, 1),
-            new ShopItem("ITEM001", 10, 10)
+            new ShopItem("ITEM003", 10, 10)
         };
 
         XMLHelper.SaveToXml<List<ShopItem>>(shopItems, "Assets/Resources/shop_items.xml");*/
