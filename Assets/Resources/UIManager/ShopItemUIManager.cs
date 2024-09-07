@@ -37,7 +37,7 @@ public class ShopItemUIManager : MonoBehaviour
         //prova
         sprite1 = Resources.Load("UIManager/salmon", typeof(Sprite)) as Sprite;
         
-        this.shopItems = FindObjectOfType<ShopItemLoader>().shopItems;
+        this.shopItems = FindObjectOfType<ItemLoader>().shopItems;
         
         this.player = FindObjectOfType<PlayerLoader>().player;
 
@@ -67,7 +67,7 @@ public class ShopItemUIManager : MonoBehaviour
         
         int i = 0;
         
-        foreach(ShopItem shopItem in shopItems.FindAll(obj => obj.MinLevelRequired <= player.level))
+        foreach(ShopItem shopItem in shopItems)
         {
             
             ShopItemUI shopItemUI = Instantiate(shopItemPrefab, contentPanel.transform).GetComponent<ShopItemUI>();
@@ -77,8 +77,11 @@ public class ShopItemUIManager : MonoBehaviour
             shopItemUI.SetShopItemPosition(Vector2.right * i * (itemWidth + itemSpacing));
             //shopItemUI.SetShopItemPosition(new Vector2(i * (itemWidth + itemSpacing), 57));
 
-            shopItemUI.SetShopItemName(shopItem.Name);
-            shopItemUI.SetShopItemDescription(shopItem.Description);
+            shopItemUI.setTag(shopItem.Tag);
+            shopItemUI.SetShopItemName(shopItem.item.name);
+            shopItemUI.SetShopItemDescription(shopItem.item.descrizione);
+            if(shopItem.MinLevelRequired > player.level)
+                shopItemUI.SetShopItemLevelNotEoungh(shopItem.MinLevelRequired);
             shopItemUI.SetShopItemPrice(shopItem.Price);
             shopItemUI.SetShopItemImage(sprite1);
 

@@ -35,7 +35,6 @@ public class CatController : MonoBehaviour, InteractableObject
     {
         this.cat = FindObjectOfType<CatLoader>().cat;
         this.player = FindObjectOfType<PlayerLoader>().player;
-        Stat stat = cat.stats.FirstOrDefault(obj => obj.catTag == CatTag.FELICITA);
 
         catAnimator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();

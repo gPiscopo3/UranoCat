@@ -3,7 +3,4 @@
   <level>1</level>
   <followers>150</followers>
   <money>5000</money>
-  <inventory>
-    <items />
-  </inventory>
 </Player>

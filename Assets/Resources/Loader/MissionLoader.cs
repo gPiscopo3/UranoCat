@@ -11,7 +11,7 @@ public class MissionLoader : MonoBehaviour
     void Awake()
     {
         
-        this.missions = XMLHelper.LoadMissionsFromXml(path);
+        this.missions = XMLHelper.LoadFromXml<List<Mission>>(path);
         Debug.Log($"Lista di missioni deserializzata. Numero di missioni: {this.missions.Count}");
 
     }

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfShopItem xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ShopItem>
+    <Tag>ITEM001</Tag>
+    <Price>5</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>ITEM002</Tag>
+    <Price>5</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>ITEM003</Tag>
+    <Price>10</Price>
+    <MinLevelRequired>10</MinLevelRequired>
+  </ShopItem>
+</ArrayOfShopItem>

@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
@@ -11,15 +10,11 @@ public abstract class Item
 
     public string tag;
     public string name; 
+    public string descrizione;
     public int durability;
+    
 
-    public Type type;
 
-    public enum Type{
-        CAT,
-        SHIP
-
-    }
 
     
     

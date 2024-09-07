@@ -4,6 +4,7 @@ using System.Xml.Serialization;
 using System.IO;
 using UnityEngine;
 using System;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 
 [XmlRoot("CatItemList")]
 public class ItemContainer
@@ -11,6 +12,14 @@ public class ItemContainer
     
     [XmlElement("CatItem")]
     public List<CatItem> items { get; set; }
+
+    public Item GetItem(String tag){
+        foreach(Item item in items){
+            if(item.tag.Equals(tag))
+                return item;
+        }
+        return null;
+    }
 
     public static ItemContainer Load(string path)
     {
