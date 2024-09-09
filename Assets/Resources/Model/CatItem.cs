@@ -24,7 +24,5 @@ public class CatItem : Item
 
     public CatItem() {}
 
-    
-
 }
 

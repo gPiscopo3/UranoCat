@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
+using UnityEngine.InputSystem.Interactions;
 
-    public class InventoryItem{
+public class InventoryItem{
 
         public String ID;
         public Item item;
@@ -21,7 +22,7 @@ using UnityEngine;
         public InventoryItem()
         {}
 
-    public void useItem(){
+        public void useItem(){
             numUses ++;
         }
 
@@ -31,14 +32,19 @@ using UnityEngine;
 
         public override bool Equals(object obj)
         {
-            
+    
             if (obj == null || GetType() != obj.GetType())
-            {
+            {   
                 return false;
             }
             
             return this.ID.Equals(((InventoryItem)obj).ID);
             
+        }
+
+        public bool EqualsByTag(Item item)
+        {
+            return this.item.tag.Equals(item.tag);
         }
      
         public override int GetHashCode()

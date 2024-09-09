@@ -12,15 +12,11 @@ public abstract class Item
     public string tag;
     public string name; 
     public int durability;
-
     public Type type;
 
     public enum Type{
         CAT,
         SHIP
-
     }
-
-    
-    
+  
 }
