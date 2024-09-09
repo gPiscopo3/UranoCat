@@ -14,11 +14,14 @@ public class TestScript : MonoBehaviour
     {
         //Provare a testare con 3 missioni;
 
+        //TODO caricare missioni dall'xml, del giocatore serve l'inventory manager (da fare)
+
         this.player = new Player();
         this.player.level = 1;
         this.player.followers = 1000;
         this.player.money = 1000;
         this.player.inventory = new Inventory();
+        this.player.inventory.addItem(new KeyItem("KEY1", "Vite", KeyItemType.CONSUMABILE));
         this.player.inventory.addItem(new KeyItem("KEY1", "Vite", KeyItemType.CONSUMABILE));
         this.player.inventory.addItem(new KeyItem("KEY1", "Vite", KeyItemType.CONSUMABILE));
         this.player.inventory.addItem(new KeyItem("KEY2", "Cacciavite", KeyItemType.UTENSILE));
@@ -75,7 +78,20 @@ public class TestScript : MonoBehaviour
             if(isCompletable)
             {
                 mission.MissionState = MissionState.COMPLETATO;
-                //togli dall'inventario gli oggetti
+
+                //TODO rimozione affidata al gestore dell' inventario
+                foreach (ItemRequirement item in mission.RequiredItems)
+                {
+                    InventoryItem itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.Item) && item.Item.keyItemType == KeyItemType.CONSUMABILE);
+                    for (int i = 0; i < item.Quantity; i++)
+                    {
+                        Debug.Log("Rimosso" + i + " " + item.Quantity);
+                        this.player.inventory.items.Remove(itemToRemove);
+                        itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.Item) && item.Item.keyItemType == KeyItemType.CONSUMABILE);
+                    }
+                  
+                }
+                   
             } 
 
         }
@@ -108,6 +124,8 @@ public class TestScript : MonoBehaviour
          foreach(Mission m in this.missions)
         {
             Debug.Log($"{m.tag}, {m.MissionState} {DateTime.Now}");
+            foreach(InventoryItem item in this.player.inventory.items)
+                Debug.Log($"{item.item.tag},{item.item.name},{item.ID}, {DateTime.Now}");
         }
 
     }
