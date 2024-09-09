@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,9 +14,15 @@ public class ShopItemUI : MonoBehaviour
     [SerializeField] TMP_Text description;
     [SerializeField] Button priceButton;
     [SerializeField] TMP_Text price;
-
+    long priceValue;
+    string tag;
 
     
+
+
+    public void setTag(string tag){
+        this.tag = tag;
+    }
 
     public void SetShopItemPosition(Vector2 pos){
 
@@ -45,22 +52,32 @@ public class ShopItemUI : MonoBehaviour
 
     public void SetShopItemPrice(long price){
 
-
+        this.priceValue = price;
         this.price.text = price.ToString();
         this.priceButton.GetComponent<Image>().enabled = true;
         this.priceButton.enabled = true;
+        priceButton.onClick.AddListener(Acquista);
         
     }
 
-
-    public void BuyShopItem(){
-
-        priceButton.onClick.AddListener(Acquista);
+    public void SetShopItemLevelNotEoungh(int level){
+        this.price.text = "Liv " + level.ToString();
     }
+
+
 
     private void Acquista(){
         
-        Debug.Log(this.itemName + " comprato!");
+        long price = this.priceValue;
+        Player player = FindObjectOfType<PlayerLoader>().player;
+        Item item = FindAnyObjectByType<ItemLoader>().GetItem(tag);
+        if(player.money >= price && item!=null){
+            player.money = player.money - price;
+            player.inventory.addItem(item);
+            Debug.Log(this.itemName + " comprato!");
+            
+        }
+        
     }
 
 

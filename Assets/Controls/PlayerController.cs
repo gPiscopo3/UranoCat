@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] protected CharacterController characterController;
     [SerializeField] protected GameObject inventory;
+    [SerializeField] protected GameObject shop;
 
     [SerializeField] protected Transform interactorSource;
     [SerializeField] protected float interactRange;
@@ -16,9 +17,11 @@ public class PlayerController : MonoBehaviour
     private PlayerControls playerControls;
 
     private InputAction toggleInventoryAction;
+    private InputAction toggleShopAction;
     private InputAction interact;
 
     private bool isInventoryActive;
+    private bool isShopActive;
     
 
     private void Awake()
@@ -28,11 +31,14 @@ public class PlayerController : MonoBehaviour
 
        playerControls = new PlayerControls();
        toggleInventoryAction = playerControls.Player.ToggleInventory;
+       toggleShopAction = playerControls.Player.ToggleShop;
        interact = playerControls.Player.Interact;
 
        isInventoryActive = false;
+       isShopActive = false;
 
-       toggleInventoryAction.performed += ToggleMenu;
+       toggleInventoryAction.performed += ToggleInventory;
+       toggleShopAction.performed += ToggleShop;
        interact.performed += Interact;
     }
 
@@ -50,27 +56,51 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
+        toggleShopAction.Enable();
         toggleInventoryAction.Enable();
         interact.Enable();
     }
 
     private void OnDisable()
     {
+        toggleShopAction.Enable();
         toggleInventoryAction.Disable();
         interact.Disable();
     }
 
-    private void ToggleMenu(InputAction.CallbackContext context)
+    private void ToggleShop(InputAction.CallbackContext context)
+    {
+        
+        shop.SetActive(!shop.activeSelf);
+        isShopActive = !isShopActive;
+
+        if (isShopActive) {
+            toggleInventoryAction.Disable();
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+            
+        } else {
+            toggleInventoryAction.Enable();
+            Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+    }
+
+
+    private void ToggleInventory(InputAction.CallbackContext context)
     {
         
         inventory.SetActive(!inventory.activeSelf);
         isInventoryActive = !isInventoryActive;
 
         if (isInventoryActive) {
+            toggleShopAction.Disable();
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             
         } else {
+            toggleShopAction.Enable();
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
         }

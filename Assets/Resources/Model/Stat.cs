@@ -5,16 +5,16 @@ using System.Xml;
 using System.Xml.Serialization;
 using UnityEngine;
 
-public class Stat
+public class CatStat
 {
 
     public float currentValue;
     public float maxValue;
     public CatTag catTag;
 
-    public Stat() {}
+    public CatStat() {}
 
-    public Stat(int currentValue, int maxValue, CatTag catTag)
+    public CatStat(int currentValue, int maxValue, CatTag catTag)
     {
 
         this.currentValue = currentValue;
