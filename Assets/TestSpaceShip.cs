@@ -5,11 +5,11 @@ using UnityEngine;
 public class TestSpaceShip : MonoBehaviour, InteractableObject
 {
     
-    TestScript manager;
+    MissionManager manager;
     // Start is called before the first frame update
     void Start()
     {
-        manager = FindObjectOfType<TestScript>();
+        manager = FindObjectOfType<MissionManager>();
     }
 
     public void Interact()

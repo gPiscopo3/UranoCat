@@ -4,11 +4,12 @@ using System.Linq;
 using System;
 using UnityEngine;
 
-public class TestScript : MonoBehaviour
+public class MissionManager : MonoBehaviour
 {
 
     Player player; 
     List<Mission> missions;
+    MissionLoader mLoader;
 
     void Start()
     {
@@ -21,30 +22,34 @@ public class TestScript : MonoBehaviour
         this.player.followers = 1000;
         this.player.money = 1000;
         this.player.inventory = new Inventory();
-        this.player.inventory.addItem(new KeyItem("KEY1", "Vite", "Vite semplice", 1));
-        this.player.inventory.addItem(new KeyItem("KEY1", "Vite", "Vite semplice", 1));
-        this.player.inventory.addItem(new KeyItem("KEY1", "Vite", "Vite semplice", 1));
-        this.player.inventory.addItem(new KeyItem("KEY2", "Cacciavite", "Semplice Cacciavite", 0));
+        this.player.inventory.addItem(new KeyItem("KEY001", "Vite", "Vite semplice", 1));
+        this.player.inventory.addItem(new KeyItem("KEY001", "Vite", "Vite semplice", 1));
+        this.player.inventory.addItem(new KeyItem("KEY001", "Vite", "Vite semplice", 1));
+        this.player.inventory.addItem(new KeyItem("KEY002", "Cacciavite", "Semplice Cacciavite", 0));
         this.player.equippedItem = this.player.inventory.items.Find(obj => obj.ID == "KEY1");
 
+        this.mLoader = FindObjectOfType<MissionLoader>();
+        this.missions = mLoader.missions;
+
+        /*
         this.missions = new List<Mission>();
 
         Mission mission1 = new Mission();
         mission1.tag = "MISSION01";
-        mission1.RequiredItems.Add(new ItemRequirement(new KeyItem("KEY1", "Vite", "Vite semplice", 1), 1));
+        mission1.RequiredItems.Add(new ItemRequirement("KEY1", 1));
         mission1.MissionState = MissionState.ATTIVO;
 
         Mission mission2 = new Mission();
         mission2.tag = "MISSION02";
         mission2.RequiredMissions.Add("MISSION01");
-        mission2.RequiredItems.Add(new ItemRequirement(new KeyItem("KEY1", "Vite", "Vite semplice", 1), 2));
-        mission2.RequiredItems.Add(new ItemRequirement(new KeyItem("KEY2", "Cacciavite", "Cacciavite semplice", 0), 1));
+        mission2.RequiredItems.Add(new ItemRequirement("KEY1", 2));
+        mission2.RequiredItems.Add(new ItemRequirement("KEY2", 1));
         mission2.MissionState = MissionState.NON_ATTIVO;
 
         Mission mission3 = new Mission();
         mission3.tag = "MISSION03";
         mission3.RequiredMissions.Add("MISSION02");
-        mission3.RequiredItems.Add(new ItemRequirement(new KeyItem("KEY3", "Bullone", "Bullone semplice", 0), 2));
+        mission3.RequiredItems.Add(new ItemRequirement("KEY3", 1));
         mission3.MissionState = MissionState.NON_ATTIVO;
 
         this.missions.Add(mission1);
@@ -55,7 +60,7 @@ public class TestScript : MonoBehaviour
         {
             Debug.Log($"{m.tag}, {m.MissionState} {DateTime.Now}");
         }
-
+        */
     }
 
     public void CheckMission()
@@ -68,7 +73,7 @@ public class TestScript : MonoBehaviour
             foreach(ItemRequirement item in mission.RequiredItems)
             {
                    
-                int quantity = this.player.inventory.items.FindAll(obj => obj.EqualsByTag(item.Item)).Count;
+                int quantity = this.player.inventory.items.FindAll(obj => obj.EqualsByTag(item.tagKeyItem)).Count;
                 if(quantity < item.Quantity)
                 {
                     isCompletable = false;    
@@ -82,12 +87,12 @@ public class TestScript : MonoBehaviour
                 //TODO rimozione affidata al gestore dell' inventario
                 foreach (ItemRequirement item in mission.RequiredItems)
                 {
-                    InventoryItem itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.Item));
+                    InventoryItem itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.tagKeyItem));
                     for (int i = 0; i < item.Quantity; i++)
                     {
                         Debug.Log("Rimosso" + i + " " + item.Quantity);
                         this.player.inventory.useItem(itemToRemove);
-                        itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.Item));
+                        itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.tagKeyItem));
                     }
                   
                 }
@@ -106,11 +111,12 @@ public class TestScript : MonoBehaviour
     
         foreach(Mission inactiveMission in this.missions.Where(x => x.MissionState == MissionState.NON_ATTIVO))
         {
+            
             bool isActivable = true;
             foreach(string requirement in inactiveMission.RequiredMissions)
             {
                 Mission toCheckMission = this.missions.Find(x => x.tag == requirement);
-                if(toCheckMission.MissionState != MissionState.COMPLETATO)
+                if (toCheckMission.MissionState != MissionState.COMPLETATO)
                 {
                     isActivable = false;           
                 }

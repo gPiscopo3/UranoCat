@@ -4,11 +4,11 @@
       </RequiredMissions>
       <RequiredItems>
         <RequiredItem>
-			<tagKeyItem>"KEY001"</tagKeyItem>
+			<tagKeyItem>KEY001</tagKeyItem>
             <Quantity>2</Quantity>
         </RequiredItem>
         <RequiredItem>
-			<tagKeyItem>"KEY002"</tagKeyItem>
+			<tagKeyItem>KEY002</tagKeyItem>
             <Quantity>1</Quantity>
         </RequiredItem>
       </RequiredItems>
@@ -16,11 +16,11 @@
     </Mission>
     <Mission tag="MISSION002">
       <RequiredMissions>
-        <RequiredMission>"MISSION001"</RequiredMission>
+        <RequiredMission>MISSION001</RequiredMission>
       </RequiredMissions>
       <RequiredItems>
         <RequiredItem>
-		    <tagKeyItem>"KEY002"</tagKeyItem>
+		    <tagKeyItem>KEY002</tagKeyItem>
             <Quantity>3</Quantity>
         </RequiredItem>
       </RequiredItems>

@@ -42,9 +42,9 @@ public class InventoryItem{
             
         }
 
-        public bool EqualsByTag(Item item)
+        public bool EqualsByTag(string tagItem)
         {
-            return this.item.tag.Equals(item.tag);
+            return this.item.tag.Equals(tagItem);
         }
      
         public override int GetHashCode()
