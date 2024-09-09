@@ -15,8 +15,6 @@ public class PlayerManager : MonoBehaviour
 
     bool lockUpdate = false;
 
-    [SerializeField] private TMP_Text moneyText;
-
 
     void Start()
     {
@@ -26,7 +24,7 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-        moneyText.SetText(player.money.ToString());
+        
         
 
     }
