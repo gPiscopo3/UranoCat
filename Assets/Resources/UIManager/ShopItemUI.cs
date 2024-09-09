@@ -31,8 +31,10 @@ public class ShopItemUI : MonoBehaviour
 
     }
 
-    public void SetShopItemImage (Sprite sprite){
+    public void SetShopItemImage (string imagePath){
 
+        Sprite sprite = Resources.Load(imagePath, typeof(Sprite)) as Sprite;
+        
         imageItem.sprite = sprite;
         this.imageItem.GetComponent<Image>().enabled = true;
 
@@ -74,7 +76,7 @@ public class ShopItemUI : MonoBehaviour
         if(player.money >= price && item!=null){
             player.money = player.money - price;
             player.inventory.addItem(item);
-            Debug.Log(this.itemName + " comprato!");
+            Debug.Log(this.itemName.text + " comprato!");
             
         }
         

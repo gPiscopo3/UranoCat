@@ -5,19 +5,11 @@
       </RequiredMissions>
       <RequiredItems>
         <RequiredItem>
-          <Item>
-            <tag>KEY001</tag>
-            <name>Chiave Antica</name>
-            <keyItemType>UTENSILE</keyItemType>
-          </Item>
+          <tag>KEY001</tag>  
           <Quantity>2</Quantity>
         </RequiredItem>
         <RequiredItem>
-          <Item>
-            <tag>KEY002</tag>
-            <name>Pozione Rara</name>
-            <keyItemType>CONSUMABILE</keyItemType>
-          </Item>
+          <tag>KEY002</tag>
           <Quantity>1</Quantity>
         </RequiredItem>
       </RequiredItems>
@@ -29,11 +21,7 @@
       </RequiredMissions>
       <RequiredItems>
         <RequiredItem>
-          <Item>
-            <tag>KEY002</tag>
-            <name>Pozione Rara</name>
-            <keyItemType>CONSUMABILE</keyItemType>
-          </Item>
+          <tag>KEY002</tag>
           <Quantity>3</Quantity>
         </RequiredItem>
       </RequiredItems>

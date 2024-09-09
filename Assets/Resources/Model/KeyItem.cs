@@ -9,11 +9,13 @@ public class KeyItem : Item
 
     public KeyItem() {}
 
-    public KeyItem(string tag, string name, KeyItemType keyItemType)
+    public KeyItem(string tag, string name, string description, KeyItemType keyItemType, string imagePath)
     {
         this.tag = tag;
         this.name = name;
+        this.descrizione = description;
         this.keyItemType = keyItemType;
+        this.imagePath = imagePath;
     }
 
 }

@@ -14,12 +14,13 @@ public class CatItem : Item
 
     public CatItem(string v) {}
 
-    public CatItem(string tag,string name,  string descrizione,  int durability, List<CatModifier> catModifiers)
+    public CatItem(string tag,string name,  string descrizione,  int durability, string imagePath, List<CatModifier> catModifiers)
     {
         this.tag = tag;
         this.name = name;
         this.descrizione = descrizione;
-        this.durability = durability; 
+        this.durability = durability;
+        this.imagePath = imagePath; 
         this.catModifiers = catModifiers;
     }
 
