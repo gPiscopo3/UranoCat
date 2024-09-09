@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static CatStatsRules;
 
 public class TestManager : MonoBehaviour
 {
@@ -54,6 +55,18 @@ public class TestManager : MonoBehaviour
         };
 
         XMLHelper.SaveToXml<List<ShopItem>>(shopItems, "Assets/Resources/shop_items.xml");*/
+
+        /*CatStatsRules catStatsRules = new CatStatsRules();
+
+        catStatsRules.seconds = 10;
+        catStatsRules.rules = new List<StatRule>(){new StatRule()};
+        catStatsRules.rules[0].tag = CatTag.SAZIETA;
+        catStatsRules.rules[0].modifiers = new List<StatModifierRule>(){new StatModifierRule()};
+        catStatsRules.rules[0].modifiers[0].tag = CatTag.SAZIETA;
+        catStatsRules.rules[0].modifiers[0].value = 0.9f;
+        XMLHelper.SaveToXml<CatStatsRules>(catStatsRules, "Assets/Resources/cat_rules.xml");*/
+
+    
 
 
 

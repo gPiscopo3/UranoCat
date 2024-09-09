@@ -14,7 +14,7 @@ public class CatStat
 
     public CatStat() {}
 
-    public CatStat(int currentValue, int maxValue, CatTag catTag)
+    public CatStat(float currentValue, float maxValue, CatTag catTag)
     {
 
         this.currentValue = currentValue;

@@ -2,11 +2,77 @@
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <level>10</level>
   <followers>150</followers>
-  <money>4940</money>
+  <money>4930</money>
   <inventory>
     <items>
       <InventoryItem>
-        <ID>ebe1b0c7-2744-4cc2-9852-6aeee654d4d3</ID>
+        <ID>63058abb-d01a-4e69-a7fb-a2b9575d10d1</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM003</tag>
+          <name>Topo di gomma</name>
+          <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
+          <durability>30</durability>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>-2</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>13</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>5949e3f5-df95-48b0-9933-c9e994493c06</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM003</tag>
+          <name>Topo di gomma</name>
+          <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
+          <durability>30</durability>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>-2</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>84975455-c798-4f40-89a7-7bd3c0872006</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM003</tag>
+          <name>Topo di gomma</name>
+          <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
+          <durability>30</durability>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>-2</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>45babc01-69a5-49cf-ab03-8b5c4f1755a8</ID>
         <item xsi:type="CatItem">
           <tag>ITEM002</tag>
           <name>Pesce</name>
@@ -28,95 +94,7 @@
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>19d8d593-5e33-40b0-9390-cb908f310b27</ID>
-        <item xsi:type="CatItem">
-          <tag>ITEM002</tag>
-          <name>Pesce</name>
-          <descrizione>Un bel merluzzo da mangiare</descrizione>
-          <durability>1</durability>
-          <CatModifier>
-            <targetStat>SAZIETA</targetStat>
-            <value>8</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>DIVERTIMENTO</targetStat>
-            <value>1</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>FELICITA</targetStat>
-            <value>0.5</value>
-          </CatModifier>
-        </item>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>47f4b102-fcd4-40fa-85f1-e5db39156bba</ID>
-        <item xsi:type="CatItem">
-          <tag>ITEM002</tag>
-          <name>Pesce</name>
-          <descrizione>Un bel merluzzo da mangiare</descrizione>
-          <durability>1</durability>
-          <CatModifier>
-            <targetStat>SAZIETA</targetStat>
-            <value>8</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>DIVERTIMENTO</targetStat>
-            <value>1</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>FELICITA</targetStat>
-            <value>0.5</value>
-          </CatModifier>
-        </item>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>29903bf8-3ef4-4eca-8c67-c7db691f1af1</ID>
-        <item xsi:type="CatItem">
-          <tag>ITEM002</tag>
-          <name>Pesce</name>
-          <descrizione>Un bel merluzzo da mangiare</descrizione>
-          <durability>1</durability>
-          <CatModifier>
-            <targetStat>SAZIETA</targetStat>
-            <value>8</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>DIVERTIMENTO</targetStat>
-            <value>1</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>FELICITA</targetStat>
-            <value>0.5</value>
-          </CatModifier>
-        </item>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>e7e67a9e-c64c-439a-92a9-21de950ed459</ID>
-        <item xsi:type="CatItem">
-          <tag>ITEM002</tag>
-          <name>Pesce</name>
-          <descrizione>Un bel merluzzo da mangiare</descrizione>
-          <durability>1</durability>
-          <CatModifier>
-            <targetStat>SAZIETA</targetStat>
-            <value>8</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>DIVERTIMENTO</targetStat>
-            <value>1</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>FELICITA</targetStat>
-            <value>0.5</value>
-          </CatModifier>
-        </item>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>73848096-f1cf-490a-bf31-9cef25069cc6</ID>
+        <ID>aca24f4e-e883-4091-ab4c-fa8b193f6c22</ID>
         <item xsi:type="CatItem">
           <tag>ITEM001</tag>
           <name>Crocchette Piccole</name>
@@ -129,6 +107,72 @@
           <CatModifier>
             <targetStat>FELICITA</targetStat>
             <value>0.1</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>7e610e82-cc81-4e40-9bd1-4e254d1fd7e0</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM003</tag>
+          <name>Topo di gomma</name>
+          <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
+          <durability>30</durability>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>-2</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>7cee59aa-5573-4f8e-b05d-0967c46bdda7</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM003</tag>
+          <name>Topo di gomma</name>
+          <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
+          <durability>30</durability>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>-2</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>40a1b2d2-c1dc-4aa8-8487-940ddc85e2af</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM003</tag>
+          <name>Topo di gomma</name>
+          <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
+          <durability>30</durability>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>-2</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
           </CatModifier>
         </item>
         <numUses>0</numUses>

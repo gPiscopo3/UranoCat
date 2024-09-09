@@ -10,23 +10,20 @@ public class CatManager : MonoBehaviour
     Cat cat;    
     Player player;
 
+    CatStatsRules rules;
+
     private float timer = 0f;
 
     bool lockUpdate = false;
 
-    [SerializeField] private float hungerRate;
-    [SerializeField] private float enjoymentRate;
-    [SerializeField] private float happinessRateIterations;
 
-    [SerializeField] private Slider hungerSlider;
-    [SerializeField] private Slider enjoymentSlider;
-    [SerializeField] private Slider happinessSlider;
 
 
     
     void Start()
     {
         this.cat = FindObjectOfType<CatLoader>().cat;
+        this.rules = FindObjectOfType<RulesLoader>().catStatsRules;
     }
     
 
@@ -34,21 +31,25 @@ public class CatManager : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > 10f)
+        if (timer > rules.seconds)
         {
 
         
             timer = 0f;
 
             lockUpdate = true;
-            // da decidere la funzione di aggiornamento delle statistiche
-            cat.setStat((CatTag.SAZIETA),cat.getStat(CatTag.SAZIETA).currentValue * hungerRate);
+          
+            /*cat.setStat((CatTag.SAZIETA),cat.getStat(CatTag.SAZIETA).currentValue * hungerRate);
             cat.setStat((CatTag.DIVERTIMENTO), cat.getStat(CatTag.DIVERTIMENTO).currentValue * enjoymentRate);
 
             float happinessRate = 
                 1 + ((cat.getStat(CatTag.SAZIETA).currentValue + cat.getStat(CatTag.DIVERTIMENTO).currentValue )/cat.getStat(CatTag.FELICITA).currentValue - 1)/happinessRateIterations;
                 
-            cat.setStat((CatTag.FELICITA), cat.getStat(CatTag.FELICITA).currentValue * happinessRate);
+            cat.setStat((CatTag.FELICITA), cat.getStat(CatTag.FELICITA).currentValue * happinessRate);*/
+
+            List<CatStat> newStats = UpdateStats(cat, rules.rules);
+
+            cat.stats = newStats;
             
 
             lockUpdate = false;
@@ -57,10 +58,7 @@ public class CatManager : MonoBehaviour
                 $"{cat.getStat(CatTag.FELICITA).currentValue}");
         }
 
-        hungerSlider.value = cat.getStat(CatTag.SAZIETA).currentValue;
-        enjoymentSlider.value = cat.getStat(CatTag.DIVERTIMENTO).currentValue;
-        happinessSlider.value = cat.getStat(CatTag.FELICITA).currentValue;
-        
+   
 
 
     }
@@ -77,6 +75,24 @@ public class CatManager : MonoBehaviour
             $"{cat.getStat(CatTag.FELICITA).currentValue}");
         
        
+    }
+
+    private List<CatStat> UpdateStats(Cat cat, List<CatStatsRules.StatRule> rules){
+
+        List<CatStat> newStats = new List<CatStat>();
+        foreach(CatStatsRules.StatRule statRule in rules){
+
+
+            float newValue = 0;
+            foreach(CatStatsRules.StatModifierRule modifierRule in statRule.modifiers){
+
+                newValue += cat.getStat(modifierRule.tag).currentValue*modifierRule.value;
+            }
+
+            newStats.Add(new CatStat(newValue, cat.getStat(statRule.tag).maxValue, cat.getStat(statRule.tag).catTag));
+        }
+
+        return newStats;
     }
 
 
