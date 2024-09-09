@@ -61,19 +61,21 @@ public class TestScript : MonoBehaviour
         foreach(Mission mission in this.missions.Where(x => x.MissionState == MissionState.ATTIVO))
         {
 
-            bool isCompleted = true;
+            bool isCompletable = true;
             foreach(ItemRequirement item in mission.RequiredItems)
             {
                    
                 int quantity = this.player.inventory.items.FindAll(obj => obj.EqualsByTag(item.Item)).Count;
                 if(quantity < item.Quantity)
-                {   
-                    isCompleted = false;    
+                {
+                    isCompletable = false;    
                 } 
                    
             }
-            if(isCompleted){
+            if(isCompletable)
+            {
                 mission.MissionState = MissionState.COMPLETATO;
+                //togli dall'inventario gli oggetti
             } 
 
         }
@@ -88,16 +90,17 @@ public class TestScript : MonoBehaviour
     
         foreach(Mission inactiveMission in this.missions.Where(x => x.MissionState == MissionState.NON_ATTIVO))
         {
-            bool isCompleted = true;
+            bool isActivable = true;
             foreach(string requirement in inactiveMission.RequiredMissions)
             {
                 Mission toCheckMission = this.missions.Find(x => x.tag == requirement);
                 if(toCheckMission.MissionState != MissionState.COMPLETATO)
-                { 
-                    isCompleted = false;           
+                {
+                    isActivable = false;           
                 }
             }
-            if(isCompleted){
+            if(isActivable)
+            {
                 inactiveMission.MissionState = MissionState.ATTIVO;
             }
         }
