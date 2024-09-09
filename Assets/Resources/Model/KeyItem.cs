@@ -4,22 +4,16 @@ using UnityEngine;
 
 public class KeyItem : Item
 {
-    
-    public KeyItemType keyItemType;
 
     public KeyItem() {}
 
-    public KeyItem(string tag, string name, KeyItemType keyItemType)
+    public KeyItem(string tag, string name, string descrizione, int durability)
     {
         this.tag = tag;
         this.name = name;
-        this.keyItemType = keyItemType;
+        this.descrizione = descrizione;
+        this.durability = durability;
     }
 
 }
 
-public enum KeyItemType
-{
-    UTENSILE, 
-    CONSUMABILE
-}

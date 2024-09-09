@@ -21,30 +21,30 @@ public class TestScript : MonoBehaviour
         this.player.followers = 1000;
         this.player.money = 1000;
         this.player.inventory = new Inventory();
-        this.player.inventory.addItem(new KeyItem("KEY1", "Vite", KeyItemType.CONSUMABILE));
-        this.player.inventory.addItem(new KeyItem("KEY1", "Vite", KeyItemType.CONSUMABILE));
-        this.player.inventory.addItem(new KeyItem("KEY1", "Vite", KeyItemType.CONSUMABILE));
-        this.player.inventory.addItem(new KeyItem("KEY2", "Cacciavite", KeyItemType.UTENSILE));
+        this.player.inventory.addItem(new KeyItem("KEY1", "Vite", "Vite semplice", 1));
+        this.player.inventory.addItem(new KeyItem("KEY1", "Vite", "Vite semplice", 1));
+        this.player.inventory.addItem(new KeyItem("KEY1", "Vite", "Vite semplice", 1));
+        this.player.inventory.addItem(new KeyItem("KEY2", "Cacciavite", "Semplice Cacciavite", 0));
         this.player.equippedItem = this.player.inventory.items.Find(obj => obj.ID == "KEY1");
 
         this.missions = new List<Mission>();
 
         Mission mission1 = new Mission();
         mission1.tag = "MISSION01";
-        mission1.RequiredItems.Add(new ItemRequirement(new KeyItem("KEY1", "Vite", KeyItemType.CONSUMABILE), 1));
+        mission1.RequiredItems.Add(new ItemRequirement(new KeyItem("KEY1", "Vite", "Vite semplice", 1), 1));
         mission1.MissionState = MissionState.ATTIVO;
 
         Mission mission2 = new Mission();
         mission2.tag = "MISSION02";
         mission2.RequiredMissions.Add("MISSION01");
-        mission2.RequiredItems.Add(new ItemRequirement(new KeyItem("KEY1", "Vite", KeyItemType.CONSUMABILE), 2));
-        mission2.RequiredItems.Add(new ItemRequirement(new KeyItem("KEY2", "Cacciavite", KeyItemType.UTENSILE), 1));
+        mission2.RequiredItems.Add(new ItemRequirement(new KeyItem("KEY1", "Vite", "Vite semplice", 1), 2));
+        mission2.RequiredItems.Add(new ItemRequirement(new KeyItem("KEY2", "Cacciavite", "Cacciavite semplice", 0), 1));
         mission2.MissionState = MissionState.NON_ATTIVO;
 
         Mission mission3 = new Mission();
         mission3.tag = "MISSION03";
         mission3.RequiredMissions.Add("MISSION02");
-        mission3.RequiredItems.Add(new ItemRequirement(new KeyItem("KEY3", "Bullone", KeyItemType.CONSUMABILE), 2));
+        mission3.RequiredItems.Add(new ItemRequirement(new KeyItem("KEY3", "Bullone", "Bullone semplice", 0), 2));
         mission3.MissionState = MissionState.NON_ATTIVO;
 
         this.missions.Add(mission1);
@@ -82,12 +82,12 @@ public class TestScript : MonoBehaviour
                 //TODO rimozione affidata al gestore dell' inventario
                 foreach (ItemRequirement item in mission.RequiredItems)
                 {
-                    InventoryItem itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.Item) && item.Item.keyItemType == KeyItemType.CONSUMABILE);
+                    InventoryItem itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.Item));
                     for (int i = 0; i < item.Quantity; i++)
                     {
                         Debug.Log("Rimosso" + i + " " + item.Quantity);
-                        this.player.inventory.items.Remove(itemToRemove);
-                        itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.Item) && item.Item.keyItemType == KeyItemType.CONSUMABILE);
+                        this.player.inventory.useItem(itemToRemove);
+                        itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.Item));
                     }
                   
                 }
@@ -125,7 +125,7 @@ public class TestScript : MonoBehaviour
         {
             Debug.Log($"{m.tag}, {m.MissionState} {DateTime.Now}");
             foreach(InventoryItem item in this.player.inventory.items)
-                Debug.Log($"{item.item.tag},{item.item.name},{item.ID}, {DateTime.Now}");
+            Debug.Log($"{item.item.tag},{item.item.name},{item.ID}, {DateTime.Now}");
         }
 
     }
