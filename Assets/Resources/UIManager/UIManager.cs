@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Slider enjoymentSlider;
     [SerializeField] private Slider happinessSlider;
     [SerializeField] private TMP_Text moneyText;
+    [SerializeField] private TMP_Text equippedText;
 
     Cat cat;
     Player player;
@@ -35,6 +36,12 @@ public class UIManager : MonoBehaviour
         enjoymentSlider.value = cat.getStat(CatTag.DIVERTIMENTO).currentValue;
         happinessSlider.value = cat.getStat(CatTag.FELICITA).currentValue;
         moneyText.SetText(player.money.ToString());
+        if(player.equippedItem!=null){
+            equippedText.SetText("Oggetto equipaggiato: " + player.equippedItem.item.name);
+        }
+        else{
+            equippedText.SetText("");
+        }
 
 
     }
