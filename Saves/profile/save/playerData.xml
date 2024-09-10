@@ -2,16 +2,40 @@
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <level>10</level>
   <followers>150</followers>
-  <money>4900</money>
+  <money>4031</money>
   <inventory>
     <items>
       <InventoryItem>
-        <ID>5949e3f5-df95-48b0-9933-c9e994493c06</ID>
+        <ID>e62181ed-dbd7-45c1-a3cb-eeefc803abf8</ID>
         <item xsi:type="CatItem">
           <tag>ITEM003</tag>
           <name>Topo di gomma</name>
           <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
           <durability>30</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>-2</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>15</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>1cd77d30-8f3b-4852-96b5-5083af34411b</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM003</tag>
+          <name>Topo di gomma</name>
+          <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
+          <durability>30</durability>
+          <imagePath>UIManager/salmon</imagePath>
           <CatModifier>
             <targetStat>SAZIETA</targetStat>
             <value>-2</value>
@@ -28,12 +52,68 @@
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>84975455-c798-4f40-89a7-7bd3c0872006</ID>
+        <ID>9e376170-5e1a-4e27-b9d3-dcf2ff238d9b</ID>
+        <item xsi:type="KeyItem">
+          <tag>KEY002</tag>
+          <name>Pozione Rara</name>
+          <descrizione>Immancabile strumento di Zio Agosto per curare i polli</descrizione>
+          <durability>100</durability>
+          <imagePath>UIManager/giravite1</imagePath>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>843f7a30-2ce7-4356-be53-d162a57b63d3</ID>
+        <item xsi:type="KeyItem">
+          <tag>KEY002</tag>
+          <name>Pozione Rara</name>
+          <descrizione>Immancabile strumento di Zio Agosto per curare i polli</descrizione>
+          <durability>100</durability>
+          <imagePath>UIManager/giravite1</imagePath>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>7c11ddcd-3a8c-4049-a749-bdad37ac817d</ID>
+        <item xsi:type="KeyItem">
+          <tag>KEY001</tag>
+          <name>Giravite</name>
+          <descrizione>Immancabile strumento di Zio Agosto</descrizione>
+          <durability>100</durability>
+          <imagePath>UIManager/giravite1</imagePath>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>ec7e336d-df78-426e-b33c-d991f039c8b1</ID>
+        <item xsi:type="KeyItem">
+          <tag>KEY001</tag>
+          <name>Giravite</name>
+          <descrizione>Immancabile strumento di Zio Agosto</descrizione>
+          <durability>100</durability>
+          <imagePath>UIManager/giravite1</imagePath>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>eb059001-b6c0-4dbd-9b36-b95cb4a72bb1</ID>
+        <item xsi:type="KeyItem">
+          <tag>KEY001</tag>
+          <name>Giravite</name>
+          <descrizione>Immancabile strumento di Zio Agosto</descrizione>
+          <durability>100</durability>
+          <imagePath>UIManager/giravite1</imagePath>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>3ab6f28f-5464-4014-9bee-2a9b32d9a499</ID>
         <item xsi:type="CatItem">
           <tag>ITEM003</tag>
           <name>Topo di gomma</name>
           <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
           <durability>30</durability>
+          <imagePath>UIManager/salmon</imagePath>
           <CatModifier>
             <targetStat>SAZIETA</targetStat>
             <value>-2</value>
@@ -50,12 +130,13 @@
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>7e610e82-cc81-4e40-9bd1-4e254d1fd7e0</ID>
+        <ID>9c54da52-2e92-43be-9a51-bc6f95460738</ID>
         <item xsi:type="CatItem">
           <tag>ITEM003</tag>
           <name>Topo di gomma</name>
           <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
           <durability>30</durability>
+          <imagePath>UIManager/salmon</imagePath>
           <CatModifier>
             <targetStat>SAZIETA</targetStat>
             <value>-2</value>
@@ -72,19 +153,53 @@
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>7cee59aa-5573-4f8e-b05d-0967c46bdda7</ID>
+        <ID>b2cd22ca-8653-4d61-8d11-2c342129c4bd</ID>
+        <item xsi:type="KeyItem">
+          <tag>KEY002</tag>
+          <name>Pozione Rara</name>
+          <descrizione>Immancabile strumento di Zio Agosto per curare i polli</descrizione>
+          <durability>100</durability>
+          <imagePath>UIManager/giravite1</imagePath>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>02240e89-0b34-4819-a754-e24c9e8d6706</ID>
+        <item xsi:type="KeyItem">
+          <tag>KEY001</tag>
+          <name>Giravite</name>
+          <descrizione>Immancabile strumento di Zio Agosto</descrizione>
+          <durability>100</durability>
+          <imagePath>UIManager/giravite1</imagePath>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>22a36cba-cd04-4536-aa24-5727995b3b6d</ID>
+        <item xsi:type="KeyItem">
+          <tag>KEY001</tag>
+          <name>Giravite</name>
+          <descrizione>Immancabile strumento di Zio Agosto</descrizione>
+          <durability>100</durability>
+          <imagePath>UIManager/giravite1</imagePath>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>79af8756-0d45-425a-91d5-88adccd07846</ID>
         <item xsi:type="CatItem">
-          <tag>ITEM003</tag>
-          <name>Topo di gomma</name>
-          <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
-          <durability>30</durability>
+          <tag>ITEM002</tag>
+          <name>Pesce</name>
+          <descrizione>Un bel merluzzo da mangiare</descrizione>
+          <durability>1</durability>
+          <imagePath>UIManager/salmon</imagePath>
           <CatModifier>
             <targetStat>SAZIETA</targetStat>
-            <value>-2</value>
+            <value>8</value>
           </CatModifier>
           <CatModifier>
             <targetStat>DIVERTIMENTO</targetStat>
-            <value>5</value>
+            <value>1</value>
           </CatModifier>
           <CatModifier>
             <targetStat>FELICITA</targetStat>
@@ -94,23 +209,131 @@
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>40a1b2d2-c1dc-4aa8-8487-940ddc85e2af</ID>
+        <ID>318792f3-6d62-40f8-88fa-576e73642f7c</ID>
         <item xsi:type="CatItem">
-          <tag>ITEM003</tag>
-          <name>Topo di gomma</name>
-          <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
-          <durability>30</durability>
+          <tag>ITEM002</tag>
+          <name>Pesce</name>
+          <descrizione>Un bel merluzzo da mangiare</descrizione>
+          <durability>1</durability>
+          <imagePath>UIManager/salmon</imagePath>
           <CatModifier>
             <targetStat>SAZIETA</targetStat>
-            <value>-2</value>
+            <value>8</value>
           </CatModifier>
           <CatModifier>
             <targetStat>DIVERTIMENTO</targetStat>
-            <value>5</value>
+            <value>1</value>
           </CatModifier>
           <CatModifier>
             <targetStat>FELICITA</targetStat>
             <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>2f03603b-46e2-494f-bf73-0dc7c321d7fd</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM002</tag>
+          <name>Pesce</name>
+          <descrizione>Un bel merluzzo da mangiare</descrizione>
+          <durability>1</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>8</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>1</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>5a200635-1a8d-4b49-b475-cc5541b5d354</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM002</tag>
+          <name>Pesce</name>
+          <descrizione>Un bel merluzzo da mangiare</descrizione>
+          <durability>1</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>8</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>1</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>32f2f24c-bed6-4286-a035-1a89bbe97c81</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM002</tag>
+          <name>Pesce</name>
+          <descrizione>Un bel merluzzo da mangiare</descrizione>
+          <durability>1</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>8</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>1</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>b7efa28d-222b-40bd-ab82-9cb840ded8bf</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM001</tag>
+          <name>Crocchette Piccole</name>
+          <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
+          <durability>10</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.1</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>0d723b41-a219-4574-b6b2-446ad7e769f8</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM001</tag>
+          <name>Crocchette Piccole</name>
+          <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
+          <durability>10</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.1</value>
           </CatModifier>
         </item>
         <numUses>0</numUses>

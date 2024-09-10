@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -24,6 +25,7 @@ public class ShopItemUIManager : MonoBehaviour
     [SerializeField] Button keyItemButton;
 
     [SerializeField] GameObject shop;
+    [SerializeField] TMP_Text moneyBar;
 
 
     List<ShopItem> shopItems;
@@ -132,6 +134,8 @@ public class ShopItemUIManager : MonoBehaviour
         if(shop_active && !shop_active_before){
             GenerateShopItemUI(type);
         }
+
+        moneyBar.SetText(player.money.ToString());
 
 
 

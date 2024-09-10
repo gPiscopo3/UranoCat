@@ -31,8 +31,10 @@ public class InventoryItemUI : MonoBehaviour
 
     }
 
-    public void SetItemImage (Sprite sprite){
+    public void SetItemImage (string imagePath){
 
+        Sprite sprite = Resources.Load(imagePath, typeof(Sprite)) as Sprite;
+        
         imageItem.sprite = sprite;
         this.imageItem.GetComponent<Image>().enabled = true;
 
@@ -65,6 +67,7 @@ public class InventoryItemUI : MonoBehaviour
     }
 
     public void setUsable(){
+        this.useButton.gameObject.SetActive(true);
         this.useButton.GetComponent<Image>().enabled = true;
         this.useButton.enabled = true;
         useButton.onClick.AddListener(Usa);

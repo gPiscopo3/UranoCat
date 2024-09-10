@@ -33,6 +33,12 @@ public class InventoryItemUIManager : MonoBehaviour
     bool inventory_active = false;
     bool inventory_active_before = false;
 
+    Type type = typeof(CatItem);
+
+    [SerializeField] Button keyItemButton;
+    [SerializeField] Button catItemButton;
+
+
 
     
 
@@ -49,6 +55,11 @@ public class InventoryItemUIManager : MonoBehaviour
         this.player = FindObjectOfType<PlayerLoader>().player;
 
         this.inventory = player.inventory;
+
+        
+        keyItemButton.onClick.AddListener(FilteringKeyItem);
+        catItemButton.onClick.AddListener(FilteringCatItem);
+      
 
         CreateInventoryUI();
 
@@ -67,7 +78,8 @@ public class InventoryItemUIManager : MonoBehaviour
 
 
 
-    public void GenerateInventoryItemUI(){
+    public void GenerateInventoryItemUI(Type type){
+
 
 
 
@@ -88,19 +100,21 @@ public class InventoryItemUIManager : MonoBehaviour
      
 
         foreach(InventoryItem item in inventory.items){
-            if(itemsGroup.ContainsKey(item.item.tag)){
-                ItemGroup itemGroup = itemsGroup[item.item.tag];
-                itemGroup.totalUses+=item.numUses;
-                itemGroup.quantity++;
-                if(itemGroup.itemToUse.numUses < item.numUses)
-                    itemGroup.itemToUse = item;
-            }
-            else{
-                itemsGroup.Add(item.item.tag, new ItemGroup(){
-                    itemToUse = item,
-                    totalUses = item.numUses,
-                    quantity = 1
-                });
+            if(item.item.GetType() == type){
+                if(itemsGroup.ContainsKey(item.item.tag)){
+                    ItemGroup itemGroup = itemsGroup[item.item.tag];
+                    itemGroup.totalUses+=item.numUses;
+                    itemGroup.quantity++;
+                    if(itemGroup.itemToUse.numUses < item.numUses)
+                        itemGroup.itemToUse = item;
+                }
+                else{
+                    itemsGroup.Add(item.item.tag, new ItemGroup(){
+                        itemToUse = item,
+                        totalUses = item.numUses,
+                        quantity = 1
+                    });
+                }
             }
             
 
@@ -126,8 +140,9 @@ public class InventoryItemUIManager : MonoBehaviour
             inventoryItemUI.SetItemDescription(group.itemToUse.item.descrizione);
             inventoryItemUI.SetItemQuantity(group.quantity);
             inventoryItemUI.SetRemainingUses(group.itemToUse.item.durability  - group.itemToUse.numUses, group.itemToUse.item.durability);
-            inventoryItemUI.setUsable();
-            inventoryItemUI.SetItemImage(sprite1);
+            if(group.itemToUse.item.GetType() == typeof(CatItem))
+                inventoryItemUI.setUsable();
+            inventoryItemUI.SetItemImage(group.itemToUse.item.imagePath);
 
             
             inventoryItemUI.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, diff, itemHeight);
@@ -145,8 +160,19 @@ public class InventoryItemUIManager : MonoBehaviour
         inventory_active = inventoryPanel.activeSelf;
 
         if(inventory_active && !inventory_active_before){
-            GenerateInventoryItemUI();
+            GenerateInventoryItemUI(type);
         }
+    }
+
+
+    public void FilteringKeyItem(){
+        GenerateInventoryItemUI(typeof(KeyItem));
+
+    }
+    
+    public void FilteringCatItem(){
+        GenerateInventoryItemUI(typeof(CatItem));
+
     }
 
 
