@@ -4285,6 +4285,7 @@ MonoBehaviour:
   enjoymentSlider: {fileID: 1136309219}
   happinessSlider: {fileID: 666916415}
   moneyText: {fileID: 2033115997}
+  equippedText: {fileID: 2140671438}
 --- !u!1 &1309568393
 GameObject:
   m_ObjectHideFlags: 0
