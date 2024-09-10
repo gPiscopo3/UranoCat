@@ -22,10 +22,10 @@ public class MissionManager : MonoBehaviour
         this.player.followers = 1000;
         this.player.money = 1000;
         this.player.inventory = new Inventory();
-        this.player.inventory.addItem(new KeyItem("KEY001", "Vite", "Vite semplice", 1));
-        this.player.inventory.addItem(new KeyItem("KEY001", "Vite", "Vite semplice", 1));
-        this.player.inventory.addItem(new KeyItem("KEY001", "Vite", "Vite semplice", 1));
-        this.player.inventory.addItem(new KeyItem("KEY002", "Cacciavite", "Semplice Cacciavite", 0));
+        this.player.inventory.addItem(new KeyItem("KEY001", "Vite", "Vite semplice", 1, ""));
+        this.player.inventory.addItem(new KeyItem("KEY001", "Vite", "Vite semplice", 1, ""));
+        this.player.inventory.addItem(new KeyItem("KEY001", "Vite", "Vite semplice", 1, ""));
+        this.player.inventory.addItem(new KeyItem("KEY002", "Cacciavite", "Semplice Cacciavite", 0, ""));
         this.player.equippedItem = this.player.inventory.items.Find(obj => obj.ID == "KEY1");
 
         this.mLoader = FindObjectOfType<MissionLoader>();
