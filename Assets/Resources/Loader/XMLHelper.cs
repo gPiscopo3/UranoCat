@@ -6,7 +6,6 @@ using System.Xml.Serialization;
 public static class XMLHelper
 {
 
-
     public static T LoadFromXml<T>(string filePath)
     {
         XmlSerializer serializer = new XmlSerializer(typeof(T));
