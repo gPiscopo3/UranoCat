@@ -5,14 +5,14 @@
         <tag>KEY001</tag>
         <name>Giravite</name>
         <descrizione>Immancabile strumento di Zio Agosto</descrizione>
-        <keyItemType>UTENSILE</keyItemType>
+        <durability>100</durability>
         <imagePath>UIManager/giravite1</imagePath>
     </KeyItem>
     <KeyItem>
         <tag>KEY002</tag>
         <name>Pozione Rara</name>
         <descrizione>Immancabile strumento di Zio Agosto per curare i polli</descrizione>
-        <keyItemType>CONSUMABILE</keyItemType>
+        <durability>100</durability>
         <imagePath>UIManager/giravite1</imagePath>
     </KeyItem>
 
