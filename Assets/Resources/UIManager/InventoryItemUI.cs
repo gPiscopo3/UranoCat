@@ -57,9 +57,9 @@ public class InventoryItemUI : MonoBehaviour
         
     }
 
-    public void SetRemainingUses(int numUses){
+    public void SetRemainingUses(int numUses, int totalUses){
 
-        this.usesRemaining.text = "Usi rimanenti: " + numUses.ToString();
+        this.usesRemaining.text = "Usi rimanenti: " + numUses.ToString() + "/" + totalUses.ToString();
         this.usesRemaining.enabled = true;
         
     }
