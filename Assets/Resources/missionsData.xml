@@ -24,6 +24,6 @@
           <Quantity>3</Quantity>
         </RequiredItem>
       </RequiredItems>
-      <MissionState>NON_ATTIVO</MissionState>
+      <MissionState>ATTIVO</MissionState>
     </Mission>
   </ArrayOfMission>

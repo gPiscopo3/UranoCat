@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -9,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] protected CharacterController characterController;
     [SerializeField] protected GameObject inventory;
     [SerializeField] protected GameObject shop;
+    [SerializeField] protected GameObject missionBoard;
 
     [SerializeField] protected Transform interactorSource;
     [SerializeField] protected float interactRange;
@@ -19,9 +21,11 @@ public class PlayerController : MonoBehaviour
     private InputAction toggleInventoryAction;
     private InputAction toggleShopAction;
     private InputAction interact;
+    private InputAction toggleMissionBoard;
 
     private bool isInventoryActive;
     private bool isShopActive;
+    private bool isMissionBoardActive;
     
 
     private void Awake()
@@ -33,14 +37,18 @@ public class PlayerController : MonoBehaviour
        toggleInventoryAction = playerControls.Player.ToggleInventory;
        toggleShopAction = playerControls.Player.ToggleShop;
        interact = playerControls.Player.Interact;
+       toggleMissionBoard = playerControls.Player.ToggleMissionBoard;
 
        isInventoryActive = false;
        isShopActive = false;
+       isMissionBoardActive = false;
 
        toggleInventoryAction.performed += ToggleInventory;
        toggleShopAction.performed += ToggleShop;
        interact.performed += Interact;
+       toggleMissionBoard.performed += ToggleMissionBoard;
     }
+
 
     private void FixedUpdate()
     {
@@ -58,6 +66,7 @@ public class PlayerController : MonoBehaviour
     {
         toggleShopAction.Enable();
         toggleInventoryAction.Enable();
+        toggleMissionBoard.Enable();
         interact.Enable();
     }
 
@@ -65,6 +74,7 @@ public class PlayerController : MonoBehaviour
     {
         toggleShopAction.Enable();
         toggleInventoryAction.Disable();
+        toggleMissionBoard.Disable();
         interact.Disable();
     }
 
@@ -117,6 +127,23 @@ public class PlayerController : MonoBehaviour
             {
                 intercatObj.Interact();
             }
+        }
+    }
+
+    private void ToggleMissionBoard(InputAction.CallbackContext context)
+    {
+        missionBoard.SetActive(!missionBoard.activeSelf);
+        isMissionBoardActive = !isMissionBoardActive;
+
+        if (isMissionBoardActive) {
+            toggleShopAction.Disable();
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+            
+        } else {
+            toggleShopAction.Enable();
+            Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
