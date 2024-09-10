@@ -2,16 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ItemLoader: MonoBehaviour
 {
 
     public const string catPath = "Assets/Resources/cat_items.xml";
-    public const string shopPath = "Assets/Resources/shop_Items.xml";
+    public const string shopPath = "Assets/Resources/shop_items.xml";
     //public ItemContainer catItemList { get; set; }
+
+    public const string keyPath = "Assets/Resources/key_items.xml";
 
     public List<Item> items;
     public List<ShopItem> shopItems;
+
+    
 
     
     void Awake()
@@ -23,6 +28,10 @@ public class ItemLoader: MonoBehaviour
 
         items.AddRange(catItemList);
 
+        List<KeyItem> keyItems = XMLHelper.LoadFromXml<List<KeyItem>>(keyPath);
+        Debug.Log($"Lista di KeyItem deserializzata con {keyItems.Count}");
+        items.AddRange(keyItems);
+        
 
         this.shopItems =  XMLHelper.LoadFromXml<List<ShopItem>>(shopPath);
         Debug.Log($"Lista di ShopItem deserializzata. Numero di elementi: {this.shopItems.Count}");

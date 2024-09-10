@@ -15,4 +15,17 @@
     <Price>10</Price>
     <MinLevelRequired>10</MinLevelRequired>
   </ShopItem>
+
+  <ShopItem>
+    <Tag>KEY001</Tag>
+    <Price>100</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+
+  <ShopItem>
+    <Tag>KEY002</Tag>
+    <Price>108</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+
 </ArrayOfShopItem>
