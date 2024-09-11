@@ -1,23 +1,14 @@
 <ArrayOfMission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <Mission tag="MISSION001">
       <RequiredMissions>
-        <RequiredMission>PREMISSION001</RequiredMission>
       </RequiredMissions>
       <RequiredItems>
         <RequiredItem>
-          <Item>
-            <tag>KEY001</tag>
-            <name>Chiave Antica</name>
-            <keyItemType>UTENSILE</keyItemType>
-          </Item>
+          <tag>KEY001</tag>  
           <Quantity>2</Quantity>
         </RequiredItem>
         <RequiredItem>
-          <Item>
-            <tag>KEY002</tag>
-            <name>Pozione Rara</name>
-            <keyItemType>CONSUMABILE</keyItemType>
-          </Item>
+          <tag>KEY002</tag>
           <Quantity>1</Quantity>
         </RequiredItem>
       </RequiredItems>
@@ -25,18 +16,14 @@
     </Mission>
     <Mission tag="MISSION002">
       <RequiredMissions>
-        <RequiredMission>PREMISSION002</RequiredMission>
+        <RequiredMission>"MISSION001"</RequiredMission>
       </RequiredMissions>
       <RequiredItems>
         <RequiredItem>
-          <Item>
-            <tag>KEY002</tag>
-            <name>Pozione Rara</name>
-            <keyItemType>CONSUMABILE</keyItemType>
-          </Item>
+          <tag>KEY002</tag>
           <Quantity>3</Quantity>
         </RequiredItem>
       </RequiredItems>
-      <MissionState>NON_ATTIVO</MissionState>
+      <MissionState>ATTIVO</MissionState>
     </Mission>
   </ArrayOfMission>

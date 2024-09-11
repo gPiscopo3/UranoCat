@@ -1,31 +1,56 @@
-<CatItemList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <CatItem>
-      <tag>TAG001</tag>
-      <name>Giocattolo Gatto</name>
-      <durability>100</durability>
-      <CatModifier>
-        <targetStat>FELICITA</targetStat>
-        <value>5</value>
-      </CatModifier>
-      <CatModifier>
-        <targetStat>DIVERTIMENTO</targetStat>
-        <value>15.0</value>
-      </CatModifier>
-      <itemType>DIVERTIMENTO</itemType>
-    </CatItem>
-    <CatItem>
-      <tag>TAG002</tag>
-      <name>Cibo per Gatti</name>
-      <durability>50</durability>
-      <CatModifier>
-        <targetStat>FELICITA</targetStat>
-        <value>15.0</value>
-      </CatModifier>
-      <CatModifier>
-        <targetStat>SAZIETA</targetStat>
-        <value>7.5</value>
-      </CatModifier>
-      <itemType>CIBO</itemType>
-    </CatItem>
-  </CatItemList>
-  
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCatItem xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CatItem>
+    <tag>ITEM001</tag>
+    <name>Crocchette Piccole</name>
+    <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
+    <durability>10</durability>
+    <imagePath>UIManager/salmon</imagePath>
+    <CatModifier>
+      <targetStat>SAZIETA</targetStat>
+      <value>5</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>FELICITA</targetStat>
+      <value>0.1</value>
+    </CatModifier>
+  </CatItem>
+  <CatItem>
+    <tag>ITEM002</tag>
+    <name>Pesce</name>
+    <descrizione>Un bel merluzzo da mangiare</descrizione>
+    <durability>1</durability>
+    <imagePath>UIManager/salmon</imagePath>
+    <CatModifier>
+      <targetStat>SAZIETA</targetStat>
+      <value>8</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>DIVERTIMENTO</targetStat>
+      <value>1</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>FELICITA</targetStat>
+      <value>0.5</value>
+    </CatModifier>
+  </CatItem>
+  <CatItem>
+    <tag>ITEM003</tag>
+    <name>Topo di gomma</name>
+    <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
+    <durability>30</durability>
+    <imagePath>UIManager/salmon</imagePath>
+    <CatModifier>
+      <targetStat>SAZIETA</targetStat>
+      <value>-2</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>DIVERTIMENTO</targetStat>
+      <value>5</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>FELICITA</targetStat>
+      <value>0.5</value>
+    </CatModifier>
+  </CatItem>
+</ArrayOfCatItem>

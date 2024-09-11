@@ -9,6 +9,7 @@ public class CatController : MonoBehaviour, InteractableObject
 {
 
     Cat cat;
+    Player player;
 
     //import da navScript
     [SerializeField] protected Transform[] points;
@@ -20,7 +21,7 @@ public class CatController : MonoBehaviour, InteractableObject
     NavMeshAgent agent;
     private float sphereRadius = 2f;
 
-    [SerializeField] public Transform player;
+    [SerializeField] public Transform playerTransform;
 
     bool isRunning, isWalking, idle;
 
@@ -33,11 +34,11 @@ public class CatController : MonoBehaviour, InteractableObject
     void Start()
     {
         this.cat = FindObjectOfType<CatLoader>().cat;
-        Stat stat = cat.stats.FirstOrDefault(obj => obj.catTag == CatTag.FELICITA);
+        this.player = FindObjectOfType<PlayerLoader>().player;
 
         catAnimator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-        catManager = CatManager.GetIstance();
+        catManager = FindObjectOfType<CatManager>();
 
         isRunning = false;
         isWalking = true;
@@ -63,7 +64,7 @@ public class CatController : MonoBehaviour, InteractableObject
 
         if(Physics.CheckSphere(transform.position, sphereRadius, mask) && idle)
         {
-            transform.LookAt(player.position);
+            transform.LookAt(playerTransform.position);
         }
     }
 
@@ -75,11 +76,35 @@ public class CatController : MonoBehaviour, InteractableObject
         idle = true;
         catAnimator.SetBool("isIdle", idle);
         agent.speed = 0f;
-        transform.LookAt(player.position);
+        transform.LookAt(playerTransform.position);
 
-        CatModifier catModifier = new CatModifier(CatTag.FELICITA, 10);
-        catManager.onInteract(catModifier);
+        InventoryItem item = player.equippedItem;
 
+        Debug.Log(item.item.tag);
+
+
+        if(item != null && item.item.GetType() == typeof(CatItem)){
+            CatItem catItem = (CatItem)item.item;
+            foreach(CatModifier modifier in catItem.catModifiers)
+                catManager.ApplyModifier(modifier);
+            
+            player.inventory.useItem(item);
+            if(!item.isUsable())
+                player.unequip();
+            
+        }
+
+        
+
+    }
+
+    
+    // override object.GetHashCode
+    public override int GetHashCode()
+    {
+        // TODO: write your implementation of GetHashCode() here
+        throw new System.NotImplementedException();
+        return base.GetHashCode();
     }
     
     void GotoNextPoint()

@@ -29,14 +29,14 @@ public class Mission
 public class ItemRequirement
 {
 
-    public KeyItem Item { get; set; }
+    public string tagKeyItem { get; set; }
     public int Quantity { get; set; }
 
     public ItemRequirement() {}
 
-    public ItemRequirement(KeyItem item, int quantity)
+    public ItemRequirement(string tag, int quantity)
     {
-        this.Item = item;
+        this.tagKeyItem = tag;
         this.Quantity = quantity;
     }
 }
