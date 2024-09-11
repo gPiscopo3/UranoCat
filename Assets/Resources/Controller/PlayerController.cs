@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -26,14 +27,17 @@ public class PlayerController : MonoBehaviour
     private bool isInventoryActive;
     private bool isShopActive;
     private bool isMissionBoardActive;
-    
+
+    private MissionItemUIManager missionManagerUI;
+
 
     private void Awake()
     {
        characterController = GetComponent<CharacterController>(); 
        status = GetComponent<CharacterStatus>();
+       missionManagerUI = FindObjectOfType<MissionItemUIManager>();
 
-       playerControls = new PlayerControls();
+        playerControls = new PlayerControls();
        toggleInventoryAction = playerControls.Player.ToggleInventory;
        toggleShopAction = playerControls.Player.ToggleShop;
        interact = playerControls.Player.Interact;
@@ -132,6 +136,7 @@ public class PlayerController : MonoBehaviour
 
     private void ToggleMissionBoard(InputAction.CallbackContext context)
     {
+        missionManagerUI.GenerateMissionItemUI();
         missionBoard.SetActive(!missionBoard.activeSelf);
         isMissionBoardActive = !isMissionBoardActive;
 

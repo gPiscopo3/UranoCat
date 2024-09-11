@@ -41,7 +41,7 @@ public class MissionItemUIManager: MonoBehaviour
 
     }
 
-    private void GenerateMissionItemUI()
+    public void GenerateMissionItemUI()
     {
 
         for(int j=1; j<contentPanel.transform.childCount; j++)
@@ -56,7 +56,7 @@ public class MissionItemUIManager: MonoBehaviour
 
         //contentPanel.GetComponent<RectTransform>().sizeDelta = Vector2.up * (itemHeight + itemSpacing) * missions.Count;
 
-        foreach (Mission mission in this.missions)
+        foreach (Mission mission in this.missions.Where(x => x.MissionState == MissionState.ATTIVO || x.MissionState == MissionState.COMPLETATO))
         {
 
             MissionItemUI missionItemUI = Instantiate(ItemPrefab, contentPanel.transform).GetComponent<MissionItemUI>();
@@ -71,7 +71,7 @@ public class MissionItemUIManager: MonoBehaviour
             foreach(ItemRequirement itemRequirement in mission.RequiredItems)
             {
                 Item item = this.keyItems.Find(x => x.tag.Equals(itemRequirement.tagKeyItem));
-                requirements = requirements + " " + $"{item.name}, x{itemRequirement.Quantity}";
+                requirements = requirements + " " + $"{item.name} x{itemRequirement.Quantity}, ";
             }
             missionItemUI.setRequirements(requirements);
 
