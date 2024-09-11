@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfKeyItem xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <KeyItem>
+        <tag>KEY001</tag>
+        <name>Giravite</name>
+        <descrizione>Immancabile strumento di Zio Agosto</descrizione>
+        <durability>100</durability>
+        <imagePath>UIManager/giravite1</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>KEY002</tag>
+        <name>Pozione Rara</name>
+        <descrizione>Immancabile strumento di Zio Agosto per curare i polli</descrizione>
+        <durability>100</durability>
+        <imagePath>UIManager/giravite1</imagePath>
+    </KeyItem>
+
+</ArrayOfKeyItem>

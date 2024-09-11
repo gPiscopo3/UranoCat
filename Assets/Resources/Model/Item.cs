@@ -10,5 +10,14 @@ public abstract class Item
 
     public string tag;
     public string name; 
+    public string descrizione;
+    public int durability;
+
+    public string imagePath;
+    
+
+
+
+    
     
 }
