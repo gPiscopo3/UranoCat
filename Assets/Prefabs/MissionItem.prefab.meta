@@ -1,6 +1,11 @@
 fileFormatVersion: 2
-guid: 37af89ab78ca7c64c9fcfeef3d800305
+<<<<<<<< Updated upstream:Assets/Prefabs/MissionItem.prefab.meta
+guid: 33800a09587aae94aa91bc03f0fc2f82
 PrefabImporter:
+========
+guid: 7fcf3e2af8b9f384ba8e673b646f95b2
+DefaultImporter:
+>>>>>>>> Stashed changes:Assets/FurnishedCabin/Documentation/FurnishedCabin_Readme_V1.3.pdf.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
