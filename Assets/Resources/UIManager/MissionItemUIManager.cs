@@ -7,7 +7,7 @@ public class MissionItemUIManager: MonoBehaviour
 {
 
     [Header ("Layout Settings")]
-    [SerializeField] float itemSpacing = 35.5f;
+    [SerializeField] float itemSpacing = 5.5f;
     float itemWidth;
     float itemHeight;
     float diff;
@@ -25,7 +25,7 @@ public class MissionItemUIManager: MonoBehaviour
         missions = FindObjectOfType<MissionLoader>().missions;
         keyItems = FindObjectOfType<ItemLoader>().items;
         keyItems = keyItems.FindAll(x => x is KeyItem);
-
+        
         CreateMissionBoard();
         GenerateMissionItemUI();
 
@@ -37,7 +37,7 @@ public class MissionItemUIManager: MonoBehaviour
         itemWidth = contentPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.x;
         itemHeight = contentPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.y;
 
-        diff = (contentPanel.GetComponent<RectTransform>().sizeDelta.y - contentPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.y)/2;
+        diff = (contentPanel.GetComponent<RectTransform>().sizeDelta.x - contentPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.x)/2;
 
     }
 
@@ -54,13 +54,16 @@ public class MissionItemUIManager: MonoBehaviour
         contentPanel.transform.GetChild(0).gameObject.SetActive(false);
         int i = 0;
 
-        foreach(Mission mission in this.missions)
+        //contentPanel.GetComponent<RectTransform>().sizeDelta = Vector2.up * (itemHeight + itemSpacing) * missions.Count;
+
+        foreach (Mission mission in this.missions)
         {
 
             MissionItemUI missionItemUI = Instantiate(ItemPrefab, contentPanel.transform).GetComponent<MissionItemUI>();
             missionItemUI.gameObject.SetActive(true);
 
-            missionItemUI.SetMissionPosition(Vector2.down * i * (itemWidth + itemSpacing));
+            Debug.Log("spacing: " + Vector2.down * i * (itemHeight + itemSpacing));
+            missionItemUI.SetMissionPosition(Vector2.down * i * (itemHeight + itemSpacing));
             missionItemUI.setToggle(mission);
             missionItemUI.setMissionTag(mission);
 
@@ -72,11 +75,11 @@ public class MissionItemUIManager: MonoBehaviour
             }
             missionItemUI.setRequirements(requirements);
 
-            missionItemUI.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, diff, itemHeight);
-            contentPanel.GetComponent<RectTransform>().sizeDelta= Vector2.down * (itemWidth + itemSpacing) * keyItems.Count;
+            //missionItemUI.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, diff, itemWidth);
+            contentPanel.GetComponent<RectTransform>().sizeDelta= Vector2.up * (itemHeight + itemSpacing) * missions.Count;
                 
             i++; 
-            Debug.Log(i);
+            
 
         }
 
