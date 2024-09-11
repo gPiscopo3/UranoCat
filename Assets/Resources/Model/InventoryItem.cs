@@ -3,9 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
-using UnityEngine.InputSystem.Interactions;
 
-public class InventoryItem{
+    public class InventoryItem{
 
         public String ID;
         public Item item;
@@ -32,9 +31,9 @@ public class InventoryItem{
 
         public override bool Equals(object obj)
         {
-    
+            
             if (obj == null || GetType() != obj.GetType())
-            {   
+            {
                 return false;
             }
             

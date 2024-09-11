@@ -6,8 +6,10 @@ using UnityEngine;
 public class PlayerLoader : MonoBehaviour
 {
     
-    public const string saveFileName = "playerData.xml";
-    public const string pathDefault = "Assets/Resources/" + saveFileName;
+    public const string filePlayer = "playerData.xml";
+    public const string fileCatItems = "cat_items.xml";
+    public const string fileKeyItems = "key_items.xml";
+    public const string pathDefault = "Assets/Resources/" + filePlayer;
     public Player player;
 
     void Awake(){
@@ -24,8 +26,8 @@ public class PlayerLoader : MonoBehaviour
 
         }
         else{
-             path = "Saves/" + SaveInfo.profile + "/" + SaveInfo.save + "/" + saveFileName;
-            this.player = XMLHelper.LoadFromXml<Player>(path);
+            path = "Saves/" + SaveInfo.profile + "/" + SaveInfo.save + "/";
+            this.player = XMLHelper.LoadFromXml<Player>(path  + filePlayer);
         }
             
 
@@ -37,7 +39,7 @@ public class PlayerLoader : MonoBehaviour
 
     public void SaveData(String profile, String save){
 
-        String path = "Saves/" + profile + "/" + save + "/" + saveFileName;
+        String path = "Saves/" + profile + "/" + save + "/" + filePlayer;
         XMLHelper.SaveToXml<Player>(player, path);
     }
 }

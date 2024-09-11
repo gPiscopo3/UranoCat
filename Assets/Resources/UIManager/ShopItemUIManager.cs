@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -23,9 +24,17 @@ public class ShopItemUIManager : MonoBehaviour
     [SerializeField] Button catItemButton;
     [SerializeField] Button keyItemButton;
 
+    [SerializeField] GameObject shop;
+    [SerializeField] TMP_Text moneyBar;
+
 
     List<ShopItem> shopItems;
     Player player;
+
+    Type type = typeof(CatItem);
+
+    bool shop_active = false;
+    bool shop_active_before = false;
 
 
     
@@ -44,7 +53,7 @@ public class ShopItemUIManager : MonoBehaviour
 
         keyItemButton.onClick.AddListener(FilteringKeyItem);
         catItemButton.onClick.AddListener(FilteringCatItem);
-        FilteringCatItem();
+      
 
 
     }
@@ -64,6 +73,8 @@ public class ShopItemUIManager : MonoBehaviour
 
 
     public void GenerateShopItemUI(Type type){
+
+        this.type = type;
 
 
         for(int j=1; j<contentPanel.transform.childCount; j++){
@@ -112,6 +123,21 @@ public class ShopItemUIManager : MonoBehaviour
         }
         
         
+
+    }
+
+    public void Update(){
+
+        shop_active_before = shop_active;
+        shop_active = shop.activeSelf;
+
+        if(shop_active && !shop_active_before){
+            GenerateShopItemUI(type);
+        }
+
+        moneyBar.SetText(player.money.ToString());
+
+
 
     }
 
