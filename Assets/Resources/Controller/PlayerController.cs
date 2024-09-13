@@ -30,12 +30,14 @@ public class PlayerController : MonoBehaviour
 
     private MissionItemUIManager missionManagerUI;
 
+    private Animator anim;
 
     private void Awake()
     {
        characterController = GetComponent<CharacterController>(); 
        status = GetComponent<CharacterStatus>();
        missionManagerUI = FindObjectOfType<MissionItemUIManager>();
+       anim = GetComponent<Animator>();
 
         playerControls = new PlayerControls();
        toggleInventoryAction = playerControls.Player.ToggleInventory;
@@ -64,6 +66,15 @@ public class PlayerController : MonoBehaviour
         }
         movement = transform.TransformDirection(movement);
         characterController.SimpleMove(movement);
+
+        if (status.IsMoving)
+        {
+            anim.SetFloat("speed", 1f);
+        }
+        else
+        {
+            anim.SetFloat("speed", 0f);
+        }
     }
 
     private void OnEnable()
