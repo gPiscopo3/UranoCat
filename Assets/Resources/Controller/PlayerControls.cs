@@ -62,6 +62,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleMissionBoard"",
+                    ""type"": ""Button"",
+                    ""id"": ""ffaba89b-4c5f-4914-8fc6-a09b39d0a048"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -152,6 +161,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""ToggleShop"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a0d68495-3a7b-4666-b4ae-059a962d4104"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleMissionBoard"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -164,6 +184,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_ToggleInventory = m_Player.FindAction("ToggleInventory", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_ToggleShop = m_Player.FindAction("ToggleShop", throwIfNotFound: true);
+        m_Player_ToggleMissionBoard = m_Player.FindAction("ToggleMissionBoard", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -229,6 +250,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_ToggleInventory;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_ToggleShop;
+    private readonly InputAction m_Player_ToggleMissionBoard;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -237,6 +259,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @ToggleInventory => m_Wrapper.m_Player_ToggleInventory;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @ToggleShop => m_Wrapper.m_Player_ToggleShop;
+        public InputAction @ToggleMissionBoard => m_Wrapper.m_Player_ToggleMissionBoard;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -258,6 +281,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @ToggleShop.started += instance.OnToggleShop;
             @ToggleShop.performed += instance.OnToggleShop;
             @ToggleShop.canceled += instance.OnToggleShop;
+            @ToggleMissionBoard.started += instance.OnToggleMissionBoard;
+            @ToggleMissionBoard.performed += instance.OnToggleMissionBoard;
+            @ToggleMissionBoard.canceled += instance.OnToggleMissionBoard;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -274,6 +300,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @ToggleShop.started -= instance.OnToggleShop;
             @ToggleShop.performed -= instance.OnToggleShop;
             @ToggleShop.canceled -= instance.OnToggleShop;
+            @ToggleMissionBoard.started -= instance.OnToggleMissionBoard;
+            @ToggleMissionBoard.performed -= instance.OnToggleMissionBoard;
+            @ToggleMissionBoard.canceled -= instance.OnToggleMissionBoard;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -297,5 +326,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnToggleInventory(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnToggleShop(InputAction.CallbackContext context);
+        void OnToggleMissionBoard(InputAction.CallbackContext context);
     }
 }
