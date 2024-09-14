@@ -181,7 +181,7 @@ Animator:
   m_GameObject: {fileID: 819054730889972528}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 897b34267f422c1499700402763d096e, type: 3}
-  m_Controller: {fileID: 9100000, guid: 3ed6a4ec809a6ef48b382b3285002327, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4d907db27bffb634c99e671e4018c2d5, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -245,6 +245,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 8953228733523865661}
   inventory: {fileID: 0}
+  shop: {fileID: 0}
+  missionBoard: {fileID: 0}
   interactorSource: {fileID: 7406465696803117698}
   interactRange: 3
 --- !u!114 &2188557242153189806
@@ -1747,7 +1749,7 @@ Transform:
   m_GameObject: {fileID: 8848270396593151230}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.6, z: 0.006}
+  m_LocalPosition: {x: 0, y: 1.36, z: 0.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
