@@ -10,11 +10,17 @@ public class CatManager : MonoBehaviour
     Cat cat;    
     Player player;
 
-    CatStatsRules rules;
+    Rules rules;
 
-    private float timer = 0f;
+    private float timer_update = 0f;
+    private float timer_iteractions = 0f;
+    private int iteractions_availables = 1;
 
     bool lockUpdate = false;
+
+    Stack<CatModifier> modifiers;
+
+    private VideoManager videoManager;    
 
 
 
@@ -22,53 +28,81 @@ public class CatManager : MonoBehaviour
     
     void Start()
     {
-        this.cat = FindObjectOfType<CatLoader>().cat;
-        this.rules = FindObjectOfType<RulesLoader>().catStatsRules;
+        this.cat = FindObjectOfType<SaveLoader>().cat;
+        this.rules = FindObjectOfType<AssetsLoader>().rules;
+        this.videoManager = FindObjectOfType<VideoManager>();
+        this.modifiers = new Stack<CatModifier>();
     }
     
 
     void Update()
     {
-        timer += Time.deltaTime;
+        timer_update += Time.deltaTime;
 
-        if (timer > rules.seconds)
+        if(iteractions_availables < rules.max_interactions)
+            timer_iteractions += Time.deltaTime;
+
+        if (timer_update > rules.update_cat_time)
         {
 
-        
-            timer = 0f;
-
-            lockUpdate = true;
-          
-            /*cat.setStat((CatTag.SAZIETA),cat.getStat(CatTag.SAZIETA).currentValue * hungerRate);
-            cat.setStat((CatTag.DIVERTIMENTO), cat.getStat(CatTag.DIVERTIMENTO).currentValue * enjoymentRate);
-
-            float happinessRate = 
-                1 + ((cat.getStat(CatTag.SAZIETA).currentValue + cat.getStat(CatTag.DIVERTIMENTO).currentValue )/cat.getStat(CatTag.FELICITA).currentValue - 1)/happinessRateIterations;
-                
-            cat.setStat((CatTag.FELICITA), cat.getStat(CatTag.FELICITA).currentValue * happinessRate);*/
-
-            List<CatStat> newStats = UpdateStats(cat, rules.rules);
-
+            timer_update = 0f;
+            List<CatStat> newStats = UpdateStats(cat, rules.cat_stats_rules.rules);
             cat.stats = newStats;
             
-
-            lockUpdate = false;
-
-            Debug.Log($"statistiche aggiornate: {cat.getStat(CatTag.SAZIETA).currentValue} {cat.getStat(CatTag.DIVERTIMENTO).currentValue} " + 
-                $"{cat.getStat(CatTag.FELICITA).currentValue}");
         }
+
+        if(timer_iteractions > rules.interaction_cat_time){
+
+            timer_iteractions = 0f;
+            iteractions_availables ++;
+
+        }
+
+        if(modifiers.Count > 0){
+            CatModifier catModifier = modifiers.Pop();
+            cat.setStat(catModifier.targetStat,cat.getStat(catModifier.targetStat).currentValue + catModifier.value);
+        }
+
+
 
    
 
 
     }
 
+
+
+    public void Interact(){
+
+        InventoryItem item = player.equippedItem;
+
+        if(iteractions_availables > 0 && item != null){
+
+            if(item.item.GetType() == typeof(CatItem)){
+                CatItem catItem = (CatItem)item.item;
+                foreach(CatModifier modifier in catItem.catModifiers)
+                    ApplyModifier(modifier);
+                    
+                player.inventory.useItem(item);
+                if(!item.isUsable())
+                     player.unequip();
+            }
+
+            else if(item.item.GetType() == typeof(Smartphone))
+            {
+                
+            }
+
+
+        }
+
+
+            
+    }
+
     public void ApplyModifier(CatModifier catModifier)
     {
-        while(lockUpdate);
-      
     
-        
         cat.setStat(catModifier.targetStat,cat.getStat(catModifier.targetStat).currentValue + catModifier.value);
 
         Debug.Log($"statistiche aggiornate: {cat.getStat(CatTag.SAZIETA).currentValue} {cat.getStat(CatTag.DIVERTIMENTO).currentValue} " + 

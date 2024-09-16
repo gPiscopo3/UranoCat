@@ -2,6 +2,7 @@
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <level>10</level>
   <followers>150</followers>
+  <experience>0</experience>
   <money>4016</money>
   <inventory>
     <items>
@@ -159,29 +160,6 @@
           <descrizione>Immancabile strumento di Zio Agosto</descrizione>
           <durability>100</durability>
           <imagePath>UIManager/giravite1</imagePath>
-        </item>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>318792f3-6d62-40f8-88fa-576e73642f7c</ID>
-        <item xsi:type="CatItem">
-          <tag>ITEM002</tag>
-          <name>Pesce</name>
-          <descrizione>Un bel merluzzo da mangiare</descrizione>
-          <durability>1</durability>
-          <imagePath>UIManager/salmon</imagePath>
-          <CatModifier>
-            <targetStat>SAZIETA</targetStat>
-            <value>8</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>DIVERTIMENTO</targetStat>
-            <value>1</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>FELICITA</targetStat>
-            <value>0.5</value>
-          </CatModifier>
         </item>
         <numUses>0</numUses>
       </InventoryItem>

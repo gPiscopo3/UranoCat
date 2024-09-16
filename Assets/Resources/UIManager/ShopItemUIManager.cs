@@ -45,9 +45,9 @@ public class ShopItemUIManager : MonoBehaviour
     {
 
         
-        this.shopItems = FindObjectOfType<ItemLoader>().shopItems;
+        this.shopItems = FindObjectOfType<AssetsLoader>().shopItems;
         
-        this.player = FindObjectOfType<PlayerLoader>().player;
+        this.player = FindObjectOfType<SaveLoader>().player;
         CreateShopUI();
         
 

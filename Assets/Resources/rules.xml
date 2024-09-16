@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Rules xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <update_cat_time>1</update_cat_time>
+  <interaction_cat_time>10</interaction_cat_time>
+  <max_interactions>3</max_interactions>
+  <day_duration>120</day_duration>
+  
+  <cat_stats_rules>
+	  <rules>
+		<StatRule>
+		  <tag>SAZIETA</tag>
+		  <modifiers>
+			<StatModifierRule>
+			  <tag>SAZIETA</tag>
+			  <value>0.9</value>
+			</StatModifierRule>
+			<StatModifierRule>
+			  <tag>FELICITA</tag>
+			  <value>0.05</value>
+			</StatModifierRule>
+		  </modifiers>
+		</StatRule>
+		<StatRule>
+		  <tag>DIVERTIMENTO</tag>
+		  <modifiers>
+			<StatModifierRule>
+			  <tag>DIVERTIMENTO</tag>
+			  <value>0.9</value>
+			</StatModifierRule>
+			<StatModifierRule>
+			  <tag>FELICITA</tag>
+			  <value>0.05</value>
+			</StatModifierRule>
+		  </modifiers>
+		</StatRule>
+		<StatRule>
+		  <tag>FELICITA</tag>
+		  <modifiers>
+			<StatModifierRule>
+			  <tag>SAZIETA</tag>
+			  <value>0.25</value>
+			</StatModifierRule>
+			<StatModifierRule>
+			  <tag>DIVERTIMENTO</tag>
+			  <value>0.25</value>
+			</StatModifierRule>
+			<StatModifierRule>
+			  <tag>FELICITA</tag>
+			  <value>0.5</value>
+			</StatModifierRule>
+		  </modifiers>
+		</StatRule>
+	  </rules>
+	</cat_stats_rules>
+	
+	<social_rules>
+		<a_factor>0.5<a_factor>
+		<b_factor>0.1<b_factor>
+		<Max_Followers>999999</Max_Followers>
+		<Start_Followers>1000</Start_Followers>
+		<TAU>360<TAU>
+		<quality_rules>
+			<QualityRule>
+				<stat>SAZIETA</stat>
+				<factor>0.2</factor>
+			</QualityRule>
+			<QualityRule>
+				<stat>DIVERTIMENTO</stat>
+				<factor>0.2</factor>
+			</QualityRule>
+			<QualityRule>
+				<stat>FELICITA</stat>
+				<factor>0.6</factor>
+			</QualityRule>
+		</quality_rules>
+	</social_rules>
+	
+	
+</Rules>

@@ -7,15 +7,15 @@ public class MainMenu : MonoBehaviour
 {
     public void NewGame(){
 
-        SaveInfo.profile = "profile";
-        SaveInfo.save = null;
+        SaveLoader.loaded_profile = "profile";
+        SaveLoader.loaded_save = null;
         SceneManager.LoadScene("SampleScene 1");
 
     }
 
     public void Continue(){
-        SaveInfo.profile = "profile";
-        SaveInfo.save = "save";
+        SaveLoader.loaded_profile = "profile";
+        SaveLoader.loaded_save = "save";
         SceneManager.LoadScene("SampleScene 1");
 
     }

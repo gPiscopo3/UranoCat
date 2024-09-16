@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ItemLoader: MonoBehaviour
+public class AssetsLoader: MonoBehaviour
 {
 
     public const string catPath = "Assets/Resources/cat_items.xml";
     public const string shopPath = "Assets/Resources/shop_items.xml";
-    //public ItemContainer catItemList { get; set; }
-
     public const string keyPath = "Assets/Resources/key_items.xml";
-
+    public const string RulesPath = "Assets/Resources/rules.xml";
     public List<Item> items;
     public List<ShopItem> shopItems;
+    public Rules rules;
+
 
     
 
@@ -38,6 +38,8 @@ public class ItemLoader: MonoBehaviour
         foreach(ShopItem shopItem in shopItems){
             shopItem.item = GetItem(shopItem.Tag);
         }
+
+        this.rules = XMLHelper.LoadFromXml<Rules>(RulesPath);
 
         
 

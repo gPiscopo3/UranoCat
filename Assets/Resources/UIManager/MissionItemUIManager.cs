@@ -22,8 +22,8 @@ public class MissionItemUIManager: MonoBehaviour
 
     void Start()
     {   
-        missions = FindObjectOfType<MissionLoader>().missions;
-        keyItems = FindObjectOfType<ItemLoader>().items;
+        missions = FindObjectOfType<SaveLoader>().missions;
+        keyItems = FindObjectOfType<AssetsLoader>().items;
         keyItems = keyItems.FindAll(x => x is KeyItem);
         
         CreateMissionBoard();
