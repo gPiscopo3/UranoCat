@@ -24,6 +24,8 @@ public class CatManager : MonoBehaviour
     {
         this.cat = FindObjectOfType<CatLoader>().cat;
         this.rules = FindObjectOfType<RulesLoader>().catStatsRules;
+        Debug.Log(cat);
+        Debug.Log(rules);
     }
     
 
