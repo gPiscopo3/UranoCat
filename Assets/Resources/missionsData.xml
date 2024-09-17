@@ -1,0 +1,29 @@
+<ArrayOfMission xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Mission tag="MISSION001">
+      <RequiredMissions>
+      </RequiredMissions>
+      <RequiredItems>
+        <RequiredItem>
+          <tag>KEY001</tag>  
+          <Quantity>2</Quantity>
+        </RequiredItem>
+        <RequiredItem>
+          <tag>KEY002</tag>
+          <Quantity>1</Quantity>
+        </RequiredItem>
+      </RequiredItems>
+      <MissionState>ATTIVO</MissionState>
+    </Mission>
+    <Mission tag="MISSION002">
+      <RequiredMissions>
+        <RequiredMission>"MISSION001"</RequiredMission>
+      </RequiredMissions>
+      <RequiredItems>
+        <RequiredItem>
+          <tag>KEY002</tag>
+          <Quantity>3</Quantity>
+        </RequiredItem>
+      </RequiredItems>
+      <MissionState>ATTIVO</MissionState>
+    </Mission>
+  </ArrayOfMission>

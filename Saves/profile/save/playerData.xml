@@ -163,29 +163,6 @@
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>5a200635-1a8d-4b49-b475-cc5541b5d354</ID>
-        <item xsi:type="CatItem">
-          <tag>ITEM002</tag>
-          <name>Pesce</name>
-          <descrizione>Un bel merluzzo da mangiare</descrizione>
-          <durability>1</durability>
-          <imagePath>UIManager/salmon</imagePath>
-          <CatModifier>
-            <targetStat>SAZIETA</targetStat>
-            <value>8</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>DIVERTIMENTO</targetStat>
-            <value>1</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>FELICITA</targetStat>
-            <value>0.5</value>
-          </CatModifier>
-        </item>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
         <ID>32f2f24c-bed6-4286-a035-1a89bbe97c81</ID>
         <item xsi:type="CatItem">
           <tag>ITEM002</tag>
