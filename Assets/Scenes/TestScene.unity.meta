@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/TestScene.unity.meta
 guid: e73e782476e4d734a87b1ade47c2998c
+========
+guid: e402a2e716d7c074a8ccd9f044a5ea9a
+>>>>>>>> Angelo:Assets/Scenes/SampleScene1.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

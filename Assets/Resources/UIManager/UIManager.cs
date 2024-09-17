@@ -23,8 +23,8 @@ public class UIManager : MonoBehaviour
     
     void Start()
     {
-        this.cat = FindObjectOfType<CatLoader>().cat;
-        this.player = FindObjectOfType<PlayerLoader>().player;
+        this.cat = FindObjectOfType<SaveLoader>().cat;
+        this.player = FindObjectOfType<SaveLoader>().player;
         
     }
     

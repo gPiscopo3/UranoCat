@@ -9,6 +9,7 @@ public class Player
 
     public int level; 
     public int followers;
+    public long experience;
     public long money; 
 
     [XmlIgnore]

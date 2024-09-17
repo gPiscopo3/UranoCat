@@ -71,8 +71,8 @@ public class ShopItemUI : MonoBehaviour
     private void Acquista(){
         
         long price = this.priceValue;
-        Player player = FindObjectOfType<PlayerLoader>().player;
-        Item item = FindAnyObjectByType<ItemLoader>().GetItem(tag);
+        Player player = FindObjectOfType<SaveLoader>().player;
+        Item item = FindAnyObjectByType<AssetsLoader>().GetItem(tag);
         if(player.money >= price && item!=null){
             player.money = player.money - price;
             player.inventory.addItem(item);
