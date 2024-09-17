@@ -18,7 +18,7 @@ public class PlayerManager : MonoBehaviour
 
     void Start()
     {
-        this.player = FindObjectOfType<PlayerLoader>().player;
+        this.player = FindObjectOfType<SaveLoader>().player;
     }
     
 

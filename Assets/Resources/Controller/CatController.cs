@@ -33,8 +33,8 @@ public class CatController : MonoBehaviour, InteractableObject
 
     void Start()
     {
-        this.cat = FindObjectOfType<CatLoader>().cat;
-        this.player = FindObjectOfType<PlayerLoader>().player;
+        this.cat = FindObjectOfType<SaveLoader>().cat;
+        this.player = FindObjectOfType<SaveLoader>().player;
 
         catAnimator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
@@ -78,21 +78,11 @@ public class CatController : MonoBehaviour, InteractableObject
         agent.speed = 0f;
         transform.LookAt(playerTransform.position);
 
-        InventoryItem item = player.equippedItem;
+    
+        catManager.Interact();
 
-        Debug.Log(item.item.tag);
 
-
-        if(item != null && item.item.GetType() == typeof(CatItem)){
-            CatItem catItem = (CatItem)item.item;
-            foreach(CatModifier modifier in catItem.catModifiers)
-                catManager.ApplyModifier(modifier);
-            
-            player.inventory.useItem(item);
-            if(!item.isUsable())
-                player.unequip();
-            
-        }
+        
 
         
 

@@ -11,8 +11,7 @@ public class SaveManager : MonoBehaviour
 
     
 
-    PlayerLoader playerLoader;
-    CatLoader catLoader;
+    SaveLoader loader;
 
     private float timer = 0f;
 
@@ -21,8 +20,7 @@ public class SaveManager : MonoBehaviour
     
     void Start()
     {
-        this.playerLoader = FindObjectOfType<PlayerLoader>();
-        this.catLoader = FindObjectOfType<CatLoader>();
+        this.loader = FindObjectOfType<SaveLoader>();
         
     }
     
@@ -46,12 +44,7 @@ public class SaveManager : MonoBehaviour
     }
 
     public void SaveGame(String profile, String save){
-
-        playerLoader.SaveData(profile, save);
-        catLoader.SaveData(profile, save);
-
-        Debug.Log($"Gioco salvato");
-       
+        loader.SaveData(profile, save);
     }
 
         

@@ -52,7 +52,7 @@ public class InventoryItemUIManager : MonoBehaviour
         //prova
         sprite1 = Resources.Load("UIManager/salmon", typeof(Sprite)) as Sprite;
         
-        this.player = FindObjectOfType<PlayerLoader>().player;
+        this.player = FindObjectOfType<SaveLoader>().player;
 
         this.inventory = player.inventory;
 

@@ -4,8 +4,6 @@ using System.Collections.Generic;
 public class CatStatsRules{
 
 
-    public int seconds;
-
     public List<StatRule> rules;
 
 

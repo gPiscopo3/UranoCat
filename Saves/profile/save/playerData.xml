@@ -2,7 +2,7 @@
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <level>10</level>
   <followers>150</followers>
-  <money>3941</money>
+  <money>3901</money>
   <inventory>
     <items>
       <InventoryItem>
@@ -480,6 +480,158 @@
           <CatModifier>
             <targetStat>FELICITA</targetStat>
             <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>f3e8e401-19e0-49ac-bfdf-5ae2debf77db</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM001</tag>
+          <name>Crocchette Piccole</name>
+          <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
+          <durability>10</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.1</value>
+          </CatModifier>
+        </item>
+        <numUses>3</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>6a8c3271-4133-4991-b466-8d49c2509618</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM001</tag>
+          <name>Crocchette Piccole</name>
+          <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
+          <durability>10</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.1</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>cf016f49-4ecd-4dc3-8416-d4a2b708a97e</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM001</tag>
+          <name>Crocchette Piccole</name>
+          <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
+          <durability>10</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.1</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>b8b4eb27-4d72-4c12-8870-23a479114c64</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM001</tag>
+          <name>Crocchette Piccole</name>
+          <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
+          <durability>10</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.1</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>ac33193e-c649-4341-8d97-6d8545efb7a8</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM001</tag>
+          <name>Crocchette Piccole</name>
+          <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
+          <durability>10</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.1</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>7e130cbb-0b0a-468e-86ca-dbf98e18c56a</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM001</tag>
+          <name>Crocchette Piccole</name>
+          <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
+          <durability>10</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.1</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>486ca960-ec7b-4b10-8425-f624a6876eff</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM001</tag>
+          <name>Crocchette Piccole</name>
+          <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
+          <durability>10</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.1</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>58f48bef-8e4b-484f-a51b-20dd710c6c66</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM001</tag>
+          <name>Crocchette Piccole</name>
+          <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
+          <durability>10</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.1</value>
           </CatModifier>
         </item>
         <numUses>0</numUses>

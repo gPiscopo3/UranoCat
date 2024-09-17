@@ -9,7 +9,7 @@ public class MissionManager : MonoBehaviour
 
     Player player; 
     List<Mission> missions;
-    MissionLoader mLoader;
+   
 
     void Start()
     {
@@ -17,19 +17,6 @@ public class MissionManager : MonoBehaviour
 
         //TODO caricare missioni dall'xml, del giocatore serve l'inventory manager (da fare)
 
-        this.player = new Player();
-        this.player.level = 1;
-        this.player.followers = 1000;
-        this.player.money = 1000;
-        this.player.inventory = new Inventory();
-        this.player.inventory.addItem(new KeyItem("KEY001", "Vite", "Vite semplice", 1, ""));
-        this.player.inventory.addItem(new KeyItem("KEY001", "Vite", "Vite semplice", 1, ""));
-        this.player.inventory.addItem(new KeyItem("KEY001", "Vite", "Vite semplice", 1, ""));
-        this.player.inventory.addItem(new KeyItem("KEY002", "Cacciavite", "Semplice Cacciavite", 0, ""));
-        this.player.equippedItem = this.player.inventory.items.Find(obj => obj.ID == "KEY1");
-
-        this.mLoader = FindObjectOfType<MissionLoader>();
-        this.missions = mLoader.missions;
 
         /*
         this.missions = new List<Mission>();
