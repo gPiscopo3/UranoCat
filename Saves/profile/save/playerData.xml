@@ -2,7 +2,7 @@
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <level>10</level>
   <followers>150</followers>
-  <money>3986</money>
+  <money>3941</money>
   <inventory>
     <items>
       <InventoryItem>
@@ -163,71 +163,6 @@
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>32f2f24c-bed6-4286-a035-1a89bbe97c81</ID>
-        <item xsi:type="CatItem">
-          <tag>ITEM002</tag>
-          <name>Pesce</name>
-          <descrizione>Un bel merluzzo da mangiare</descrizione>
-          <durability>1</durability>
-          <imagePath>UIManager/salmon</imagePath>
-          <CatModifier>
-            <targetStat>SAZIETA</targetStat>
-            <value>8</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>DIVERTIMENTO</targetStat>
-            <value>1</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>FELICITA</targetStat>
-            <value>0.5</value>
-          </CatModifier>
-        </item>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>53d394e8-ab97-404c-8e9e-8ebbddc9dc3f</ID>
-        <item xsi:type="CatItem">
-          <tag>ITEM001</tag>
-          <name>Crocchette Piccole</name>
-          <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
-          <durability>10</durability>
-          <imagePath>UIManager/salmon</imagePath>
-          <CatModifier>
-            <targetStat>SAZIETA</targetStat>
-            <value>5</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>FELICITA</targetStat>
-            <value>0.1</value>
-          </CatModifier>
-        </item>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>482c4fe3-e4b5-460b-ad48-27ce21d6033c</ID>
-        <item xsi:type="CatItem">
-          <tag>ITEM002</tag>
-          <name>Pesce</name>
-          <descrizione>Un bel merluzzo da mangiare</descrizione>
-          <durability>1</durability>
-          <imagePath>UIManager/salmon</imagePath>
-          <CatModifier>
-            <targetStat>SAZIETA</targetStat>
-            <value>8</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>DIVERTIMENTO</targetStat>
-            <value>1</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>FELICITA</targetStat>
-            <value>0.5</value>
-          </CatModifier>
-        </item>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
         <ID>2c52efd3-8fcc-4228-98c5-7b9e1fc7b230</ID>
         <item xsi:type="CatItem">
           <tag>ITEM002</tag>
@@ -321,6 +256,213 @@
       </InventoryItem>
       <InventoryItem>
         <ID>b79279a5-5cb4-43dc-9795-a4c6c4f592f9</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM002</tag>
+          <name>Pesce</name>
+          <descrizione>Un bel merluzzo da mangiare</descrizione>
+          <durability>1</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>8</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>1</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>fbba247c-a5a7-4974-90fe-23ffc4633dcd</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM002</tag>
+          <name>Pesce</name>
+          <descrizione>Un bel merluzzo da mangiare</descrizione>
+          <durability>1</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>8</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>1</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>f52c3c95-393d-4249-9f86-d663d7823cf2</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM002</tag>
+          <name>Pesce</name>
+          <descrizione>Un bel merluzzo da mangiare</descrizione>
+          <durability>1</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>8</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>1</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>06ecf4fc-2fa1-42d4-9f18-3ae4ce0e632e</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM002</tag>
+          <name>Pesce</name>
+          <descrizione>Un bel merluzzo da mangiare</descrizione>
+          <durability>1</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>8</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>1</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>9cef6742-84b4-412d-9b03-7c8f3326ea95</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM002</tag>
+          <name>Pesce</name>
+          <descrizione>Un bel merluzzo da mangiare</descrizione>
+          <durability>1</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>8</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>1</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>fd9725e2-adbc-411e-8bc6-ee3b3195ecbe</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM002</tag>
+          <name>Pesce</name>
+          <descrizione>Un bel merluzzo da mangiare</descrizione>
+          <durability>1</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>8</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>1</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>e7852bd0-27df-4199-8fea-8a3fdb7de9c5</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM002</tag>
+          <name>Pesce</name>
+          <descrizione>Un bel merluzzo da mangiare</descrizione>
+          <durability>1</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>8</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>1</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>c5ef6ebd-619e-4276-a0db-5c7af6e4aad2</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM002</tag>
+          <name>Pesce</name>
+          <descrizione>Un bel merluzzo da mangiare</descrizione>
+          <durability>1</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>8</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>1</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>25a49690-1daf-40b3-98a2-d4b8ea2c02db</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM002</tag>
+          <name>Pesce</name>
+          <descrizione>Un bel merluzzo da mangiare</descrizione>
+          <durability>1</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>8</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>1</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>43b67f70-232e-46f6-bd51-58ac7cf87dc2</ID>
         <item xsi:type="CatItem">
           <tag>ITEM002</tag>
           <name>Pesce</name>
