@@ -41,6 +41,7 @@ public class AssetsLoader: MonoBehaviour
 
         this.rules = XMLHelper.LoadFromXml<Rules>(RulesPath);
 
+
         
 
         

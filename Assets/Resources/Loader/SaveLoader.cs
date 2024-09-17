@@ -13,7 +13,7 @@ public class SaveLoader : MonoBehaviour
     public const string fileMissions = "missionsData.xml";
     public const string fileVideo = "videos.xml";
     public const string fileStats = "stats.xml";
-    public const string pathDefault = "Assets/Resources/";
+    public const string pathDefault = "Assets/Resources/Saves";
     public Cat cat;
     public Player player;
     public List<Mission> missions;

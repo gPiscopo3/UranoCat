@@ -54,11 +54,11 @@
 	</cat_stats_rules>
 	
 	<social_rules>
-		<a_factor>0.5<a_factor>
-		<b_factor>0.1<b_factor>
+		<a_factor>0.5</a_factor>
+		<b_factor>0.1</b_factor>
 		<Max_Followers>999999</Max_Followers>
 		<Start_Followers>1000</Start_Followers>
-		<TAU>360<TAU>
+		<TAU>360</TAU>
 		<quality_rules>
 			<QualityRule>
 				<stat>SAZIETA</stat>

@@ -12,15 +12,13 @@ public class CatManager : MonoBehaviour
 
     Rules rules;
 
-    private float timer_update = 0f;
-    private float timer_iteractions = 0f;
-    private int iteractions_availables = 1;
-
+   
     bool lockUpdate = false;
 
     Stack<CatModifier> modifiers;
 
     private VideoManager videoManager;    
+    SavedStats savedStats;
 
 
 
@@ -29,36 +27,39 @@ public class CatManager : MonoBehaviour
     void Start()
     {
         this.cat = FindObjectOfType<SaveLoader>().cat;
+        this.player = FindObjectOfType<SaveLoader>().player;
         this.rules = FindObjectOfType<AssetsLoader>().rules;
         this.videoManager = FindObjectOfType<VideoManager>();
         this.modifiers = new Stack<CatModifier>();
+        savedStats = FindAnyObjectByType<SaveLoader>().savedStats;
     }
     
 
     void Update()
     {
-        timer_update += Time.deltaTime;
+        savedStats.update_cat_timer += Time.deltaTime;
 
-        if(iteractions_availables < rules.max_interactions)
-            timer_iteractions += Time.deltaTime;
+        
+        if(savedStats.interactions_cat < rules.max_interactions)
+            savedStats.interaction_cat_timer += Time.deltaTime;
 
-        if (timer_update > rules.update_cat_time)
+        if (savedStats.update_cat_timer > rules.update_cat_time)
         {
 
-            timer_update = 0f;
+            savedStats.update_cat_timer = 0f;
             List<CatStat> newStats = UpdateStats(cat, rules.cat_stats_rules.rules);
             cat.stats = newStats;
             
         }
 
-        if(timer_iteractions > rules.interaction_cat_time){
+        if(savedStats.interaction_cat_timer > rules.interaction_cat_time){
 
-            timer_iteractions = 0f;
-            iteractions_availables ++;
+            savedStats.interaction_cat_timer = 0f;
+            savedStats.interactions_cat ++;
 
         }
 
-        if(modifiers.Count > 0){
+        while(modifiers.Count > 0){
             CatModifier catModifier = modifiers.Pop();
             cat.setStat(catModifier.targetStat,cat.getStat(catModifier.targetStat).currentValue + catModifier.value);
         }
@@ -76,7 +77,7 @@ public class CatManager : MonoBehaviour
 
         InventoryItem item = player.equippedItem;
 
-        if(iteractions_availables > 0 && item != null){
+        if(savedStats.interactions_cat > 0 && item != null){
 
             if(item.item.GetType() == typeof(CatItem)){
                 CatItem catItem = (CatItem)item.item;
@@ -86,6 +87,8 @@ public class CatManager : MonoBehaviour
                 player.inventory.useItem(item);
                 if(!item.isUsable())
                      player.unequip();
+
+            savedStats.interactions_cat--;
             }
 
             else if(item.item.GetType() == typeof(Smartphone))
