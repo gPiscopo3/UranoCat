@@ -9,14 +9,14 @@ public class MainMenu : MonoBehaviour
 
         SaveLoader.loaded_profile = "profile";
         SaveLoader.loaded_save = null;
-        SceneManager.LoadScene("SampleScene 1");
+        SceneManager.LoadScene("TestScene");
 
     }
 
     public void Continue(){
         SaveLoader.loaded_profile = "profile";
         SaveLoader.loaded_save = "save";
-        SceneManager.LoadScene("SampleScene 1");
+        SceneManager.LoadScene("TestScene");
 
     }
     
