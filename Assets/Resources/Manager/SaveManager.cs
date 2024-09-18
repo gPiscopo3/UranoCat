@@ -15,12 +15,15 @@ public class SaveManager : MonoBehaviour
 
     private float timer = 0f;
 
+    Profiles profiles;
+
    
 
     
     void Start()
     {
         this.loader = FindObjectOfType<SaveLoader>();
+    
         
     }
     
@@ -35,16 +38,18 @@ public class SaveManager : MonoBehaviour
         
             timer = 0f;
 
-            SaveGame("profile", "save");
+            SaveGame("save");
+            
 
+            
             
            
         }
 
     }
 
-    public void SaveGame(String profile, String save){
-        loader.SaveData(profile, save);
+    public void SaveGame(String save){
+        loader.SaveData(save);
     }
 
         

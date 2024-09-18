@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Profiles xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <profiles>
+    <Profile>
+      <name>verroide</name>
+      <id>b75e0502-830f-4661-b2b9-6788f04ac4dd</id>
+    </Profile>
+    <Profile>
+      <name />
+      <id>fafc19bc-c54d-4d7c-a7bf-73b5d5574e12</id>
+    </Profile>
+    <Profile>
+      <name>vvvv</name>
+      <last_save>save</last_save>
+      <id>01755d63-dd46-4d88-8f91-4c6f3d92a83b</id>
+    </Profile>
+  </profiles>
+  <last_profile>
+    <name>vvvv</name>
+    <last_save>save</last_save>
+    <id>01755d63-dd46-4d88-8f91-4c6f3d92a83b</id>
+  </last_profile>
+</Profiles>
