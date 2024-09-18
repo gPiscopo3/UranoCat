@@ -17,6 +17,8 @@ public class SaveManager : MonoBehaviour
     private float timer_save = 0f;
     private float timer_timestamp = 0f;
 
+    Profiles profiles;
+
    
 
     
@@ -40,8 +42,10 @@ public class SaveManager : MonoBehaviour
         
             timer_save = 0f;
 
-            SaveGame("profile", "save");
+            SaveGame("save");
+            
 
+            
             
            
         }
@@ -54,8 +58,8 @@ public class SaveManager : MonoBehaviour
 
     }
 
-    public void SaveGame(String profile, String save){
-        loader.SaveData(profile, save);
+    public void SaveGame(String save){
+        loader.SaveData(save);
     }
 
         

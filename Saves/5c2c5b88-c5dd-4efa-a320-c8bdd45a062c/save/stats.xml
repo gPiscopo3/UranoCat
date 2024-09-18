@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SavedStats xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <day>1</day>
-  <update_cat_timer>0.8541212</update_cat_timer>
+  <update_cat_timer>0.5622812</update_cat_timer>
   <interaction_cat_timer>0</interaction_cat_timer>
   <interactions_cat>3</interactions_cat>
   <day_timer>0</day_timer>
