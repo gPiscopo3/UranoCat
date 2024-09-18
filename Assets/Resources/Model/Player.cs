@@ -11,6 +11,8 @@ public class Player
     public int followers;
     public long money; 
 
+    public int experience;
+
     [XmlIgnore]
     public InventoryItem equippedItem;
 
