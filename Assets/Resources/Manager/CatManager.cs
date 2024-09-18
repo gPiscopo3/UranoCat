@@ -88,12 +88,13 @@ public class CatManager : MonoBehaviour
                 if(!item.isUsable())
                      player.unequip();
 
-            savedStats.interactions_cat--;
+                savedStats.interactions_cat--;
             }
 
             else if(item.item.GetType() == typeof(Smartphone))
             {
-                
+                savedStats.interactions_cat--;
+                videoManager.CreateVideo();
             }
 
 
@@ -113,6 +114,9 @@ public class CatManager : MonoBehaviour
         
        
     }
+
+
+    
 
     private List<CatStat> UpdateStats(Cat cat, List<CatStatsRules.StatRule> rules){
 
