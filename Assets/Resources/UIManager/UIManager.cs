@@ -40,7 +40,6 @@ public class UIManager : MonoBehaviour
         happinessSlider.value = cat.getStat(CatTag.FELICITA).currentValue;
         experienceSlider.value = player.experience;
         levelText.SetText(player.level.ToString());
-        Debug.Log(player.level);
         moneyText.SetText(player.money.ToString());
         if(player.equippedItem!=null){
             equippedText.SetText("Oggetto equipaggiato: " + player.equippedItem.item.name);

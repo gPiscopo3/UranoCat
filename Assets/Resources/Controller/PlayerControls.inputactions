@@ -49,6 +49,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ToggleSummaryBoard",
+                    "type": "Button",
+                    "id": "a3b674ce-c465-41f8-af3e-52b32c4e404c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -142,12 +151,23 @@
                 },
                 {
                     "name": "",
-                    "id": "a0d68495-3a7b-4666-b4ae-059a962d4104",
-                    "path": "<Keyboard>/tab",
+                    "id": "666d9ba0-a25d-4d63-a545-9ffaf49ac217",
+                    "path": "<Keyboard>/t",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "ToggleMissionBoard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6c002081-82fc-4f7b-9e5c-4472e2b5a75c",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleSummaryBoard",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

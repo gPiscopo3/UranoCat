@@ -22,9 +22,12 @@ public class MissionItemUIManager: MonoBehaviour
 
     void Start()
     {   
+        Debug.Log("MissionItemUIManager Start");
         missions = FindObjectOfType<SaveLoader>().missions;
         keyItems = FindObjectOfType<AssetsLoader>().items;
         keyItems = keyItems.FindAll(x => x is KeyItem);
+
+        Debug.Log("Missions: " + missions.Count);
         
         CreateMissionBoard();
         GenerateMissionItemUI();
