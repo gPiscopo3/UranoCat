@@ -76,6 +76,7 @@ public class CatManager : MonoBehaviour
     public void Interact(){
 
         InventoryItem item = player.equippedItem;
+        player.experience += 10;
 
         if(savedStats.interactions_cat > 0 && item != null){
 

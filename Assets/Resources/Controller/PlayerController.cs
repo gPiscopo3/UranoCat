@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] protected GameObject inventory;
     [SerializeField] protected GameObject shop;
     [SerializeField] protected GameObject missionBoard;
+    [SerializeField] protected GameObject summaryBoard;
 
     [SerializeField] protected Transform interactorSource;
     [SerializeField] protected float interactRange;
@@ -23,10 +24,12 @@ public class PlayerController : MonoBehaviour
     private InputAction toggleShopAction;
     private InputAction interact;
     private InputAction toggleMissionBoard;
+    private InputAction toggleSummaryBoard;
 
     private bool isInventoryActive;
     private bool isShopActive;
     private bool isMissionBoardActive;
+    private bool isSummaryBoardActive;
 
     private MissionItemUIManager missionManagerUI;
 
@@ -44,15 +47,18 @@ public class PlayerController : MonoBehaviour
        toggleShopAction = playerControls.Player.ToggleShop;
        interact = playerControls.Player.Interact;
        toggleMissionBoard = playerControls.Player.ToggleMissionBoard;
+       toggleSummaryBoard = playerControls.Player.ToggleSummaryBoard;
 
        isInventoryActive = false;
        isShopActive = false;
        isMissionBoardActive = false;
+       isSummaryBoardActive = false;
 
        toggleInventoryAction.performed += ToggleInventory;
        toggleShopAction.performed += ToggleShop;
        interact.performed += Interact;
        toggleMissionBoard.performed += ToggleMissionBoard;
+       toggleSummaryBoard.performed += ToggleSummaryBoard;
     }
 
 
@@ -83,14 +89,16 @@ public class PlayerController : MonoBehaviour
         toggleInventoryAction.Enable();
         toggleMissionBoard.Enable();
         interact.Enable();
+        toggleSummaryBoard.Enable();
     }
 
     private void OnDisable()
     {
-        toggleShopAction.Enable();
+        toggleShopAction.Disable();
         toggleInventoryAction.Disable();
         toggleMissionBoard.Disable();
         interact.Disable();
+        toggleSummaryBoard.Disable();
     }
 
     private void ToggleShop(InputAction.CallbackContext context)
@@ -163,4 +171,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void ToggleSummaryBoard(InputAction.CallbackContext context)
+    {
+        summaryBoard.SetActive(!summaryBoard.activeSelf);
+        isSummaryBoardActive = !isSummaryBoardActive;
+
+        if (isSummaryBoardActive) {
+            toggleSummaryBoard.Disable();
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+            
+        } else {
+            toggleSummaryBoard.Enable();
+            Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
 }

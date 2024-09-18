@@ -39,13 +39,7 @@ public class SaveLoader : MonoBehaviour
         this.videos = XMLHelper.LoadFromXml<List<Video>>(path + fileVideo);
         this.savedStats = XMLHelper.LoadFromXml<SavedStats>(path + fileStats);
 
-        savedStats = new SavedStats(){
-            day = 1, day_timer= 0, interaction_cat_timer = 0, interactions_cat = 1, is_video_available = false, update_cat_timer = 0
-        };
-        videos = new List<Video>();
-        missions = new List<Mission>();
-
-        SaveData("profile", "save");
+    
         
     
     }
