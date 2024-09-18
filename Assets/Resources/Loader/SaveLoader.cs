@@ -32,7 +32,6 @@ public class SaveLoader : MonoBehaviour
         else
             path = "Saves/" + profile + "/" + save + "/";
     
-
         this.cat = XMLHelper.LoadFromXml<Cat>(path + fileCat);
         this.player = XMLHelper.LoadFromXml<Player>(path + filePlayer);
         this.missions = XMLHelper.LoadFromXml<List<Mission>>(path + fileMissions);
@@ -46,8 +45,7 @@ public class SaveLoader : MonoBehaviour
         missions = new List<Mission>();
 
         SaveData("profile", "save");
-        
-    
+
     }
 
 

@@ -4,50 +4,26 @@
       </RequiredMissions>
       <RequiredItems>
         <RequiredItem>
-			<tagKeyItem>KEY001</tagKeyItem>
-            <Quantity>1</Quantity>
+          <tag>KEY001</tag>  
+          <Quantity>2</Quantity>
         </RequiredItem>
         <RequiredItem>
-			<tagKeyItem>KEY001</tagKeyItem>
-            <Quantity>1</Quantity>
+          <tag>KEY002</tag>
+          <Quantity>1</Quantity>
         </RequiredItem>
       </RequiredItems>
       <MissionState>ATTIVO</MissionState>
     </Mission>
     <Mission tag="MISSION002">
       <RequiredMissions>
-        <RequiredMission>MISSION001</RequiredMission>
+        <RequiredMission>"MISSION001"</RequiredMission>
       </RequiredMissions>
       <RequiredItems>
         <RequiredItem>
-		    <tagKeyItem>KEY001</tagKeyItem>
-            <Quantity>1</Quantity>
+          <tag>KEY002</tag>
+          <Quantity>3</Quantity>
         </RequiredItem>
       </RequiredItems>
-      <MissionState>NON_ATTIVO</MissionState>
+      <MissionState>ATTIVO</MissionState>
     </Mission>
-	<Mission tag="MISSION003">
-		<RequiredMissions>
-			<RequiredMission>MISSION001</RequiredMission>
-		</RequiredMissions>
-		<RequiredItems>
-			<RequiredItem>
-				<tagKeyItem>KEY002</tagKeyItem>
-				<Quantity>1</Quantity>
-			</RequiredItem>
-		</RequiredItems>
-		<MissionState>NON_ATTIVO</MissionState>
-	</Mission>
-	<Mission tag="MISSION004">
-		<RequiredMissions>
-			<RequiredMission>MISSION001</RequiredMission>
-		</RequiredMissions>
-		<RequiredItems>
-			<RequiredItem>
-				<tagKeyItem>KEY002</tagKeyItem>
-				<Quantity>1</Quantity>
-			</RequiredItem>
-		</RequiredItems>
-		<MissionState>NON_ATTIVO</MissionState>
-	</Mission>
   </ArrayOfMission>

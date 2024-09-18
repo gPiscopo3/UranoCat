@@ -10,44 +10,15 @@ public class MissionManager : MonoBehaviour
     Player player; 
     List<Mission> missions;
    
-
     void Start()
     {
-        //Provare a testare con 3 missioni;
+        this.missions = FindObjectOfType<SaveLoader>().missions;
+        this.player = FindAnyObjectByType<SaveLoader>().player;
 
-        //TODO caricare missioni dall'xml, del giocatore serve l'inventory manager (da fare)
-
-
-        /*
-        this.missions = new List<Mission>();
-
-        Mission mission1 = new Mission();
-        mission1.tag = "MISSION01";
-        mission1.RequiredItems.Add(new ItemRequirement("KEY1", 1));
-        mission1.MissionState = MissionState.ATTIVO;
-
-        Mission mission2 = new Mission();
-        mission2.tag = "MISSION02";
-        mission2.RequiredMissions.Add("MISSION01");
-        mission2.RequiredItems.Add(new ItemRequirement("KEY1", 2));
-        mission2.RequiredItems.Add(new ItemRequirement("KEY2", 1));
-        mission2.MissionState = MissionState.NON_ATTIVO;
-
-        Mission mission3 = new Mission();
-        mission3.tag = "MISSION03";
-        mission3.RequiredMissions.Add("MISSION02");
-        mission3.RequiredItems.Add(new ItemRequirement("KEY3", 1));
-        mission3.MissionState = MissionState.NON_ATTIVO;
-
-        this.missions.Add(mission1);
-        this.missions.Add(mission2);
-        this.missions.Add(mission3);
-
-        foreach(Mission m in this.missions)
+        foreach(Mission mission in this.missions)
         {
-            Debug.Log($"{m.tag}, {m.MissionState} {DateTime.Now}");
+            Debug.Log($"{mission.tag}");
         }
-        */
     }
 
     public void CheckMission()
