@@ -15,7 +15,7 @@
     </RequiredItems>
   </Mission>
   <Mission tag="MISSION002">
-    <MissionState>NON_ATTIVO</MissionState>
+    <MissionState>ATTIVO</MissionState>
     <RequiredMissions>
       <RequiredMission>MISSION001</RequiredMission>
     </RequiredMissions>

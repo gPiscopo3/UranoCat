@@ -41,6 +41,10 @@ public class SaveLoader : MonoBehaviour
         this.videos = XMLHelper.LoadFromXml<List<Video>>(path + fileVideo);
         this.savedStats = XMLHelper.LoadFromXml<SavedStats>(path + fileStats);
 
+        Debug.Log(cat + " " + player + " " + missions + " " + videos + " " + savedStats);
+
+    
+
         this.profiles = XMLHelper.LoadFromXml<Profiles>(profiles_path);
 
 

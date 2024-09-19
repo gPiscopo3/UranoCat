@@ -89,6 +89,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleViewBoard"",
+                    ""type"": ""Button"",
+                    ""id"": ""fec8c8d0-af8a-429f-99c1-ae8b923aa46d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -212,6 +221,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""ToggleEsc"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6a266673-fe28-45e6-af4d-92c969fc421a"",
+                    ""path"": ""<Keyboard>/v"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleViewBoard"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -227,6 +247,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_ToggleMissionBoard = m_Player.FindAction("ToggleMissionBoard", throwIfNotFound: true);
         m_Player_ToggleSummaryBoard = m_Player.FindAction("ToggleSummaryBoard", throwIfNotFound: true);
         m_Player_ToggleEsc = m_Player.FindAction("ToggleEsc", throwIfNotFound: true);
+        m_Player_ToggleViewBoard = m_Player.FindAction("ToggleViewBoard", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -295,6 +316,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_ToggleMissionBoard;
     private readonly InputAction m_Player_ToggleSummaryBoard;
     private readonly InputAction m_Player_ToggleEsc;
+    private readonly InputAction m_Player_ToggleViewBoard;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -306,6 +328,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @ToggleMissionBoard => m_Wrapper.m_Player_ToggleMissionBoard;
         public InputAction @ToggleSummaryBoard => m_Wrapper.m_Player_ToggleSummaryBoard;
         public InputAction @ToggleEsc => m_Wrapper.m_Player_ToggleEsc;
+        public InputAction @ToggleViewBoard => m_Wrapper.m_Player_ToggleViewBoard;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -336,6 +359,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @ToggleEsc.started += instance.OnToggleEsc;
             @ToggleEsc.performed += instance.OnToggleEsc;
             @ToggleEsc.canceled += instance.OnToggleEsc;
+            @ToggleViewBoard.started += instance.OnToggleViewBoard;
+            @ToggleViewBoard.performed += instance.OnToggleViewBoard;
+            @ToggleViewBoard.canceled += instance.OnToggleViewBoard;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -361,6 +387,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @ToggleEsc.started -= instance.OnToggleEsc;
             @ToggleEsc.performed -= instance.OnToggleEsc;
             @ToggleEsc.canceled -= instance.OnToggleEsc;
+            @ToggleViewBoard.started -= instance.OnToggleViewBoard;
+            @ToggleViewBoard.performed -= instance.OnToggleViewBoard;
+            @ToggleViewBoard.canceled -= instance.OnToggleViewBoard;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -387,5 +416,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnToggleMissionBoard(InputAction.CallbackContext context);
         void OnToggleSummaryBoard(InputAction.CallbackContext context);
         void OnToggleEsc(InputAction.CallbackContext context);
+        void OnToggleViewBoard(InputAction.CallbackContext context);
     }
 }
