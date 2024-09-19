@@ -17,6 +17,11 @@ public class SummaryUIManager : MonoBehaviour
     [SerializeField] private Button missionButton;
     [SerializeField] private Button videoButton;
 
+    [SerializeField] private GameObject shop;
+    [SerializeField] private GameObject inventory;
+    [SerializeField] private GameObject missionBoard;
+    [SerializeField] private GameObject videoBoard;
+
     Player player;
     
     void Start()
@@ -24,12 +29,32 @@ public class SummaryUIManager : MonoBehaviour
         this.player = FindObjectOfType<SaveLoader>().player;
 
 
-        shopButton.onClick.AddListener(() => {
-            FindObjectOfType<ShopItemUIManager>().OpenShop();
-        });
+        shopButton.onClick.AddListener(OpenShop);
+        inventoryButton.onClick.AddListener(OpenInventory);
+        missionButton.onClick.AddListener(OpenMissionBoard);
+        videoButton.onClick.AddListener(OpenVideoBoard);
 
     }
 
+    void OpenShop()
+    {
+        shop.SetActive(true);
+    }
+
+    void OpenInventory()
+    {
+        inventory.SetActive(true);
+    }   
+
+    void OpenMissionBoard()
+    {
+        missionBoard.SetActive(true);
+    }
+
+    void OpenVideoBoard()
+    {
+        videoBoard.SetActive(true);
+    }
 
     // Update is called once per frame
     void Update()
@@ -41,4 +66,7 @@ public class SummaryUIManager : MonoBehaviour
         moneyValue.SetText(player.money.ToString());
 
     }
+
+
 }
+
