@@ -2835,6 +2835,10 @@ MonoBehaviour:
   inventoryButton: {fileID: 1765881248}
   missionButton: {fileID: 1021911080}
   videoButton: {fileID: 858975007}
+  shop: {fileID: 2125307030}
+  inventory: {fileID: 2042812802}
+  missionBoard: {fileID: 901065475}
+  videoBoard: {fileID: 0}
 --- !u!114 &337493945
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     private InputAction interact;
     private InputAction toggleMissionBoard;
     private InputAction toggleSummaryBoard;
+    private InputAction toggleEsc;
 
     private bool isInventoryActive;
     private bool isShopActive;
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
        interact = playerControls.Player.Interact;
        toggleMissionBoard = playerControls.Player.ToggleMissionBoard;
        toggleSummaryBoard = playerControls.Player.ToggleSummaryBoard;
+       toggleEsc = playerControls.Player.ToggleEsc; 
 
        isInventoryActive = false;
        isShopActive = false;
@@ -59,6 +61,7 @@ public class PlayerController : MonoBehaviour
        interact.performed += Interact;
        toggleMissionBoard.performed += ToggleMissionBoard;
        toggleSummaryBoard.performed += ToggleSummaryBoard;
+       toggleEsc.performed += ToggleEsc;
     }
 
 
@@ -90,6 +93,7 @@ public class PlayerController : MonoBehaviour
         toggleMissionBoard.Enable();
         interact.Enable();
         toggleSummaryBoard.Enable();
+        toggleEsc.Enable();
     }
 
     private void OnDisable()
@@ -99,6 +103,7 @@ public class PlayerController : MonoBehaviour
         toggleMissionBoard.Disable();
         interact.Disable();
         toggleSummaryBoard.Disable();
+        toggleEsc.Disable();
     }
 
     private void ToggleShop(InputAction.CallbackContext context)
@@ -107,19 +112,16 @@ public class PlayerController : MonoBehaviour
         shop.SetActive(!shop.activeSelf);
         isShopActive = !isShopActive;
 
-        if (isShopActive) {
-            toggleInventoryAction.Disable();
+        if (shop.activeSelf) {
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             
         } else {
-            toggleInventoryAction.Enable();
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
         }
 
     }
-
 
     private void ToggleInventory(InputAction.CallbackContext context)
     {
@@ -127,13 +129,11 @@ public class PlayerController : MonoBehaviour
         inventory.SetActive(!inventory.activeSelf);
         isInventoryActive = !isInventoryActive;
 
-        if (isInventoryActive) {
-            toggleShopAction.Disable();
+        if (inventory.activeSelf) {
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             
         } else {
-            toggleShopAction.Enable();
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -159,13 +159,11 @@ public class PlayerController : MonoBehaviour
         missionBoard.SetActive(!missionBoard.activeSelf);
         isMissionBoardActive = !isMissionBoardActive;
 
-        if (isMissionBoardActive) {
-            toggleShopAction.Disable();
+        if (missionBoard.activeSelf) {
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             
         } else {
-            toggleShopAction.Enable();
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -173,18 +171,56 @@ public class PlayerController : MonoBehaviour
 
     private void ToggleSummaryBoard(InputAction.CallbackContext context)
     {
-        summaryBoard.SetActive(!summaryBoard.activeSelf);
+        
         isSummaryBoardActive = !isSummaryBoardActive;
+        if(inventory.activeSelf || shop.activeSelf || missionBoard.activeSelf)
+        {
+            inventory.SetActive(false);
+            shop.SetActive(false);
+            missionBoard.SetActive(false);
+        }
+        else
+            summaryBoard.SetActive(!summaryBoard.activeSelf);
 
-        if (isSummaryBoardActive) {
-            toggleSummaryBoard.Disable();
+
+
+        if (summaryBoard.activeSelf) {
+            //toggleSummaryBoard.Disable();
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             
         } else {
-            toggleSummaryBoard.Enable();
+            //toggleSummaryBoard.Enable();
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
         }
+    }
+
+
+    private void ToggleEsc(InputAction.CallbackContext context)
+    {
+
+        if(shop.activeSelf || inventory.activeSelf || missionBoard.activeSelf)
+        {
+            shop.SetActive(false);
+            inventory.SetActive(false);
+            missionBoard.SetActive(false);
+        }
+        else if(summaryBoard.activeSelf)    
+            summaryBoard.SetActive(false);
+
+        if(shop.activeSelf || inventory.activeSelf || missionBoard.activeSelf || summaryBoard.activeSelf)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+        
+
+        
+
+        
     }
 }

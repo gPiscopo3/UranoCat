@@ -12,8 +12,12 @@ public class SaveManager : MonoBehaviour
     
 
     SaveLoader loader;
+    SavedStats savedStats;
 
-    private float timer = 0f;
+    private float timer_save = 0f;
+    private float timer_timestamp = 0f;
+
+    Profiles profiles;
 
    
 
@@ -21,30 +25,41 @@ public class SaveManager : MonoBehaviour
     void Start()
     {
         this.loader = FindObjectOfType<SaveLoader>();
+        savedStats = loader.savedStats;
         
     }
     
 
     void Update()
     {
-        timer += Time.deltaTime;
+        timer_save += Time.deltaTime;
+        
+        timer_timestamp += Time.deltaTime;
 
-        if (timer > 10f)
+        if (timer_save > 10f)
         {
 
         
-            timer = 0f;
+            timer_save = 0f;
 
-            SaveGame("profile", "save");
+            SaveGame("save");
+            
 
+            
             
            
         }
 
+        if(timer_timestamp >= 1){
+            timer_timestamp = 0f;
+            savedStats.timestamp_seconds ++;
+
+        }
+
     }
 
-    public void SaveGame(String profile, String save){
-        loader.SaveData(profile, save);
+    public void SaveGame(String save){
+        loader.SaveData(save);
     }
 
         

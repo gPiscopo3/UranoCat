@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,12 +23,14 @@ public class UIManager : MonoBehaviour
     Cat cat;
     Player player;
 
+    Rules rules;
 
     
     void Start()
     {
         this.cat = FindObjectOfType<SaveLoader>().cat;
         this.player = FindObjectOfType<SaveLoader>().player;
+        this.rules = FindObjectOfType<AssetsLoader>().rules;
         
     }
     
@@ -38,7 +41,12 @@ public class UIManager : MonoBehaviour
         hungerSlider.value = cat.getStat(CatTag.SAZIETA).currentValue;
         enjoymentSlider.value = cat.getStat(CatTag.DIVERTIMENTO).currentValue;
         happinessSlider.value = cat.getStat(CatTag.FELICITA).currentValue;
-        experienceSlider.value = player.experience;
+
+
+        experienceSlider.value = getExperiencePercentage();
+
+       
+
         levelText.SetText(player.level.ToString());
         moneyText.SetText(player.money.ToString());
         if(player.equippedItem!=null){
@@ -49,6 +57,18 @@ public class UIManager : MonoBehaviour
         }
 
 
+    }
+
+    private float getExperiencePercentage(){
+     
+        Level lastLevel = rules.levels.FirstOrDefault(level => level.level == player.level);
+        Level nextLevel = rules.levels.FirstOrDefault(level => level.level == player.level + 1);
+
+        if(nextLevel == null)
+            return 100f; 
+        else
+            return ((float)(player.experience - lastLevel.experience))/(nextLevel.experience - lastLevel.experience)*100;
+        
     }
 
    

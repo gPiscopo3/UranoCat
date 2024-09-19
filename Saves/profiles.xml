@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Profiles xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <profiles>
+    <Profile>
+      <name>micio</name>
+      <last_save>save</last_save>
+      <id>5c2c5b88-c5dd-4efa-a320-c8bdd45a062c</id>
+    </Profile>
+    <Profile>
+      <name>verroide</name>
+      <last_save>save</last_save>
+      <id>6ee20a0d-c890-49bf-9ac1-b287b81658d8</id>
+    </Profile>
+  </profiles>
+  <last_profile>
+    <name>verroide</name>
+    <last_save>save</last_save>
+    <id>6ee20a0d-c890-49bf-9ac1-b287b81658d8</id>
+  </last_profile>
+</Profiles>
