@@ -17,7 +17,7 @@ public class Profiles
 
     public class Profile
     {
-        public string id { get; set; }
+        //public string id { get; set; }
         public string name;
         public string last_save;
 
@@ -31,7 +31,7 @@ public class Profiles
                 return false;
             }
 
-            return this.id.Equals(((Profile)obj).id);
+            return this.name.Equals(((Profile)obj).name);
 
 
     }

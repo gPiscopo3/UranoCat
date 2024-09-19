@@ -2,19 +2,23 @@
 <Profiles xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <profiles>
     <Profile>
-      <name>micio</name>
-      <last_save>save</last_save>
-      <id>5c2c5b88-c5dd-4efa-a320-c8bdd45a062c</id>
+      <name>ccccc</name>
     </Profile>
     <Profile>
-      <name>verroide</name>
+      <name>micio</name>
       <last_save>save</last_save>
-      <id>6ee20a0d-c890-49bf-9ac1-b287b81658d8</id>
+    </Profile>
+    <Profile>
+      <name>profile</name>
+      <last_save>auto4</last_save>
+    </Profile>
+    <Profile>
+      <name>miao</name>
+      <last_save>auto5</last_save>
     </Profile>
   </profiles>
   <last_profile>
-    <name>verroide</name>
-    <last_save>save</last_save>
-    <id>6ee20a0d-c890-49bf-9ac1-b287b81658d8</id>
+    <name>profile</name>
+    <last_save>auto4</last_save>
   </last_profile>
 </Profiles>

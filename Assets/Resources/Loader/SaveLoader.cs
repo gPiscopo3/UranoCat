@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class SaveLoader : MonoBehaviour
 {
     
-    public static string loaded_profile_id = "profile";
+    public static string loaded_profile = "profile";
     public static string loaded_save = "save";
 
     public const string fileCat = "catStats.xml";
@@ -14,6 +15,7 @@ public class SaveLoader : MonoBehaviour
     public const string fileVideo = "videos.xml";
     public const string fileStats = "stats.xml";
     public const string profiles_path = "Saves/profiles.xml";
+    public const string infos_file_name = "saves.xml";
     public const string pathDefault = "Assets/Resources/Saves/";
     public Cat cat;
     public Player player;
@@ -21,11 +23,12 @@ public class SaveLoader : MonoBehaviour
     public List<Video> videos;
     public SavedStats savedStats;
     public Profiles profiles;
+    public List<SaveInfo> infos;
 
 
     void Awake(){
 
-        string profile = loaded_profile_id;
+        string profile = loaded_profile;
         string save = loaded_save;
         string path;
 
@@ -40,31 +43,56 @@ public class SaveLoader : MonoBehaviour
         this.missions = XMLHelper.LoadFromXml<List<Mission>>(path + fileMissions);
         this.videos = XMLHelper.LoadFromXml<List<Video>>(path + fileVideo);
         this.savedStats = XMLHelper.LoadFromXml<SavedStats>(path + fileStats);
-
         this.profiles = XMLHelper.LoadFromXml<Profiles>(profiles_path);
+        this.infos = XMLHelper.LoadFromXml<List<SaveInfo>>("Saves/" + profile + "/" + infos_file_name);
 
 
-     
-        
     
     }
 
 
     public void SaveData(String save){
 
-        String path = "Saves/" + loaded_profile_id + "/" + save + "/";
+        String path = "Saves/" + loaded_profile + "/" + save;
+        if(!System.IO.Directory.Exists(path))
+            System.IO.Directory.CreateDirectory(path);
+
+        path = path + "/";
+
         XMLHelper.SaveToXml<Cat>(cat, path + fileCat);
         XMLHelper.SaveToXml<Player>(player, path + filePlayer);
         XMLHelper.SaveToXml<List<Mission>>(missions, path + fileMissions);
         XMLHelper.SaveToXml<List<Video>>(videos, path + fileVideo);
         XMLHelper.SaveToXml<SavedStats>(savedStats, path + fileStats);
 
-        Profiles.Profile profile = profiles.profiles.Find(x => x.id.Equals(loaded_profile_id));
-
+   
+        Profiles.Profile profile = profiles.profiles.Find(x => x.name.Equals(loaded_profile));
         profile.last_save = save;
         profiles.last_profile = profile;
-
         XMLHelper.SaveToXml<Profiles>(profiles, profiles_path);
+        
+
+        SaveInfo info = infos.FirstOrDefault(x => x.name.Equals(save));
+
+        if(info == null){
+            info = new SaveInfo{
+                level = player.level,
+                money = (int)player.money,
+                seconds = savedStats.timestamp_seconds,
+                name = save,
+                time = DateTime.Now
+            };
+            infos.Add(info);
+        }
+        else{
+            info.level = player.level;
+            info.money = (int)player.money;
+            info.seconds = savedStats.timestamp_seconds;
+            info.time = DateTime.Now;
+        }
+
+        XMLHelper.SaveToXml<List<SaveInfo>>(infos, "Saves/" + loaded_profile + "/" + infos_file_name);
+
 
 
 

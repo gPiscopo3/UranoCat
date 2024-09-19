@@ -51,19 +51,22 @@ public class MainMenu : MonoBehaviour
         string profile_name = ProfileInput.GetComponent<TMP_InputField>().text;
         Profiles.Profile profile = new Profiles.Profile()
         {
-            id = Guid.NewGuid().ToString(),
             name = profile_name,
             last_save = null
         };
 
-        SaveLoader.loaded_profile_id = profile.id;
+        SaveLoader.loaded_profile = profile.name;
         SaveLoader.loaded_save = null;
 
-        System.IO.Directory.CreateDirectory(path + profile.id + "/save");
+        System.IO.Directory.CreateDirectory(path + profile.name);
+        
  
         profiles.profiles.Add(profile);
         profiles.last_profile = profile; 
         XMLHelper.SaveToXml<Profiles>(profiles, path + "profiles.xml");
+        
+        List<SaveInfo> saveInfos = new List<SaveInfo>();
+        XMLHelper.SaveToXml<List<SaveInfo>>(saveInfos, path + profile.name + "/saves.xml");
 
 
         SceneManager.LoadScene("TestScene1");
@@ -73,7 +76,7 @@ public class MainMenu : MonoBehaviour
 
 
        
-        SaveLoader.loaded_profile_id = profiles.last_profile.id;
+        SaveLoader.loaded_profile = profiles.last_profile.name;
         SaveLoader.loaded_save = profiles.last_profile.last_save;
 
         SceneManager.LoadScene("TestScene1");
@@ -91,7 +94,7 @@ public class MainMenu : MonoBehaviour
         DirectoryInfo info = new DirectoryInfo(path).GetDirectories()
                        .OrderByDescending(d => d.LastWriteTimeUtc).First();
 
-        SaveLoader.loaded_profile_id = Path.GetFileName(info.FullName);
+        SaveLoader.loaded_profile = Path.GetFileName(info.FullName);
         SaveLoader.loaded_save = "save";
         SceneManager.LoadScene("TestScene1");
 
