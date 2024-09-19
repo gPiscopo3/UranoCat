@@ -31,7 +31,7 @@ public class CatManager : MonoBehaviour
         this.rules = FindObjectOfType<AssetsLoader>().rules;
         this.videoManager = FindObjectOfType<VideoManager>();
         this.modifiers = new Stack<CatModifier>();
-        savedStats = FindAnyObjectByType<SaveLoader>().savedStats;
+        this.savedStats = FindAnyObjectByType<SaveLoader>().savedStats;
     }
     
 

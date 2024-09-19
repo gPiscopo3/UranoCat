@@ -27,7 +27,6 @@ public class MissionItemUIManager: MonoBehaviour
         keyItems = FindObjectOfType<AssetsLoader>().items;
         keyItems = keyItems.FindAll(x => x is KeyItem);
 
-        Debug.Log("Missions: " + missions.Count);
         
         CreateMissionBoard();
         GenerateMissionItemUI();

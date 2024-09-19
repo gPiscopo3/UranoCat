@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,7 +28,7 @@ public class PlayerManager : MonoBehaviour
     void Update()
     {
 
-        Level nextLevel = rules.levels.Find(level => level.level == player.level + 1);
+        Level nextLevel = rules.levels.FirstOrDefault(level => level.level == player.level + 1);
         if(nextLevel!= null && player.experience > nextLevel.experience){
             player.level++;
             player.pension = nextLevel.pension;
