@@ -17,9 +17,6 @@ public class SaveManager : MonoBehaviour
     private float timer_save = 0f;
     private float timer_timestamp = 0f;
     private int autosave;
-
-    Profiles profiles;
-
    
 
     

@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Profiles xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <profiles>
-    <Profile>
-      <name>ccccc</name>
-    </Profile>
-    <Profile>
-      <name>micio</name>
-      <last_save>save</last_save>
-    </Profile>
-    <Profile>
-      <name>profile</name>
-      <last_save>auto4</last_save>
-    </Profile>
-    <Profile>
-      <name>miao</name>
-      <last_save>auto5</last_save>
-    </Profile>
-  </profiles>
-  <last_profile>
+<ArrayOfProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>
     <name>profile</name>
-    <last_save>auto4</last_save>
-  </last_profile>
-</Profiles>
+    <last_save>auto0</last_save>
+    <dateTime>2024-09-20T12:02:19.1291849+02:00</dateTime>
+  </Profile>
+  <Profile>
+    <name>verro</name>
+    <last_save>auto0</last_save>
+    <dateTime>2024-09-20T12:05:11.4535832+02:00</dateTime>
+  </Profile>
+  <Profile>
+    <name>verroide</name>
+    <last_save>auto0</last_save>
+    <dateTime>2024-09-20T12:04:37.3290417+02:00</dateTime>
+  </Profile>
+</ArrayOfProfile>

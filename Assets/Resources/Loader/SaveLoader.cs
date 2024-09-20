@@ -22,7 +22,7 @@ public class SaveLoader : MonoBehaviour
     public List<Mission> missions;
     public List<Video> videos;
     public SavedStats savedStats;
-    public Profiles profiles;
+    public List<Profile> profiles;
     public List<SaveInfo> infos;
 
 
@@ -43,7 +43,7 @@ public class SaveLoader : MonoBehaviour
         this.missions = XMLHelper.LoadFromXml<List<Mission>>(path + fileMissions);
         this.videos = XMLHelper.LoadFromXml<List<Video>>(path + fileVideo);
         this.savedStats = XMLHelper.LoadFromXml<SavedStats>(path + fileStats);
-        this.profiles = XMLHelper.LoadFromXml<Profiles>(profiles_path);
+        this.profiles = XMLHelper.LoadFromXml<List<Profile>>(profiles_path);
         this.infos = XMLHelper.LoadFromXml<List<SaveInfo>>("Saves/" + profile + "/" + infos_file_name);
 
 
@@ -66,10 +66,10 @@ public class SaveLoader : MonoBehaviour
         XMLHelper.SaveToXml<SavedStats>(savedStats, path + fileStats);
 
    
-        Profiles.Profile profile = profiles.profiles.Find(x => x.name.Equals(loaded_profile));
+        Profile profile = profiles.Find(x => x.name.Equals(loaded_profile));
         profile.last_save = save;
-        profiles.last_profile = profile;
-        XMLHelper.SaveToXml<Profiles>(profiles, profiles_path);
+        profile.dateTime = DateTime.Now;
+        XMLHelper.SaveToXml<List<Profile>>(profiles, profiles_path);
         
 
         SaveInfo info = infos.FirstOrDefault(x => x.name.Equals(save));
