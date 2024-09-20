@@ -12,6 +12,8 @@ public class VideoManager: MonoBehaviour{
 
     private float timer_update_video = 0f;
     public bool is_video_available;
+    
+
 
 
     public void Start(){
@@ -27,27 +29,60 @@ public class VideoManager: MonoBehaviour{
 
     public void Update(){
 
-        savedStats.day_timer += Time.deltaTime;
+        if(savedStats.dayTime.Equals(DayTime.MORNING))
+            Morning_Cycle();
+        else
+            Afternoon_Cycle();
+
         
-        timer_update_video += Time.deltaTime;
 
-        if(savedStats.day_timer >= rules.day_duration){
-            savedStats.day_timer = 0f;
-            savedStats.day++;
-            savedStats.is_video_available = true;
-        }
-
-        if(timer_update_video > 1){
-            timer_update_video = 0;
-            foreach(Video video in videos){
-                long seconds_elapsed = savedStats.timestamp_seconds - video.timestamp_seconds;
-                video.views = video.target_views;
-            }
-        }
+       
 
         
         
     }
+
+
+    public void Morning_Cycle(){
+
+        savedStats.day_timer ++;
+
+        if(savedStats.day_timer >= rules.time_to_video){
+            if(savedStats.videoStatus == EventStatus.NOT_AVAILABLE)
+                savedStats.videoStatus = EventStatus.AVAILABLE;
+        }
+
+        if(savedStats.videoStatus == EventStatus.DONE){
+            savedStats.dayTime = DayTime.AFTERNOON;
+            savedStats.day_timer = 0;
+        }
+
+    }
+
+    public void Afternoon_Cycle(){
+
+        savedStats.day_timer ++;
+
+        if(savedStats.day_timer >= rules.time_to_sleep){
+            if(savedStats.sleepStatus == EventStatus.NOT_AVAILABLE)
+                savedStats.sleepStatus = EventStatus.AVAILABLE;
+        }
+
+        if(savedStats.sleepStatus == EventStatus.DONE){
+            savedStats.dayTime = DayTime.AFTERNOON;
+            NuovaGiornata();
+        }
+
+    }
+
+    public void VideoRegistrato(){
+        savedStats.videoStatus = EventStatus.DONE;
+    }
+    public void Dormi(){
+        savedStats.sleepStatus = EventStatus.DONE;
+    }
+
+    public void NuovaGiornata(){}
 
 
      public void CreateVideo(){

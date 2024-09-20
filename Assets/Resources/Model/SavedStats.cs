@@ -10,7 +10,10 @@ public class SavedStats{
     public float day_timer;
     public bool is_video_available;
     public long timestamp_seconds;
+    public DayTime dayTime;
 
+    public EventStatus videoStatus;
+    public EventStatus sleepStatus;
 
     
 }
