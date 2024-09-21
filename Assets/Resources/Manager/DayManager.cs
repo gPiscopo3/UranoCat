@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VideoManager: MonoBehaviour{
+public class DayManager: MonoBehaviour{
 
 
     public Rules rules;
@@ -12,8 +12,12 @@ public class VideoManager: MonoBehaviour{
 
     private float timer_update_video = 0f;
     public bool is_video_available;
-    
+    public double moneyGain=0;
 
+    public long experienceGain = 0;
+    public long views_yesterday = 0;
+    
+    
 
 
     public void Start(){
@@ -33,18 +37,12 @@ public class VideoManager: MonoBehaviour{
             Morning_Cycle();
         else
             Afternoon_Cycle();
-
-        
-
-       
-
-        
-        
     }
 
 
     public void Morning_Cycle(){
 
+        Debug.Log("Giorno:"+savedStats.day);
         savedStats.day_timer ++;
 
         if(savedStats.day_timer >= rules.time_to_video){
@@ -52,6 +50,8 @@ public class VideoManager: MonoBehaviour{
                 savedStats.videoStatus = EventStatus.AVAILABLE;
         }
 
+        // per prova 
+        VideoRegistrato();
         if(savedStats.videoStatus == EventStatus.DONE){
             savedStats.dayTime = DayTime.AFTERNOON;
             savedStats.day_timer = 0;
@@ -68,6 +68,7 @@ public class VideoManager: MonoBehaviour{
                 savedStats.sleepStatus = EventStatus.AVAILABLE;
         }
 
+        
         if(savedStats.sleepStatus == EventStatus.DONE){
             savedStats.dayTime = DayTime.AFTERNOON;
             NuovaGiornata();
@@ -80,12 +81,33 @@ public class VideoManager: MonoBehaviour{
     }
     public void Dormi(){
         savedStats.sleepStatus = EventStatus.DONE;
+        Debug.Log("Sleeping");
     }
 
-    public void NuovaGiornata(){}
+    public void NuovaGiornata(){
+        Debug.Log("Nuova giornata");
+        ProfitOfDay();
+        savedStats.sleepStatus = EventStatus.NOT_AVAILABLE;
+        savedStats.videoStatus = EventStatus.NOT_AVAILABLE;
+        savedStats.dayTime = DayTime.MORNING;
+        savedStats.day_timer = 0;
+
+        player.money += moneyGain;
+        player.experience += experienceGain;
+
+        savedStats.day ++;
+    }
 
 
-     public void CreateVideo(){
+    private void ProfitOfDay(){
+        views_yesterday = videos.Find(video => video.day == savedStats.day).views ;
+        moneyGain = views_yesterday * player.money;
+        moneyGain += player.pension;
+        experienceGain = views_yesterday*player.experience;
+
+    }
+
+    public void CreateVideo(){
 
         double quality = 0;
         foreach(SocialRules.QualityRule qualityRule in rules.social_rules.quality_rules){
@@ -96,8 +118,7 @@ public class VideoManager: MonoBehaviour{
         Video video = new Video{
             day = savedStats.day, 
             quality = quality,
-            target_views = (long)(rules.social_rules.a_factor*player.followers*quality),
-            views = 0,
+            views = (long)(rules.social_rules.a_factor*player.followers*quality),
             today_views = 0,
             timestamp_seconds = savedStats.timestamp_seconds
         };

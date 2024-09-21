@@ -1,2 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfVideo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<ArrayOfVideo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Video>
+    <day>1</day>
+    <views>1000</views>
+    <today_views>100</today_views>
+    <quality>0.5</quality>
+    <timestamp_seconds>100</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>2</day>
+    <views>100</views>
+    <today_views>100</today_views>
+    <quality>0.3</quality>
+    <timestamp_seconds>100087</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>1</day>
+    <views>1000</views>
+    <today_views>100</today_views>
+    <quality>0.5</quality>
+    <timestamp_seconds>100</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>2</day>
+    <views>100</views>
+    <today_views>100</today_views>
+    <quality>0.3</quality>
+    <timestamp_seconds>100087</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>1</day>
+    <views>1000</views>
+    <today_views>100</today_views>
+    <quality>0.5</quality>
+    <timestamp_seconds>100</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>2</day>
+    <views>100</views>
+    <today_views>100</today_views>
+    <quality>0.3</quality>
+    <timestamp_seconds>100087</timestamp_seconds>
+  </Video>
+</ArrayOfVideo>

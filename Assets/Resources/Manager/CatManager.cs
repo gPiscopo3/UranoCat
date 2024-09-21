@@ -17,7 +17,7 @@ public class CatManager : MonoBehaviour
 
     Stack<CatModifier> modifiers;
 
-    private VideoManager videoManager;    
+    private DayManager dayManager;    
     SavedStats savedStats;
 
 
@@ -29,7 +29,7 @@ public class CatManager : MonoBehaviour
         this.cat = FindObjectOfType<SaveLoader>().cat;
         this.player = FindObjectOfType<SaveLoader>().player;
         this.rules = FindObjectOfType<AssetsLoader>().rules;
-        this.videoManager = FindObjectOfType<VideoManager>();
+        this.dayManager = FindObjectOfType<DayManager>();
         this.modifiers = new Stack<CatModifier>();
         this.savedStats = FindAnyObjectByType<SaveLoader>().savedStats;
     }
@@ -127,13 +127,12 @@ public class CatManager : MonoBehaviour
         Video video = new Video{
             day = savedStats.day, 
             quality = quality,
-            target_views = (long)(rules.social_rules.a_factor*player.followers*quality),
-            views = 0,
+            views = (long)(rules.social_rules.a_factor*player.followers*quality),
             today_views = 0,
             timestamp_seconds = savedStats.timestamp_seconds
         };
 
-        videoManager.VideoRegistrato();
+        dayManager.VideoRegistrato();
 
 
 

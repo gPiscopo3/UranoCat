@@ -5,7 +5,6 @@
     <views>1000</views>
     <today_views>100</today_views>
     <quality>0.5</quality>
-    <target_views>1000</target_views>
     <timestamp_seconds>100</timestamp_seconds>
   </Video>
   <Video>
@@ -13,7 +12,34 @@
     <views>100</views>
     <today_views>100</today_views>
     <quality>0.3</quality>
-    <target_views>100</target_views>
+    <timestamp_seconds>100087</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>1</day>
+    <views>1000</views>
+    <today_views>100</today_views>
+    <quality>0.5</quality>
+    <timestamp_seconds>100</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>2</day>
+    <views>100</views>
+    <today_views>100</today_views>
+    <quality>0.3</quality>
+    <timestamp_seconds>100087</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>1</day>
+    <views>1000</views>
+    <today_views>100</today_views>
+    <quality>0.5</quality>
+    <timestamp_seconds>100</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>2</day>
+    <views>100</views>
+    <today_views>100</today_views>
+    <quality>0.3</quality>
     <timestamp_seconds>100087</timestamp_seconds>
   </Video>
 </ArrayOfVideo>

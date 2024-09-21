@@ -1,35 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <level>3</level>
+  <level>5</level>
   <followers>1000</followers>
-  <money>385</money>
-  <pension>12</pension>
-  <experience>460</experience>
+  <money>1385</money>
+  <pension>15</pension>
+  <experience>1290</experience>
   <inventory>
     <items>
-      <InventoryItem>
-        <ID>8991d019-6a12-4967-b84a-8ce08b36fe02</ID>
-        <item xsi:type="CatItem">
-          <tag>ITEM002</tag>
-          <name>Pesce</name>
-          <descrizione>Un bel merluzzo da mangiare</descrizione>
-          <durability>1</durability>
-          <imagePath>UIManager/salmon</imagePath>
-          <CatModifier>
-            <targetStat>SAZIETA</targetStat>
-            <value>8</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>DIVERTIMENTO</targetStat>
-            <value>1</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>FELICITA</targetStat>
-            <value>0.5</value>
-          </CatModifier>
-        </item>
-        <numUses>0</numUses>
-      </InventoryItem>
       <InventoryItem>
         <ID>edab1092-f75e-42a7-81ee-0b3b3fb0eede</ID>
         <item xsi:type="CatItem">

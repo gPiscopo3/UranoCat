@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] protected Transform interactorSource;
     [SerializeField] protected float interactRange;
 
+    [SerializeField] protected GameObject newDayPanel;
+
     protected CharacterStatus status;
     private PlayerControls playerControls;
 
@@ -223,23 +225,26 @@ public class PlayerController : MonoBehaviour
     private void ToggleEsc(InputAction.CallbackContext context)
     {
 
-        if(shop.activeSelf || inventory.activeSelf || missionBoard.activeSelf || viewsBoard.activeSelf)
+        if(shop.activeSelf || inventory.activeSelf || missionBoard.activeSelf || viewsBoard.activeSelf || newDayPanel.activeSelf)
         {
             shop.SetActive(false);
             inventory.SetActive(false);
             missionBoard.SetActive(false);
             viewsBoard.SetActive(false);
+            newDayPanel.SetActive(false);
         }
         else if(summaryBoard.activeSelf)    
             summaryBoard.SetActive(false);
 
-        if(shop.activeSelf || inventory.activeSelf || missionBoard.activeSelf || summaryBoard.activeSelf || viewsBoard.activeSelf)
+        if(shop.activeSelf || inventory.activeSelf || missionBoard.activeSelf || summaryBoard.activeSelf || viewsBoard.activeSelf || newDayPanel.activeSelf)
         {
             Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {
             Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
         }
         
 
