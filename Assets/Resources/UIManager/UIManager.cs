@@ -20,10 +20,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text moneyText;
     [SerializeField] private TMP_Text equippedText;
 
+  
+
     Cat cat;
     Player player;
 
     Rules rules;
+
+    
 
     
     void Start()
@@ -31,6 +35,7 @@ public class UIManager : MonoBehaviour
         this.cat = FindObjectOfType<SaveLoader>().cat;
         this.player = FindObjectOfType<SaveLoader>().player;
         this.rules = FindObjectOfType<AssetsLoader>().rules;
+        
         
     }
     
@@ -56,10 +61,13 @@ public class UIManager : MonoBehaviour
             equippedText.SetText("");
         }
 
+        
+
+
 
     }
 
-    private float getExperiencePercentage(){
+    public float getExperiencePercentage(){
      
         Level lastLevel = rules.levels.FirstOrDefault(level => level.level == player.level);
         Level nextLevel = rules.levels.FirstOrDefault(level => level.level == player.level + 1);

@@ -50,14 +50,14 @@ public class VideoBoardUIManager : MonoBehaviour
         contentPanel.transform.GetChild(0).gameObject.SetActive(false);
         int i = 0;
 
-        videos.Add(new Video(1, 1000, 100, 0.5, 1000, 100));
-        videos.Add(new Video(2, 100, 100, 0.3, 100, 100087));
+        videos.Add(new Video(1, 1000, 100, 0.5, 100));
+        videos.Add(new Video(2, 100, 100, 0.3, 100087));
         foreach(Video video in videos)
         {
             GameObject item = Instantiate(ItemPrefab, contentPanel.transform);
             item.gameObject.SetActive(true);
             item.GetComponent<VideoItemUI>().SetDayValue(video.day);
-            item.GetComponent<VideoItemUI>().SetViewValue(video.target_views);
+            item.GetComponent<VideoItemUI>().SetViewValue(video.views);
             item.GetComponent<VideoItemUI>().SetVideoItemPosition(Vector2.down * (itemHeight + itemSpacing) * i);
 
             contentPanel.GetComponent<RectTransform>().sizeDelta= Vector2.up * (itemHeight + itemSpacing) * videos.Count;
