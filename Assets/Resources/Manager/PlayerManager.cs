@@ -17,6 +17,7 @@ public class PlayerManager : MonoBehaviour
 
     bool lockUpdate = false;
 
+    public bool newLevel = false;
 
     void Start()
     {
@@ -27,12 +28,15 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-
+        
         Level nextLevel = rules.levels.FirstOrDefault(level => level.level == player.level + 1);
         if(nextLevel!= null && player.experience > nextLevel.experience){
+
             player.level++;
             player.pension = nextLevel.pension;
             player.money += nextLevel.reward;
+
+            newLevel = true;
         }
         
         

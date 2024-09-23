@@ -23,11 +23,13 @@ public class SummaryUIManager : MonoBehaviour
     [SerializeField] private GameObject videoBoard;
 
     Player player;
+
+    UIManager uiManager;
     
     void Start()
     {
         this.player = FindObjectOfType<SaveLoader>().player;
-
+        this.uiManager = FindObjectOfType<UIManager>();
 
         shopButton.onClick.AddListener(OpenShop);
         inventoryButton.onClick.AddListener(OpenInventory);
@@ -61,7 +63,7 @@ public class SummaryUIManager : MonoBehaviour
     {
         
         levelValue.SetText(player.level.ToString());
-        experienceValue.SetText(player.experience.ToString());
+        experienceValue.SetText(uiManager.getExperiencePercentage().ToString() + " %");
         followersValue.SetText(player.followers.ToString());
         moneyValue.SetText(player.money.ToString());
 
