@@ -53,7 +53,7 @@ public class DayManager: MonoBehaviour{
         }
 
         // per prova 
-        //VideoRegistrato();
+        VideoRegistrato();
         if(savedStats.videoStatus == EventStatus.DONE){
             savedStats.dayTime = DayTime.AFTERNOON;
             savedStats.day_timer = 0;
