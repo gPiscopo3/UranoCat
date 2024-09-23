@@ -30,15 +30,22 @@ public class PlayerController : MonoBehaviour
     private InputAction toggleSummaryBoard;
     private InputAction toggleEsc;
     private InputAction toggleViewsBoard;
+    private InputAction toggleSprint;
+    private InputAction toggleJump;
     private bool isInventoryActive;
     private bool isShopActive;
     private bool isMissionBoardActive;
     private bool isSummaryBoardActive;
     private bool isViewsBoardActive;
+    private bool isSprinting;
+    private bool isJumping;
 
     private MissionItemUIManager missionManagerUI;
 
     private Animator anim;
+
+    private float sprintMultiplier = 1f;
+    
 
     private void Awake()
     {
@@ -55,6 +62,8 @@ public class PlayerController : MonoBehaviour
         toggleSummaryBoard = playerControls.Player.ToggleSummaryBoard;
         toggleEsc = playerControls.Player.ToggleEsc; 
         toggleViewsBoard = playerControls.Player.ToggleViewBoard;
+        toggleSprint = playerControls.Player.ToggleSprint;
+        toggleJump = playerControls.Player.ToggleJump;
 
         isInventoryActive = false;
         isShopActive = false;
@@ -69,7 +78,10 @@ public class PlayerController : MonoBehaviour
         toggleSummaryBoard.performed += ToggleSummaryBoard;
         toggleEsc.performed += ToggleEsc;
         toggleViewsBoard.performed += ToggleViewBoard;
-       
+        toggleSprint.performed += ToggleSprint;
+        toggleJump.performed += ToggleJump;
+
+
     }
 
 
@@ -78,19 +90,28 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(0, 0, 0);
         if (status.IsMoving)
         {
-            movement.z = status.Movement.z*Time.deltaTime;
-            movement.x = status.Movement.x*Time.deltaTime;
+            movement.z = status.Movement.z*Time.deltaTime* sprintMultiplier;
+            movement.x = status.Movement.x*Time.deltaTime* sprintMultiplier;
         }
         movement = transform.TransformDirection(movement);
         characterController.SimpleMove(movement);
 
         if (status.IsMoving)
         {
-            anim.SetFloat("speed", 1f);
+            if(isSprinting)
+            {
+                anim.SetFloat("speed", 1f);
+            }
+            else
+            {
+                anim.SetFloat("speed", 0.5f);
+            }
+            
         }
         else
         {
             anim.SetFloat("speed", 0f);
+            isSprinting = false;
         }
     }
 
@@ -103,6 +124,8 @@ public class PlayerController : MonoBehaviour
         toggleSummaryBoard.Enable();
         toggleEsc.Enable();
         toggleViewsBoard.Enable();
+        toggleSprint.Enable();
+        toggleJump.Enable();
     }
 
     private void OnDisable()
@@ -114,6 +137,8 @@ public class PlayerController : MonoBehaviour
         toggleSummaryBoard.Disable();
         toggleEsc.Disable();
         toggleViewsBoard.Disable();
+        toggleSprint.Disable();
+        toggleJump.Disable();
     }
 
     private void ToggleShop(InputAction.CallbackContext context)
@@ -220,6 +245,24 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
         }
+    }
+
+    private void ToggleSprint(InputAction.CallbackContext context)
+    {
+        isSprinting = !isSprinting;
+        if (isSprinting)
+        {
+            sprintMultiplier = 1.5f;
+        }
+        else
+        {
+            sprintMultiplier = 1f;
+        }
+    }
+
+    private void ToggleJump(InputAction.CallbackContext context)
+    {
+        anim.SetTrigger("jump");
     }
 
     private void ToggleEsc(InputAction.CallbackContext context)

@@ -9,6 +9,7 @@ public class CharacterStatus : MonoBehaviour
 
     protected bool isMoving; // whether the character is moving
     protected Vector3 movement; //movement speed
+    
 
     public bool IsMoving
     {
