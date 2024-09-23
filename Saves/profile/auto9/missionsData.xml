@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfMission xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Mission tag="MISSION001">
-    <MissionState>COMPLETATO</MissionState>
+    <MissionState>ATTIVO</MissionState>
     <RequiredMissions />
     <RequiredItems>
       <RequiredItem>
@@ -15,7 +15,7 @@
     </RequiredItems>
   </Mission>
   <Mission tag="MISSION002">
-    <MissionState>COMPLETATO</MissionState>
+    <MissionState>ATTIVO</MissionState>
     <RequiredMissions>
       <RequiredMission>MISSION001</RequiredMission>
     </RequiredMissions>
@@ -27,7 +27,7 @@
     </RequiredItems>
   </Mission>
   <Mission tag="MISSION003">
-    <MissionState>COMPLETATO</MissionState>
+    <MissionState>NON_ATTIVO</MissionState>
     <RequiredMissions>
       <RequiredMission>MISSION001</RequiredMission>
     </RequiredMissions>
@@ -39,7 +39,7 @@
     </RequiredItems>
   </Mission>
   <Mission tag="MISSION004">
-    <MissionState>COMPLETATO</MissionState>
+    <MissionState>NON_ATTIVO</MissionState>
     <RequiredMissions>
       <RequiredMission>MISSION001</RequiredMission>
     </RequiredMissions>

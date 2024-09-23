@@ -16,6 +16,8 @@ public class DayManager: MonoBehaviour{
 
     public long experienceGain = 0;
     public long views_yesterday = 0;
+
+    public bool newDay = false;
     
     
 
@@ -41,7 +43,7 @@ public class DayManager: MonoBehaviour{
 
 
     public void Morning_Cycle(){
-
+        newDay = false;
         Debug.Log("Giorno:"+savedStats.day);
         savedStats.day_timer ++;
 
@@ -51,7 +53,7 @@ public class DayManager: MonoBehaviour{
         }
 
         // per prova 
-        VideoRegistrato();
+        //VideoRegistrato();
         if(savedStats.videoStatus == EventStatus.DONE){
             savedStats.dayTime = DayTime.AFTERNOON;
             savedStats.day_timer = 0;
@@ -96,6 +98,7 @@ public class DayManager: MonoBehaviour{
         player.experience += experienceGain;
 
         savedStats.day ++;
+        newDay = true;
     }
 
 
