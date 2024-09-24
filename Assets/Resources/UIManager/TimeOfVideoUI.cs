@@ -10,7 +10,10 @@ public class TimeOfVideoUI : MonoBehaviour
     [SerializeField] private GameObject message;
     [SerializeField] private GameObject icon; 
 
+    [SerializeField] private GameObject videoOK; 
+
     float timer = 5;
+    float timerok = 5;
 
     SavedStats savedStats;
 
@@ -30,11 +33,23 @@ public class TimeOfVideoUI : MonoBehaviour
             timeOfVideoUI.SetActive(true);
             this.icon.SetActive(false);
             this.message.SetActive(false);
+            this.videoOK.SetActive(false);
+            timerok = 0;
         }
 
         if (savedStats.videoStatus == EventStatus.DONE){
             is_video_available = false;
             this.icon.SetActive(false);
+            if(timerok<4){
+                timerok += Time.deltaTime;
+                this.videoOK.SetActive(true);
+            }
+            else{
+                this.videoOK.SetActive(false);
+                timeOfVideoUI.SetActive(false);
+            }
+            
+
         }
 
         if (is_video_available){
