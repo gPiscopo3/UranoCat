@@ -2,9 +2,9 @@
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <level>1</level>
   <followers>1000</followers>
-  <money>210511</money>
+  <money>210486</money>
   <pension>15</pension>
-  <experience>35</experience>
+  <experience>415</experience>
   <inventory>
     <items>
       <InventoryItem>
@@ -24,30 +24,7 @@
             <value>0.1</value>
           </CatModifier>
         </item>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>74d506c8-d27a-4ca2-8e3a-5c7e43b7cf6c</ID>
-        <item xsi:type="CatItem">
-          <tag>ITEM003</tag>
-          <name>Topo di gomma</name>
-          <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
-          <durability>30</durability>
-          <imagePath>UIManager/salmon</imagePath>
-          <CatModifier>
-            <targetStat>SAZIETA</targetStat>
-            <value>-2</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>DIVERTIMENTO</targetStat>
-            <value>5</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>FELICITA</targetStat>
-            <value>0.5</value>
-          </CatModifier>
-        </item>
-        <numUses>29</numUses>
+        <numUses>6</numUses>
       </InventoryItem>
       <InventoryItem>
         <ID>e13a18a0-1b7e-4ae2-a09f-fb5c27f19dec</ID>
@@ -68,6 +45,113 @@
           <CatModifier>
             <targetStat>FELICITA</targetStat>
             <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>5ee50ed1-7663-4939-8212-edf7d755f32b</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM003</tag>
+          <name>Topo di gomma</name>
+          <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
+          <durability>30</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>-2</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>3367d3f9-519c-4938-ac4d-f2b9f326c97f</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM003</tag>
+          <name>Topo di gomma</name>
+          <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
+          <durability>30</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>-2</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>88675c0a-e7ff-4e66-8266-57ad73a44487</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM003</tag>
+          <name>Topo di gomma</name>
+          <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
+          <durability>30</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>-2</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>952f46a3-e4e7-4d26-9e7f-6d66d774af62</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM001</tag>
+          <name>Crocchette Piccole</name>
+          <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
+          <durability>10</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.1</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>5c79f8e1-58ce-466e-85be-9bff94867ea6</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM001</tag>
+          <name>Crocchette Piccole</name>
+          <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
+          <durability>10</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.1</value>
           </CatModifier>
         </item>
         <numUses>0</numUses>

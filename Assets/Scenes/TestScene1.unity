@@ -3556,9 +3556,6 @@ GameObject:
   - component: {fileID: 337493941}
   - component: {fileID: 337493940}
   - component: {fileID: 337493939}
-  - component: {fileID: 337493938}
-  - component: {fileID: 337493937}
-  - component: {fileID: 337493936}
   - component: {fileID: 337493934}
   - component: {fileID: 337493944}
   - component: {fileID: 337493945}
@@ -3584,62 +3581,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e346b2b1ff49cec49aac84bbdcfcf742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &337493936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 337493933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 280765831ae99af49ad6d50427c108b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSpacing: 10
-  contentPanel: {fileID: 1589224936}
-  shopItemPrefab: {fileID: 962558956}
-  catItemButton: {fileID: 1550178071}
-  keyItemButton: {fileID: 1689245891}
-  shop: {fileID: 1423011496}
-  moneyBar: {fileID: 319834858}
---- !u!114 &337493937
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 337493933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3839dd74072516f438b1a38b4d717a8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemSpacing: 20.5
-  contentPanel: {fileID: 921717225}
-  inventoryItemPrefab: {fileID: 575210984}
-  inventoryPanel: {fileID: 2042812802}
-  keyItemButton: {fileID: 527160958}
-  catItemButton: {fileID: 112048117}
---- !u!114 &337493938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 337493933}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 446f022c9e5ca314c98f5b2e2b591a9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hungerSlider: {fileID: 668606827}
-  enjoymentSlider: {fileID: 308422641}
-  happinessSlider: {fileID: 1554639795}
-  experienceSlider: {fileID: 212860318}
-  levelText: {fileID: 391925092}
-  moneyText: {fileID: 532484237}
-  equippedText: {fileID: 905670295}
 --- !u!114 &337493939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3712,7 +3653,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 337493933}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc94eaa89bd3a7b40a4b1f3e5ff49ba5, type: 3}
   m_Name: 
@@ -14572,6 +14513,10 @@ GameObject:
   - component: {fileID: 1425847956}
   - component: {fileID: 1425847957}
   - component: {fileID: 1425847958}
+  - component: {fileID: 1425847959}
+  - component: {fileID: 1425847960}
+  - component: {fileID: 1425847961}
+  - component: {fileID: 1425847962}
   m_Layer: 0
   m_Name: ManagerUI
   m_TagString: Untagged
@@ -14623,6 +14568,87 @@ MonoBehaviour:
   message: {fileID: 389825778}
   icon: {fileID: 1874951477}
   videoOK: {fileID: 1294182007}
+--- !u!114 &1425847959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425847955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 446f022c9e5ca314c98f5b2e2b591a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hungerSlider: {fileID: 668606827}
+  enjoymentSlider: {fileID: 308422641}
+  happinessSlider: {fileID: 1554639795}
+  experienceSlider: {fileID: 212860318}
+  levelText: {fileID: 391925092}
+  moneyText: {fileID: 532484237}
+  equippedText: {fileID: 905670295}
+--- !u!114 &1425847960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425847955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3839dd74072516f438b1a38b4d717a8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSpacing: 20.5
+  contentPanel: {fileID: 921717225}
+  inventoryItemPrefab: {fileID: 575210984}
+  inventoryPanel: {fileID: 2042812802}
+  keyItemButton: {fileID: 527160958}
+  catItemButton: {fileID: 112048117}
+--- !u!114 &1425847961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425847955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280765831ae99af49ad6d50427c108b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSpacing: 10
+  contentPanel: {fileID: 1589224936}
+  shopItemPrefab: {fileID: 962558956}
+  catItemButton: {fileID: 1550178071}
+  keyItemButton: {fileID: 1689245891}
+  shop: {fileID: 2125307030}
+  moneyBar: {fileID: 319834858}
+--- !u!114 &1425847962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425847955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc94eaa89bd3a7b40a4b1f3e5ff49ba5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerImage: {fileID: 1171935675}
+  levelValue: {fileID: 1894924933}
+  experienceValue: {fileID: 1023765291}
+  followersValue: {fileID: 1701822166}
+  moneyValue: {fileID: 1097784517}
+  shopButton: {fileID: 1791612059}
+  inventoryButton: {fileID: 1765881248}
+  missionButton: {fileID: 1021911080}
+  videoButton: {fileID: 858975007}
+  shop: {fileID: 2125307030}
+  inventory: {fileID: 2042812802}
+  missionBoard: {fileID: 901065475}
+  videoBoard: {fileID: 335716498}
 --- !u!1001 &1435522204
 PrefabInstance:
   m_ObjectHideFlags: 0

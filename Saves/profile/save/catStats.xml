@@ -2,17 +2,17 @@
 <Cat xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <stats>
     <CatStat>
-      <currentValue>0.0587755181</currentValue>
+      <currentValue>26.1802731</currentValue>
       <maxValue>100</maxValue>
       <catTag>SAZIETA</catTag>
     </CatStat>
     <CatStat>
-      <currentValue>0.05885875</currentValue>
+      <currentValue>2.00727916</currentValue>
       <maxValue>100</maxValue>
       <catTag>DIVERTIMENTO</catTag>
     </CatStat>
     <CatStat>
-      <currentValue>0.06464118</currentValue>
+      <currentValue>8.91195</currentValue>
       <maxValue>100</maxValue>
       <catTag>FELICITA</catTag>
     </CatStat>
