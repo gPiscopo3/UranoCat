@@ -8457,6 +8457,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2042812802}
     - target: {fileID: 1304705680149804993, guid: 9748a6b1ac49bbf4ba18ee74f0ac86a5, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 921914463}
+    - target: {fileID: 1304705680149804993, guid: 9748a6b1ac49bbf4ba18ee74f0ac86a5, type: 3}
       propertyPath: missionBoard
       value: 
       objectReference: {fileID: 901065475}
@@ -8464,13 +8468,17 @@ PrefabInstance:
       propertyPath: summaryBoard
       value: 
       objectReference: {fileID: 273839760}
+    - target: {fileID: 1304705680149804993, guid: 9748a6b1ac49bbf4ba18ee74f0ac86a5, type: 3}
+      propertyPath: crouchVelocity
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5654326587804196272, guid: 9748a6b1ac49bbf4ba18ee74f0ac86a5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 34.64503
       objectReference: {fileID: 0}
     - target: {fileID: 5654326587804196272, guid: 9748a6b1ac49bbf4ba18ee74f0ac86a5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.994143
+      value: 13.58
       objectReference: {fileID: 0}
     - target: {fileID: 5654326587804196272, guid: 9748a6b1ac49bbf4ba18ee74f0ac86a5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8506,11 +8514,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7406465696803117698, guid: 9748a6b1ac49bbf4ba18ee74f0ac86a5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7406465696803117698, guid: 9748a6b1ac49bbf4ba18ee74f0ac86a5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.33
+      value: 0.46
       objectReference: {fileID: 0}
     - target: {fileID: 8953228733523865661, guid: 9748a6b1ac49bbf4ba18ee74f0ac86a5, type: 3}
       propertyPath: m_Radius
