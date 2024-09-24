@@ -54,6 +54,9 @@ public class UIManager : MonoBehaviour
 
         levelText.SetText(player.level.ToString());
         moneyText.SetText(player.money.ToString());
+
+       
+
         if(player.equippedItem!=null){
             equippedText.SetText("Oggetto equipaggiato: " + player.equippedItem.item.name);
         }

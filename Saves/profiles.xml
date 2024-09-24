@@ -2,17 +2,7 @@
 <ArrayOfProfile xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Profile>
     <name>profile</name>
-    <last_save>auto0</last_save>
-    <dateTime>2024-09-23T16:35:40.2679757+02:00</dateTime>
-  </Profile>
-  <Profile>
-    <name>verro</name>
-    <last_save>auto0</last_save>
-    <dateTime>2024-09-20T12:05:11.4535832+02:00</dateTime>
-  </Profile>
-  <Profile>
-    <name>verroide</name>
-    <last_save>auto0</last_save>
-    <dateTime>2024-09-20T12:04:37.3290417+02:00</dateTime>
+    <last_save>save</last_save>
+    <dateTime>2024-09-24T16:25:30.6033673+02:00</dateTime>
   </Profile>
 </ArrayOfProfile>

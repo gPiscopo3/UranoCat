@@ -63,6 +63,7 @@ public class SaveLoader : MonoBehaviour
         XMLHelper.SaveToXml<Player>(player, path + filePlayer);
         XMLHelper.SaveToXml<List<Mission>>(missions, path + fileMissions);
         XMLHelper.SaveToXml<List<Video>>(videos, path + fileVideo);
+        Debug.Log("video salvati" + videos.Count);
         XMLHelper.SaveToXml<SavedStats>(savedStats, path + fileStats);
 
    

@@ -2,8 +2,8 @@
 <Rules xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <update_cat_time>1</update_cat_time>
   <interaction_cat_time>10</interaction_cat_time>
-  <max_interactions>3</max_interactions>
-  <day_duration>120</day_duration>
+  <max_interactions>10</max_interactions>
+  <day_duration>10</day_duration>
   
   <cat_stats_rules>
 	  <rules>

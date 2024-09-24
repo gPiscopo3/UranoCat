@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -30,6 +31,8 @@ public class PlayerController : MonoBehaviour
     private InputAction toggleSummaryBoard;
     private InputAction toggleEsc;
     private InputAction toggleViewsBoard;
+    private InputAction toggleSmartphone; 
+
     private bool isInventoryActive;
     private bool isShopActive;
     private bool isMissionBoardActive;
@@ -40,12 +43,15 @@ public class PlayerController : MonoBehaviour
 
     private Animator anim;
 
+    private Player player;
+
     private void Awake()
     {
         characterController = GetComponent<CharacterController>(); 
         status = GetComponent<CharacterStatus>();
         missionManagerUI = FindObjectOfType<MissionItemUIManager>();
         anim = GetComponent<Animator>();
+        
 
         playerControls = new PlayerControls();
         toggleInventoryAction = playerControls.Player.ToggleInventory;
@@ -55,6 +61,7 @@ public class PlayerController : MonoBehaviour
         toggleSummaryBoard = playerControls.Player.ToggleSummaryBoard;
         toggleEsc = playerControls.Player.ToggleEsc; 
         toggleViewsBoard = playerControls.Player.ToggleViewBoard;
+        toggleSmartphone = playerControls.Player.ToggleSmartphone;
 
         isInventoryActive = false;
         isShopActive = false;
@@ -69,9 +76,14 @@ public class PlayerController : MonoBehaviour
         toggleSummaryBoard.performed += ToggleSummaryBoard;
         toggleEsc.performed += ToggleEsc;
         toggleViewsBoard.performed += ToggleViewBoard;
+        toggleSmartphone.performed += ToggleSmartphone;
        
     }
 
+    private void Start()
+    {
+       player = FindObjectOfType<SaveLoader>().player;
+    }
 
     private void FixedUpdate()
     {
@@ -103,6 +115,7 @@ public class PlayerController : MonoBehaviour
         toggleSummaryBoard.Enable();
         toggleEsc.Enable();
         toggleViewsBoard.Enable();
+        toggleSmartphone.Enable();
     }
 
     private void OnDisable()
@@ -114,6 +127,7 @@ public class PlayerController : MonoBehaviour
         toggleSummaryBoard.Disable();
         toggleEsc.Disable();
         toggleViewsBoard.Disable();
+        toggleSmartphone.Disable();
     }
 
     private void ToggleShop(InputAction.CallbackContext context)
@@ -246,10 +260,16 @@ public class PlayerController : MonoBehaviour
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
         }
-        
+    }
 
+    private void ToggleSmartphone(InputAction.CallbackContext context)
+    {
         
-
+        Debug.Log("Smartphone attivato");
+        player.equip( new InventoryItem(new Smartphone(){
+            name = "Smartphone"
+        }));
+        
         
     }
 }

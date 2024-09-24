@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 
@@ -20,8 +21,7 @@ public class CatManager : MonoBehaviour
     private DayManager dayManager;    
     SavedStats savedStats;
 
-
-
+    List<Video> videos;
 
     
     void Start()
@@ -32,6 +32,7 @@ public class CatManager : MonoBehaviour
         this.dayManager = FindObjectOfType<DayManager>();
         this.modifiers = new Stack<CatModifier>();
         this.savedStats = FindAnyObjectByType<SaveLoader>().savedStats;
+        this.videos = FindAnyObjectByType<SaveLoader>().videos;
     }
     
 
@@ -41,6 +42,7 @@ public class CatManager : MonoBehaviour
 
         
         if(savedStats.interactions_cat < rules.max_interactions_stackables)
+            Debug.Log("aggiornamento timer ");
             savedStats.interaction_cat_timer += Time.deltaTime;
 
         if (savedStats.update_cat_timer > rules.update_cat_time)
@@ -74,11 +76,14 @@ public class CatManager : MonoBehaviour
 
 
     public void Interact(){
-
+        
         InventoryItem item = player.equippedItem;
         player.experience += 10;
+        Debug.Log("equippedItame " +player.equippedItem);
+        Debug.Log("int" + savedStats.interactions_cat);
 
         if(savedStats.interactions_cat > 0 && item != null){
+            Debug.Log(player.equippedItem.item.GetType() == typeof(Smartphone));
 
             if(item.item.GetType() == typeof(CatItem)){
                 CatItem catItem = (CatItem)item.item;
@@ -94,6 +99,7 @@ public class CatManager : MonoBehaviour
 
             else if(item.item.GetType() == typeof(Smartphone) && savedStats.videoStatus == EventStatus.AVAILABLE)
             {
+                Debug.Log("Creo video");
                 savedStats.interactions_cat--;
                 CreateVideo();
             }
@@ -132,6 +138,8 @@ public class CatManager : MonoBehaviour
             timestamp_seconds = savedStats.timestamp_seconds
         };
 
+        videos.Add(video);
+        
         dayManager.VideoRegistrato();
 
 

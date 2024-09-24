@@ -98,6 +98,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleSmartphone"",
+                    ""type"": ""Button"",
+                    ""id"": ""ee189d5d-cedf-4f68-b8a7-71125b66b963"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -232,6 +241,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""ToggleViewBoard"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""faf8a172-3be7-46dc-be64-d93885645bce"",
+                    ""path"": ""<Keyboard>/h"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleSmartphone"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -248,6 +268,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_ToggleSummaryBoard = m_Player.FindAction("ToggleSummaryBoard", throwIfNotFound: true);
         m_Player_ToggleEsc = m_Player.FindAction("ToggleEsc", throwIfNotFound: true);
         m_Player_ToggleViewBoard = m_Player.FindAction("ToggleViewBoard", throwIfNotFound: true);
+        m_Player_ToggleSmartphone = m_Player.FindAction("ToggleSmartphone", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -317,6 +338,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_ToggleSummaryBoard;
     private readonly InputAction m_Player_ToggleEsc;
     private readonly InputAction m_Player_ToggleViewBoard;
+    private readonly InputAction m_Player_ToggleSmartphone;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -329,6 +351,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @ToggleSummaryBoard => m_Wrapper.m_Player_ToggleSummaryBoard;
         public InputAction @ToggleEsc => m_Wrapper.m_Player_ToggleEsc;
         public InputAction @ToggleViewBoard => m_Wrapper.m_Player_ToggleViewBoard;
+        public InputAction @ToggleSmartphone => m_Wrapper.m_Player_ToggleSmartphone;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -362,6 +385,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @ToggleViewBoard.started += instance.OnToggleViewBoard;
             @ToggleViewBoard.performed += instance.OnToggleViewBoard;
             @ToggleViewBoard.canceled += instance.OnToggleViewBoard;
+            @ToggleSmartphone.started += instance.OnToggleSmartphone;
+            @ToggleSmartphone.performed += instance.OnToggleSmartphone;
+            @ToggleSmartphone.canceled += instance.OnToggleSmartphone;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -390,6 +416,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @ToggleViewBoard.started -= instance.OnToggleViewBoard;
             @ToggleViewBoard.performed -= instance.OnToggleViewBoard;
             @ToggleViewBoard.canceled -= instance.OnToggleViewBoard;
+            @ToggleSmartphone.started -= instance.OnToggleSmartphone;
+            @ToggleSmartphone.performed -= instance.OnToggleSmartphone;
+            @ToggleSmartphone.canceled -= instance.OnToggleSmartphone;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -417,5 +446,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnToggleSummaryBoard(InputAction.CallbackContext context);
         void OnToggleEsc(InputAction.CallbackContext context);
         void OnToggleViewBoard(InputAction.CallbackContext context);
+        void OnToggleSmartphone(InputAction.CallbackContext context);
     }
 }

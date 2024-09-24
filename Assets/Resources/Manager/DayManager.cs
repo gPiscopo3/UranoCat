@@ -44,17 +44,20 @@ public class DayManager: MonoBehaviour{
 
     public void Morning_Cycle(){
         newDay = false;
-        Debug.Log("Giorno:"+savedStats.day);
+        //Debug.Log("Giorno:"+savedStats.day);
         savedStats.day_timer ++;
 
         if(savedStats.day_timer >= rules.time_to_video){
-            if(savedStats.videoStatus == EventStatus.NOT_AVAILABLE)
+            if(savedStats.videoStatus == EventStatus.NOT_AVAILABLE){
                 savedStats.videoStatus = EventStatus.AVAILABLE;
+                Debug.Log("Video disponibile");
+            }
         }
 
         // per prova 
-        VideoRegistrato();
+        //VideoRegistrato();
         if(savedStats.videoStatus == EventStatus.DONE){
+            Debug.Log("Video registrato");
             savedStats.dayTime = DayTime.AFTERNOON;
             savedStats.day_timer = 0;
         }
@@ -79,7 +82,9 @@ public class DayManager: MonoBehaviour{
     }
 
     public void VideoRegistrato(){
+        
         savedStats.videoStatus = EventStatus.DONE;
+        Debug.Log("Video registrato");
     }
     public void Dormi(){
         savedStats.sleepStatus = EventStatus.DONE;
@@ -109,7 +114,7 @@ public class DayManager: MonoBehaviour{
         experienceGain = views_yesterday*player.experience;
 
     }
-
+/*
     public void CreateVideo(){
 
         double quality = 0;
@@ -129,7 +134,7 @@ public class DayManager: MonoBehaviour{
 
 
     }
-
+*/
 
 
 

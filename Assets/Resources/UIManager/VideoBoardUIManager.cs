@@ -50,8 +50,6 @@ public class VideoBoardUIManager : MonoBehaviour
         contentPanel.transform.GetChild(0).gameObject.SetActive(false);
         int i = 0;
 
-        videos.Add(new Video(1, 1000, 100, 0.5, 100));
-        videos.Add(new Video(2, 100, 100, 0.3, 100087));
         foreach(Video video in videos)
         {
             GameObject item = Instantiate(ItemPrefab, contentPanel.transform);
