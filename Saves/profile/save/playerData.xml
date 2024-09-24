@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <level>1</level>
+  <level>5</level>
   <followers>1000</followers>
-  <money>2023</money>
+  <money>210511</money>
   <pension>15</pension>
-  <experience>362</experience>
+  <experience>150200</experience>
   <inventory>
     <items>
       <InventoryItem>
@@ -22,6 +22,52 @@
           <CatModifier>
             <targetStat>FELICITA</targetStat>
             <value>0.1</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>74d506c8-d27a-4ca2-8e3a-5c7e43b7cf6c</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM003</tag>
+          <name>Topo di gomma</name>
+          <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
+          <durability>30</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>-2</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>29</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>e13a18a0-1b7e-4ae2-a09f-fb5c27f19dec</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM003</tag>
+          <name>Topo di gomma</name>
+          <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
+          <durability>30</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>-2</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
           </CatModifier>
         </item>
         <numUses>0</numUses>

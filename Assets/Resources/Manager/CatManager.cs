@@ -102,6 +102,8 @@ public class CatManager : MonoBehaviour
                 Debug.Log("Creo video");
                 savedStats.interactions_cat--;
                 CreateVideo();
+                player.equippedItem = null;
+
             }
 
 

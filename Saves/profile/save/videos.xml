@@ -2,9 +2,23 @@
 <ArrayOfVideo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Video>
     <day>1</day>
-    <views>7</views>
+    <views>0</views>
     <today_views>0</today_views>
-    <quality>0.015221270084381105</quality>
-    <timestamp_seconds>477</timestamp_seconds>
+    <quality>1.200927165336907E-05</quality>
+    <timestamp_seconds>629</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>2</day>
+    <views>0</views>
+    <today_views>0</today_views>
+    <quality>5.2267207502154631E-07</quality>
+    <timestamp_seconds>697</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>3</day>
+    <views>49</views>
+    <today_views>0</today_views>
+    <quality>0.099231819152832024</quality>
+    <timestamp_seconds>788</timestamp_seconds>
   </Video>
 </ArrayOfVideo>
