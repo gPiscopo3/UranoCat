@@ -28,4 +28,18 @@
     <quality>0.0013027810901403427</quality>
     <timestamp_seconds>883</timestamp_seconds>
   </Video>
+  <Video>
+    <day>2</day>
+    <views>0</views>
+    <today_views>0</today_views>
+    <quality>0.00093688271939754489</quality>
+    <timestamp_seconds>1073</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>3</day>
+    <views>0</views>
+    <today_views>0</today_views>
+    <quality>0.00010734836943447589</quality>
+    <timestamp_seconds>1120</timestamp_seconds>
+  </Video>
 </ArrayOfVideo>
