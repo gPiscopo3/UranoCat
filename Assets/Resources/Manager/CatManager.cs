@@ -126,19 +126,11 @@ public class CatManager : MonoBehaviour
 
      public void CreateVideo(){
 
-        double quality = 0;
-        foreach(SocialRules.QualityRule qualityRule in rules.social_rules.quality_rules){
+        
 
-            quality += qualityRule.factor * cat.getStat(qualityRule.stat).currentValue / 100;
-        }
+        Video video = VideoUtilis.createVideo(player.followers, cat, rules.social_rules, savedStats);
 
-        Video video = new Video{
-            day = savedStats.day, 
-            quality = quality,
-            views = (long)(rules.social_rules.a_factor*player.followers*quality),
-            today_views = 0,
-            timestamp_seconds = savedStats.timestamp_seconds
-        };
+        Debug.Log(VideoUtilis.GetFollowersRules(player.followers,rules.social_rules.followers_rules));
 
         videos.Add(video);
         

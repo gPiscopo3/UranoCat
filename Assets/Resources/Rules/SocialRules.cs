@@ -5,26 +5,44 @@ public class SocialRules{
 
     //k -> giorni
     //t -> secondi
-    //V(k) = a * F(k) * q(k);
+    //V(k) = a * F(k) * Q(k);
+    //Q(K) = [q(k)/q_soglia]^n;    0 <= Q(k) <= 1
+
     //q(k) -> comb lineare statischiche gatto
-    //v(t) = V(k)(1-e^-t/T)
-    //T -> tempo di raggiungimento massime visualizzazioni
-    //F(k+1) = F(k) + v(k) * b * N(k)
-    //N(k) = TOT - F(k) 
+    //F(K+1) = F(K) + b * V(K) * QF(k)
+    //QF(k) = [(q(k) - qmin)/(qmax - qmin)]^m; 0 <= QF(k) <= 1
 
 
-    public double a_factor; //numero di visualizzazioni medie per utente
-    public double b_factor; //percentuali di nuovi utenti
-    public double Max_Followers;
-    public double Start_Followers;
-    public double TAU; //tempo di assestamento views
 
+    public double views_factor; //a
+    public double views_quality_power_factor; //n
+    public double followers_factor;  //b
+    public double followers_quality_power_factor;  //b
+    
     public List<QualityRule> quality_rules;
+    public List<FollowersRule> followers_rules;
 
     public class QualityRule{
 
         public CatTag stat;
         public double factor;
+
+        public QualityRule(){}
+    }
+
+    public class FollowersRule{
+
+        public long followers;
+        public double min_quality_followers;
+        public double max_quality_followers;
+        public double rif_quality_views;
+
+        public FollowersRule(){}
+
+        public override string ToString()
+        {
+            return followers + " " + min_quality_followers + " " + max_quality_followers + " " + rif_quality_views;
+        }
     }
 
     public SocialRules(){}

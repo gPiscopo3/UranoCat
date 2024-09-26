@@ -54,11 +54,33 @@
 	</cat_stats_rules>
 	
 	<social_rules>
-		<a_factor>0.5</a_factor>
-		<b_factor>0.1</b_factor>
-		<Max_Followers>999999</Max_Followers>
-		<Start_Followers>1000</Start_Followers>
-		<TAU>360</TAU>
+		<views_factor>0.5</views_factor>
+		<views_quality_power_factor>2</views_quality_power_factor>
+		<followers_factor>0.5</followers_factor>
+		<followers_quality_power_factor>0.1</followers_quality_power_factor>
+
+		<followers_rules>
+			<FollowersRule>
+				<followers>1000</followers>
+				<rif_quality_views>0.5</rif_quality_views>
+				<min_quality_followers>0.3</min_quality_followers>
+				<max_quality_followers>0.5</max_quality_followers>
+			</FollowersRule>
+			<FollowersRule>
+				<followers>10000</followers>
+				<rif_quality_views>0.6</rif_quality_views>
+				<min_quality_followers>0.5</min_quality_followers>
+				<max_quality_followers>0.75</max_quality_followers>
+			</FollowersRule>
+			<FollowersRule>
+				<followers>100000</followers>
+				<rif_quality_views>0.5</rif_quality_views>
+				<min_quality_followers>0.7</min_quality_followers>
+				<max_quality_followers>1.0</max_quality_followers>
+			</FollowersRule>
+
+		</followers_rules>
+
 		<quality_rules>
 			<QualityRule>
 				<stat>SAZIETA</stat>
@@ -73,6 +95,7 @@
 				<factor>0.6</factor>
 			</QualityRule>
 		</quality_rules>
+
 	</social_rules>
 
 

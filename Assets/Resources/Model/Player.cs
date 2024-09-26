@@ -8,7 +8,7 @@ public class Player
 {
 
     public int level; 
-    public int followers;
+    public long followers;
     public double money; 
     public double pension;
 

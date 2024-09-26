@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <level>5</level>
+  <level>1</level>
   <followers>1000</followers>
-  <money>10530011</money>
+  <money>1000</money>
   <pension>15</pension>
-  <experience>159770</experience>
+  <experience>80</experience>
   <inventory>
     <items>
       <InventoryItem>
