@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SavedStats xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <day>2</day>
-  <update_cat_timer>0.427797675</update_cat_timer>
+  <day>1</day>
+  <update_cat_timer>0.8243783</update_cat_timer>
   <interaction_cat_timer>0</interaction_cat_timer>
   <interactions_cat>3</interactions_cat>
-  <day_timer>5344</day_timer>
+  <day_timer>2870</day_timer>
   <is_video_available>false</is_video_available>
   <timestamp_seconds>106</timestamp_seconds>
   <dayTime>AFTERNOON</dayTime>

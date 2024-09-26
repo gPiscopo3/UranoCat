@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SavedStats xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <day>3</day>
-  <update_cat_timer>0.5576547</update_cat_timer>
+  <day>1</day>
+  <update_cat_timer>0.322560877</update_cat_timer>
   <interaction_cat_timer>0</interaction_cat_timer>
   <interactions_cat>3</interactions_cat>
-  <day_timer>1181</day_timer>
+  <day_timer>956</day_timer>
   <is_video_available>false</is_video_available>
   <timestamp_seconds>66</timestamp_seconds>
   <dayTime>AFTERNOON</dayTime>
   <videoStatus>DONE</videoStatus>
-  <sleepStatus>DONE</sleepStatus>
+  <sleepStatus>AVAILABLE</sleepStatus>
 </SavedStats>
