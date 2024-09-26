@@ -35,7 +35,7 @@ public class NewDayIU : MonoBehaviour
             moneyText.text =  dayManager.moneyGain.ToString();
             viewsText.text = dayManager.views_yesterday.ToString();
             experienceText.text = dayManager.experienceGain.ToString();
-            //  followersText.text = 
+            followersText.text = dayManager.followersGain.ToString();
 
             newDayPanel.SetActive(true);
         }

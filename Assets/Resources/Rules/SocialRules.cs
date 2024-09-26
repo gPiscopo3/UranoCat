@@ -7,17 +7,14 @@ public class SocialRules{
     //t -> secondi
     //V(k) = a * F(k) * Q(k);
     //Q(K) = [q(k)/q_soglia]^n;    0 <= Q(k) <= 1
-
     //q(k) -> comb lineare statischiche gatto
     //F(K+1) = F(K) + b * V(K) * QF(k)
-    //QF(k) = [(q(k) - qmin)/(qmax - qmin)]^m; 0 <= QF(k) <= 1
+    //QF(k) = [(q(k) - qmin)/(qmax - qmin)]; 0 <= QF(k) <= 1
 
 
 
     public double views_factor; //a
     public double views_quality_power_factor; //n
-    public double followers_factor;  //b
-    public double followers_quality_power_factor;  //b
     
     public List<QualityRule> quality_rules;
     public List<FollowersRule> followers_rules;
@@ -36,6 +33,7 @@ public class SocialRules{
         public double min_quality_followers;
         public double max_quality_followers;
         public double rif_quality_views;
+        public double followers_factor; //b
 
         public FollowersRule(){}
 

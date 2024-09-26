@@ -1,17 +1,20 @@
-<Cat xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <Stat>
+<?xml version="1.0" encoding="utf-8"?>
+<Cat xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <stats>
+    <CatStat>
       <currentValue>50</currentValue>
       <maxValue>100</maxValue>
       <catTag>SAZIETA</catTag>
-    </Stat>
-    <Stat>
-      <currentValue>30</currentValue>
+    </CatStat>
+    <CatStat>
+      <currentValue>50</currentValue>
       <maxValue>100</maxValue>
       <catTag>DIVERTIMENTO</catTag>
-    </Stat>
-    <Stat>
-      <currentValue>70</currentValue>
+    </CatStat>
+    <CatStat>
+      <currentValue>50</currentValue>
       <maxValue>100</maxValue>
       <catTag>FELICITA</catTag>
-    </Stat>
-  </Cat>
+    </CatStat>
+  </stats>
+</Cat>

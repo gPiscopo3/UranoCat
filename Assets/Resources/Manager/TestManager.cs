@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using static CatStatsRules;
 
@@ -10,8 +11,13 @@ public class TestManager : MonoBehaviour
 
     Player player;
     List<CatItem> items;
+    private Cat cat;
 
     private float timer = 0f;
+    private SavedStats savedStats;
+    private Rules rules;
+    private List<Video> videos;
+    private DayManager dayManager;
 
    
 
@@ -66,7 +72,14 @@ public class TestManager : MonoBehaviour
         catStatsRules.rules[0].modifiers[0].value = 0.9f;
         XMLHelper.SaveToXml<CatStatsRules>(catStatsRules, "Assets/Resources/cat_rules.xml");*/
 
-    
+        savedStats = FindObjectOfType<SaveLoader>().savedStats;
+        player = FindObjectOfType<SaveLoader>().player;
+        rules = FindObjectOfType<AssetsLoader>().rules;
+        videos = FindObjectOfType<SaveLoader>().videos;
+        cat = FindObjectOfType<SaveLoader>().cat;
+
+        dayManager = FindObjectOfType<DayManager>();
+
 
 
 
@@ -99,7 +112,19 @@ public class TestManager : MonoBehaviour
           
             
            
+
         }
+
+        if(timer > 0.5f){
+            if(savedStats.videoStatus.Equals(EventStatus.AVAILABLE)){
+                Video video = VideoUtilis.createVideo(player.followers, cat, rules.social_rules, savedStats);   
+                videos.Add(video);
+                dayManager.VideoRegistrato();
+            }
+        timer = 0f;
+        }
+
+    
 
     }
 

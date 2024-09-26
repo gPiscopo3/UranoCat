@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 using static SocialRules;
 
 
@@ -13,14 +14,14 @@ public class VideoUtilis{
         long lowerFollowers;
 
         try{
-         upperFollowers = list.FindAll(x => x.followers >= followers).Min(x => x.followers);
-        }catch(ArgumentNullException){
+            upperFollowers = list.FindAll(x => x.followers >= followers).Min(x => x.followers);
+        }catch(Exception){
             upperFollowers = 0;
         }
 
         try{
-        lowerFollowers = list.FindAll(x => x.followers < followers).Max(x => x.followers);
-        }catch(ArgumentNullException){
+            lowerFollowers = list.FindAll(x => x.followers < followers).Max(x => x.followers);
+        }catch(Exception){
             lowerFollowers = 0;
         }
 
@@ -37,7 +38,9 @@ public class VideoUtilis{
         FollowersRule upper = list.Find(x => x.followers == upperFollowers);
         FollowersRule lower = list.Find(x => x.followers == lowerFollowers);
 
-        double ratio = Math.Log10((followers - lowerFollowers)/(upperFollowers - lowerFollowers)) + Math.Log10(lowerFollowers);
+        double ratio = (Math.Log10(followers) - Math.Log10(lowerFollowers))/(Math.Log10(upperFollowers) - Math.Log10(lowerFollowers));
+
+        Debug.Log(ratio);
 
         return new FollowersRule{
             followers = followers,
@@ -62,6 +65,9 @@ public class VideoUtilis{
     public static long Calculate_views(long followers, double quality, SocialRules socialRules){
 
         FollowersRule followersRule = GetFollowersRules(followers, socialRules.followers_rules);
+
+        
+
         double Q = Math.Pow(quality/followersRule.rif_quality_views, socialRules.views_quality_power_factor);
         if(Q > 1)
             Q = 1;
@@ -69,13 +75,12 @@ public class VideoUtilis{
     }
 
     public static Video createVideo(long followers, Cat cat, SocialRules socialRules, SavedStats savedStats){
-
+        
 
         return new Video{
             day = savedStats.day, 
             quality = getQuality(cat, socialRules),
             views = Calculate_views(followers, getQuality(cat, socialRules), socialRules),
-            today_views = 0,
             timestamp_seconds = savedStats.timestamp_seconds
         };
     }
@@ -83,15 +88,20 @@ public class VideoUtilis{
     public static long calculateNewFollowers(long followers, Video video, SocialRules socialRules){
         
         FollowersRule followersRule = GetFollowersRules(followers, socialRules.followers_rules);
+        Debug.Log(followers);
+        Debug.Log(followersRule.ToString());
         double Q = (video.quality - followersRule.min_quality_followers)/(followersRule.max_quality_followers - followersRule.min_quality_followers);
+        Debug.Log(Q);
         if(Q > 1)
             Q = 1;
         else if (Q < 0)
             Q = 0;
-        else
-            Q = Math.Pow(Q, socialRules.followers_quality_power_factor);
+
+        Debug.Log(Q);
+
         
-        return (long)(socialRules.followers_factor * video.views * Q);
+        
+        return Math.Max((long)(followersRule.followers_factor * video.views * Q),0);
 
     }
 
