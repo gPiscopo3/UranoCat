@@ -16,9 +16,7 @@ public class SaveManager : MonoBehaviour
 
     private float timer_save = 0f;
     private float timer_timestamp = 0f;
-
-    Profiles profiles;
-
+    private int autosave;
    
 
     
@@ -32,23 +30,10 @@ public class SaveManager : MonoBehaviour
 
     void Update()
     {
+        
         timer_save += Time.deltaTime;
         
         timer_timestamp += Time.deltaTime;
-
-        if (timer_save > 10f)
-        {
-
-        
-            timer_save = 0f;
-
-            SaveGame("save");
-            
-
-            
-            
-           
-        }
 
         if(timer_timestamp >= 1){
             timer_timestamp = 0f;
@@ -56,10 +41,26 @@ public class SaveManager : MonoBehaviour
 
         }
 
+        if (timer_save > 10f)
+        {
+
+        
+            SaveGame("auto"+autosave);
+            autosave = (autosave + 1)%10;
+            timer_save = 0f;
+            
+
+            
+            
+           
+        }
+
+        
+
     }
 
     public void SaveGame(String save){
-        loader.SaveData(save);
+        loader.SaveData("save");
     }
 
         

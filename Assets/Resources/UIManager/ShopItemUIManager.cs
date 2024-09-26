@@ -126,13 +126,7 @@ public class ShopItemUIManager : MonoBehaviour
 
     }
 
-    public void OpenShop(){
-        shop_active_before = shop_active;
-        shop_active = shop.activeSelf;
-
-        CreateShopUI();
-        FilteringCatItem();
-    }
+    
 
     public void Update(){
 

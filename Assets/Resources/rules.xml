@@ -2,8 +2,8 @@
 <Rules xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <update_cat_time>1</update_cat_time>
   <interaction_cat_time>10</interaction_cat_time>
-  <max_interactions>3</max_interactions>
-  <day_duration>120</day_duration>
+  <max_interactions>10</max_interactions>
+  <day_duration>10</day_duration>
   
   <cat_stats_rules>
 	  <rules>
@@ -85,25 +85,25 @@
 		</Level>
 		<Level>
 			<level>2</level>
-			<experience>100</experience>
+			<experience>3000</experience>
 			<pension>11</pension>
 			<reward>100</reward>
 		</Level>
 		<Level>
 			<level>3</level>
-			<experience>300</experience>
+			<experience>5000</experience>
 			<pension>12</pension>
 			<reward>200</reward>
 		</Level>
 		<Level>
 			<level>4</level>
-			<experience>700</experience>
+			<experience>1500</experience>
 			<pension>13</pension>
 			<reward>400</reward>
 		</Level>
 		<Level>
 			<level>5</level>
-			<experience>1200</experience>
+			<experience>20000</experience>
 			<pension>15</pension>
 			<reward>600</reward>
 		</Level>

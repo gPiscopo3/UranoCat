@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -13,9 +14,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] protected GameObject shop;
     [SerializeField] protected GameObject missionBoard;
     [SerializeField] protected GameObject summaryBoard;
+    [SerializeField] protected GameObject viewsBoard;
 
     [SerializeField] protected Transform interactorSource;
     [SerializeField] protected float interactRange;
+
+    [SerializeField] protected GameObject newDayPanel;
 
     protected CharacterStatus status;
     private PlayerControls playerControls;
@@ -25,42 +29,61 @@ public class PlayerController : MonoBehaviour
     private InputAction interact;
     private InputAction toggleMissionBoard;
     private InputAction toggleSummaryBoard;
+    private InputAction toggleEsc;
+    private InputAction toggleViewsBoard;
+    private InputAction toggleSmartphone; 
 
     private bool isInventoryActive;
     private bool isShopActive;
     private bool isMissionBoardActive;
     private bool isSummaryBoardActive;
+    private bool isViewsBoardActive;
 
     private MissionItemUIManager missionManagerUI;
 
     private Animator anim;
 
+    private Player player;
+
     private void Awake()
     {
-       characterController = GetComponent<CharacterController>(); 
-       status = GetComponent<CharacterStatus>();
-       missionManagerUI = FindObjectOfType<MissionItemUIManager>();
-       anim = GetComponent<Animator>();
+        characterController = GetComponent<CharacterController>(); 
+        status = GetComponent<CharacterStatus>();
+        missionManagerUI = FindObjectOfType<MissionItemUIManager>();
+        anim = GetComponent<Animator>();
+        
 
         playerControls = new PlayerControls();
-       toggleInventoryAction = playerControls.Player.ToggleInventory;
-       toggleShopAction = playerControls.Player.ToggleShop;
-       interact = playerControls.Player.Interact;
-       toggleMissionBoard = playerControls.Player.ToggleMissionBoard;
-       toggleSummaryBoard = playerControls.Player.ToggleSummaryBoard;
+        toggleInventoryAction = playerControls.Player.ToggleInventory;
+        toggleShopAction = playerControls.Player.ToggleShop;
+        interact = playerControls.Player.Interact;
+        toggleMissionBoard = playerControls.Player.ToggleMissionBoard;
+        toggleSummaryBoard = playerControls.Player.ToggleSummaryBoard;
+        toggleEsc = playerControls.Player.ToggleEsc; 
+        toggleViewsBoard = playerControls.Player.ToggleViewBoard;
+        toggleSmartphone = playerControls.Player.ToggleSmartphone;
 
-       isInventoryActive = false;
-       isShopActive = false;
-       isMissionBoardActive = false;
-       isSummaryBoardActive = false;
+        isInventoryActive = false;
+        isShopActive = false;
+        isMissionBoardActive = false;
+        isSummaryBoardActive = false;
+        isViewsBoardActive = false;
 
-       toggleInventoryAction.performed += ToggleInventory;
-       toggleShopAction.performed += ToggleShop;
-       interact.performed += Interact;
-       toggleMissionBoard.performed += ToggleMissionBoard;
-       toggleSummaryBoard.performed += ToggleSummaryBoard;
+        toggleInventoryAction.performed += ToggleInventory;
+        toggleShopAction.performed += ToggleShop;
+        interact.performed += Interact;
+        toggleMissionBoard.performed += ToggleMissionBoard;
+        toggleSummaryBoard.performed += ToggleSummaryBoard;
+        toggleEsc.performed += ToggleEsc;
+        toggleViewsBoard.performed += ToggleViewBoard;
+        toggleSmartphone.performed += ToggleSmartphone;
+       
     }
 
+    private void Start()
+    {
+       player = FindObjectOfType<SaveLoader>().player;
+    }
 
     private void FixedUpdate()
     {
@@ -90,6 +113,9 @@ public class PlayerController : MonoBehaviour
         toggleMissionBoard.Enable();
         interact.Enable();
         toggleSummaryBoard.Enable();
+        toggleEsc.Enable();
+        toggleViewsBoard.Enable();
+        toggleSmartphone.Enable();
     }
 
     private void OnDisable()
@@ -99,6 +125,9 @@ public class PlayerController : MonoBehaviour
         toggleMissionBoard.Disable();
         interact.Disable();
         toggleSummaryBoard.Disable();
+        toggleEsc.Disable();
+        toggleViewsBoard.Disable();
+        toggleSmartphone.Disable();
     }
 
     private void ToggleShop(InputAction.CallbackContext context)
@@ -107,19 +136,16 @@ public class PlayerController : MonoBehaviour
         shop.SetActive(!shop.activeSelf);
         isShopActive = !isShopActive;
 
-        if (isShopActive) {
-            toggleInventoryAction.Disable();
+        if (shop.activeSelf) {
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             
         } else {
-            toggleInventoryAction.Enable();
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
         }
 
     }
-
 
     private void ToggleInventory(InputAction.CallbackContext context)
     {
@@ -127,13 +153,11 @@ public class PlayerController : MonoBehaviour
         inventory.SetActive(!inventory.activeSelf);
         isInventoryActive = !isInventoryActive;
 
-        if (isInventoryActive) {
-            toggleShopAction.Disable();
+        if (inventory.activeSelf) {
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             
         } else {
-            toggleShopAction.Enable();
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -159,13 +183,11 @@ public class PlayerController : MonoBehaviour
         missionBoard.SetActive(!missionBoard.activeSelf);
         isMissionBoardActive = !isMissionBoardActive;
 
-        if (isMissionBoardActive) {
-            toggleShopAction.Disable();
+        if (missionBoard.activeSelf) {
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             
         } else {
-            toggleShopAction.Enable();
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -173,18 +195,81 @@ public class PlayerController : MonoBehaviour
 
     private void ToggleSummaryBoard(InputAction.CallbackContext context)
     {
-        summaryBoard.SetActive(!summaryBoard.activeSelf);
+        
         isSummaryBoardActive = !isSummaryBoardActive;
+        if(inventory.activeSelf || shop.activeSelf || missionBoard.activeSelf || viewsBoard.activeSelf)
+        {
+            inventory.SetActive(false);
+            shop.SetActive(false);
+            missionBoard.SetActive(false);
+            viewsBoard.SetActive(false);
+        }
+        else
+            summaryBoard.SetActive(!summaryBoard.activeSelf);
 
-        if (isSummaryBoardActive) {
-            toggleSummaryBoard.Disable();
+
+
+        if (summaryBoard.activeSelf) {
+            //toggleSummaryBoard.Disable();
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             
         } else {
-            toggleSummaryBoard.Enable();
+            //toggleSummaryBoard.Enable();
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
         }
+    }
+
+    private void ToggleViewBoard(InputAction.CallbackContext context)
+    {
+        viewsBoard.SetActive(!viewsBoard.activeSelf);
+        isViewsBoardActive = !isViewsBoardActive;
+
+        if (viewsBoard.activeSelf) {
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+            
+        } else {
+            Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
+
+    private void ToggleEsc(InputAction.CallbackContext context)
+    {
+
+        if(shop.activeSelf || inventory.activeSelf || missionBoard.activeSelf || viewsBoard.activeSelf || newDayPanel.activeSelf)
+        {
+            shop.SetActive(false);
+            inventory.SetActive(false);
+            missionBoard.SetActive(false);
+            viewsBoard.SetActive(false);
+            newDayPanel.SetActive(false);
+        }
+        else if(summaryBoard.activeSelf)    
+            summaryBoard.SetActive(false);
+
+        if(shop.activeSelf || inventory.activeSelf || missionBoard.activeSelf || summaryBoard.activeSelf || viewsBoard.activeSelf || newDayPanel.activeSelf)
+        {
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
+
+    private void ToggleSmartphone(InputAction.CallbackContext context)
+    {
+        
+        Debug.Log("Smartphone attivato");
+        player.equip( new InventoryItem(new Smartphone(){
+            name = "Smartphone"
+        }));
+        
+        
     }
 }

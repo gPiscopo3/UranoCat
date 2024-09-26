@@ -77,7 +77,7 @@ public class CatController : MonoBehaviour, InteractableObject
         catAnimator.SetBool("isIdle", idle);
         agent.speed = 0f;
         transform.LookAt(playerTransform.position);
-
+        Debug.Log("ooooooo");
     
         catManager.Interact();
 

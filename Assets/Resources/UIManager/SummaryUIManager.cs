@@ -17,28 +17,58 @@ public class SummaryUIManager : MonoBehaviour
     [SerializeField] private Button missionButton;
     [SerializeField] private Button videoButton;
 
+    [SerializeField] private GameObject shop;
+    [SerializeField] private GameObject inventory;
+    [SerializeField] private GameObject missionBoard;
+    [SerializeField] private GameObject videoBoard;
+
     Player player;
+
+    UIManager uiManager;
     
     void Start()
     {
         this.player = FindObjectOfType<SaveLoader>().player;
+        this.uiManager = FindObjectOfType<UIManager>();
 
-
-        shopButton.onClick.AddListener(() => {
-            FindObjectOfType<ShopItemUIManager>().OpenShop();
-        });
+        shopButton.onClick.AddListener(OpenShop);
+        inventoryButton.onClick.AddListener(OpenInventory);
+        missionButton.onClick.AddListener(OpenMissionBoard);
+        videoButton.onClick.AddListener(OpenVideoBoard);
 
     }
 
+    void OpenShop()
+    {
+        shop.SetActive(true);
+    }
+
+    void OpenInventory()
+    {
+        inventory.SetActive(true);
+    }   
+
+    void OpenMissionBoard()
+    {
+        missionBoard.SetActive(true);
+    }
+
+    void OpenVideoBoard()
+    {
+        videoBoard.SetActive(true);
+    }
 
     // Update is called once per frame
     void Update()
     {
         
         levelValue.SetText(player.level.ToString());
-        experienceValue.SetText(player.experience.ToString());
+        experienceValue.SetText(uiManager.getExperiencePercentage().ToString() + " %");
         followersValue.SetText(player.followers.ToString());
         moneyValue.SetText(player.money.ToString());
 
     }
+
+
 }
+
