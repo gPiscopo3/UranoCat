@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <level>2</level>
+  <level>5</level>
   <followers>1000</followers>
-  <money>210581</money>
-  <pension>11</pension>
-  <experience>3005</experience>
+  <money>10530011</money>
+  <pension>15</pension>
+  <experience>159770</experience>
   <inventory>
     <items>
       <InventoryItem>
@@ -100,25 +100,6 @@
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>952f46a3-e4e7-4d26-9e7f-6d66d774af62</ID>
-        <item xsi:type="CatItem">
-          <tag>ITEM001</tag>
-          <name>Crocchette Piccole</name>
-          <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
-          <durability>10</durability>
-          <imagePath>UIManager/salmon</imagePath>
-          <CatModifier>
-            <targetStat>SAZIETA</targetStat>
-            <value>5</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>FELICITA</targetStat>
-            <value>0.1</value>
-          </CatModifier>
-        </item>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
         <ID>5c79f8e1-58ce-466e-85be-9bff94867ea6</ID>
         <item xsi:type="CatItem">
           <tag>ITEM001</tag>
@@ -162,6 +143,25 @@
       </InventoryItem>
       <InventoryItem>
         <ID>90a6797e-44db-4ab5-a372-f008ea31e631</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM001</tag>
+          <name>Crocchette Piccole</name>
+          <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
+          <durability>10</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.1</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>988b52f4-d016-4316-90ad-d04fb386b97f</ID>
         <item xsi:type="CatItem">
           <tag>ITEM001</tag>
           <name>Crocchette Piccole</name>
