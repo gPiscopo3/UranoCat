@@ -2695,6 +2695,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e346b2b1ff49cec49aac84bbdcfcf742, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VFX_MissionComplete: {fileID: 138338, guid: cd1ff9e92aad8ac4db78b6ffd5f1eab7, type: 3}
+  VFX_SpawnPoint: {fileID: 1012925765}
 --- !u!114 &337493936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4384,17 +4386,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedShip
       objectReference: {fileID: 0}
-    - target: {fileID: 2719757005526440390, guid: 4692cf7577530044a9c1c16036f2d702, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 63.83
-      objectReference: {fileID: 0}
-    - target: {fileID: 2719757005526440390, guid: 4692cf7577530044a9c1c16036f2d702, type: 3}
-      propertyPath: m_LocalPosition.y
+    - target: {fileID: 419306829966180706, guid: 4692cf7577530044a9c1c16036f2d702, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2719757005526440390, guid: 4692cf7577530044a9c1c16036f2d702, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 27.697
+      objectReference: {fileID: 0}
+    - target: {fileID: 2719757005526440390, guid: 4692cf7577530044a9c1c16036f2d702, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2719757005526440390, guid: 4692cf7577530044a9c1c16036f2d702, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 81.161
+      value: -5.99
       objectReference: {fileID: 0}
     - target: {fileID: 2719757005526440390, guid: 4692cf7577530044a9c1c16036f2d702, type: 3}
       propertyPath: m_LocalRotation.w

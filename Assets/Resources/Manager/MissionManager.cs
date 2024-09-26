@@ -9,7 +9,10 @@ public class MissionManager : MonoBehaviour
 
     Player player; 
     List<Mission> missions;
-   
+
+    [SerializeField] private GameObject VFX_MissionComplete;
+    [SerializeField] private Transform VFX_SpawnPoint;
+
 
     void Start()
     {
@@ -38,6 +41,8 @@ public class MissionManager : MonoBehaviour
             if(isCompletable)
             {
                 mission.MissionState = MissionState.COMPLETATO;
+
+                Instantiate(VFX_MissionComplete, VFX_SpawnPoint.position, Quaternion.identity);
 
                 //TODO rimozione affidata al gestore dell' inventario
                 foreach (ItemRequirement item in mission.RequiredItems)
