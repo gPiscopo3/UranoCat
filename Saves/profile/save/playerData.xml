@@ -4,7 +4,7 @@
   <followers>602747</followers>
   <money>8544.8939999999984</money>
   <pension>13</pension>
-  <experience>16529</experience>
+  <experience>16559</experience>
   <inventory>
     <items>
       <InventoryItem>
@@ -51,7 +51,7 @@
             <value>-5</value>
           </CatModifier>
         </item>
-        <numUses>11</numUses>
+        <numUses>14</numUses>
       </InventoryItem>
     </items>
   </inventory>

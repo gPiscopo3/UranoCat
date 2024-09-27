@@ -18,7 +18,9 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private TMP_Text levelText;
     [SerializeField] private TMP_Text moneyText;
+    [SerializeField] private GameObject equippedItem;
     [SerializeField] private TMP_Text equippedText;
+    [SerializeField] private Image equippedItemImage;
 
   
 
@@ -58,10 +60,17 @@ public class UIManager : MonoBehaviour
        
 
         if(player.equippedItem!=null){
-            equippedText.SetText("Oggetto equipaggiato: " + player.equippedItem.item.name);
+            //equippedText.SetText("Oggetto equipaggiato: " + player.equippedItem.item.name);
+            equippedItem.SetActive(true);
+            Sprite sprite = Resources.Load(player.equippedItem.item.imagePath, typeof(Sprite)) as Sprite;
+            equippedItemImage.sprite = sprite;
+            equippedItemImage.enabled = true;
+            equippedText.SetText((player.equippedItem.item.durability - player.equippedItem.numUses).ToString());
+            equippedText.enabled = true;
+
         }
         else{
-            equippedText.SetText("");
+            equippedItem.SetActive(false);
         }
 
         
