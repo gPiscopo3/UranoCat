@@ -107,6 +107,33 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleSprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""d9ce47e3-f381-4f8d-b413-6a974814ee4b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleJump"",
+                    ""type"": ""Button"",
+                    ""id"": ""f5d150d7-3af4-401a-bcea-d6905bb07acd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ToggleCrouch"",
+                    ""type"": ""Button"",
+                    ""id"": ""4e86931d-e1e6-44b5-a2ef-ab07eaee2807"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -252,6 +279,39 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""ToggleSmartphone"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""efb05a46-775f-470a-963a-c15bbc574157"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleSprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bb4ce94e-955c-4347-9952-95f66de29f11"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleJump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a117c4d6-9fca-49ef-ab23-12d032768478"",
+                    ""path"": ""<Keyboard>/leftCtrl"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToggleCrouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -269,6 +329,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_ToggleEsc = m_Player.FindAction("ToggleEsc", throwIfNotFound: true);
         m_Player_ToggleViewBoard = m_Player.FindAction("ToggleViewBoard", throwIfNotFound: true);
         m_Player_ToggleSmartphone = m_Player.FindAction("ToggleSmartphone", throwIfNotFound: true);
+        m_Player_ToggleSprint = m_Player.FindAction("ToggleSprint", throwIfNotFound: true);
+        m_Player_ToggleJump = m_Player.FindAction("ToggleJump", throwIfNotFound: true);
+        m_Player_ToggleCrouch = m_Player.FindAction("ToggleCrouch", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -339,6 +402,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_ToggleEsc;
     private readonly InputAction m_Player_ToggleViewBoard;
     private readonly InputAction m_Player_ToggleSmartphone;
+    private readonly InputAction m_Player_ToggleSprint;
+    private readonly InputAction m_Player_ToggleJump;
+    private readonly InputAction m_Player_ToggleCrouch;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -352,6 +418,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @ToggleEsc => m_Wrapper.m_Player_ToggleEsc;
         public InputAction @ToggleViewBoard => m_Wrapper.m_Player_ToggleViewBoard;
         public InputAction @ToggleSmartphone => m_Wrapper.m_Player_ToggleSmartphone;
+        public InputAction @ToggleSprint => m_Wrapper.m_Player_ToggleSprint;
+        public InputAction @ToggleJump => m_Wrapper.m_Player_ToggleJump;
+        public InputAction @ToggleCrouch => m_Wrapper.m_Player_ToggleCrouch;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -388,6 +457,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @ToggleSmartphone.started += instance.OnToggleSmartphone;
             @ToggleSmartphone.performed += instance.OnToggleSmartphone;
             @ToggleSmartphone.canceled += instance.OnToggleSmartphone;
+            @ToggleSprint.started += instance.OnToggleSprint;
+            @ToggleSprint.performed += instance.OnToggleSprint;
+            @ToggleSprint.canceled += instance.OnToggleSprint;
+            @ToggleJump.started += instance.OnToggleJump;
+            @ToggleJump.performed += instance.OnToggleJump;
+            @ToggleJump.canceled += instance.OnToggleJump;
+            @ToggleCrouch.started += instance.OnToggleCrouch;
+            @ToggleCrouch.performed += instance.OnToggleCrouch;
+            @ToggleCrouch.canceled += instance.OnToggleCrouch;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -419,6 +497,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @ToggleSmartphone.started -= instance.OnToggleSmartphone;
             @ToggleSmartphone.performed -= instance.OnToggleSmartphone;
             @ToggleSmartphone.canceled -= instance.OnToggleSmartphone;
+            @ToggleSprint.started -= instance.OnToggleSprint;
+            @ToggleSprint.performed -= instance.OnToggleSprint;
+            @ToggleSprint.canceled -= instance.OnToggleSprint;
+            @ToggleJump.started -= instance.OnToggleJump;
+            @ToggleJump.performed -= instance.OnToggleJump;
+            @ToggleJump.canceled -= instance.OnToggleJump;
+            @ToggleCrouch.started -= instance.OnToggleCrouch;
+            @ToggleCrouch.performed -= instance.OnToggleCrouch;
+            @ToggleCrouch.canceled -= instance.OnToggleCrouch;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -447,5 +534,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnToggleEsc(InputAction.CallbackContext context);
         void OnToggleViewBoard(InputAction.CallbackContext context);
         void OnToggleSmartphone(InputAction.CallbackContext context);
+        void OnToggleSprint(InputAction.CallbackContext context);
+        void OnToggleJump(InputAction.CallbackContext context);
+        void OnToggleCrouch(InputAction.CallbackContext context);
     }
 }

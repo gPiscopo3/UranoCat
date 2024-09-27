@@ -9,17 +9,21 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
-using UnityEngine.UIElements;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject newGameCanvas;
     [SerializeField] private GameObject MainCanvas;
     [SerializeField] private GameObject LoadGameCanvas;
+    [SerializeField] private GameObject LoadScreenCanvas;
     [SerializeField] private GameObject ProfileInput;
     [SerializeField] private TMP_Dropdown DropDown;
+    [SerializeField] private GameObject contentPanel;
+    public GameObject buttonPrefab;
     [SerializeField] private string scene_name;
+    [SerializeField] Image _loadingBar;
 
     private string path = "Saves/";
 
@@ -72,8 +76,11 @@ public class MainMenu : MonoBehaviour
         List<SaveInfo> saveInfos = new List<SaveInfo>();
         XMLHelper.SaveToXml<List<SaveInfo>>(saveInfos, path + profile.name + "/saves.xml");
 
+        newGameCanvas.SetActive(false);
+        LoadScreenCanvas.SetActive(true);
 
-        SceneManager.LoadScene("TestScene1");
+        StartCoroutine(LoadNextLevel());
+
     }
 
     public void Continue(){
@@ -85,25 +92,62 @@ public class MainMenu : MonoBehaviour
         SaveLoader.loaded_profile = profile_name;
         SaveLoader.loaded_save = last_save;
 
-        SceneManager.LoadScene("TestScene1");
+        MainCanvas.SetActive(false);
+        LoadScreenCanvas.SetActive(true);
+
+        StartCoroutine(LoadNextLevel());
 
 
     }
 
     public void LoadGame()
     {
-        
 
         MainCanvas.SetActive(false);
         LoadGameCanvas.SetActive(true);
 
+        string profile_name = DropDown.options[DropDown.value].text;
+        SaveLoader.loaded_profile = profile_name;
+        DirectoryInfo[] infos = new DirectoryInfo(path + "/" + profile_name).GetDirectories();
+
+        createScrollView(infos);
+
+        /*
+        foreach (DirectoryInfo info in infos)
+        { 
+            
+            // Instantiate (clone) the prefab    
+            GameObject button = (GameObject)Instantiate(buttonPrefab);
+
+
+            button.transform.position = contentPanel.transform.position;
+            button.GetComponent<RectTransform>().SetParent(contentPanel.transform);
+            button.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 10, 100);
+            button.layer = 5;
+            
+
+           button.GetComponentInChildren<TMP_Text>().text = info.Name;
+            
+            Debug.Log("istanziato bottone: "+ button.name);
+
+            /*
+            UnityEngine.UI.Button buttonToInstantiate = Button;
+            buttonToInstantiate.GetComponentInChildren<TMP_Text>().text = info.Name;
+            Instantiate(buttonToInstantiate, new Vector3(0,y,0), Quaternion.identity);
+            y += delta;
+            
+        }
+
+    */
+
+        /*
         DirectoryInfo info = new DirectoryInfo(path).GetDirectories()
                        .OrderByDescending(d => d.LastWriteTimeUtc).First();
 
         SaveLoader.loaded_profile = Path.GetFileName(info.FullName);
         SaveLoader.loaded_save = "save";
         SceneManager.LoadScene("TestScene1");
-
+        */
     }
 
     /*
@@ -142,4 +186,68 @@ public class MainMenu : MonoBehaviour
 
     }
     */
+
+    private void createScrollView(DirectoryInfo[] infos)
+    {
+        for (int j = 1; j < contentPanel.transform.childCount; j++)
+        {
+
+            Destroy(contentPanel.transform.GetChild(j).gameObject);
+
+        }
+
+        contentPanel.transform.GetChild(0).gameObject.SetActive(false);
+        
+
+        //contentPanel.GetComponent<RectTransform>().sizeDelta = Vector2.up * (itemHeight + itemSpacing) * missions.Count;
+
+        float y = 0;
+        float delta = 80f;
+        int i = 0;
+
+
+        foreach (DirectoryInfo info in infos)
+        {
+            GameObject button = (GameObject)Instantiate(buttonPrefab, contentPanel.transform);
+            button.SetActive(true);
+            button.GetComponent<RectTransform>().position = contentPanel.transform.GetChild(0).gameObject.transform.position + new Vector3(0,y,0);
+            //button.transform.position = new Vector3(0, y, 0);
+            //Debug.Log(button.transform.position);
+            y -= delta;
+
+            button.GetComponentInChildren<TMP_Text>().text = info.Name;
+            Button realButton = button.GetComponentInChildren<Button>();
+            realButton.onClick.AddListener(() => SaveSelection(info.Name));
+
+            button.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, delta*i, 80);
+            contentPanel.GetComponent<RectTransform>().sizeDelta = Vector2.down * (y+(delta*i)) * infos.Count();
+            button.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 380, 200);
+            i++;
+
+        }
+
+    }
+
+    public void SaveSelection(string selection)
+    {
+        SaveLoader.loaded_save = selection;
+        LoadGameCanvas.SetActive(false);
+        LoadScreenCanvas.SetActive(true);
+
+        StartCoroutine(LoadNextLevel());
+
+        //SceneManager.LoadScene("TestScene2");
+    }
+
+    IEnumerator LoadNextLevel()
+    {
+        AsyncOperation loadLevel = SceneManager.LoadSceneAsync("TestScene2");
+
+        while(!loadLevel.isDone) {
+            _loadingBar.fillAmount = Mathf.Clamp01(loadLevel.progress / .9f);
+            yield return null;
+        }
+    }
+
 }
+

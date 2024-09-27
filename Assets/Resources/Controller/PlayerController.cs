@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XR;
 
 public class PlayerController : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     protected CharacterStatus status;
     private PlayerControls playerControls;
+    [SerializeField] private Transform mainCamera;
 
     private InputAction toggleInventoryAction;
     private InputAction toggleShopAction;
@@ -33,17 +35,38 @@ public class PlayerController : MonoBehaviour
     private InputAction toggleViewsBoard;
     private InputAction toggleSmartphone; 
 
+    private InputAction toggleSprint;
+    private InputAction toggleJump;
+    private InputAction toggleCrouch;
     private bool isInventoryActive;
     private bool isShopActive;
     private bool isMissionBoardActive;
     private bool isSummaryBoardActive;
     private bool isViewsBoardActive;
+    private bool isSprinting;
+    private bool isJumping = false;
+    private bool isCrouching = false;
 
     private MissionItemUIManager missionManagerUI;
 
     private Animator anim;
 
     private Player player;
+
+    private float sprintMultiplier = 1f;
+
+    [SerializeField] private float baseVelocity = 1f;
+    [SerializeField] private float sprintVelocity = 1.5f;
+    [SerializeField] private float crouchVelocity = 0.5f;
+    private float currentVelocity;
+
+    private Vector3 playerVelocity;
+    private bool groundedPlayer;
+    private float jumpHeight = 3.5f;
+
+    //gravit� alta per evitare rimbalzi del giocatore dopo un salto
+    private float gravityValue = -30.81f;
+
 
     private void Awake()
     {
@@ -62,6 +85,9 @@ public class PlayerController : MonoBehaviour
         toggleEsc = playerControls.Player.ToggleEsc; 
         toggleViewsBoard = playerControls.Player.ToggleViewBoard;
         toggleSmartphone = playerControls.Player.ToggleSmartphone;
+        toggleSprint = playerControls.Player.ToggleSprint;
+        toggleJump = playerControls.Player.ToggleJump;
+        toggleCrouch = playerControls.Player.ToggleCrouch;
 
         isInventoryActive = false;
         isShopActive = false;
@@ -78,6 +104,12 @@ public class PlayerController : MonoBehaviour
         toggleViewsBoard.performed += ToggleViewBoard;
         toggleSmartphone.performed += ToggleSmartphone;
        
+        toggleSprint.performed += ToggleSprint;
+        toggleJump.performed += ToggleJump;
+        toggleCrouch.performed += ToggleCrouch;
+
+        currentVelocity = baseVelocity;
+
     }
 
     private void Start()
@@ -88,22 +120,55 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 movement = new Vector3(0, 0, 0);
+        Debug.Log("movement: "+ status.Movement);
         if (status.IsMoving)
         {
-            movement.z = status.Movement.z*Time.deltaTime;
-            movement.x = status.Movement.x*Time.deltaTime;
+            movement.z = status.Movement.z*Time.deltaTime* currentVelocity;
+            movement.x = status.Movement.x*Time.deltaTime* currentVelocity * 2;
         }
         movement = transform.TransformDirection(movement);
         characterController.SimpleMove(movement);
 
+        //animazioni
         if (status.IsMoving)
         {
-            anim.SetFloat("speed", 1f);
+            if(isSprinting)
+            {
+                anim.SetFloat("speed", 1f);
+            }
+            else
+            {
+                anim.SetFloat("speed", 0.5f);
+            }
+            
         }
         else
         {
             anim.SetFloat("speed", 0f);
+            isSprinting = false;
         }
+
+        //salto
+        groundedPlayer = characterController.isGrounded;
+        if (groundedPlayer && playerVelocity.y < 0)
+        {
+            playerVelocity.y = -2f;
+        }
+
+        if (isJumping && groundedPlayer)
+        {
+            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+            isJumping = false;
+        }
+
+        
+        playerVelocity.y += gravityValue * Time.deltaTime;
+
+        characterController.Move(playerVelocity * Time.deltaTime);
+        
+        //crouch
+        anim.SetBool("crouch", isCrouching);
+
     }
 
     private void OnEnable()
@@ -116,6 +181,9 @@ public class PlayerController : MonoBehaviour
         toggleEsc.Enable();
         toggleViewsBoard.Enable();
         toggleSmartphone.Enable();
+        toggleSprint.Enable();
+        toggleJump.Enable();
+        toggleCrouch.Enable();
     }
 
     private void OnDisable()
@@ -128,6 +196,9 @@ public class PlayerController : MonoBehaviour
         toggleEsc.Disable();
         toggleViewsBoard.Disable();
         toggleSmartphone.Disable();
+        toggleSprint.Disable();
+        toggleJump.Disable();
+        toggleCrouch.Disable(); 
     }
 
     private void ToggleShop(InputAction.CallbackContext context)
@@ -233,6 +304,52 @@ public class PlayerController : MonoBehaviour
         } else {
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
+        }
+    }
+
+    private void ToggleSprint(InputAction.CallbackContext context)
+    {
+        isSprinting = !isSprinting;
+        if (isSprinting && !isCrouching)
+        {
+            currentVelocity = sprintVelocity;
+        }
+        else
+        {
+            if(isCrouching)
+                currentVelocity = crouchVelocity;
+            else
+                currentVelocity = baseVelocity;
+        }
+    }
+
+    private void ToggleJump(InputAction.CallbackContext context)
+    {
+        isJumping = true;
+    }
+
+    private void ToggleCrouch(InputAction.CallbackContext context)
+    {
+        isCrouching = !isCrouching;
+        
+        if (isCrouching)
+        {
+            mainCamera.position -= new Vector3(0, 0.7f, 0);
+            
+        }
+        else
+        {
+            mainCamera.position -= new Vector3(0, -0.7f, 0);
+            
+        }
+
+        if (isCrouching)
+        {
+            currentVelocity = crouchVelocity;
+        }
+        else
+        {
+            currentVelocity = baseVelocity;
         }
     }
 
