@@ -38,8 +38,8 @@ ModelImporter:
       name: Human@Jump01 [RM]
       takeName: Untitled
       internalID: 3094330708855449807
-      firstFrame: 0
-      lastFrame: 46
+      firstFrame: 15
+      lastFrame: 38
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <level>4</level>
-  <followers>602747</followers>
-  <money>8544.8939999999984</money>
-  <pension>13</pension>
-  <experience>16559</experience>
+  <level>1</level>
+  <followers>1000</followers>
+  <money>80</money>
+  <pension>10</pension>
+  <experience>170</experience>
   <inventory>
     <items>
       <InventoryItem>
@@ -28,7 +28,7 @@
             <value>5</value>
           </CatModifier>
         </item>
-        <numUses>21</numUses>
+        <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
         <ID>880d85d8-8618-4ca9-992c-151525fc9796</ID>
@@ -51,7 +51,30 @@
             <value>-5</value>
           </CatModifier>
         </item>
-        <numUses>14</numUses>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>00227ce8-4cf6-48ea-9248-9bfd3214693d</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM002</tag>
+          <name>Pesce</name>
+          <descrizione>Un bel merluzzo da mangiare</descrizione>
+          <durability>1</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>8</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>DIVERTIMENTO</targetStat>
+            <value>1</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.5</value>
+          </CatModifier>
+        </item>
+        <numUses>0</numUses>
       </InventoryItem>
     </items>
   </inventory>

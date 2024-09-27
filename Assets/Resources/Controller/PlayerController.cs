@@ -326,6 +326,7 @@ public class PlayerController : MonoBehaviour
     private void ToggleJump(InputAction.CallbackContext context)
     {
         isJumping = true;
+        anim.SetTrigger("jump");
     }
 
     private void ToggleCrouch(InputAction.CallbackContext context)

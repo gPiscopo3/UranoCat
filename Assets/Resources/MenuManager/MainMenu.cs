@@ -241,7 +241,8 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator LoadNextLevel()
     {
-        AsyncOperation loadLevel = SceneManager.LoadSceneAsync("TestScene2");
+        AsyncOperation loadLevel = SceneManager.LoadSceneAsync("MainScene");
+        Debug.Log("loading " + SaveLoader.loaded_profile + ": " + SaveLoader.loaded_save);
 
         while(!loadLevel.isDone) {
             _loadingBar.fillAmount = Mathf.Clamp01(loadLevel.progress / .9f);
