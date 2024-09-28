@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7512696163091319493}
   - component: {fileID: 5739417792448265743}
   - component: {fileID: 8164527426543513608}
+  - component: {fileID: 4890157402050386318}
   m_Layer: 0
   m_Name: M_Realistic7_5
   m_TagString: Untagged
@@ -110,3 +111,30 @@ CapsuleCollider:
   m_Height: 15.888247
   m_Direction: 1
   m_Center: {x: 0, y: 7.9441233, z: 0}
+--- !u!205 &4890157402050386318
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6099701708563210202}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.8427758, y: 7.9441233, z: -0.31267118}
+  m_Size: 15.888247
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.6
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5739417792448265743}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5739417792448265743}
+  - screenRelativeHeight: 0.1
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 5739417792448265743}
+  m_Enabled: 1
