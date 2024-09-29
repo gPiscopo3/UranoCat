@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfVideo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Video>
-    <day>1</day>
+    <day>0</day>
     <views>500</views>
     <quality>0.5</quality>
-    <timestamp_seconds>47</timestamp_seconds>
+    <timestamp_seconds>0</timestamp_seconds>
   </Video>
 </ArrayOfVideo>

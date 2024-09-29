@@ -23,8 +23,8 @@ public class MissionItemUIManager: MonoBehaviour
     void Start()
     {   
         Debug.Log("MissionItemUIManager Start");
-        missions = FindObjectOfType<SaveLoader>().missions;
-        keyItems = FindObjectOfType<AssetsLoader>().items;
+        missions = FindObjectOfType<GameLoader>().missions;
+        keyItems = FindObjectOfType<GameLoader>().items;
         keyItems = keyItems.FindAll(x => x is KeyItem);
 
         
@@ -72,8 +72,8 @@ public class MissionItemUIManager: MonoBehaviour
             string requirements = "";
             foreach(ItemRequirement itemRequirement in mission.RequiredItems)
             {
-                Item item = this.keyItems.Find(x => x.tag.Equals(itemRequirement.tagKeyItem));
-                requirements = requirements + " " + $"{item.name} x{itemRequirement.Quantity}, ";
+                Item item = this.keyItems.Find(x => x.tag.Equals(itemRequirement.tag));
+                requirements = requirements + " " + $"{item.name} x{itemRequirement.quantity}, ";
             }
             missionItemUI.setRequirements(requirements);
 

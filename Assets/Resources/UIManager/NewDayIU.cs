@@ -23,7 +23,7 @@ public class NewDayIU : MonoBehaviour
     private void Start()
     {
         dayManager = FindObjectOfType<DayManager>();
-        savedStats = FindObjectOfType<SaveLoader>().savedStats;
+        savedStats = FindObjectOfType<GameLoader>().savedStats;
     }
 
     private void Update()

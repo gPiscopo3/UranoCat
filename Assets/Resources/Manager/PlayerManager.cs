@@ -21,8 +21,8 @@ public class PlayerManager : MonoBehaviour
 
     void Start()
     {
-        this.player = FindObjectOfType<SaveLoader>().player;
-        this.rules = FindObjectOfType<AssetsLoader>().rules;
+        this.player = FindObjectOfType<GameLoader>().player;
+        this.rules = FindObjectOfType<GameLoader>().rules;
     }
     
 

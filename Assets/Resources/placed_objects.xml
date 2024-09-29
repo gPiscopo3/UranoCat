@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPlacedObjectRequirement xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <PlacedObjectRequirement>
+        <name>MISS01_01</name>
+        <requirements>
+            <ItemRequirement>
+                <tag>KEY001</tag>
+                <quantity>1</quantity>
+            </ItemRequirement>
+        </requirements>
+    </PlacedObjectRequirement>
+</ArrayOfPlacedObjectRequirement>

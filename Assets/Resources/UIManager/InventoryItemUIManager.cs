@@ -52,7 +52,7 @@ public class InventoryItemUIManager : MonoBehaviour
         //prova
         sprite1 = Resources.Load("UIManager/salmon", typeof(Sprite)) as Sprite;
         
-        this.player = FindObjectOfType<SaveLoader>().player;
+        this.player = FindObjectOfType<GameLoader>().player;
         
         this.inventory = player.inventory;
 
@@ -100,7 +100,7 @@ public class InventoryItemUIManager : MonoBehaviour
      
 
         foreach(InventoryItem item in inventory.items){
-            if(item.item.GetType() == type){
+            if(item.item != null && item.item.GetType() == type){
                 if(itemsGroup.ContainsKey(item.item.tag)){
                     ItemGroup itemGroup = itemsGroup[item.item.tag];
                     itemGroup.totalUses+=item.numUses;

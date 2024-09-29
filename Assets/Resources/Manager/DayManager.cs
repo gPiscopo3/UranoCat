@@ -24,11 +24,11 @@ public class DayManager: MonoBehaviour{
 
 
     public void Start(){
-        rules = FindObjectOfType<AssetsLoader>().rules;
-        savedStats = FindObjectOfType<SaveLoader>().savedStats;
-        cat = FindObjectOfType<SaveLoader>().cat;
-        player = FindObjectOfType<SaveLoader>().player;
-        videos = FindObjectOfType<SaveLoader>().videos;
+        rules = FindObjectOfType<GameLoader>().rules;
+        savedStats = FindObjectOfType<GameLoader>().savedStats;
+        cat = FindObjectOfType<GameLoader>().cat;
+        player = FindObjectOfType<GameLoader>().player;
+        videos = FindObjectOfType<GameLoader>().videos;
 
 
 

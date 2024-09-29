@@ -8,8 +8,7 @@ public class ShopItem
     
     public string Tag { get; set; }
 
-    [XmlIgnore]
-    public Item item {get; set; }
+    [XmlIgnore] public Item item {get; set; }
 
     public long Price { get; set; }
 

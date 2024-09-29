@@ -14,8 +14,7 @@ public class Player
 
     public long experience;
 
-    [XmlIgnore]
-    public InventoryItem equippedItem;
+    [XmlIgnore] public InventoryItem equippedItem;
 
     public Inventory inventory; 
     public Player() {}   

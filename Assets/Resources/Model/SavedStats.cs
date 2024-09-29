@@ -8,7 +8,6 @@ public class SavedStats{
     public float interaction_cat_timer;
     public int interactions_cat;
     public float day_timer;
-    public bool is_video_available;
     public long timestamp_seconds;
     public DayTime dayTime;
 

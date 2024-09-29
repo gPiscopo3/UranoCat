@@ -26,13 +26,13 @@ public class CatManager : MonoBehaviour
     
     void Start()
     {
-        this.cat = FindObjectOfType<SaveLoader>().cat;
-        this.player = FindObjectOfType<SaveLoader>().player;
-        this.rules = FindObjectOfType<AssetsLoader>().rules;
+        this.cat = FindObjectOfType<GameLoader>().cat;
+        this.player = FindObjectOfType<GameLoader>().player;
+        this.rules = FindObjectOfType<GameLoader>().rules;
         this.dayManager = FindObjectOfType<DayManager>();
         this.modifiers = new Stack<CatModifier>();
-        this.savedStats = FindAnyObjectByType<SaveLoader>().savedStats;
-        this.videos = FindAnyObjectByType<SaveLoader>().videos;
+        this.savedStats = FindAnyObjectByType<GameLoader>().savedStats;
+        this.videos = FindAnyObjectByType<GameLoader>().videos;
     }
     
 

@@ -114,13 +114,13 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-       player = FindObjectOfType<SaveLoader>().player;
+       player = FindObjectOfType<GameLoader>().player;
     }
 
     private void FixedUpdate()
     {
         Vector3 movement = new Vector3(0, 0, 0);
-        Debug.Log("movement: "+ status.Movement);
+        ///Debug.Log("movement: "+ status.Movement);
         if (status.IsMoving)
         {
             movement.z = status.Movement.z*Time.deltaTime* currentVelocity;

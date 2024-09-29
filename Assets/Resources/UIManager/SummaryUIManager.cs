@@ -28,7 +28,7 @@ public class SummaryUIManager : MonoBehaviour
     
     void Start()
     {
-        this.player = FindObjectOfType<SaveLoader>().player;
+        this.player = FindObjectOfType<GameLoader>().player;
         this.uiManager = FindObjectOfType<UIManager>();
 
         shopButton.onClick.AddListener(OpenShop);

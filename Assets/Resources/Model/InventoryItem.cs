@@ -7,7 +7,9 @@ using UnityEngine;
     public class InventoryItem{
 
         public String ID;
-        public Item item;
+        public string tag;
+
+        [XmlIgnore] public Item item;
 
         public int numUses;
         
@@ -15,6 +17,7 @@ using UnityEngine;
             Guid myuuid = Guid.NewGuid();
             ID = myuuid.ToString();
             this.item = item;
+            this.tag = item.tag;
             numUses = 0;
         }
 

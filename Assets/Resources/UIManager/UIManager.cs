@@ -34,9 +34,9 @@ public class UIManager : MonoBehaviour
     
     void Start()
     {
-        this.cat = FindObjectOfType<SaveLoader>().cat;
-        this.player = FindObjectOfType<SaveLoader>().player;
-        this.rules = FindObjectOfType<AssetsLoader>().rules;
+        this.cat = FindObjectOfType<GameLoader>().cat;
+        this.player = FindObjectOfType<GameLoader>().player;
+        this.rules = FindObjectOfType<GameLoader>().rules;
         
         
     }
@@ -70,7 +70,7 @@ public class UIManager : MonoBehaviour
 
         }
         else{
-            equippedItem.SetActive(false);
+            //equippedItem.SetActive(false);
         }
 
         

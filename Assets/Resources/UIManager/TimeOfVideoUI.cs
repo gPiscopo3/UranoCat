@@ -19,7 +19,7 @@ public class TimeOfVideoUI : MonoBehaviour
     bool is_video_available;
     void Start()
     {
-        savedStats = FindObjectOfType<SaveLoader>().savedStats;
+        savedStats = FindObjectOfType<GameLoader>().savedStats;
         is_video_available = false;
     }
 

@@ -64,8 +64,8 @@ public class MainMenu : MonoBehaviour
             dateTime = DateTime.Now
         };
 
-        SaveLoader.loaded_profile = profile.name;
-        SaveLoader.loaded_save = null;
+        GameLoader.loaded_profile = profile.name;
+        GameLoader.loaded_save = null;
 
         System.IO.Directory.CreateDirectory(path + profile.name);
         
@@ -89,8 +89,8 @@ public class MainMenu : MonoBehaviour
        
         string profile_name = DropDown.options[DropDown.value].text;
         string last_save = profiles.Find(profile => profile.name.Equals(profile_name)).last_save;
-        SaveLoader.loaded_profile = profile_name;
-        SaveLoader.loaded_save = last_save;
+        GameLoader.loaded_profile = profile_name;
+        GameLoader.loaded_save = last_save;
 
         MainCanvas.SetActive(false);
         LoadScreenCanvas.SetActive(true);
@@ -107,7 +107,7 @@ public class MainMenu : MonoBehaviour
         LoadGameCanvas.SetActive(true);
 
         string profile_name = DropDown.options[DropDown.value].text;
-        SaveLoader.loaded_profile = profile_name;
+        GameLoader.loaded_profile = profile_name;
         DirectoryInfo[] infos = new DirectoryInfo(path + "/" + profile_name).GetDirectories();
 
         createScrollView(infos);
@@ -144,8 +144,8 @@ public class MainMenu : MonoBehaviour
         DirectoryInfo info = new DirectoryInfo(path).GetDirectories()
                        .OrderByDescending(d => d.LastWriteTimeUtc).First();
 
-        SaveLoader.loaded_profile = Path.GetFileName(info.FullName);
-        SaveLoader.loaded_save = "save";
+        GameLoader.loaded_profile = Path.GetFileName(info.FullName);
+        GameLoader.loaded_save = "save";
         SceneManager.LoadScene("TestScene1");
         */
     }
@@ -230,7 +230,7 @@ public class MainMenu : MonoBehaviour
 
     public void SaveSelection(string selection)
     {
-        SaveLoader.loaded_save = selection;
+        GameLoader.loaded_save = selection;
         LoadGameCanvas.SetActive(false);
         LoadScreenCanvas.SetActive(true);
 
@@ -242,7 +242,7 @@ public class MainMenu : MonoBehaviour
     IEnumerator LoadNextLevel()
     {
         AsyncOperation loadLevel = SceneManager.LoadSceneAsync("MainScene");
-        Debug.Log("loading " + SaveLoader.loaded_profile + ": " + SaveLoader.loaded_save);
+        Debug.Log("loading " + GameLoader.loaded_profile + ": " + GameLoader.loaded_save);
 
         while(!loadLevel.isDone) {
             _loadingBar.fillAmount = Mathf.Clamp01(loadLevel.progress / .9f);

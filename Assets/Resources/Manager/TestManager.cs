@@ -71,11 +71,11 @@ public class TestManager : MonoBehaviour
         catStatsRules.rules[0].modifiers[0].value = 0.9f;
         XMLHelper.SaveToXml<CatStatsRules>(catStatsRules, "Assets/Resources/cat_rules.xml");*/
 
-        savedStats = FindObjectOfType<SaveLoader>().savedStats;
-        player = FindObjectOfType<SaveLoader>().player;
-        rules = FindObjectOfType<AssetsLoader>().rules;
-        videos = FindObjectOfType<SaveLoader>().videos;
-        cat = FindObjectOfType<SaveLoader>().cat;
+        savedStats = FindObjectOfType<GameLoader>().savedStats;
+        player = FindObjectOfType<GameLoader>().player;
+        rules = FindObjectOfType<GameLoader>().rules;
+        videos = FindObjectOfType<GameLoader>().videos;
+        cat = FindObjectOfType<GameLoader>().cat;
 
         dayManager = FindObjectOfType<DayManager>();
 

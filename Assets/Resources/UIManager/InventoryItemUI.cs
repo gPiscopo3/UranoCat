@@ -79,7 +79,7 @@ public class InventoryItemUI : MonoBehaviour
 
     private void Usa(){
         
-        Player player = FindObjectOfType<SaveLoader>().player;
+        Player player = FindObjectOfType<GameLoader>().player;
         player.equip(itemToUse);
         
         

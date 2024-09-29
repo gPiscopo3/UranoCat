@@ -33,8 +33,8 @@ public class CatController : MonoBehaviour, InteractableObject
 
     void Start()
     {
-        this.cat = FindObjectOfType<SaveLoader>().cat;
-        this.player = FindObjectOfType<SaveLoader>().player;
+        this.cat = FindObjectOfType<GameLoader>().cat;
+        this.player = FindObjectOfType<GameLoader>().player;
 
         catAnimator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();

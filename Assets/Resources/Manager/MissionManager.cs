@@ -8,7 +8,8 @@ public class MissionManager : MonoBehaviour
 {
 
     Player player; 
-    List<Mission> missions;
+    List<Mission> allMissions;
+    List<Mission> playerMissions;
 
     [SerializeField] private GameObject VFX_MissionComplete;
     [SerializeField] private Transform VFX_SpawnPoint;
@@ -16,23 +17,24 @@ public class MissionManager : MonoBehaviour
 
     void Start()
     {
-        this.player = FindObjectOfType<SaveLoader>().player;
-        this.missions = FindObjectOfType<SaveLoader>().missions;
+        this.player = FindObjectOfType<GameLoader>().player;
+        this.allMissions = FindObjectOfType<GameLoader>().missions;
+        this.playerMissions = FindObjectOfType<GameLoader>().missions;
    
     }
 
     public void CheckMission()
     {
 
-        foreach(Mission mission in this.missions.Where(x => x.MissionState == MissionState.ATTIVO))
+        foreach(Mission mission in this.playerMissions.Where(x => x.MissionState == MissionState.ATTIVO))
         {
 
             bool isCompletable = true;
             foreach(ItemRequirement item in mission.RequiredItems)
             {
                    
-                int quantity = this.player.inventory.items.FindAll(obj => obj.EqualsByTag(item.tagKeyItem)).Count;
-                if(quantity < item.Quantity)
+                int quantity = this.player.inventory.items.FindAll(obj => obj.EqualsByTag(item.tag)).Count;
+                if(quantity < item.quantity)
                 {
                     isCompletable = false;    
                 } 
@@ -47,12 +49,12 @@ public class MissionManager : MonoBehaviour
                 //TODO rimozione affidata al gestore dell' inventario
                 foreach (ItemRequirement item in mission.RequiredItems)
                 {
-                    InventoryItem itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.tagKeyItem));
-                    for (int i = 0; i < item.Quantity; i++)
+                    InventoryItem itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.tag));
+                    for (int i = 0; i < item.quantity; i++)
                     {
-                        Debug.Log("Rimosso" + i + " " + item.Quantity);
+                        Debug.Log("Rimosso" + i + " " + item.quantity);
                         this.player.inventory.useItem(itemToRemove);
-                        itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.tagKeyItem));
+                        itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.tag));
                     }
                   
                 }
@@ -69,7 +71,7 @@ public class MissionManager : MonoBehaviour
     public void UpdateMissions()
     {
     
-        foreach(Mission inactiveMission in this.missions.Where(x => x.MissionState == MissionState.NON_ATTIVO))
+        /*foreach(Mission inactiveMission in this.missions.Where(x => x.MissionState == MissionState.NON_ATTIVO))
         {
             
             bool isActivable = true;
@@ -92,7 +94,10 @@ public class MissionManager : MonoBehaviour
             Debug.Log($"{m.tag}, {m.MissionState} {DateTime.Now}");
             foreach(InventoryItem item in this.player.inventory.items)
             Debug.Log($"{item.item.tag},{item.item.name},{item.ID}, {DateTime.Now}");
-        }
+        }*/
+
+
+    
 
     }
 

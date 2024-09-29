@@ -11,7 +11,7 @@ public class SaveManager : MonoBehaviour
 
     
 
-    SaveLoader loader;
+    GameLoader loader;
     SavedStats savedStats;
 
     private float timer_save = 0f;
@@ -22,7 +22,7 @@ public class SaveManager : MonoBehaviour
     
     void Start()
     {
-        this.loader = FindObjectOfType<SaveLoader>();
+        this.loader = FindObjectOfType<GameLoader>();
         savedStats = loader.savedStats;
         
     }

@@ -13,7 +13,7 @@ public class Inventory
     
 
     public Inventory(){
-        this.items = new List<InventoryItem>();
+
     }
 
 

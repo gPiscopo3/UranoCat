@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
 
     public void Start(){
 
-        savedStats = FindAnyObjectByType<SaveLoader>().savedStats;
+        savedStats = FindAnyObjectByType<GameLoader>().savedStats;
         ambient.Play();
         lago.Play();
 

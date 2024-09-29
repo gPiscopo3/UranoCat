@@ -9,7 +9,7 @@ public class SleppingController : MonoBehaviour, InteractableObject
 
     private void Start()
     {
-        savedStats = FindObjectOfType<SaveLoader>().savedStats;
+        savedStats = FindObjectOfType<GameLoader>().savedStats;
         dayManager = FindObjectOfType<DayManager>();
     }
     

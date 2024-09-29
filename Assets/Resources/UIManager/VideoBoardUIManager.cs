@@ -22,7 +22,7 @@ public class VideoBoardUIManager : MonoBehaviour
     void Start()
     {   
         Debug.Log("VideoBoardUIManager Start");
-        videos = FindObjectOfType<SaveLoader>().videos;
+        videos = FindObjectOfType<GameLoader>().videos;
         CreateVideoBoard();
         GenerateVideoItemUI();
     }
