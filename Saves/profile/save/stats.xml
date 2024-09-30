@@ -9,4 +9,14 @@
   <dayTime>AFTERNOON</dayTime>
   <videoStatus>DONE</videoStatus>
   <sleepStatus>AVAILABLE</sleepStatus>
+  <day>7</day>
+  <update_cat_timer>991.333862</update_cat_timer>
+  <interaction_cat_timer>9.241509</interaction_cat_timer>
+  <interactions_cat>83</interactions_cat>
+  <day_timer>18008</day_timer>
+  <is_video_available>false</is_video_available>
+  <timestamp_seconds>1019</timestamp_seconds>
+  <dayTime>MORNING</dayTime>
+  <videoStatus>AVAILABLE</videoStatus>
+  <sleepStatus>NOT_AVAILABLE</sleepStatus>
 </SavedStats>
