@@ -25,9 +25,5 @@ public class RecordPlayerController : MonoBehaviour, InteractableObject
 
         songUIManager.AvviaGiradischi(isShown);
 
-        
-
-
-
     }
 }

@@ -29,6 +29,7 @@ public class GameLoader : MonoBehaviour
     public const string RulesPath = "Assets/Resources/rules.xml";
     public const string missionPath = "Assets/Resources/missions.xml";
     public const string placedObjectsPath = "Assets/Resources/placed_objects.xml";
+    public const string songsPath = "Assets/Resources/songs.xml";
 
 
     public Cat cat;
@@ -37,11 +38,9 @@ public class GameLoader : MonoBehaviour
     public List<Video> videos;
     public SavedStats savedStats;
     public List<PlacedObjectStatus> placedObjects;
-
     public List<Profile> profiles;
     public List<SaveInfo> infos;
-
-
+    public List<Song> songs;
     public List<Item> items;
     public List<ShopItem> shopItems;
     public List<PlacedObjectRequirement> placedObjectRequirements;
@@ -54,9 +53,6 @@ public class GameLoader : MonoBehaviour
         LoadAssets();
         LoadSave();
         
-
-
-    
     }
 
     void LoadAssets(){
@@ -80,11 +76,9 @@ public class GameLoader : MonoBehaviour
 
         this.placedObjectRequirements = XMLHelper.LoadFromXml<List<PlacedObjectRequirement>>(placedObjectsPath);
 
-      
-
-    
-
         this.rules = XMLHelper.LoadFromXml<Rules>(RulesPath);
+
+        this.songs = XMLHelper.LoadFromXml<List<Song>>(songsPath);
     }
 
     void LoadSave(){

@@ -31,7 +31,7 @@ public class SongUIManager: MonoBehaviour
     public void Start()
     {   
        
-        songs = FindObjectOfType<AssetsLoader>().songs;
+        songs = FindObjectOfType<GameLoader>().songs;
 
         CreateSongBoard();
         GenerateSongItemUI();
