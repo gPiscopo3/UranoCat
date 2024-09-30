@@ -11,9 +11,12 @@ public class AssetsLoader: MonoBehaviour
     public const string shopPath = "Assets/Resources/shop_items.xml";
     public const string keyPath = "Assets/Resources/key_items.xml";
     public const string RulesPath = "Assets/Resources/rules.xml";
+    public const string SongsPath = "Assets/Resources/songs.xml";
     public List<Item> items;
     public List<ShopItem> shopItems;
     public Rules rules;
+
+    public List<Song> songs;
 
 
     
@@ -42,6 +45,7 @@ public class AssetsLoader: MonoBehaviour
         this.rules = XMLHelper.LoadFromXml<Rules>(RulesPath);
 
 
+        this.songs = XMLHelper.LoadFromXml<List<Song>>(SongsPath);
         
 
         

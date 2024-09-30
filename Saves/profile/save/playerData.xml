@@ -2,9 +2,9 @@
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <level>1</level>
   <followers>1000</followers>
-  <money>80</money>
+  <money>97</money>
   <pension>10</pension>
-  <experience>170</experience>
+  <experience>284</experience>
   <inventory>
     <items>
       <InventoryItem>
@@ -75,6 +75,25 @@
           </CatModifier>
         </item>
         <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>4b3f30fc-7502-4c51-88ce-3b642db31e8e</ID>
+        <item xsi:type="CatItem">
+          <tag>ITEM001</tag>
+          <name>Crocchette Piccole</name>
+          <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
+          <durability>10</durability>
+          <imagePath>UIManager/salmon</imagePath>
+          <CatModifier>
+            <targetStat>SAZIETA</targetStat>
+            <value>5</value>
+          </CatModifier>
+          <CatModifier>
+            <targetStat>FELICITA</targetStat>
+            <value>0.1</value>
+          </CatModifier>
+        </item>
+        <numUses>7</numUses>
       </InventoryItem>
     </items>
   </inventory>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSong xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Song>
+    <SongName>Una rotonda sul mare</SongName>
+    <Author>Fred Bongusto</Author>
+    <SongPath>unaRotonda</SongPath>
+  </Song>
+ <Song>
+    <SongName>Guarda come dondolo</SongName>
+    <Author>Edoardo Vianello</Author>
+    <SongPath>comedondolo</SongPath>
+  </Song>
+<Song>
+    <SongName>Quanno chiove</SongName>
+    <Author>Pino Daniele</Author>
+    <SongPath>quannochiove</SongPath>
+  </Song>
+  <Song>
+    <SongName>La carriola di ZIO AGOSTO</SongName>
+    <Author>Angela</Author>
+    <SongPath>prova</SongPath>
+  </Song>
+</ArrayOfSong>
