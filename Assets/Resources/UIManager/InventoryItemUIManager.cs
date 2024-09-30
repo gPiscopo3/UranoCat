@@ -49,8 +49,6 @@ public class InventoryItemUIManager : MonoBehaviour
      void Start()
     {
 
-        //prova
-        sprite1 = Resources.Load("UIManager/salmon", typeof(Sprite)) as Sprite;
         
         this.player = FindObjectOfType<GameLoader>().player;
         
@@ -142,7 +140,7 @@ public class InventoryItemUIManager : MonoBehaviour
             inventoryItemUI.SetRemainingUses(group.itemToUse.item.durability  - group.itemToUse.numUses, group.itemToUse.item.durability);
             if(group.itemToUse.item.GetType() == typeof(CatItem))
                 inventoryItemUI.setUsable();
-            inventoryItemUI.SetItemImage(group.itemToUse.item.imagePath);
+            inventoryItemUI.SetItemImage("Images/" + group.itemToUse.item.imagePath);
 
             
             inventoryItemUI.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, diff, itemHeight);

@@ -6,14 +6,41 @@
         <name>Giravite</name>
         <descrizione>Immancabile strumento di Zio Agosto</descrizione>
         <durability>100</durability>
-        <imagePath>UIManager/giravite1</imagePath>
+        <imagePath>giravite</imagePath>
     </KeyItem>
     <KeyItem>
         <tag>KEY002</tag>
         <name>Pozione Rara</name>
         <descrizione>Immancabile strumento di Zio Agosto per curare i polli</descrizione>
         <durability>100</durability>
-        <imagePath>UIManager/giravite1</imagePath>
+        <imagePath>pozione</imagePath>
     </KeyItem>
-
+    <KeyItem>
+        <tag>KEY003</tag>
+        <name>Zappa</name>
+        <descrizione>Strumento per curare l'orto</descrizione>
+        <durability>50</durability>
+        <imagePath>zappa</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>KEY004</tag>
+        <name>Maschera protettiva</name>
+        <descrizione>Maschera protettiva per zio Agosto</descrizione>
+        <durability>1</durability>
+        <imagePath>mask</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>KEY005</tag>
+        <name>Tenaglia</name>
+        <descrizione>Chiave per aprire la porta</descrizione>
+        <durability>10</durability>
+        <imagePath>tenaglia</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>KEY006</tag>
+        <name>Sega</name>
+        <descrizione>Chiave per aprire la porta</descrizione>
+        <durability>27</durability>
+        <imagePath>sega</imagePath>
+    </KeyItem>
 </ArrayOfKeyItem>

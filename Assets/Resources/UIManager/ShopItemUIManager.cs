@@ -88,9 +88,10 @@ public class ShopItemUIManager : MonoBehaviour
         
 
         int i = 0;
-        
+        Debug.Log("shopItems.Count: " + shopItems.Count);
         foreach(ShopItem shopItem in shopItems)
         {
+        
             if(shopItem.item.GetType().Equals(type)){
                 
                 ShopItemUI shopItemUI = Instantiate(shopItemPrefab, contentPanel.transform).GetComponent<ShopItemUI>();
@@ -107,7 +108,7 @@ public class ShopItemUIManager : MonoBehaviour
                 if(shopItem.MinLevelRequired > player.level)
                     shopItemUI.SetShopItemLevelNotEoungh(shopItem.MinLevelRequired);
                 shopItemUI.SetShopItemPrice(shopItem.Price);
-                shopItemUI.SetShopItemImage(shopItem.item.imagePath);
+                shopItemUI.SetShopItemImage("Images/" + shopItem.item.imagePath);
 
                 
                 

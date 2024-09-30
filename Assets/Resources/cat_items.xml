@@ -5,7 +5,7 @@
     <name>Crocchette Piccole</name>
     <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
     <durability>10</durability>
-    <imagePath>UIManager/salmon</imagePath>
+    <imagePath>crocchette</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
       <value>5</value>
@@ -20,7 +20,7 @@
     <name>Pesce</name>
     <descrizione>Un bel merluzzo da mangiare</descrizione>
     <durability>1</durability>
-    <imagePath>UIManager/salmon</imagePath>
+    <imagePath>pesce</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
       <value>8</value>
@@ -39,7 +39,7 @@
     <name>Topo di gomma</name>
     <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
     <durability>30</durability>
-    <imagePath>UIManager/salmon</imagePath>
+    <imagePath>topo</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
       <value>-2</value>
