@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SavedStats xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <interactions_cat>227</interactions_cat>
   <day>0</day>
   <update_cat_timer>1690.66931</update_cat_timer>
   <interaction_cat_timer>9.523517</interaction_cat_timer>

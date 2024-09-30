@@ -6,4 +6,16 @@
     <quality>0.5</quality>
     <timestamp_seconds>0</timestamp_seconds>
   </Video>
+  <Video>
+    <day>2</day>
+    <views>500</views>
+    <quality>0.6159999084472656</quality>
+    <timestamp_seconds>987</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>3</day>
+    <views>500</views>
+    <quality>0.6159999084472656</quality>
+    <timestamp_seconds>1150</timestamp_seconds>
+  </Video>
 </ArrayOfVideo>
