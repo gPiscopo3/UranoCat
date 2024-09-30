@@ -11,7 +11,6 @@ public class Player
     public long followers;
     public double money; 
     public double pension;
-
     public long experience;
 
     [XmlIgnore] public InventoryItem equippedItem;
@@ -26,8 +25,5 @@ public class Player
     public void unequip(){
         equippedItem = null;
     }
-
    
-
-    
 }

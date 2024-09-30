@@ -157,7 +157,7 @@ public class PlayerController : MonoBehaviour
 
         if (isJumping && groundedPlayer)
         {
-            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+            playerVelocity.y += Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
             isJumping = false;
         }
 

@@ -8,9 +8,7 @@ using UnityEngine;
 
         public String ID;
         public string tag;
-
         [XmlIgnore] public Item item;
-
         public int numUses;
         
         public InventoryItem(Item item){

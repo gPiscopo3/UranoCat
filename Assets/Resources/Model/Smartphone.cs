@@ -4,7 +4,7 @@ public class Smartphone:Item{
         this.tag = "Smartphone";
         this.name = "Smartphone";
         this.descrizione = "A smartphone";
-        this.durability = 100;
+        this.durability = 0;
         this.imagePath = "UIManager/salmon";
     }
     

@@ -25,12 +25,11 @@ public class PlayerManager : MonoBehaviour
         this.rules = FindObjectOfType<GameLoader>().rules;
     }
     
-
     void Update()
     {
         
         Level nextLevel = rules.levels.FirstOrDefault(level => level.level == player.level + 1);
-        if(nextLevel!= null && player.experience > nextLevel.experience){
+        if(nextLevel!= null && player.experience >  nextLevel.experience){
 
             player.level++;
             player.pension = nextLevel.pension;
@@ -39,11 +38,6 @@ public class PlayerManager : MonoBehaviour
             newLevel = true;
         }
         
-        
-
     }
-
-
-
 
 }

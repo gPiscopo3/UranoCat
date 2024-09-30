@@ -8,9 +8,6 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-
-   
-
     [SerializeField] private Slider hungerSlider;
     [SerializeField] private Slider enjoymentSlider;
     [SerializeField] private Slider happinessSlider;
@@ -21,24 +18,15 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject equippedItem;
     [SerializeField] private TMP_Text equippedText;
     [SerializeField] private Image equippedItemImage;
-
-  
-
     Cat cat;
     Player player;
-
     Rules rules;
-
-    
-
     
     void Start()
     {
         this.cat = FindObjectOfType<GameLoader>().cat;
         this.player = FindObjectOfType<GameLoader>().player;
         this.rules = FindObjectOfType<GameLoader>().rules;
-        
-        
     }
     
 
@@ -49,33 +37,29 @@ public class UIManager : MonoBehaviour
         enjoymentSlider.value = cat.getStat(CatTag.DIVERTIMENTO).currentValue;
         happinessSlider.value = cat.getStat(CatTag.FELICITA).currentValue;
 
-
         experienceSlider.value = getExperiencePercentage();
-
-       
 
         levelText.SetText(player.level.ToString());
         moneyText.SetText(player.money.ToString());
 
-       
-
         if(player.equippedItem!=null){
             //equippedText.SetText("Oggetto equipaggiato: " + player.equippedItem.item.name);
-            equippedItem.SetActive(true);
-            Sprite sprite = Resources.Load(player.equippedItem.item.imagePath, typeof(Sprite)) as Sprite;
-            equippedItemImage.sprite = sprite;
-            equippedItemImage.enabled = true;
-            equippedText.SetText((player.equippedItem.item.durability - player.equippedItem.numUses).ToString());
-            equippedText.enabled = true;
-
+            if(player.equippedItem.isUsable())
+            {
+                equippedItem.SetActive(true);
+                Sprite sprite = Resources.Load(player.equippedItem.item.imagePath, typeof(Sprite)) as Sprite;
+                equippedItemImage.sprite = sprite;
+                equippedItemImage.enabled = true;
+                if(player.equippedItem.item.durability == 0){
+                    equippedText.SetText("\u221E");
+                } else {
+                    equippedText.SetText((player.equippedItem.item.durability - player.equippedItem.numUses).ToString());
+                }
+                equippedText.enabled = true;
+            } 
+        } else {
+            equippedItem.SetActive(false);
         }
-        else{
-            //equippedItem.SetActive(false);
-        }
-
-        
-
-
 
     }
 
@@ -90,9 +74,5 @@ public class UIManager : MonoBehaviour
             return ((float)(player.experience - lastLevel.experience))/(nextLevel.experience - lastLevel.experience)*100;
         
     }
-
-   
-
-
 
 }
