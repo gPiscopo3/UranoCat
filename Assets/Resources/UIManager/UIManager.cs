@@ -46,22 +46,26 @@ public class UIManager : MonoBehaviour
             if(player.equippedItem!=null)
             {
             //equippedText.SetText("Oggetto equipaggiato: " + player.equippedItem.item.name);
-            if(player.equippedItem.isUsable())
-            {
-                equippedItem.SetActive(true);
-                Sprite sprite = Resources.Load("Images/" + player.equippedItem.item.imagePath, typeof(Sprite)) as Sprite;
-                equippedItemImage.sprite = sprite;
-                equippedItemImage.enabled = true;
-                if(player.equippedItem.item.durability == 0){
-                    equippedText.SetText("\u221E");
-                } else {
-                    equippedText.SetText((player.equippedItem.item.durability - player.equippedItem.numUses).ToString());
-                }
-                equippedText.enabled = true;
-            } 
-        } else {
-            equippedItem.SetActive(false);
+                if(player.equippedItem.isUsable())
+                {
+                    equippedItem.SetActive(true);
+                    Sprite sprite = Resources.Load("Images/" + player.equippedItem.item.imagePath, typeof(Sprite)) as Sprite;
+                    equippedItemImage.sprite = sprite;
+                    equippedItemImage.enabled = true;
+                    if(player.equippedItem.item.durability == 0){
+                        equippedText.SetText("\u221E");
+                    } else {
+                        equippedText.SetText((player.equippedItem.item.durability - player.equippedItem.numUses).ToString());
+                    }
+                    equippedText.enabled = true;
+                } 
+            } else {
+                equippedItem.SetActive(false);
+            }
+        } catch (UnassignedReferenceException e){
+            Debug.LogWarning(e.Message);
         }
+
         
 
     }
