@@ -6,4 +6,34 @@
     <quality>0.5</quality>
     <timestamp_seconds>47</timestamp_seconds>
   </Video>
+  <Video>
+    <day>2</day>
+    <views>500</views>
+    <quality>0.62099990844726571</quality>
+    <timestamp_seconds>686</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>3</day>
+    <views>500</views>
+    <quality>0.62099990844726571</quality>
+    <timestamp_seconds>768</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>4</day>
+    <views>500</views>
+    <quality>0.62099990844726571</quality>
+    <timestamp_seconds>791</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>5</day>
+    <views>500</views>
+    <quality>0.62099990844726571</quality>
+    <timestamp_seconds>806</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>6</day>
+    <views>500</views>
+    <quality>0.62099990844726571</quality>
+    <timestamp_seconds>822</timestamp_seconds>
+  </Video>
 </ArrayOfVideo>
