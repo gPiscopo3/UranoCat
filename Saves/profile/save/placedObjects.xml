@@ -4,4 +4,8 @@
     <name>MISS01_02</name>
     <obtained>true</obtained>
   </PlacedObjectStatus>
+  <PlacedObjectStatus>
+    <name>MISS01_01</name>
+    <obtained>true</obtained>
+  </PlacedObjectStatus>
 </ArrayOfPlacedObjectStatus>

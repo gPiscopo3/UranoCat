@@ -10,12 +10,10 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
 {
 
     Player player;
-    PlacedObjectRequirement objectRequirements;
+    PlacedObject placedObject;
     List<PlacedObjectStatus> statusList;
 
     GameLoader gameLoader;
-
-    [SerializeField] public string itemTag;
 
     void Awake(){
         
@@ -29,13 +27,13 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
     {
         gameLoader = FindObjectOfType<GameLoader>();
         player = gameLoader.player;
-        objectRequirements = gameLoader.placedObjectRequirements.FirstOrDefault(x => x.name.Equals(gameObject.name));
-        this.statusList = gameLoader.placedObjects;
+        placedObject = gameLoader.placedObjects.FirstOrDefault(x => x.objectName.Equals(gameObject.name));
+        this.statusList = gameLoader.placedObjectsStatus;
 
         PlacedObjectStatus status = this.statusList.FirstOrDefault(x => x.name == gameObject.name);
         Debug.Log(status);
 
-        if(status != null && status.obtained)
+        if(status != null && status.obtained && placedObject != null)
             gameObject.SetActive(false);
                 
         
@@ -55,8 +53,8 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
         
        
 
-        if(objectRequirements!=null){
-            List<ItemRequirement> requirements = objectRequirements.requirements;
+        if(placedObject.requirements!=null){
+            List<ItemRequirement> requirements = placedObject.requirements;
             foreach(ItemRequirement requirement in requirements){
                  Debug.Log(requirement.tag);
                 if(player.inventory.items.FindAll(obj => obj.tag.Equals(requirement.tag)).Count < requirement.quantity){
@@ -70,7 +68,7 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
             Debug.Log("non puoi averlo ");
         }
         else{
-            Item item = gameLoader.GetItem(itemTag);
+            Item item = gameLoader.GetItem(placedObject.itemTag);
 
 
             player.inventory.addItem(item);

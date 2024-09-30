@@ -37,13 +37,13 @@ public class GameLoader : MonoBehaviour
     public List<Mission> missions;
     public List<Video> videos;
     public SavedStats savedStats;
-    public List<PlacedObjectStatus> placedObjects;
+    public List<PlacedObjectStatus> placedObjectsStatus;
     public List<Profile> profiles;
     public List<SaveInfo> infos;
     public List<Song> songs;
     public List<Item> items;
     public List<ShopItem> shopItems;
-    public List<PlacedObjectRequirement> placedObjectRequirements;
+    public List<PlacedObject> placedObjects;
     public Rules rules;
 
   
@@ -74,8 +74,13 @@ public class GameLoader : MonoBehaviour
             shopItem.item = GetItem(shopItem.Tag);
         }
 
-        this.placedObjectRequirements = XMLHelper.LoadFromXml<List<PlacedObjectRequirement>>(placedObjectsPath);
-
+        this.placedObjects = XMLHelper.LoadFromXml<List<PlacedObject>>(placedObjectsPath);
+        foreach(PlacedObject placedObject in placedObjects){
+            placedObject.item = GetItem(placedObject.itemTag);
+            foreach(ItemRequirement itemRequirement in placedObject.requirements)
+                itemRequirement.item = GetItem(itemRequirement.tag);
+        }
+        
         this.rules = XMLHelper.LoadFromXml<Rules>(RulesPath);
 
         this.songs = XMLHelper.LoadFromXml<List<Song>>(songsPath);
@@ -98,7 +103,7 @@ public class GameLoader : MonoBehaviour
         this.missions = XMLHelper.LoadFromXml<List<Mission>>(path + fileMissions);
         this.videos = XMLHelper.LoadFromXml<List<Video>>(path + fileVideo);
         this.savedStats = XMLHelper.LoadFromXml<SavedStats>(path + fileStats);
-        this.placedObjects = XMLHelper.LoadFromXml<List<PlacedObjectStatus>>(path + placedObjectsFile);
+        this.placedObjectsStatus = XMLHelper.LoadFromXml<List<PlacedObjectStatus>>(path + placedObjectsFile);
 
         this.profiles = XMLHelper.LoadFromXml<List<Profile>>(profiles_path);
         this.infos = XMLHelper.LoadFromXml<List<SaveInfo>>("Saves/" + profile + "/" + infos_file_name);
@@ -138,7 +143,7 @@ public class GameLoader : MonoBehaviour
         XMLHelper.SaveToXml<List<Video>>(videos, path + fileVideo);
         Debug.Log("video salvati" + videos.Count);
         XMLHelper.SaveToXml<SavedStats>(savedStats, path + fileStats);
-        XMLHelper.SaveToXml(placedObjects, path + placedObjectsFile);
+        XMLHelper.SaveToXml(placedObjectsStatus, path + placedObjectsFile);
 
    
         Profile profile = profiles.Find(x => x.name.Equals(loaded_profile));
