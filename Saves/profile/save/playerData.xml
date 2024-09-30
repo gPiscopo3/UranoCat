@@ -9,117 +9,22 @@
     <items>
       <InventoryItem>
         <ID>880d85d8-8618-4ca9-992c-151525ec9796</ID>
-        <item xsi:type="CatItem">
-          <tag>ITEM998</tag>
-          <name>Aumenta Statistiche</name>
-          <descrizione>Aumenta le statistiche di 5</descrizione>
-          <durability>0</durability>
-          <imagePath>UIManager/salmon</imagePath>
-          <CatModifier>
-            <targetStat>SAZIETA</targetStat>
-            <value>5</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>DIVERTIMENTO</targetStat>
-            <value>5</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>FELICITA</targetStat>
-            <value>5</value>
-          </CatModifier>
-        </item>
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
         <ID>880d85d8-8618-4ca9-992c-151525fc9796</ID>
-        <item xsi:type="CatItem">
-          <tag>ITEM999</tag>
-          <name>Diminusci Statistiche</name>
-          <descrizione>Diminuisce le statistiche di 5</descrizione>
-          <durability>0</durability>
-          <imagePath>UIManager/salmon</imagePath>
-          <CatModifier>
-            <targetStat>SAZIETA</targetStat>
-            <value>-5</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>DIVERTIMENTO</targetStat>
-            <value>-5</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>FELICITA</targetStat>
-            <value>-5</value>
-          </CatModifier>
-        </item>
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
         <ID>52fd9361-9cfd-4322-b616-4ab908d70ac4</ID>
-        <item xsi:type="CatItem">
-          <tag>ITEM003</tag>
-          <name>Topo di gomma</name>
-          <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
-          <durability>30</durability>
-          <imagePath>UIManager/salmon</imagePath>
-          <CatModifier>
-            <targetStat>SAZIETA</targetStat>
-            <value>-2</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>DIVERTIMENTO</targetStat>
-            <value>5</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>FELICITA</targetStat>
-            <value>0.5</value>
-          </CatModifier>
-        </item>
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
         <ID>dcdbf3d9-fe06-43ad-ad0a-c11f22838589</ID>
-        <item xsi:type="CatItem">
-          <tag>ITEM003</tag>
-          <name>Topo di gomma</name>
-          <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
-          <durability>30</durability>
-          <imagePath>UIManager/salmon</imagePath>
-          <CatModifier>
-            <targetStat>SAZIETA</targetStat>
-            <value>-2</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>DIVERTIMENTO</targetStat>
-            <value>5</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>FELICITA</targetStat>
-            <value>0.5</value>
-          </CatModifier>
-        </item>
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
         <ID>82cb0dbd-b04e-4b4d-a86c-c930f1cb4cff</ID>
-        <item xsi:type="CatItem">
-          <tag>ITEM003</tag>
-          <name>Topo di gomma</name>
-          <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
-          <durability>30</durability>
-          <imagePath>UIManager/salmon</imagePath>
-          <CatModifier>
-            <targetStat>SAZIETA</targetStat>
-            <value>-2</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>DIVERTIMENTO</targetStat>
-            <value>5</value>
-          </CatModifier>
-          <CatModifier>
-            <targetStat>FELICITA</targetStat>
-            <value>0.5</value>
-          </CatModifier>
-        </item>
         <numUses>0</numUses>
       </InventoryItem>
     </items>

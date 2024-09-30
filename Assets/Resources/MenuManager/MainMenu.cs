@@ -111,8 +111,8 @@ public class MainMenu : MonoBehaviour
                 dateTime = DateTime.Now
             };
 
-            SaveLoader.loaded_profile = profile.name;
-            SaveLoader.loaded_save = null;
+            GameLoader.loaded_profile = profile.name;
+            GameLoader.loaded_save = null;
 
             System.IO.Directory.CreateDirectory(path + profile.name);
             
@@ -154,7 +154,7 @@ public class MainMenu : MonoBehaviour
         LoadGameCanvas.SetActive(true);
 
         string profile_name = DropDown.options[DropDown.value].text;
-        SaveLoader.loaded_profile = profile_name;
+        GameLoader.loaded_profile = profile_name;
         List<SaveInfo> infos = XMLHelper.LoadFromXml<List<SaveInfo>>(path + profile_name + "/saves.xml");
 
         createScrollView(infos);
