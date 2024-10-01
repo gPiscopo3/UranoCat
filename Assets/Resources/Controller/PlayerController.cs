@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -410,6 +411,11 @@ public class PlayerController : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
 
+    }
+
+    public void setPauseFlag(bool flag)
+    {
+        isPauseActive = flag;
     }
 
 }
