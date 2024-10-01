@@ -84,7 +84,7 @@ public class SongItemUI: MonoBehaviour
 
         Song song = manager.songs.Find(x => x.SongName.Equals(songName));
         
-        AudioClip clip = (AudioClip)Resources.Load(song.SongPath);
+        AudioClip clip = (AudioClip)Resources.Load("audio/"+song.SongPath);
         audioSource.clip = clip;
         audioSource.Play();
 
