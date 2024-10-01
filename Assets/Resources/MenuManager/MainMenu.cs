@@ -91,6 +91,7 @@ public class MainMenu : MonoBehaviour
             MainCanvas.SetActive(true); 
             });
 
+        CreateLoadBoard();
     }
 
 
@@ -161,7 +162,7 @@ public class MainMenu : MonoBehaviour
         string profile_name = DropDown.options[DropDown.value].text;
         GameLoader.loaded_profile = profile_name;
         List<SaveInfo> infos = XMLHelper.LoadFromXml<List<SaveInfo>>(path + profile_name + "/saves.xml");
-        CreateLoadBoard();
+        
         createScrollView(infos);
 
     }
@@ -173,6 +174,7 @@ public class MainMenu : MonoBehaviour
         itemHeight = contentPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.y;
 
         diff = (contentPanel.GetComponent<RectTransform>().sizeDelta.x - contentPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.x)/ 2;
+        Debug.Log(contentPanel.GetComponent<RectTransform>().sizeDelta.x);
     }
 
     private void createScrollView(List<SaveInfo> infos)
