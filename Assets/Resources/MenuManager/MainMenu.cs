@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private GameObject LoadScreenCanvas;
     [SerializeField] private string scene_name;
-    [SerializeField] Image _loadingBar;
+
 
 
     [Header("Main Canvas")]
@@ -222,10 +222,7 @@ public class MainMenu : MonoBehaviour
         AsyncOperation loadLevel = SceneManager.LoadSceneAsync("MainScene");
         Debug.Log("loading " + GameLoader.loaded_profile + ": " + GameLoader.loaded_save);
 
-        while(!loadLevel.isDone) {
-            _loadingBar.fillAmount = Mathf.Clamp01(loadLevel.progress / .9f);
-            yield return null;
-        }
+        yield return null;
     }
 
 }
