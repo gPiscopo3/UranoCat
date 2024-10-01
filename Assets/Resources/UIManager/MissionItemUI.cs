@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class MissionItemUI: MonoBehaviour
 {
     [SerializeField] Toggle toggle;
-    [SerializeField] TMP_Text missionTag;
+    [SerializeField] TMP_Text missionName;
     [SerializeField] TMP_Text requirements;
 
     public void SetMissionPosition(Vector2 pos){
@@ -27,10 +27,10 @@ public class MissionItemUI: MonoBehaviour
         }
     }
 
-    public void setMissionTag(Mission mission){
+    public void setMissionName(Mission mission){
 
-        this.missionTag.text = mission.tag;
-        this.missionTag.enabled = true;
+        this.missionName.text = mission.name;
+        this.missionName.enabled = true;
 
     } 
 

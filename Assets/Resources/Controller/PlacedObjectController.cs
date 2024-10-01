@@ -51,7 +51,7 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
 
         bool isObtainable = true;
         
-       
+       Item missingItem = null;
 
         if(placedObject.requirements!=null){
             List<ItemRequirement> requirements = placedObject.requirements;
@@ -59,20 +59,21 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
                  Debug.Log(requirement.tag);
                 if(player.inventory.items.FindAll(obj => obj.tag.Equals(requirement.tag)).Count < requirement.quantity){
                     isObtainable = false;
+                    missingItem = requirement.item;
                     break;
                 }
             }
         }
 
         if(!isObtainable){
-            Debug.Log("non puoi averlo ");
+            Debug.Log($"non puoi averlo perche ti manca{missingItem.name}");
         }
         else{
             Item item = gameLoader.GetItem(placedObject.itemTag);
 
 
             player.inventory.addItem(item);
-            Debug.Log("ottenuto " + item);
+            Debug.Log("ottenuto " + item.name);
 
             statusList.Add(new PlacedObjectStatus{name = gameObject.name, obtained = true});
 

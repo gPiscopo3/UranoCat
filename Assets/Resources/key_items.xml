@@ -23,10 +23,10 @@
         <imagePath>zappa</imagePath>
     </KeyItem>
     <KeyItem>
-        <tag>KEY004</tag>
+        <tag>MASCHERA001</tag>
         <name>Maschera protettiva</name>
         <descrizione>Maschera protettiva per zio Agosto</descrizione>
-        <durability>1</durability>
+        <durability>10</durability>
         <imagePath>mask</imagePath>
     </KeyItem>
     <KeyItem>
@@ -43,4 +43,27 @@
         <durability>27</durability>
         <imagePath>sega</imagePath>
     </KeyItem>
+
+    <KeyItem>
+        <tag>MISS01A</tag>
+        <name>Faro destro</name>
+        <descrizione>Faro destro</descrizione>
+        <durability>1</durability>
+        <imagePath>giravite</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>MISS01B</tag>
+        <name>Faro sinistro</name>
+        <descrizione>Faro sinistro</descrizione>
+        <durability>1</durability>
+        <imagePath>giravite</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>MISS01C</tag>
+        <name>Faro centrale</name>
+        <descrizione>Faro centrale</descrizione>
+        <durability>1</durability>
+        <imagePath>giravite</imagePath>
+    </KeyItem>
+
 </ArrayOfKeyItem>

@@ -77,8 +77,11 @@ public class GameLoader : MonoBehaviour
         this.placedObjects = XMLHelper.LoadFromXml<List<PlacedObject>>(placedObjectsPath);
         foreach(PlacedObject placedObject in placedObjects){
             placedObject.item = GetItem(placedObject.itemTag);
-            foreach(ItemRequirement itemRequirement in placedObject.requirements)
+            foreach(ItemRequirement itemRequirement in placedObject.requirements){
                 itemRequirement.item = GetItem(itemRequirement.tag);
+                if(itemRequirement.quantity == 0)
+                        itemRequirement.quantity = 1;
+            }
         }
         
         this.rules = XMLHelper.LoadFromXml<Rules>(RulesPath);
@@ -114,8 +117,11 @@ public class GameLoader : MonoBehaviour
             inventoryItem.item = GetItem(inventoryItem.tag);
 
          foreach(Mission mission in missions)
-                foreach(ItemRequirement itemRequirement in mission.RequiredItems)
-                itemRequirement.item = GetItem(itemRequirement.tag);
+                foreach(ItemRequirement itemRequirement in mission.RequiredItems){
+                    itemRequirement.item = GetItem(itemRequirement.tag);
+                    if(itemRequirement.quantity == 0)
+                        itemRequirement.quantity = 1;
+                }
         
     }
 

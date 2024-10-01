@@ -8,8 +8,7 @@ public class MissionManager : MonoBehaviour
 {
 
     Player player; 
-    List<Mission> allMissions;
-    List<Mission> playerMissions;
+    List<Mission> missions;
 
     [SerializeField] private GameObject VFX_MissionComplete;
     [SerializeField] private Transform VFX_SpawnPoint;
@@ -18,15 +17,14 @@ public class MissionManager : MonoBehaviour
     void Start()
     {
         this.player = FindObjectOfType<GameLoader>().player;
-        this.allMissions = FindObjectOfType<GameLoader>().missions;
-        this.playerMissions = FindObjectOfType<GameLoader>().missions;
+        this.missions = FindObjectOfType<GameLoader>().missions;
    
     }
 
     public void CheckMission()
     {
 
-        foreach(Mission mission in this.playerMissions.Where(x => x.MissionState == MissionState.ATTIVO))
+        foreach(Mission mission in this.missions.Where(x => x.MissionState == MissionState.ATTIVO))
         {
 
             bool isCompletable = true;

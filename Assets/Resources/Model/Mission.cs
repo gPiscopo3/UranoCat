@@ -9,6 +9,9 @@ public class Mission
     public string tag { get; set; }
 
     public List<ItemRequirement> RequiredItems { get; set; }
+    public int experience;
+    public string name;
+    public string description;
     public MissionState MissionState;
 
     public Mission()

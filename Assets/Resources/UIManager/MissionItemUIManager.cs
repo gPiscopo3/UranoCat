@@ -26,7 +26,6 @@ public class MissionItemUIManager: MonoBehaviour
         missions = FindObjectOfType<GameLoader>().missions;
         keyItems = FindObjectOfType<GameLoader>().items;
         keyItems = keyItems.FindAll(x => x is KeyItem);
-
         
         CreateMissionBoard();
         GenerateMissionItemUI();
@@ -60,18 +59,20 @@ public class MissionItemUIManager: MonoBehaviour
 
         foreach (Mission mission in this.missions.Where(x => x.MissionState == MissionState.ATTIVO || x.MissionState == MissionState.COMPLETATO))
         {
-
+            
             MissionItemUI missionItemUI = Instantiate(ItemPrefab, contentPanel.transform).GetComponent<MissionItemUI>();
             missionItemUI.gameObject.SetActive(true);
 
             Debug.Log("spacing: " + Vector2.down * i * (itemHeight + itemSpacing));
             missionItemUI.SetMissionPosition(Vector2.down * i * (itemHeight + itemSpacing));
             missionItemUI.setToggle(mission);
-            missionItemUI.setMissionTag(mission);
+            missionItemUI.setMissionName(mission);
+            
 
             string requirements = "";
             foreach(ItemRequirement itemRequirement in mission.RequiredItems)
             {
+                
                 Item item = this.keyItems.Find(x => x.tag.Equals(itemRequirement.tag));
                 requirements = requirements + " " + $"{item.name} x{itemRequirement.quantity}, ";
             }
