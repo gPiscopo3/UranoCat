@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] protected GameObject viewsBoard;
     [SerializeField] protected GameObject newDayPanel;
     [SerializeField] protected GameObject pausePanel;
+    [SerializeField] protected GameObject musicPanel;
 
     [SerializeField] protected Transform interactorSource;
     [SerializeField] protected float interactRange;
@@ -363,18 +364,19 @@ public class PlayerController : MonoBehaviour
     private void ToggleEsc(InputAction.CallbackContext context)
     {
 
-        if(shop.activeSelf || inventory.activeSelf || missionBoard.activeSelf || viewsBoard.activeSelf || newDayPanel.activeSelf)
+        if(shop.activeSelf || inventory.activeSelf || missionBoard.activeSelf || viewsBoard.activeSelf || newDayPanel.activeSelf || musicPanel.activeSelf)
         {
             shop.SetActive(false);
             inventory.SetActive(false);
             missionBoard.SetActive(false);
             viewsBoard.SetActive(false);
             newDayPanel.SetActive(false);
+            musicPanel.SetActive(false);
         }
         else if(summaryBoard.activeSelf)    
             summaryBoard.SetActive(false);
 
-        if(shop.activeSelf || inventory.activeSelf || missionBoard.activeSelf || summaryBoard.activeSelf || viewsBoard.activeSelf || newDayPanel.activeSelf)
+        if(shop.activeSelf || inventory.activeSelf || missionBoard.activeSelf || summaryBoard.activeSelf || viewsBoard.activeSelf || newDayPanel.activeSelf || musicPanel.activeSelf)
         {
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
