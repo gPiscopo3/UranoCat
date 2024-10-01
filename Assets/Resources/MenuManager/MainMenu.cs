@@ -18,7 +18,7 @@ public class MainMenu : MonoBehaviour
     
 
     [SerializeField] private GameObject LoadScreenCanvas;
-    [SerializeField] private string scene_name;
+    [SerializeField] private string scene_name = "MainScene";
 
 
 
@@ -47,6 +47,11 @@ public class MainMenu : MonoBehaviour
     private string path = "Saves/";
 
     private List<Profile> profiles;
+
+
+    float itemWidth;
+    float itemHeight;
+    float diff;
 
 
     public void Awake()
@@ -156,9 +161,18 @@ public class MainMenu : MonoBehaviour
         string profile_name = DropDown.options[DropDown.value].text;
         GameLoader.loaded_profile = profile_name;
         List<SaveInfo> infos = XMLHelper.LoadFromXml<List<SaveInfo>>(path + profile_name + "/saves.xml");
-
+        CreateLoadBoard();
         createScrollView(infos);
 
+    }
+
+    private void CreateLoadBoard()
+    { 
+
+        itemWidth = contentPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.x;
+        itemHeight = contentPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.y;
+
+        diff = (contentPanel.GetComponent<RectTransform>().sizeDelta.x - contentPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.x)/ 2;
     }
 
     private void createScrollView(List<SaveInfo> infos)
@@ -173,10 +187,10 @@ public class MainMenu : MonoBehaviour
         contentPanel.transform.GetChild(0).gameObject.SetActive(false);
         
 
-        //contentPanel.GetComponent<RectTransform>().sizeDelta = Vector2.up * (itemHeight + itemSpacing) * missions.Count;
+        
 
         float y = 0;
-        float delta = 80f;
+        float delta = 35f;
         int i = 0;
 
 
@@ -187,19 +201,19 @@ public class MainMenu : MonoBehaviour
             ButtonPanelUI buttonPan = Instantiate(buttonPrefab, contentPanel.transform).GetComponent<ButtonPanelUI>();
             buttonPan.gameObject.SetActive(true);
             
-            buttonPan.GetComponent<RectTransform>().position = contentPanel.transform.GetChild(0).gameObject.transform.position + new Vector3(0,y,0);
-            //button.transform.position = new Vector3(0, y, 0);
-            //Debug.Log(button.transform.position);
+            
             y -= delta;
 
+            buttonPan.SetPosition(Vector2.down * i * (itemHeight + delta));
             buttonPan.SetButtonText("Load");
             buttonPan.SetLastAccess(info.time.ToString("dd/MM/yyyy HH:mm"));
             buttonPan.SetHourPlayed(info.seconds/60 + " minutes");
             buttonPan.button.onClick.AddListener(() => SaveSelection(info.name));
 
-            buttonPan.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, delta*i, 150);
-            contentPanel.GetComponent<RectTransform>().sizeDelta = Vector2.down * (y+(delta*i)) * infos.Count();
-            buttonPan.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 380, 200);
+           
+            contentPanel.GetComponent<RectTransform>().sizeDelta= Vector2.up * (itemHeight + delta) * infos.Count;
+
+            buttonPan.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, diff, itemWidth);
             i++;
 
         }
@@ -214,12 +228,12 @@ public class MainMenu : MonoBehaviour
 
         StartCoroutine(LoadNextLevel());
 
-        //SceneManager.LoadScene("TestScene2");
+       
     }
 
     IEnumerator LoadNextLevel()
     {
-        AsyncOperation loadLevel = SceneManager.LoadSceneAsync("MainScene");
+        AsyncOperation loadLevel = SceneManager.LoadSceneAsync(scene_name);
         Debug.Log("loading " + GameLoader.loaded_profile + ": " + GameLoader.loaded_save);
 
         yield return null;

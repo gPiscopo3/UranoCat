@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <level>1</level>
+  <followers>1000</followers>
+  <money>128</money>
+  <pension>10</pension>
+  <experience>636</experience>
+  <inventory>
+    <items>
+      <InventoryItem>
+        <ID>9f7362cb-924e-46a5-b010-caf52f1fee32</ID>
+        <tag>ITEM002</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>73e82998-9b0a-4d7d-8efd-6d023c634cec</ID>
+        <tag>KEY001</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>ddb8dd4f-5ac4-4c39-aa57-2fb28fb6635b</ID>
+        <tag>ITEM001</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>868cf286-3456-414c-861b-6dcba07b0e90</ID>
+        <tag>ITEM003</tag>
+        <numUses>9</numUses>
+      </InventoryItem>
+    </items>
+  </inventory>
+</Player>

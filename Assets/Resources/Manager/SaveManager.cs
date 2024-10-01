@@ -60,7 +60,7 @@ public class SaveManager : MonoBehaviour
     }
 
     public void SaveGame(String save){
-        loader.SaveData("save");
+        loader.SaveData(save);
     }
 
         

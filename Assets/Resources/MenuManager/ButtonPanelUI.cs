@@ -31,6 +31,10 @@ public class ButtonPanelUI : MonoBehaviour{
     public void SetButtonInteractable(bool value){
         this.button.interactable = value;
     }
+
+    public void SetPosition(Vector2 pos){
+        this.GetComponent<RectTransform>().anchoredPosition += pos;
+    }
     
 
 }
