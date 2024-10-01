@@ -11,7 +11,7 @@ public class SongItemUI: MonoBehaviour
     [SerializeField] TMP_Text songTitle;
     [SerializeField] TMP_Text author;
     [SerializeField] Button playButton;
-    [SerializeField] Button stopButton;
+    //[SerializeField] Button stopButton;
     
 
     [SerializeField] GameObject giradischi;
@@ -20,6 +20,7 @@ public class SongItemUI: MonoBehaviour
 
     SongUIManager manager;
 
+
     public void Start(){
 
         manager = FindObjectOfType<SongUIManager>();
@@ -27,6 +28,7 @@ public class SongItemUI: MonoBehaviour
         audioSource = giradischi.GetComponent<AudioSource>();
     }
 
+    
 
     public void SetSongPosition(Vector2 pos){
 
@@ -49,20 +51,27 @@ public class SongItemUI: MonoBehaviour
 
     }
 
-    public void setButtons(){
-
+    public void setButtonsPlay(){
+       
         this.playButton.enabled = true;
         playButton.onClick.AddListener(PlaySong);
+        
+        
 
+    }
+/*
+    public void setButtonsStop(){
+
+        this.stopButton.gameObject.SetActive(true);
         this.stopButton.enabled = true;
         stopButton.onClick.AddListener(StopSong);
     }
 
-    
+    */
     
     private void PlaySong(){
-
-       
+        
+        
         
         GameObject SongItem = playButton.transform.parent.gameObject;
 
@@ -78,14 +87,14 @@ public class SongItemUI: MonoBehaviour
         AudioClip clip = (AudioClip)Resources.Load(song.SongPath);
         audioSource.clip = clip;
         audioSource.Play();
-        
+
+        /*if(audioSource.isPlaying){
+            setButtonsStop();
+        }*/
+       
     }
 
-    public void StopSong(){
-
-        audioSource.Stop();
-
-    }
+    
 
 
 

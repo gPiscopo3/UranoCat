@@ -25,6 +25,8 @@ public class SongUIManager: MonoBehaviour
     
     [SerializeField] GameObject giradischi;
 
+    [SerializeField] Button stopButton;
+
     AudioSource audioSource;
     
 
@@ -37,9 +39,19 @@ public class SongUIManager: MonoBehaviour
         GenerateSongItemUI();
 
         audioSource = giradischi.GetComponent<AudioSource>();
-
+        stopButton.onClick.AddListener(StopSong);
     }
 
+    public void Update(){
+        if (audioSource.isPlaying){
+            stopButton.gameObject.SetActive(true);
+        }
+        else{
+            stopButton.gameObject.SetActive(false);
+        }
+    }
+
+    
     private void CreateSongBoard()
     { 
 
@@ -75,7 +87,9 @@ public class SongUIManager: MonoBehaviour
             songItemUI.SetSongPosition(Vector2.down * i * (itemHeight + itemSpacing));
             songItemUI.setSongName(song.SongName);
             songItemUI.setAuthor(song.Author);
-            songItemUI.setButtons();
+            songItemUI.setButtonsPlay();
+
+          
            
             //songItemUI.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, diff, itemWidth);
             contentPanel.GetComponent<RectTransform>().sizeDelta= Vector2.up * (itemHeight + itemSpacing) * songs.Count;
@@ -103,6 +117,12 @@ public class SongUIManager: MonoBehaviour
         }
     }
 
+    public void StopSong(){
+
+        audioSource.Stop();
+      //  this.stopButton.gameObject.SetActive(false);
+
+    }
 
     /*public void PlayAllSongs(int indexOfSong){
 

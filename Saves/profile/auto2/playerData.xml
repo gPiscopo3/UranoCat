@@ -2,9 +2,9 @@
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <level>1</level>
   <followers>1000</followers>
-  <money>139</money>
+  <money>128</money>
   <pension>10</pension>
-  <experience>658</experience>
+  <experience>606</experience>
   <inventory>
     <items>
       <InventoryItem>
