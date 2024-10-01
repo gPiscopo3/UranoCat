@@ -7,7 +7,6 @@ public class AudioManager : MonoBehaviour
     
     [SerializeField] AudioSource CatSource;
     [SerializeField] AudioSource ambient;
-
     [SerializeField] AudioSource lago;
 
     SavedStats savedStats;
@@ -18,9 +17,8 @@ public class AudioManager : MonoBehaviour
         ambient.Play();
         lago.Play();
 
-        
-
     }
+
     void Update()
     {
         Debug.Log("interazioni: " + savedStats.interactions_cat);

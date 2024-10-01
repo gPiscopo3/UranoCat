@@ -16,11 +16,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] protected GameObject missionBoard;
     [SerializeField] protected GameObject summaryBoard;
     [SerializeField] protected GameObject viewsBoard;
+    [SerializeField] protected GameObject newDayPanel;
+    [SerializeField] protected GameObject pausePanel;
 
     [SerializeField] protected Transform interactorSource;
     [SerializeField] protected float interactRange;
 
-    [SerializeField] protected GameObject newDayPanel;
+    
 
     protected CharacterStatus status;
     private PlayerControls playerControls;
@@ -34,10 +36,11 @@ public class PlayerController : MonoBehaviour
     private InputAction toggleEsc;
     private InputAction toggleViewsBoard;
     private InputAction toggleSmartphone; 
-
     private InputAction toggleSprint;
     private InputAction toggleJump;
     private InputAction toggleCrouch;
+    private InputAction togglePause;
+
     private bool isInventoryActive;
     private bool isShopActive;
     private bool isMissionBoardActive;
@@ -46,11 +49,10 @@ public class PlayerController : MonoBehaviour
     private bool isSprinting;
     private bool isJumping = false;
     private bool isCrouching = false;
+    private bool isPauseActive;
 
     private MissionItemUIManager missionManagerUI;
-
     private Animator anim;
-
     private Player player;
 
     private float sprintMultiplier = 1f;
@@ -64,7 +66,7 @@ public class PlayerController : MonoBehaviour
     private bool groundedPlayer;
     private float jumpHeight = 3.5f;
 
-    //gravit� alta per evitare rimbalzi del giocatore dopo un salto
+    //gravità alta per evitare rimbalzi del giocatore dopo un salto
     private float gravityValue = -30.81f;
 
 
@@ -88,12 +90,14 @@ public class PlayerController : MonoBehaviour
         toggleSprint = playerControls.Player.ToggleSprint;
         toggleJump = playerControls.Player.ToggleJump;
         toggleCrouch = playerControls.Player.ToggleCrouch;
+        togglePause = playerControls.Player.TogglePause;
 
         isInventoryActive = false;
         isShopActive = false;
         isMissionBoardActive = false;
         isSummaryBoardActive = false;
         isViewsBoardActive = false;
+        isPauseActive = false;
 
         toggleInventoryAction.performed += ToggleInventory;
         toggleShopAction.performed += ToggleShop;
@@ -107,6 +111,8 @@ public class PlayerController : MonoBehaviour
         toggleSprint.performed += ToggleSprint;
         toggleJump.performed += ToggleJump;
         toggleCrouch.performed += ToggleCrouch;
+
+        togglePause.performed += TogglePause;
 
         currentVelocity = baseVelocity;
 
@@ -184,6 +190,7 @@ public class PlayerController : MonoBehaviour
         toggleSprint.Enable();
         toggleJump.Enable();
         toggleCrouch.Enable();
+        togglePause.Enable();
     }
 
     private void OnDisable()
@@ -199,6 +206,7 @@ public class PlayerController : MonoBehaviour
         toggleSprint.Disable();
         toggleJump.Disable();
         toggleCrouch.Disable(); 
+        togglePause.Disable();
     }
 
     private void ToggleShop(InputAction.CallbackContext context)
@@ -235,7 +243,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    // TO DO: Refactor del metodo
     private void Interact(InputAction.CallbackContext context)
     {
         Ray r = new Ray(interactorSource.position, interactorSource.forward);
@@ -281,12 +288,10 @@ public class PlayerController : MonoBehaviour
 
 
         if (summaryBoard.activeSelf) {
-            //toggleSummaryBoard.Disable();
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             
         } else {
-            //toggleSummaryBoard.Enable();
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -390,4 +395,21 @@ public class PlayerController : MonoBehaviour
         
         
     }
+
+    private void TogglePause(InputAction.CallbackContext context)
+    {
+        isPauseActive = !isPauseActive;
+        
+        if(isPauseActive){
+            pausePanel.SetActive(true);
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+        } else {
+            pausePanel.SetActive(false);
+            Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+
+    }
+
 }

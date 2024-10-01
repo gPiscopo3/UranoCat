@@ -134,6 +134,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TogglePause"",
+                    ""type"": ""Button"",
+                    ""id"": ""47fab5c9-c8fb-42c6-8229-8f9519cb5dfa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -312,6 +321,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""ToggleCrouch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d7609f61-4215-4f6a-a94e-58ff2a7c1b8c"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""TogglePause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -332,6 +352,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_ToggleSprint = m_Player.FindAction("ToggleSprint", throwIfNotFound: true);
         m_Player_ToggleJump = m_Player.FindAction("ToggleJump", throwIfNotFound: true);
         m_Player_ToggleCrouch = m_Player.FindAction("ToggleCrouch", throwIfNotFound: true);
+        m_Player_TogglePause = m_Player.FindAction("TogglePause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -405,6 +426,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_ToggleSprint;
     private readonly InputAction m_Player_ToggleJump;
     private readonly InputAction m_Player_ToggleCrouch;
+    private readonly InputAction m_Player_TogglePause;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -421,6 +443,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @ToggleSprint => m_Wrapper.m_Player_ToggleSprint;
         public InputAction @ToggleJump => m_Wrapper.m_Player_ToggleJump;
         public InputAction @ToggleCrouch => m_Wrapper.m_Player_ToggleCrouch;
+        public InputAction @TogglePause => m_Wrapper.m_Player_TogglePause;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -466,6 +489,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @ToggleCrouch.started += instance.OnToggleCrouch;
             @ToggleCrouch.performed += instance.OnToggleCrouch;
             @ToggleCrouch.canceled += instance.OnToggleCrouch;
+            @TogglePause.started += instance.OnTogglePause;
+            @TogglePause.performed += instance.OnTogglePause;
+            @TogglePause.canceled += instance.OnTogglePause;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -506,6 +532,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @ToggleCrouch.started -= instance.OnToggleCrouch;
             @ToggleCrouch.performed -= instance.OnToggleCrouch;
             @ToggleCrouch.canceled -= instance.OnToggleCrouch;
+            @TogglePause.started -= instance.OnTogglePause;
+            @TogglePause.performed -= instance.OnTogglePause;
+            @TogglePause.canceled -= instance.OnTogglePause;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -537,5 +566,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnToggleSprint(InputAction.CallbackContext context);
         void OnToggleJump(InputAction.CallbackContext context);
         void OnToggleCrouch(InputAction.CallbackContext context);
+        void OnTogglePause(InputAction.CallbackContext context);
     }
 }
