@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <level>1</level>
+  <followers>1000</followers>
+  <money>12799</money>
+  <pension>10</pension>
+  <experience>606</experience>
+  <inventory>
+    <items>
+      <InventoryItem>
+        <ID>42f1bb21-9033-4e5a-bab3-a121ef3dff7b</ID>
+        <tag>MASCHERA001</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>e4c50766-d6fd-418d-bc0d-1262c40969de</ID>
+        <tag>MISS01C</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+    </items>
+  </inventory>
+</Player>

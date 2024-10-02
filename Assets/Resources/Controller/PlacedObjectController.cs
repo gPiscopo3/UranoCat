@@ -15,7 +15,7 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
 
     GameLoader gameLoader;
 
-    MissinigItemManager missingItemManager;
+    MissingItemManager missingItemManager;
 
     void Awake(){
         
@@ -27,7 +27,7 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
 
 
     {
-        missingItemManager = FindObjectOfType<MissinigItemManager>();
+        missingItemManager = FindObjectOfType<MissingItemManager>();
         gameLoader = FindObjectOfType<GameLoader>();
         player = gameLoader.player;
         placedObject = gameLoader.placedObjects.FirstOrDefault(x => x.objectName.Equals(gameObject.name));
