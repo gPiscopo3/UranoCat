@@ -1,7 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfPlacedObjectStatus xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <PlacedObjectStatus>
-    <name>MISS01C</name>
-    <obtained>true</obtained>
-  </PlacedObjectStatus>
-</ArrayOfPlacedObjectStatus>
+<ArrayOfPlacedObjectStatus xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />

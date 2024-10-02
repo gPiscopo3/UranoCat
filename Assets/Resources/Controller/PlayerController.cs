@@ -218,6 +218,11 @@ public class PlayerController : MonoBehaviour
         isShopActive = !isShopActive;
 
         if (shop.activeSelf) {
+            inventory.SetActive(false);
+            missionBoard.SetActive(false);
+            viewsBoard.SetActive(false);
+            newDayPanel.SetActive(false);
+            musicPanel.SetActive(false);
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             
@@ -235,6 +240,11 @@ public class PlayerController : MonoBehaviour
         isInventoryActive = !isInventoryActive;
 
         if (inventory.activeSelf) {
+            shop.SetActive(false);
+            missionBoard.SetActive(false);
+            viewsBoard.SetActive(false);
+            newDayPanel.SetActive(false);
+            musicPanel.SetActive(false);
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             
@@ -264,6 +274,11 @@ public class PlayerController : MonoBehaviour
         isMissionBoardActive = !isMissionBoardActive;
 
         if (missionBoard.activeSelf) {
+            shop.SetActive(false);
+            inventory.SetActive(false);
+            viewsBoard.SetActive(false);
+            newDayPanel.SetActive(false);
+            musicPanel.SetActive(false);
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
             
@@ -307,6 +322,11 @@ public class PlayerController : MonoBehaviour
         if (viewsBoard.activeSelf) {
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
+            shop.SetActive(false);
+            inventory.SetActive(false);
+            missionBoard.SetActive(false);
+            newDayPanel.SetActive(false);
+            musicPanel.SetActive(false);
             
         } else {
             Time.timeScale = 1;

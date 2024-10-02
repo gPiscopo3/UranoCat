@@ -58,6 +58,12 @@
     <day>2</day>
     <views>500</views>
     <quality>0.70199990844726567</quality>
-    <timestamp_seconds>2722</timestamp_seconds>
+    <timestamp_seconds>2646</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>3</day>
+    <views>500</views>
+    <quality>0.70199990844726567</quality>
+    <timestamp_seconds>2720</timestamp_seconds>
   </Video>
 </ArrayOfVideo>

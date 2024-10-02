@@ -2,19 +2,29 @@
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <level>1</level>
   <followers>1000</followers>
-  <money>12799</money>
+  <money>12771</money>
   <pension>10</pension>
-  <experience>606</experience>
+  <experience>748</experience>
   <inventory>
     <items>
       <InventoryItem>
-        <ID>42f1bb21-9033-4e5a-bab3-a121ef3dff7b</ID>
-        <tag>MASCHERA001</tag>
+        <ID>b502f6ef-3811-4019-a569-d0726fbd5911</ID>
+        <tag>ITEM003</tag>
+        <numUses>6</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>053d9385-3d97-4352-843e-428175bfc5dd</ID>
+        <tag>ITEM003</tag>
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>e4c50766-d6fd-418d-bc0d-1262c40969de</ID>
-        <tag>MISS01C</tag>
+        <ID>f2963293-bfac-4c2b-908d-b7b52e2fc0bd</ID>
+        <tag>ITEM003</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>883de517-29ac-4304-9461-f02f1101d897</ID>
+        <tag>ITEM003</tag>
         <numUses>0</numUses>
       </InventoryItem>
     </items>
