@@ -10,36 +10,71 @@
   <SaveInfo>
     <name>auto0</name>
     <seconds>2603</seconds>
-    <time>2024-10-02T12:48:03.510076+02:00</time>
+    <time>2024-10-02T10:24:50.9258464+02:00</time>
     <level>1</level>
     <money>12800</money>
   </SaveInfo>
   <SaveInfo>
     <name>auto1</name>
     <seconds>2613</seconds>
-    <time>2024-10-02T12:48:13.8991646+02:00</time>
+    <time>2024-10-02T10:25:00.8724254+02:00</time>
     <level>1</level>
     <money>12800</money>
   </SaveInfo>
   <SaveInfo>
     <name>auto2</name>
-    <seconds>2622</seconds>
-    <time>2024-10-02T12:48:23.6051331+02:00</time>
+    <seconds>2623</seconds>
+    <time>2024-10-02T10:25:10.8754681+02:00</time>
     <level>1</level>
     <money>12800</money>
   </SaveInfo>
   <SaveInfo>
     <name>auto3</name>
-    <seconds>2632</seconds>
-    <time>2024-10-02T12:48:38.3569537+02:00</time>
+    <seconds>2633</seconds>
+    <time>2024-10-02T10:25:20.8769378+02:00</time>
     <level>1</level>
-    <money>12799</money>
+    <money>12800</money>
   </SaveInfo>
   <SaveInfo>
     <name>auto4</name>
-    <seconds>2642</seconds>
-    <time>2024-10-02T12:48:59.2875919+02:00</time>
+    <seconds>2643</seconds>
+    <time>2024-10-02T10:25:30.878357+02:00</time>
     <level>1</level>
-    <money>12699</money>
+    <money>12800</money>
+  </SaveInfo>
+  <SaveInfo>
+    <name>auto5</name>
+    <seconds>2653</seconds>
+    <time>2024-10-02T10:25:40.8889636+02:00</time>
+    <level>1</level>
+    <money>12800</money>
+  </SaveInfo>
+  <SaveInfo>
+    <name>auto6</name>
+    <seconds>2663</seconds>
+    <time>2024-10-02T10:25:50.9054474+02:00</time>
+    <level>1</level>
+    <money>12800</money>
+  </SaveInfo>
+  <SaveInfo>
+    <name>auto7</name>
+    <seconds>2773</seconds>
+    <time>2024-10-02T10:17:59.0674379+02:00</time>
+    <level>1</level>
+    <money>12800</money>
+  </SaveInfo>
+  <SaveInfo>
+    <name>auto8</name>
+    <seconds>2783</seconds>
+    <time>2024-10-02T10:18:09.0711516+02:00</time>
+    <level>1</level>
+    <money>12800</money>
+  </SaveInfo>
+  <SaveInfo>
+    <name>auto9</name>
+    <seconds>2793</seconds>
+    <time>2024-10-02T10:18:19.0737548+02:00</time>
+    <level>1</level>
+    <money>12800</money>
   </SaveInfo>
 </ArrayOfSaveInfo>
