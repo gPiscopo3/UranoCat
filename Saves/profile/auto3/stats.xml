@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SavedStats xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <day>3</day>
-  <update_cat_timer>3181.513</update_cat_timer>
-  <interaction_cat_timer>9.203262</interaction_cat_timer>
-  <interactions_cat>358</interactions_cat>
-  <day_timer>47483</day_timer>
-  <timestamp_seconds>3129</timestamp_seconds>
-  <dayTime>AFTERNOON</dayTime>
-  <videoStatus>DONE</videoStatus>
-  <sleepStatus>AVAILABLE</sleepStatus>
+  <day>2</day>
+  <update_cat_timer>2681.27539</update_cat_timer>
+  <interaction_cat_timer>9.273415</interaction_cat_timer>
+  <interactions_cat>316</interactions_cat>
+  <day_timer>18152</day_timer>
+  <timestamp_seconds>2633</timestamp_seconds>
+  <dayTime>MORNING</dayTime>
+  <videoStatus>AVAILABLE</videoStatus>
+  <sleepStatus>NOT_AVAILABLE</sleepStatus>
 </SavedStats>

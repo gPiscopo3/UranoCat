@@ -118,11 +118,16 @@ public class PlayerController : MonoBehaviour
 
         currentVelocity = baseVelocity;
 
+        
     }
 
     private void Start()
     {
-       player = FindObjectOfType<GameLoader>().player;
+        player = FindObjectOfType<GameLoader>().player;
+        
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1;
+        setPauseFlag(false);
     }
 
     private void FixedUpdate()

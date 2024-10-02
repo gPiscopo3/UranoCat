@@ -54,8 +54,4 @@ public class CameraController : MonoBehaviour
         isLooking = false;
     }
 
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-    }
 }
