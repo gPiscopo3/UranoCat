@@ -15,6 +15,8 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
 
     GameLoader gameLoader;
 
+    MissinigItemManager missingItemManager;
+
     void Awake(){
         
     }
@@ -25,6 +27,7 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
 
 
     {
+        missingItemManager = FindObjectOfType<MissinigItemManager>();
         gameLoader = FindObjectOfType<GameLoader>();
         player = gameLoader.player;
         placedObject = gameLoader.placedObjects.FirstOrDefault(x => x.objectName.Equals(gameObject.name));
@@ -51,22 +54,26 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
 
         bool isObtainable = true;
         
-       Item missingItem = null;
+        Item missingItem = null;
+        int missingQuantity = 0;
 
         if(placedObject.requirements!=null){
             List<ItemRequirement> requirements = placedObject.requirements;
             foreach(ItemRequirement requirement in requirements){
-                 Debug.Log(requirement.tag);
-                if(player.inventory.items.FindAll(obj => obj.tag.Equals(requirement.tag)).Count < requirement.quantity){
+                Debug.Log(requirement.tag);
+                int count = player.inventory.items.FindAll(obj => obj.tag.Equals(requirement.tag)).Count;
+                if (count < requirement.quantity){
                     isObtainable = false;
                     missingItem = requirement.item;
+                    missingQuantity = requirement.quantity - count;
                     break;
                 }
             }
         }
 
         if(!isObtainable){
-            Debug.Log($"non puoi averlo perche ti manca{missingItem.name}");
+            //Debug.Log($"non puoi averlo perche ti mancano {missingQuantity} oggetti di tipo {missingItem.name}");
+            missingItemManager.setTextAndStartTimer($"ti manca {missingQuantity} oggetto/i di tipo {missingItem.name}");
         }
         else{
             Item item = gameLoader.GetItem(placedObject.itemTag);
