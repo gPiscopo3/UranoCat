@@ -214,7 +214,7 @@ public class MainMenu : MonoBehaviour
 
            
             contentPanel.GetComponent<RectTransform>().sizeDelta= Vector2.up * (itemHeight + delta) * infos.Count;
-
+        
             buttonPan.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, diff, itemWidth);
             i++;
 
