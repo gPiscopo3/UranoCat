@@ -43,6 +43,65 @@
         <durability>27</durability>
         <imagePath>sega</imagePath>
     </KeyItem>
+    <KeyItem>
+        <tag>KEY007</tag>
+        <name>Chiave Inglese</name>
+        <descrizione>Chiave per aprire la porta</descrizione>
+        <durability>1</durability>
+        <imagePath>spanner</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>KEY008</tag>
+        <name>Pennello</name>
+        <descrizione>Pennello</descrizione>
+        <durability>1</durability>
+        <imagePath>pennello</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>KEY009</tag>
+        <name>Viti a stella piccole</name>
+        <descrizione>Viti </descrizione>
+        <durability>1</durability>
+        <imagePath>viti</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>KEY010</tag>
+        <name>Vite a taglio</name>
+        <descrizione>10 viti a taglio</descrizione>
+        <durability>10</durability>
+        <imagePath>vitedritta</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>KEY011</tag>
+        <name>Vite torx</name>
+        <descrizione>10 viti torx</descrizione>
+        <durability>10</durability>
+        <imagePath>vitestella</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>KEY012</tag>
+        <name>Secchio di vernice</name>
+        <descrizione>Secchio di vernice da 1L</descrizione>
+        <durability>1</durability>
+        <imagePath>secchiopitt</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>KEY013</tag>
+        <name>Mascherina FFP2</name>
+        <descrizione>Pacco da 5 mascherine</descrizione>
+        <durability>5</durability>
+        <imagePath>maskerina</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>KEY014</tag>
+        <name>Motosega</name>
+        <descrizione>Motosega elettrica</descrizione>
+        <durability>1</durability>
+        <imagePath>motosega</imagePath>
+    </KeyItem>
+    
+
+
 
     <KeyItem>
         <tag>MISS01A</tag>
@@ -65,5 +124,6 @@
         <durability>1</durability>
         <imagePath>giravite</imagePath>
     </KeyItem>
+
 
 </ArrayOfKeyItem>
