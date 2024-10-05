@@ -2,29 +2,29 @@
 <ArrayOfSaveInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SaveInfo>
     <name>save</name>
-    <seconds>2594</seconds>
-    <time>2024-10-01T12:01:11.3952996+02:00</time>
+    <seconds>2698</seconds>
+    <time>2024-10-05T19:10:22.7194646+02:00</time>
     <level>1</level>
-    <money>128</money>
+    <money>12364</money>
   </SaveInfo>
   <SaveInfo>
     <name>auto0</name>
     <seconds>2603</seconds>
-    <time>2024-10-05T18:05:59.4946381+02:00</time>
+    <time>2024-10-05T17:47:12.0264051+02:00</time>
     <level>1</level>
     <money>12800</money>
   </SaveInfo>
   <SaveInfo>
     <name>auto1</name>
     <seconds>2613</seconds>
-    <time>2024-10-05T18:06:14.794442+02:00</time>
+    <time>2024-10-05T17:47:22.0366259+02:00</time>
     <level>1</level>
     <money>12800</money>
   </SaveInfo>
   <SaveInfo>
     <name>auto2</name>
     <seconds>2623</seconds>
-    <time>2024-10-05T18:06:25.3248788+02:00</time>
+    <time>2024-10-05T17:47:32.0347034+02:00</time>
     <level>1</level>
     <money>12800</money>
   </SaveInfo>

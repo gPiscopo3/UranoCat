@@ -16,7 +16,9 @@ public class Player
     [XmlIgnore] public InventoryItem equippedItem;
 
     public Inventory inventory; 
-    public Player() {}   
+    public Player() {
+
+    }   
 
     public void equip(InventoryItem item){
         equippedItem = item;

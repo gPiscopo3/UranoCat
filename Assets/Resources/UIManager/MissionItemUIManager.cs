@@ -19,6 +19,7 @@ public class MissionItemUIManager: MonoBehaviour
 
     List<Mission> missions;
     List<Item> keyItems;
+    public Player player;
 
     void Start()
     {   
@@ -26,6 +27,7 @@ public class MissionItemUIManager: MonoBehaviour
         this.missions = FindObjectOfType<GameLoader>().missions;
         keyItems = FindObjectOfType<GameLoader>().items;
         keyItems = keyItems.FindAll(x => x is KeyItem);
+        this.player = FindObjectOfType<GameLoader>().player;
         
         CreateMissionBoard();
     }
@@ -67,14 +69,16 @@ public class MissionItemUIManager: MonoBehaviour
             missionItemUI.setMissionName(mission);
             
 
-            string requirements = "";
-            foreach(ItemRequirement itemRequirement in mission.RequiredItems)
+            
+            /*foreach(ItemRequirement itemRequirement in mission.RequiredItems)
             {
                 
                 Item item = this.keyItems.Find(x => x.tag.Equals(itemRequirement.tag));
                 requirements = requirements + " " + $"{item.name} x{itemRequirement.quantity}, ";
-            }
-            missionItemUI.setRequirements(requirements);
+            }*/
+
+            Debug.Log("mission.RequiredItems: " + mission.RequiredItems.Count);
+            missionItemUI.setRequirements(mission.RequiredItems, player.inventory.items);
 
             //missionItemUI.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, diff, itemWidth);
             contentPanel.GetComponent<RectTransform>().sizeDelta= Vector2.up * (itemHeight + itemSpacing) * missions.Count;
@@ -85,7 +89,7 @@ public class MissionItemUIManager: MonoBehaviour
 
     }
 
-    void Update()
+   void Update()
     {
         GenerateMissionItemUI();
     }
