@@ -2,39 +2,14 @@
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <level>1</level>
   <followers>1000</followers>
-  <money>12437</money>
+  <money>12700</money>
   <pension>10</pension>
   <experience>606</experience>
   <inventory>
     <items>
       <InventoryItem>
-        <ID>3f2193a6-eb02-4711-b6a1-34943975157b</ID>
+        <ID>2e237c1a-019b-43d0-9e64-a4f394f4d92b</ID>
         <tag>KEY001</tag>
-        <numUses>1</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>aa2f9b6b-8e58-4bff-876e-c390a2de97e7</ID>
-        <tag>KEY002</tag>
-        <numUses>2</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>32e2375a-036a-43a1-9296-aae17ed86917</ID>
-        <tag>KEY002</tag>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>b5db1562-4a9e-4f2d-aa62-842f98331c01</ID>
-        <tag>KEY005</tag>
-        <numUses>2</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>45cb6fad-7442-4407-b578-bf489b4f9887</ID>
-        <tag>KEY005</tag>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>5bb8f9bd-8db8-4bbc-a1b7-913e27980b3f</ID>
-        <tag>KEY006</tag>
         <numUses>1</numUses>
       </InventoryItem>
     </items>

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using UnityEngine;
+using JetBrains.Annotations;
+using UnityEditor;
 
 public class MissionManager : MonoBehaviour, InteractableObject
 {
@@ -14,11 +16,24 @@ public class MissionManager : MonoBehaviour, InteractableObject
     [SerializeField] private Transform VFX_SpawnPoint;
 
     private AudioSource audioSource;
+
+    [SerializeField] private List<GameObject> spaceshipParts;
+
+    private int counter;
+    
     void Start()
     {
         this.player = FindObjectOfType<GameLoader>().player;
         this.missions = FindObjectOfType<GameLoader>().missions;
         this.audioSource = GetComponent<AudioSource>();
+
+        this.counter = 0;
+        //TO DO: instance this starting from mission file.
+        foreach(GameObject part in spaceshipParts)
+        {
+            part.SetActive(false);
+        }
+
     }
 
 
@@ -42,9 +57,6 @@ public class MissionManager : MonoBehaviour, InteractableObject
             if(isCompletable)
             {
                 mission.MissionState = MissionState.COMPLETATO;
-
-                //Instantiate(VFX_MissionComplete, VFX_SpawnPoint.position, Quaternion.identity);
-
                 foreach (ItemRequirement item in mission.RequiredItems)
                 {
                     InventoryItem itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.tag));
@@ -59,18 +71,14 @@ public class MissionManager : MonoBehaviour, InteractableObject
                 UpdateMissions();
 
                 Instantiate(VFX_MissionComplete, VFX_SpawnPoint.position, Quaternion.identity);
-                //Play audio
+                
                 audioSource.Play();
-                //Deactivate previous prefab
-                //Instantiate new prefab
-                //TODO: salva la lista aggiornata nell'xml
-            
+                spaceshipParts[this.counter].SetActive(true);
+                counter++;
 
             }
 
         }
-
-       
 
     }
 
