@@ -50,7 +50,6 @@ public class MissionManager : MonoBehaviour, InteractableObject
                     InventoryItem itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.tag));
                     for (int i = 0; i < item.quantity; i++)
                     {
-                        Debug.Log("Rimosso" + i + " " + item.quantity);
                         this.player.inventory.useItem(itemToRemove);
                         itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.tag));
                     }
@@ -65,6 +64,7 @@ public class MissionManager : MonoBehaviour, InteractableObject
                 //Deactivate previous prefab
                 //Instantiate new prefab
                 //TODO: salva la lista aggiornata nell'xml
+            
 
             }
 
@@ -102,15 +102,14 @@ public class MissionManager : MonoBehaviour, InteractableObject
             }
         }
 
-         foreach(Mission m in this.missions)
+        */
+
+        foreach(Mission m in this.missions)
         {
             Debug.Log($"{m.tag}, {m.MissionState} {DateTime.Now}");
             foreach(InventoryItem item in this.player.inventory.items)
             Debug.Log($"{item.item.tag},{item.item.name},{item.ID}, {DateTime.Now}");
-        }*/
-
-
-
+        }
 
     }
 

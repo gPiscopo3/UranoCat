@@ -2,15 +2,15 @@
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <level>1</level>
   <followers>1000</followers>
-  <money>12799</money>
+  <money>12700</money>
   <pension>10</pension>
   <experience>606</experience>
   <inventory>
     <items>
       <InventoryItem>
-        <ID>aae26357-11ee-42fd-aec0-c9879809fab1</ID>
-        <tag>KEY009</tag>
-        <numUses>0</numUses>
+        <ID>b1c42677-487f-4fe7-bc90-bcf3934ec481</ID>
+        <tag>KEY001</tag>
+        <numUses>1</numUses>
       </InventoryItem>
     </items>
   </inventory>

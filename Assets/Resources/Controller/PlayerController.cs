@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>(); 
         status = GetComponent<CharacterStatus>();
-        missionManagerUI = FindObjectOfType<MissionItemUIManager>();
+        //missionManagerUI = FindObjectOfType<MissionItemUIManager>();
         anim = GetComponent<Animator>();
         
 
@@ -274,7 +274,7 @@ public class PlayerController : MonoBehaviour
 
     private void ToggleMissionBoard(InputAction.CallbackContext context)
     {
-        missionManagerUI.GenerateMissionItemUI();
+        //missionManagerUI.GenerateMissionItemUI();
         missionBoard.SetActive(!missionBoard.activeSelf);
         isMissionBoardActive = !isMissionBoardActive;
 

@@ -15,7 +15,6 @@ public class MissionItemUI: MonoBehaviour
     public void SetMissionPosition(Vector2 pos){
 
         GetComponent<RectTransform>().anchoredPosition += pos;
-
     }
 
     public void setToggle(Mission mission){

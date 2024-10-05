@@ -23,13 +23,11 @@ public class MissionItemUIManager: MonoBehaviour
     void Start()
     {   
         Debug.Log("MissionItemUIManager Start");
-        missions = FindObjectOfType<GameLoader>().missions;
+        this.missions = FindObjectOfType<GameLoader>().missions;
         keyItems = FindObjectOfType<GameLoader>().items;
         keyItems = keyItems.FindAll(x => x is KeyItem);
         
         CreateMissionBoard();
-        GenerateMissionItemUI();
-
     }
 
     private void CreateMissionBoard()
@@ -82,10 +80,14 @@ public class MissionItemUIManager: MonoBehaviour
             contentPanel.GetComponent<RectTransform>().sizeDelta= Vector2.up * (itemHeight + itemSpacing) * missions.Count;
                 
             i++; 
-            
-
+        
         }
 
+    }
+
+    void Update()
+    {
+        GenerateMissionItemUI();
     }
 
 }
