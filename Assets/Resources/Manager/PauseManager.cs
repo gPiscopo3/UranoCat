@@ -11,6 +11,8 @@ public class PauseManager : MonoBehaviour
     [SerializeField] private Button desktopButton;
     [SerializeField] private Button continueButton;
 
+    private GameLoader gameLoader;
+
     private PlayerController playerController;
 
     [SerializeField] protected GameObject pausePanel;
@@ -22,6 +24,8 @@ public class PauseManager : MonoBehaviour
         continueButton.onClick.AddListener(Continue);
         mainMenuButton.onClick.AddListener(mainMenu);
         desktopButton.onClick.AddListener(desktop);
+
+        gameLoader = FindObjectOfType<GameLoader>();
     }
 
     public void Continue()
@@ -33,11 +37,13 @@ public class PauseManager : MonoBehaviour
     }
     public void mainMenu()
     {
+        gameLoader.SaveData("last");
         SceneManager.LoadScene("Main Menu");
     }
     public void desktop()
     {
         // da testare quando viene fatta la build
+        gameLoader.SaveData("last");
         Application.Quit();
     }
 
