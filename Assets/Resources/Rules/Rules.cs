@@ -17,4 +17,7 @@ public class Rules{
     public double money_for_view;
     public double xp_for_view;
 
+
+    public double autosave_time;
+    public int autosave_number;
 }

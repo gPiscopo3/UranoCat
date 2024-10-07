@@ -10,12 +10,18 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
 {
 
     Player player;
-    PlacedObject placedObject;
+    //PlacedObject placedObject;
     List<PlacedObjectStatus> statusList;
 
     GameLoader gameLoader;
 
     MissingItemManager missingItemManager;
+
+    [SerializeField] List<String> requiredItemTags;
+    [SerializeField] String recivedItemTag;
+
+    Item receivedItem;
+    List<ItemRequirement> requirements;
 
     void Awake(){
         
@@ -24,23 +30,32 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
 
 
     void Start()
-
-
     {
+        
         missingItemManager = FindObjectOfType<MissingItemManager>();
         gameLoader = FindObjectOfType<GameLoader>();
         player = gameLoader.player;
-        placedObject = gameLoader.placedObjects.FirstOrDefault(x => x.objectName.Equals(gameObject.name));
+        
         this.statusList = gameLoader.placedObjectsStatus;
 
         PlacedObjectStatus status = this.statusList.FirstOrDefault(x => x.name == gameObject.name);
         Debug.Log(status);
 
-        if(status != null && status.obtained && placedObject != null)
+        if(status != null && status.obtained)
             gameObject.SetActive(false);
+
+        try{
+            receivedItem = gameLoader.GetItem(recivedItemTag);
+            requirements = new List<ItemRequirement>();
+            foreach(String tag in requiredItemTags){
+                ItemRequirement requirement = requirements.FirstOrDefault(x => x.tag.Equals(tag));
+                if(requirement==null)
+                    requirements.Add(new ItemRequirement{item = gameLoader.GetItem(tag), quantity = 1, tag = tag});
+                else
+                    requirement.quantity++;        
+            }
+        }catch(Exception){gameObject.SetActive(false);}
                 
-        
-    
     }
 
     void Update()
@@ -57,8 +72,7 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
         Item missingItem = null;
         int missingQuantity = 0;
 
-        if(placedObject.requirements!=null){
-            List<ItemRequirement> requirements = placedObject.requirements;
+        if(requirements!=null){
             foreach(ItemRequirement requirement in requirements){
                 Debug.Log(requirement.tag);
                 int count = player.inventory.items.FindAll(obj => obj.tag.Equals(requirement.tag)).Count;
@@ -76,11 +90,8 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
             missingItemManager.setTextAndStartTimer($"ti manca {missingQuantity} oggetto/i di tipo {missingItem.name}");
         }
         else{
-            Item item = gameLoader.GetItem(placedObject.itemTag);
-
-
-            player.inventory.addItem(item);
-            Debug.Log("ottenuto " + item.name);
+            player.inventory.addItem(receivedItem);
+            Debug.Log("ottenuto " + receivedItem.name);
 
             statusList.Add(new PlacedObjectStatus{name = gameObject.name, obtained = true});
 

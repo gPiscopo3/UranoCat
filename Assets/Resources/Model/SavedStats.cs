@@ -14,5 +14,7 @@ public class SavedStats{
     public EventStatus videoStatus;
     public EventStatus sleepStatus;
 
+    public int autosave;
+
     
 }

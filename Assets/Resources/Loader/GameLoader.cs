@@ -28,7 +28,6 @@ public class GameLoader : MonoBehaviour
     public const string keyPath = "Assets/Resources/key_items.xml";
     public const string RulesPath = "Assets/Resources/rules.xml";
     public const string missionPath = "Assets/Resources/missions.xml";
-    public const string placedObjectsPath = "Assets/Resources/placed_objects.xml";
     public const string songsPath = "Assets/Resources/songs.xml";
 
 
@@ -72,16 +71,6 @@ public class GameLoader : MonoBehaviour
         Debug.Log($"Lista di ShopItem deserializzata. Numero di elementi: {this.shopItems.Count}");
         foreach(ShopItem shopItem in shopItems){
             shopItem.item = GetItem(shopItem.Tag);
-        }
-
-        this.placedObjects = XMLHelper.LoadFromXml<List<PlacedObject>>(placedObjectsPath);
-        foreach(PlacedObject placedObject in placedObjects){
-            placedObject.item = GetItem(placedObject.itemTag);
-            foreach(ItemRequirement itemRequirement in placedObject.requirements){
-                itemRequirement.item = GetItem(itemRequirement.tag);
-                if(itemRequirement.quantity == 0)
-                        itemRequirement.quantity = 1;
-            }
         }
         
         this.rules = XMLHelper.LoadFromXml<Rules>(RulesPath);

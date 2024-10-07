@@ -13,6 +13,7 @@ public class SaveManager : MonoBehaviour
 
     GameLoader loader;
     SavedStats savedStats;
+    Rules rules;
 
     private float timer_save = 0f;
     private float timer_timestamp = 0f;
@@ -24,6 +25,7 @@ public class SaveManager : MonoBehaviour
     {
         this.loader = FindObjectOfType<GameLoader>();
         savedStats = loader.savedStats;
+        rules = loader.rules;
         
     }
     
@@ -41,18 +43,17 @@ public class SaveManager : MonoBehaviour
 
         }
 
-        if (timer_save > 10f)
+        if (timer_save > rules.autosave_time)
         {
 
-        
-            SaveGame("auto"+autosave);
-            autosave = (autosave + 1)%10;
+            savedStats.autosave = (savedStats.autosave + 1)%rules.autosave_number;
+            SaveGame("auto"+savedStats.autosave);
+            
             timer_save = 0f;
             
 
             
-            
-           
+    
         }
 
         

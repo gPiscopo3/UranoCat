@@ -38,7 +38,7 @@ public class DayManager: MonoBehaviour{
 
         if(savedStats.dayTime.Equals(DayTime.MORNING))
             Morning_Cycle();
-        else
+        else if(savedStats.dayTime.Equals(DayTime.EVENING))
             Afternoon_Cycle();
     }
 
@@ -52,15 +52,15 @@ public class DayManager: MonoBehaviour{
             if(savedStats.videoStatus == EventStatus.NOT_AVAILABLE){
                 savedStats.videoStatus = EventStatus.AVAILABLE;
                 Debug.Log("Video disponibile");
+                savedStats.dayTime = DayTime.AFTERNOON;
+                savedStats.day_timer = 0;
             }
         }
 
         // per prova 
         //VideoRegistrato();
         if(savedStats.videoStatus == EventStatus.DONE){
-            Debug.Log("Video registrato");
-            savedStats.dayTime = DayTime.AFTERNOON;
-            savedStats.day_timer = 0;
+            
         }
 
     }
@@ -72,13 +72,11 @@ public class DayManager: MonoBehaviour{
         if(savedStats.day_timer >= rules.time_to_sleep){
             if(savedStats.sleepStatus == EventStatus.NOT_AVAILABLE)
                 savedStats.sleepStatus = EventStatus.AVAILABLE;
+            savedStats.dayTime = DayTime.EVENING;
         }
 
         
-        if(savedStats.sleepStatus == EventStatus.DONE){
-            savedStats.dayTime = DayTime.AFTERNOON;
-            NuovaGiornata();
-        }
+        
 
     }
 
@@ -88,8 +86,10 @@ public class DayManager: MonoBehaviour{
         Debug.Log("Video registrato");
     }
     public void Dormi(){
-        savedStats.sleepStatus = EventStatus.DONE;
-        Debug.Log("Sleeping");
+        if(savedStats.sleepStatus== EventStatus.AVAILABLE){
+            savedStats.sleepStatus = EventStatus.DONE;
+            Debug.Log("Sleeping");
+        }
     }
 
     public void NuovaGiornata(){

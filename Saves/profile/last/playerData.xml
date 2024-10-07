@@ -42,6 +42,11 @@
         <tag>KEY005</tag>
         <numUses>0</numUses>
       </InventoryItem>
+      <InventoryItem>
+        <ID>878fc2ba-a565-4fc5-962a-20c33978f976</ID>
+        <tag>KEY001</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
     </items>
   </inventory>
 </Player>
