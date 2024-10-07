@@ -22,4 +22,5 @@
     </RequiredItems>
     <name>ACCENDI LE LUCI</name>
     <description>Trova le componenti dei fari cadute nei pressi di casa tua</description>
+  </Mission>
 </ArrayOfMission>

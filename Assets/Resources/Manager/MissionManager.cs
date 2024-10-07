@@ -5,6 +5,7 @@ using System;
 using UnityEngine;
 using JetBrains.Annotations;
 using UnityEditor;
+using Unity.VisualScripting;
 
 public class MissionManager : MonoBehaviour, InteractableObject
 {
@@ -17,9 +18,7 @@ public class MissionManager : MonoBehaviour, InteractableObject
 
     private AudioSource audioSource;
 
-    [SerializeField] private List<GameObject> spaceshipParts;
-
-    private int counter;
+    [SerializeField] private List<GameObject> spaceshipParts = new List<GameObject>();
     
     void Start()
     {
@@ -27,19 +26,59 @@ public class MissionManager : MonoBehaviour, InteractableObject
         this.missions = FindObjectOfType<GameLoader>().missions;
         this.audioSource = GetComponent<AudioSource>();
 
-        this.counter = 0;
-        //TO DO: instance this starting from mission file.
-        foreach(GameObject part in spaceshipParts)
+        foreach(Mission mission in this.missions.Where(x => x.enableSpaceshipModification))
         {
-            part.SetActive(false);
-        }
 
+            if(mission.MissionState == MissionState.COMPLETATO){
+                this.spaceshipParts.Find(obj => obj.name.Equals(mission.spaceshipPart)).SetActive(true);
+            } else {
+                this.spaceshipParts.Find(obj => obj.name.Equals(mission.spaceshipPart)).SetActive(false);
+            }
+        
+        }
     }
 
 
     public void CheckMission()
     {
+        Mission actualMission = this.missions.FirstOrDefault(x => x.MissionState == MissionState.ATTIVO);
 
+        bool isCompletable = true;
+        foreach(ItemRequirement item in actualMission.RequiredItems)
+        {
+            int quantity = this.player.inventory.items.FindAll(obj => obj.EqualsByTag(item.tag)).Count;    
+            if(quantity < item.quantity)
+            {
+                isCompletable = false;    
+            }            
+        }
+        
+        Debug.Log($"Missione completata? {isCompletable}");
+        if(isCompletable){
+            actualMission.MissionState = MissionState.COMPLETATO;
+            foreach (ItemRequirement item in actualMission.RequiredItems)
+            {
+                InventoryItem itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.tag));
+                for (int i = 0; i < item.quantity; i++)
+                {
+                    this.player.inventory.useItem(itemToRemove);
+                    itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.tag));
+                }
+                   
+            }
+
+            Instantiate(VFX_MissionComplete, VFX_SpawnPoint.position, Quaternion.identity);
+            audioSource.Play();
+
+            if(actualMission.enableSpaceshipModification)
+            {
+                spaceshipParts.Find(obj => obj.name.Equals(actualMission.spaceshipPart)).SetActive(true);
+            }
+
+            UpdateMissions();
+        }
+
+        /*
         foreach(Mission mission in this.missions.Where(x => x.MissionState == MissionState.ATTIVO))
         {
 
@@ -54,11 +93,14 @@ public class MissionManager : MonoBehaviour, InteractableObject
                 } 
                    
             }
+            Debug.Log($"Missione completata? {isCompletable}");
             if(isCompletable)
             {
+                
                 mission.MissionState = MissionState.COMPLETATO;
                 foreach (ItemRequirement item in mission.RequiredItems)
                 {
+                    //TO DO: rimozione oggetti dall'inventario in base al criterio
                     InventoryItem itemToRemove = this.player.inventory.items.Find(obj => obj.EqualsByTag(item.tag));
                     for (int i = 0; i < item.quantity; i++)
                     {
@@ -68,18 +110,18 @@ public class MissionManager : MonoBehaviour, InteractableObject
                    
                 }
 
-                UpdateMissions();
-
                 Instantiate(VFX_MissionComplete, VFX_SpawnPoint.position, Quaternion.identity);
-                
                 audioSource.Play();
-                spaceshipParts[this.counter].SetActive(true);
-                counter++;
 
+                if(mission.enableSpaceshipModification)
+                {
+                    spaceshipParts.Find(obj => obj.name.Equals(mission.spaceshipPart)).SetActive(true);
+                }
+                
             }
 
         }
-
+        */
     }
 
     // Una volta che una missione è stata completata andiamo ad aggiornare lo stato delle missioni che non sono attive

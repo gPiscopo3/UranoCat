@@ -13,6 +13,8 @@ public class Mission
     public string name;
     public string description;
     public MissionState MissionState;
+    public bool enableSpaceshipModification;
+    public string spaceshipPart;
 
     public Mission()
     {
