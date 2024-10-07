@@ -2,7 +2,7 @@
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <level>1</level>
   <followers>1000</followers>
-  <money>12364</money>
+  <money>12337</money>
   <pension>10</pension>
   <experience>606</experience>
   <inventory>
@@ -35,6 +35,11 @@
       <InventoryItem>
         <ID>b88e51a6-261a-4582-b9f2-88ba063e0919</ID>
         <tag>KEY005</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>b228acbd-6583-46e6-afed-b9c592e0ab50</ID>
+        <tag>KEY006</tag>
         <numUses>0</numUses>
       </InventoryItem>
     </items>
