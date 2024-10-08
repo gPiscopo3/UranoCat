@@ -67,7 +67,7 @@ public class MissionManager : MonoBehaviour, InteractableObject
                    
             }
 
-            Instantiate(VFX_MissionComplete, VFX_SpawnPoint.position, Quaternion.identity);
+            Instantiate(VFX_MissionComplete, VFX_SpawnPoint.position, VFX_SpawnPoint.rotation);
             audioSource.Play();
 
             if(actualMission.enableSpaceshipModification)
