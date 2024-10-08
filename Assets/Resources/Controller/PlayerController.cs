@@ -4,10 +4,12 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.XR;
 using UnityEngine.UI;
+using static UnityEditor.FilePathAttribute;
 
 public class PlayerController : MonoBehaviour
 {
@@ -71,6 +73,8 @@ public class PlayerController : MonoBehaviour
     //gravità alta per evitare rimbalzi del giocatore dopo un salto
     private float gravityValue = -30.81f;
 
+    [SerializeField] GameObject playerToMove;
+
 
     private void Awake()
     {
@@ -128,6 +132,7 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
         setPauseFlag(false);
+
     }
 
     private void FixedUpdate()
@@ -182,6 +187,9 @@ public class PlayerController : MonoBehaviour
         //crouch
         anim.SetBool("crouch", isCrouching);
 
+        player.x = this.transform.position.x;
+        player.y = this.transform.position.y;
+        player.z = this.transform.position.z;
     }
 
     private void OnEnable()
@@ -443,6 +451,13 @@ public class PlayerController : MonoBehaviour
     public void setPauseFlag(bool flag)
     {
         isPauseActive = flag;
+    }
+
+    public void setInitialPosition(float x, float y, float z)
+    {
+        characterController.enabled = false;
+        playerToMove.transform.position = new Vector3(x, y, z);
+        characterController.enabled = true;
     }
 
 }

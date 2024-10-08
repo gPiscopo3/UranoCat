@@ -5,6 +5,9 @@
   <money>12327</money>
   <pension>10</pension>
   <experience>606</experience>
+  <x>198.954346</x>
+  <y>19.5119743</y>
+  <z>110.743813</z>
   <inventory>
     <items>
       <InventoryItem>
@@ -43,7 +46,7 @@
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>878fc2ba-a565-4fc5-962a-20c33978f976</ID>
+        <ID>249e7d7c-8c03-43f6-8228-bcb92e47485a</ID>
         <tag>KEY001</tag>
         <numUses>0</numUses>
       </InventoryItem>

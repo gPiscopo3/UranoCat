@@ -12,6 +12,8 @@ public class Player
     public double money; 
     public double pension;
     public long experience;
+    
+    public float x, y, z;
 
     [XmlIgnore] public InventoryItem equippedItem;
 

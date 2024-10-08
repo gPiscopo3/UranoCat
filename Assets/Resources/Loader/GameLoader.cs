@@ -45,9 +45,14 @@ public class GameLoader : MonoBehaviour
     public List<PlacedObject> placedObjects;
     public Rules rules;
 
-  
+    private PlayerController playerController;
+
+
+
 
     void Awake(){
+
+        playerController = FindObjectOfType<PlayerController>();
 
         LoadAssets();
         LoadSave();
@@ -92,6 +97,9 @@ public class GameLoader : MonoBehaviour
 
         this.cat = XMLHelper.LoadFromXml<Cat>(path + fileCat);
         this.player = XMLHelper.LoadFromXml<Player>(path + filePlayer);
+
+        playerController.setInitialPosition(player.x, player.y, player.z);
+        
         this.missions = XMLHelper.LoadFromXml<List<Mission>>(path + fileMissions);
         this.videos = XMLHelper.LoadFromXml<List<Video>>(path + fileVideo);
         this.savedStats = XMLHelper.LoadFromXml<SavedStats>(path + fileStats);
