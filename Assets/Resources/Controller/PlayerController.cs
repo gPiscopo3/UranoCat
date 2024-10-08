@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] protected GameObject newDayPanel;
     [SerializeField] protected GameObject pausePanel;
     [SerializeField] protected GameObject musicPanel;
+    [SerializeField] protected GameObject commandsPanel;
 
     [SerializeField] protected Transform interactorSource;
     [SerializeField] protected float interactRange;
@@ -435,7 +436,8 @@ public class PlayerController : MonoBehaviour
     private void TogglePause(InputAction.CallbackContext context)
     {
         isPauseActive = !isPauseActive;
-        
+
+        commandsPanel.SetActive(false);
         if(isPauseActive){
             pausePanel.SetActive(true);
             Time.timeScale = 0;
