@@ -97,7 +97,6 @@ public class PlayerController : MonoBehaviour
         toggleSprint = playerControls.Player.ToggleSprint;
         toggleJump = playerControls.Player.ToggleJump;
         toggleCrouch = playerControls.Player.ToggleCrouch;
-        togglePause = playerControls.Player.TogglePause;
 
         isInventoryActive = false;
         isShopActive = false;
@@ -119,8 +118,7 @@ public class PlayerController : MonoBehaviour
         toggleJump.performed += ToggleJump;
         toggleCrouch.performed += ToggleCrouch;
 
-        togglePause.performed += TogglePause;
-
+      
         currentVelocity = baseVelocity;
 
         
@@ -206,7 +204,6 @@ public class PlayerController : MonoBehaviour
         toggleSprint.Enable();
         toggleJump.Enable();
         toggleCrouch.Enable();
-        togglePause.Enable();
     }
 
     private void OnDisable()
@@ -222,7 +219,6 @@ public class PlayerController : MonoBehaviour
         toggleSprint.Disable();
         toggleJump.Disable();
         toggleCrouch.Disable(); 
-        togglePause.Disable();
     }
 
     private void ToggleShop(InputAction.CallbackContext context)
@@ -395,10 +391,22 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void ToggleEsc(InputAction.CallbackContext context)
+    private void ToggleEsc(InputAction.CallbackContext context){
+
+        if(!(shop.activeSelf || inventory.activeSelf || missionBoard.activeSelf || summaryBoard.activeSelf || viewsBoard.activeSelf || 
+        newDayPanel.activeSelf || musicPanel.activeSelf || commandsPanel.activeSelf))
+            TogglePause(context);
+
+        ToggleBack(context);
+    }
+
+    private void ToggleBack(InputAction.CallbackContext context)
     {
 
-        if(shop.activeSelf || inventory.activeSelf || missionBoard.activeSelf || viewsBoard.activeSelf || newDayPanel.activeSelf || musicPanel.activeSelf)
+        
+
+        if(shop.activeSelf || inventory.activeSelf || missionBoard.activeSelf || viewsBoard.activeSelf || 
+        newDayPanel.activeSelf || musicPanel.activeSelf ||commandsPanel.activeSelf || pausePanel.activeSelf)
         {
             shop.SetActive(false);
             inventory.SetActive(false);
@@ -406,11 +414,13 @@ public class PlayerController : MonoBehaviour
             viewsBoard.SetActive(false);
             newDayPanel.SetActive(false);
             musicPanel.SetActive(false);
+            commandsPanel.SetActive(false);
         }
         else if(summaryBoard.activeSelf)    
             summaryBoard.SetActive(false);
 
-        if(shop.activeSelf || inventory.activeSelf || missionBoard.activeSelf || summaryBoard.activeSelf || viewsBoard.activeSelf || newDayPanel.activeSelf || musicPanel.activeSelf)
+        if(shop.activeSelf || inventory.activeSelf || missionBoard.activeSelf || summaryBoard.activeSelf || viewsBoard.activeSelf || 
+        newDayPanel.activeSelf || musicPanel.activeSelf || commandsPanel.activeSelf || pausePanel.activeSelf)
         {
             Time.timeScale = 0;
             Cursor.lockState = CursorLockMode.None;
@@ -435,19 +445,21 @@ public class PlayerController : MonoBehaviour
 
     private void TogglePause(InputAction.CallbackContext context)
     {
-        isPauseActive = !isPauseActive;
+        if(!(shop.activeSelf || inventory.activeSelf || missionBoard.activeSelf || summaryBoard.activeSelf || viewsBoard.activeSelf || 
+        newDayPanel.activeSelf || musicPanel.activeSelf || commandsPanel.activeSelf)){
 
-        commandsPanel.SetActive(false);
-        if(isPauseActive){
-            pausePanel.SetActive(true);
-            Time.timeScale = 0;
-            Cursor.lockState = CursorLockMode.None;
-        } else {
-            pausePanel.SetActive(false);
-            Time.timeScale = 1;
-            Cursor.lockState = CursorLockMode.Locked;
+
+            commandsPanel.SetActive(false);
+            if(!pausePanel.activeSelf){
+                pausePanel.SetActive(true);
+                Time.timeScale = 0;
+                Cursor.lockState = CursorLockMode.None;
+            } else {
+                pausePanel.SetActive(false);
+                Time.timeScale = 1;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
         }
-
     }
 
     public void setPauseFlag(bool flag)

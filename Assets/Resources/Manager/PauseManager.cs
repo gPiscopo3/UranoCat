@@ -57,6 +57,8 @@ public class PauseManager : MonoBehaviour
     public void Commands()
     {
         commandsPanel.SetActive(true);
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.None;
     }
 
 }
