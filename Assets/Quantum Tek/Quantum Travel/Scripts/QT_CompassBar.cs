@@ -31,8 +31,6 @@ namespace QuantumTek.QuantumTravel
         public float MarkerSize = 20;
         public float MinScale = 0.5f;
         public float MaxScale = 2f;
-        private GameLoader loader;
-        private string itemTag;
         private MissionManager missionManager;
 
         private void Awake()
@@ -45,9 +43,6 @@ namespace QuantumTek.QuantumTravel
             rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, ShownCompassSize.y);
             barBackground.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, CompassSize.x);
             barBackground.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, CompassSize.y);
-
-            this.loader = FindObjectOfType<GameLoader>();
-            this.itemTag = null;
 
             this.missionManager = FindObjectOfType<MissionManager>();
         }
