@@ -4,4 +4,48 @@
     <name>ScrewDriver 1</name>
     <obtained>true</obtained>
   </PlacedObjectStatus>
+  <PlacedObjectStatus>
+    <name>StarSparrow_Wing1 (1)</name>
+    <obtained>true</obtained>
+  </PlacedObjectStatus>
+  <PlacedObjectStatus>
+    <name>StarSparrow_Wing1</name>
+    <obtained>true</obtained>
+  </PlacedObjectStatus>
+  <PlacedObjectStatus>
+    <name>StarSparrow_Wing2</name>
+    <obtained>true</obtained>
+  </PlacedObjectStatus>
+  <PlacedObjectStatus>
+    <name>Wing3</name>
+    <obtained>true</obtained>
+  </PlacedObjectStatus>
+  <PlacedObjectStatus>
+    <name>Wing1</name>
+    <obtained>true</obtained>
+  </PlacedObjectStatus>
+  <PlacedObjectStatus>
+    <name>Wing5</name>
+    <obtained>true</obtained>
+  </PlacedObjectStatus>
+  <PlacedObjectStatus>
+    <name>Wing4</name>
+    <obtained>true</obtained>
+  </PlacedObjectStatus>
+  <PlacedObjectStatus>
+    <name>Wing2</name>
+    <obtained>true</obtained>
+  </PlacedObjectStatus>
+  <PlacedObjectStatus>
+    <name>Wing6</name>
+    <obtained>true</obtained>
+  </PlacedObjectStatus>
+  <PlacedObjectStatus>
+    <name>Thruster</name>
+    <obtained>true</obtained>
+  </PlacedObjectStatus>
+  <PlacedObjectStatus>
+    <name>Engine</name>
+    <obtained>true</obtained>
+  </PlacedObjectStatus>
 </ArrayOfPlacedObjectStatus>

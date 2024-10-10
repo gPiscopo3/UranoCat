@@ -26,7 +26,7 @@
         <tag>MASCHERA001</tag>
         <name>Maschera protettiva</name>
         <descrizione>Maschera protettiva per zio Agosto</descrizione>
-        <durability>10</durability>
+        <durability>1</durability>
         <imagePath>mask</imagePath>
     </KeyItem>
     <KeyItem>
@@ -67,15 +67,15 @@
     <KeyItem>
         <tag>KEY010</tag>
         <name>Vite a taglio</name>
-        <descrizione>10 viti a taglio</descrizione>
-        <durability>10</durability>
+        <descrizione>Semplice vite a taglio</descrizione>
+        <durability>1</durability>
         <imagePath>vitedritta</imagePath>
     </KeyItem>
     <KeyItem>
         <tag>KEY011</tag>
         <name>Vite torx</name>
-        <descrizione>10 viti torx</descrizione>
-        <durability>10</durability>
+        <descrizione>Viti torx speciali</descrizione>
+        <durability>1</durability>
         <imagePath>vitestella</imagePath>
     </KeyItem>
     <KeyItem>
@@ -88,42 +88,94 @@
     <KeyItem>
         <tag>KEY013</tag>
         <name>Mascherina FFP2</name>
-        <descrizione>Pacco da 5 mascherine</descrizione>
-        <durability>5</durability>
+        <descrizione>Mascherina FFP2, spesso utilizzata durante il COVID, ora un lontano ricordo</descrizione>
+        <durability>1</durability>
         <imagePath>maskerina</imagePath>
     </KeyItem>
     <KeyItem>
         <tag>KEY014</tag>
         <name>Motosega</name>
         <descrizione>Motosega elettrica</descrizione>
-        <durability>1</durability>
+        <durability>100</durability>
         <imagePath>motosega</imagePath>
     </KeyItem>
-    
-
-
-
     <KeyItem>
-        <tag>MISS01A</tag>
+        <tag>KEY015</tag>
+        <name>Bullone</name>
+        <descrizione>Semplice bullone per costruire e riparare oggetti</descrizione>
+        <durability>1</durability>
+        <imagePath>bullone</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>KEY016</tag>
+        <name>Kerosene</name>
+        <descrizione>Carburante per il propulsore dell'astronave</descrizione>
+        <durability>1</durability>
+        <imagePath>kerosene</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>KEY017</tag>
+        <name>Pompa del motore</name>
+        <descrizione>Pompa del motore dell'astronave</descrizione>
+        <durability>1</durability>
+        <imagePath>pump</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>KEY018</tag>
+        <name>Compressore del motore</name>
+        <descrizione>Compressore del motore dell'astronave</descrizione>
+        <durability>1</durability>
+        <imagePath>compressor</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>KEY019</tag>
+        <name>Ventola del motore</name>
+        <descrizione>Ventola del motore dell'astronave</descrizione>
+        <durability>1</durability>
+        <imagePath>fan</imagePath>
+    </KeyItem>
+    
+    <KeyItem>
+        <tag>SPACESHIP001</tag>
         <name>Faro destro</name>
         <descrizione>Faro destro</descrizione>
         <durability>1</durability>
-        <imagePath>giravite</imagePath>
+        <imagePath>headlight</imagePath>
     </KeyItem>
     <KeyItem>
-        <tag>MISS01B</tag>
+        <tag>SPACESHIP002</tag>
         <name>Faro sinistro</name>
         <descrizione>Faro sinistro</descrizione>
         <durability>1</durability>
-        <imagePath>giravite</imagePath>
+        <imagePath>headlight</imagePath>
     </KeyItem>
     <KeyItem>
-        <tag>MISS01C</tag>
+        <tag>SPACESHIP003</tag>
         <name>Faro centrale</name>
         <descrizione>Faro centrale</descrizione>
         <durability>1</durability>
-        <imagePath>giravite</imagePath>
+        <imagePath>headlight</imagePath>
     </KeyItem>
-
+    <KeyItem>
+        <tag>SPACESHIP004</tag>
+        <name>Ala Astronave</name>
+        <descrizione>Una delle 6 ali che compongono la navicella</descrizione>
+        <durability>1</durability>
+        <imagePath>spaceship</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>SPACESHIP005</tag>
+        <name>Propulsore</name>
+        <descrizione>Propulsore dell'astronave, essenziale per la partenza</descrizione>
+        <durability>1</durability>
+        <imagePath>spaceship</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>SPACESHIP006</tag>
+        <name>Motore</name>
+        <descrizione>Motore dell'astronave, senza di lui non si torna a casa</descrizione>
+        <durability>1</durability>
+        <imagePath>spaceship</imagePath>
+    </KeyItem>
 
 </ArrayOfKeyItem>

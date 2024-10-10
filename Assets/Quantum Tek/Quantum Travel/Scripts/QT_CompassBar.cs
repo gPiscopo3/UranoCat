@@ -29,6 +29,8 @@ namespace QuantumTek.QuantumTravel
         public float MarkerSize = 20;
         public float MinScale = 0.5f;
         public float MaxScale = 2f;
+        private GameLoader loader;
+        private string itemTag;
 
         private void Awake()
         {
@@ -40,16 +42,32 @@ namespace QuantumTek.QuantumTravel
             rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, ShownCompassSize.y);
             barBackground.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, CompassSize.x);
             barBackground.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, CompassSize.y);
+
+            this.loader = FindObjectOfType<GameLoader>();
+            this.itemTag = null;
         }
 
         private void Update()
         {
             image.uvRect = new Rect(ReferenceObject.transform.localEulerAngles.y / 360, 0, 1, 1);
 
+            foreach(QT_MapObject obj in Objects){
+                if(!obj.GetComponent<GameObject>().activeSelf)
+                {
+                    
+                }
+            }
+
             foreach (var marker in Markers)
             {
-                marker.SetPosition(CalculatePosition(marker));
-                marker.SetScale(CalculateScale(marker));
+                GameObject obj = marker.GetComponent<GameObject>();
+                if(obj.activeSelf){
+                    marker.SetPosition(CalculatePosition(marker));
+                    marker.SetScale(CalculateScale(marker));
+                } else {
+                    Markers.Remove(marker);
+                }
+                
             }
         }
 
@@ -84,5 +102,6 @@ namespace QuantumTek.QuantumTravel
             marker.Initialize(obj, MarkerSize);
             Markers.Add(marker);
         }
+
     }
 }

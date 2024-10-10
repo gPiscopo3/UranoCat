@@ -88,5 +88,30 @@
     <Price>1</Price>
     <MinLevelRequired>1</MinLevelRequired>
   </ShopItem>
+  <ShopItem>
+    <Tag>KEY015</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>KEY016</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>KEY017</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>KEY018</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>KEY019</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
 
 </ArrayOfShopItem>

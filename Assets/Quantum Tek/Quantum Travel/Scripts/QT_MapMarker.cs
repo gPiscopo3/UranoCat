@@ -32,5 +32,11 @@ namespace QuantumTek.QuantumTravel
 
         public void SetScale(Vector2 scale)
         { rectTransform.localScale = scale; }
+
+        public void SetFalse(){
+            this.Data.ShowOnCompass = false;
+            this.Data.ShowRotation = false;
+        }
+
     }
 }

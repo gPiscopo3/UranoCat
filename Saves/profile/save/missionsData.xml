@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfMission xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Mission>
-    <experience>0</experience>
-    <name>ACCENDI LE LUCI</name>
-    <description>Trova le componenti dei fari cadute nei pressi di casa tua</description>
-    <MissionState>COMPLETATO</MissionState>
-    <enableSpaceshipModification>true</enableSpaceshipModification>
-    <spaceshipPart>StarSparrow_Wing1</spaceshipPart>
-    <tag>MISSION001</tag>
+    <experience>100</experience>
+    <name>Compra il giravite</name>
+    <description>Missione del tutorial</description>
+    <MissionState>ATTIVO</MissionState>
+    <enableSpaceshipModification>false</enableSpaceshipModification>
+    <spaceshipPart />
+    <tag>MISSION000</tag>
     <RequiredItems>
       <ItemRequirement>
         <tag>KEY001</tag>
@@ -16,35 +16,393 @@
     </RequiredItems>
   </Mission>
   <Mission>
-    <experience>0</experience>
-    <name>Raccogli le melenzane</name>
-    <description>Trova le melenzane mature nell'orto</description>
-    <MissionState>COMPLETATO</MissionState>
+    <experience>100</experience>
+    <name>Trova la prima ala</name>
+    <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
+    <MissionState>NON_ATTIVO</MissionState>
     <enableSpaceshipModification>false</enableSpaceshipModification>
     <spaceshipPart />
-    <tag>MISSION002</tag>
+    <tag>FIND001</tag>
     <RequiredItems>
       <ItemRequirement>
-        <tag>KEY002</tag>
-        <quantity>2</quantity>
-      </ItemRequirement>
-      <ItemRequirement>
-        <tag>KEY005</tag>
-        <quantity>2</quantity>
+        <tag>SPACESHIP004</tag>
+        <quantity>1</quantity>
       </ItemRequirement>
     </RequiredItems>
   </Mission>
   <Mission>
-    <experience>0</experience>
-    <name>Costruisci la cuccia</name>
-    <description>Trova gli attrezzi necessari per costruire la cuccia</description>
-    <MissionState>COMPLETATO</MissionState>
+    <experience>100</experience>
+    <name>Ripara la prima ala</name>
+    <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
+    <MissionState>NON_ATTIVO</MissionState>
+    <enableSpaceshipModification>true</enableSpaceshipModification>
+    <spaceshipPart>StarSparrow_Wing1</spaceshipPart>
+    <tag>MISSION001</tag>
+    <RequiredItems>
+      <ItemRequirement>
+        <tag>KEY001</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY009</tag>
+        <quantity>3</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY010</tag>
+        <quantity>3</quantity>
+      </ItemRequirement>
+    </RequiredItems>
+  </Mission>
+  <Mission>
+    <experience>100</experience>
+    <name>Trova la seconda ala</name>
+    <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
+    <MissionState>NON_ATTIVO</MissionState>
+    <enableSpaceshipModification>false</enableSpaceshipModification>
+    <spaceshipPart />
+    <tag>FIND002</tag>
+    <RequiredItems>
+      <ItemRequirement>
+        <tag>SPACESHIP004</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+    </RequiredItems>
+  </Mission>
+  <Mission>
+    <experience>120</experience>
+    <name>Ripara la seconda ala</name>
+    <description>Trova gli strumenti necessari per costruire l'ala sinistra dell'astronave.</description>
+    <MissionState>NON_ATTIVO</MissionState>
+    <enableSpaceshipModification>true</enableSpaceshipModification>
+    <spaceshipPart>StarSparrow_Wing2</spaceshipPart>
+    <tag>MISSION002</tag>
+    <RequiredItems>
+      <ItemRequirement>
+        <tag>KEY001</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY009</tag>
+        <quantity>5</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY010</tag>
+        <quantity>5</quantity>
+      </ItemRequirement>
+    </RequiredItems>
+  </Mission>
+  <Mission>
+    <experience>100</experience>
+    <name>Trova la terza ala</name>
+    <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
+    <MissionState>NON_ATTIVO</MissionState>
+    <enableSpaceshipModification>false</enableSpaceshipModification>
+    <spaceshipPart />
+    <tag>FIND003</tag>
+    <RequiredItems>
+      <ItemRequirement>
+        <tag>SPACESHIP004</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+    </RequiredItems>
+  </Mission>
+  <Mission>
+    <experience>150</experience>
+    <name>Ripara la terza ala</name>
+    <description>Trova le componenti necessarie per l'ala posteriore dell'astronave.</description>
+    <MissionState>NON_ATTIVO</MissionState>
     <enableSpaceshipModification>true</enableSpaceshipModification>
     <spaceshipPart>StarSparrow_Wing3</spaceshipPart>
     <tag>MISSION003</tag>
     <RequiredItems>
       <ItemRequirement>
-        <tag>KEY006</tag>
+        <tag>KEY001</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY007</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY009</tag>
+        <quantity>5</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY010</tag>
+        <quantity>5</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY015</tag>
+        <quantity>7</quantity>
+      </ItemRequirement>
+    </RequiredItems>
+  </Mission>
+  <Mission>
+    <experience>100</experience>
+    <name>Trova la quarta ala</name>
+    <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
+    <MissionState>NON_ATTIVO</MissionState>
+    <enableSpaceshipModification>false</enableSpaceshipModification>
+    <spaceshipPart />
+    <tag>FIND004</tag>
+    <RequiredItems>
+      <ItemRequirement>
+        <tag>SPACESHIP004</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+    </RequiredItems>
+  </Mission>
+  <Mission>
+    <experience>130</experience>
+    <name>Ripara la quarta ala</name>
+    <description>Trova gli attrezzi per montare l'ala superiore dell'astronave.</description>
+    <MissionState>NON_ATTIVO</MissionState>
+    <enableSpaceshipModification>true</enableSpaceshipModification>
+    <spaceshipPart>StarSparrow_Wing4</spaceshipPart>
+    <tag>MISSION004</tag>
+    <RequiredItems>
+      <ItemRequirement>
+        <tag>KEY001</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY007</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY009</tag>
+        <quantity>10</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY010</tag>
+        <quantity>10</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY015</tag>
+        <quantity>10</quantity>
+      </ItemRequirement>
+    </RequiredItems>
+  </Mission>
+  <Mission>
+    <experience>100</experience>
+    <name>Trova la quinta ala</name>
+    <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
+    <MissionState>NON_ATTIVO</MissionState>
+    <enableSpaceshipModification>false</enableSpaceshipModification>
+    <spaceshipPart />
+    <tag>FIND005</tag>
+    <RequiredItems>
+      <ItemRequirement>
+        <tag>SPACESHIP004</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+    </RequiredItems>
+  </Mission>
+  <Mission>
+    <experience>140</experience>
+    <name>Ripara la quinta ala</name>
+    <description>Recupera i pezzi per l'ala inferiore dell'astronave.</description>
+    <MissionState>NON_ATTIVO</MissionState>
+    <enableSpaceshipModification>true</enableSpaceshipModification>
+    <spaceshipPart>StarSparrow_Wing5</spaceshipPart>
+    <tag>MISSION005</tag>
+    <RequiredItems>
+      <ItemRequirement>
+        <tag>KEY001</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY007</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY014</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY009</tag>
+        <quantity>13</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY010</tag>
+        <quantity>13</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY015</tag>
+        <quantity>13</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY011</tag>
+        <quantity>10</quantity>
+      </ItemRequirement>
+    </RequiredItems>
+  </Mission>
+  <Mission>
+    <experience>100</experience>
+    <name>Trova la sesta ala</name>
+    <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
+    <MissionState>NON_ATTIVO</MissionState>
+    <enableSpaceshipModification>false</enableSpaceshipModification>
+    <spaceshipPart />
+    <tag>FIND006</tag>
+    <RequiredItems>
+      <ItemRequirement>
+        <tag>SPACESHIP004</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+    </RequiredItems>
+  </Mission>
+  <Mission>
+    <experience>160</experience>
+    <name>Ripara la sesta ala</name>
+    <description>Trova gli strumenti necessari per costruire l'ala centrale dell'astronave.</description>
+    <MissionState>NON_ATTIVO</MissionState>
+    <enableSpaceshipModification>true</enableSpaceshipModification>
+    <spaceshipPart>StarSparrow_Wing6</spaceshipPart>
+    <tag>MISSION006</tag>
+    <RequiredItems>
+      <ItemRequirement>
+        <tag>KEY007</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY014</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY007</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY015</tag>
+        <quantity>15</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY011</tag>
+        <quantity>15</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>MASCHERA001</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY012</tag>
+        <quantity>5</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY008</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+    </RequiredItems>
+  </Mission>
+  <Mission>
+    <experience>100</experience>
+    <name>Trova il propulsore</name>
+    <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
+    <MissionState>NON_ATTIVO</MissionState>
+    <enableSpaceshipModification>false</enableSpaceshipModification>
+    <spaceshipPart />
+    <tag>FIND007</tag>
+    <RequiredItems>
+      <ItemRequirement>
+        <tag>SPACESHIP005</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+    </RequiredItems>
+  </Mission>
+  <Mission>
+    <experience>200</experience>
+    <name>Ripara il propulsore</name>
+    <description>Raccogli i pezzi necessari per montare il motore dell'astronave.</description>
+    <MissionState>NON_ATTIVO</MissionState>
+    <enableSpaceshipModification>true</enableSpaceshipModification>
+    <spaceshipPart>StarSparrow_Thruster</spaceshipPart>
+    <tag>MISSION007</tag>
+    <RequiredItems>
+      <ItemRequirement>
+        <tag>KEY001</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY007</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY009</tag>
+        <quantity>20</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY010</tag>
+        <quantity>20</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY015</tag>
+        <quantity>20</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY016</tag>
+        <quantity>5</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY013</tag>
+        <quantity>5</quantity>
+      </ItemRequirement>
+    </RequiredItems>
+  </Mission>
+  <Mission>
+    <experience>100</experience>
+    <name>Trova il motore</name>
+    <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
+    <MissionState>NON_ATTIVO</MissionState>
+    <enableSpaceshipModification>false</enableSpaceshipModification>
+    <spaceshipPart />
+    <tag>FIND008</tag>
+    <RequiredItems>
+      <ItemRequirement>
+        <tag>SPACESHIP006</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+    </RequiredItems>
+  </Mission>
+  <Mission>
+    <experience>250</experience>
+    <name>Ripara il motore</name>
+    <description>Trova le componenti necessarie per la turbina dell'astronave.</description>
+    <MissionState>NON_ATTIVO</MissionState>
+    <enableSpaceshipModification>true</enableSpaceshipModification>
+    <spaceshipPart>StarSparrow_Engine</spaceshipPart>
+    <tag>MISSION008</tag>
+    <RequiredItems>
+      <ItemRequirement>
+        <tag>KEY001</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY007</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY009</tag>
+        <quantity>30</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY010</tag>
+        <quantity>30</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY015</tag>
+        <quantity>30</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY017</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY018</tag>
+        <quantity>1</quantity>
+      </ItemRequirement>
+      <ItemRequirement>
+        <tag>KEY019</tag>
         <quantity>1</quantity>
       </ItemRequirement>
     </RequiredItems>

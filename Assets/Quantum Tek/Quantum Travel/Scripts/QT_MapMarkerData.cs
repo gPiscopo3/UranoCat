@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace QuantumTek.QuantumTravel
 {
@@ -11,10 +12,18 @@ namespace QuantumTek.QuantumTravel
         [Header("Data")]
         public string Name;
         public Sprite Icon;
+        private string id;
 
         [Header("Rules")]
         public bool ShowOnCompass = true;
         public bool HugBorder;
         public bool ShowRotation = true;
+
+        public QT_MapMarkerData()
+        {
+            Guid myuuid = Guid.NewGuid();
+            this.id = myuuid.ToString();
+        }
+        
     }
 }

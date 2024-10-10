@@ -17,7 +17,7 @@
   </CatItem>
   <CatItem>
     <tag>ITEM002</tag>
-    <name>Pesce</name>
+    <name>Merluzzo</name>
     <descrizione>Un bel merluzzo da mangiare</descrizione>
     <durability>1</durability>
     <imagePath>pesce</imagePath>
