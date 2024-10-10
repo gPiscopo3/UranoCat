@@ -13,5 +13,13 @@ namespace QuantumTek.QuantumTravel
 
         public Vector2 Position (QT_MapType type) => new Vector2(transform.position.x, type == QT_MapType.Map3D ? transform.position.z : transform.position.y);
 
+        
+        public void Update(){
+            if(Data.isPlaced){
+                if (this.GetComponent<PlacedObjectController>().status.obtained){
+                    Data.ShowOnCompass = false;
+            } 
+        }
     }
+}
 }

@@ -30,6 +30,7 @@ public class MissionItemUIManager: MonoBehaviour
         this.player = FindObjectOfType<GameLoader>().player;
         
         CreateMissionBoard();
+        GenerateMissionItemUI();
     }
 
     private void CreateMissionBoard()
@@ -91,7 +92,7 @@ public class MissionItemUIManager: MonoBehaviour
 
    void Update()
     {
-        GenerateMissionItemUI();
+     //  GenerateMissionItemUI();
     }
 
 }

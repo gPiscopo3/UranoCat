@@ -18,11 +18,12 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
     MissingItemManager missingItemManager;
 
     [SerializeField] List<String> requiredItemTags;
-    [SerializeField] String recivedItemTag;
+    [SerializeField] public String recivedItemTag;
 
     Item receivedItem;
     List<ItemRequirement> requirements;
 
+    public PlacedObjectStatus status; 
     void Awake(){
         
     }
@@ -38,7 +39,7 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
         
         this.statusList = gameLoader.placedObjectsStatus;
 
-        PlacedObjectStatus status = this.statusList.FirstOrDefault(x => x.name == gameObject.name);
+        status = this.statusList.FirstOrDefault(x => x.name == gameObject.name);
         Debug.Log(status);
 
         if(status != null && status.obtained)

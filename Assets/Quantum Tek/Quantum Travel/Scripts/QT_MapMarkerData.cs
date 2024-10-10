@@ -14,9 +14,11 @@ namespace QuantumTek.QuantumTravel
         public Sprite Icon;
         private string id;
 
+        
+
         [Header("Rules")]
         public bool ShowOnCompass = true;
-        public bool HugBorder;
+        public bool isPlaced = false;
         public bool ShowRotation = true;
 
         public QT_MapMarkerData()

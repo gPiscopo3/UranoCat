@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -34,8 +35,8 @@ namespace QuantumTek.QuantumTravel
 
         private void Awake()
         {
-            foreach (var obj in Objects)
-                if (obj.Data.ShowOnCompass)
+           foreach (var obj in Objects)
+                if (!obj.Data.isPlaced)
                     AddMarker(obj);
 
             rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, ShownCompassSize.x);
@@ -50,23 +51,29 @@ namespace QuantumTek.QuantumTravel
         private void Update()
         {
             image.uvRect = new Rect(ReferenceObject.transform.localEulerAngles.y / 360, 0, 1, 1);
-
+/*
             foreach(QT_MapObject obj in Objects){
                 if(!obj.GetComponent<GameObject>().activeSelf)
                 {
                     
                 }
+            }*/
+
+            foreach(QT_MapObject obj in Objects){
+                if(obj.Data.isPlaced && obj.Data.ShowOnCompass){
+                    
+                        AddMarker(obj);
+                }else if(!obj.Data.ShowOnCompass){
+                    RemoveMarker(obj);
+                }
             }
+
 
             foreach (var marker in Markers)
             {
-                GameObject obj = marker.GetComponent<GameObject>();
-                if(obj.activeSelf){
-                    marker.SetPosition(CalculatePosition(marker));
-                    marker.SetScale(CalculateScale(marker));
-                } else {
-                    Markers.Remove(marker);
-                }
+               
+                marker.SetPosition(CalculatePosition(marker));
+                marker.SetScale(CalculateScale(marker));
                 
             }
         }
@@ -98,9 +105,17 @@ namespace QuantumTek.QuantumTravel
         /// <param name="obj">The GameObject with a QT_MapObject on it.</param>
         public void AddMarker(QT_MapObject obj)
         {
-            QT_MapMarker marker = Instantiate(MarkerPrefab, markersTransform);
-            marker.Initialize(obj, MarkerSize);
-            Markers.Add(marker);
+            if (Markers.Find(obj => obj.Object == obj) == null){
+                QT_MapMarker marker = Instantiate(MarkerPrefab, markersTransform);
+                marker.Initialize(obj, MarkerSize);
+                Markers.Add(marker);
+            }
+        }
+
+        public void RemoveMarker(QT_MapObject obj){
+            if (Markers.Find(x => x.Object == obj) != null){
+                Markers.Remove(Markers.Find(x => x.Object == obj));
+            }
         }
 
     }
