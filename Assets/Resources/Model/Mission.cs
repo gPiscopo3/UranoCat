@@ -20,6 +20,21 @@ public class Mission
     {
     }
 
+    public bool IsItemRequired(Item itemToCheck)
+    {
+        if (RequiredItems == null || itemToCheck == null)
+            return false;
+
+        foreach (var requirement in RequiredItems)
+        {
+            if (requirement.item != null && requirement.item.tag == itemToCheck.tag)
+            {
+                return true; // L'oggetto è stato trovato nella lista
+            }
+        }
+        return false; // L'oggetto non è stato trovato nella lista
+    }
+
 }
 
 

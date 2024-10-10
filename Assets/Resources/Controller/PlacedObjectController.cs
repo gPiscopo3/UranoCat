@@ -20,7 +20,7 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
     [SerializeField] List<String> requiredItemTags;
     [SerializeField] String recivedItemTag;
 
-    Item receivedItem;
+    public Item receivedItem;
     List<ItemRequirement> requirements;
 
     void Awake(){

@@ -11,7 +11,7 @@ public class MissionManager : MonoBehaviour, InteractableObject
 {
 
     Player player; 
-    List<Mission> missions;
+    public List<Mission> missions;
 
     [SerializeField] private GameObject VFX_MissionComplete;
     [SerializeField] private Transform VFX_SpawnPoint;
