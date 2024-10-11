@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private TMP_Text levelText;
     [SerializeField] private TMP_Text moneyText;
-    [SerializeField] private GameObject equippedItem;
+ //   [SerializeField] private GameObject equippedItem;
     [SerializeField] private TMP_Text equippedText;
     [SerializeField] private Image equippedItemImage;
     Cat cat;
@@ -27,6 +27,8 @@ public class UIManager : MonoBehaviour
         this.cat = FindObjectOfType<GameLoader>().cat;
         this.player = FindObjectOfType<GameLoader>().player;
         this.rules = FindObjectOfType<GameLoader>().rules;
+        equippedItemImage.enabled = false;
+        equippedText.enabled = false;
     }
     
 
@@ -43,24 +45,27 @@ public class UIManager : MonoBehaviour
         moneyText.SetText(player.money.ToString());
 
         try{
-            if(player.equippedItem!=null)
-            {
+            if(player.equippedItem!=null){
             //equippedText.SetText("Oggetto equipaggiato: " + player.equippedItem.item.name);
-                if(player.equippedItem.isUsable())
-                {
-                    equippedItem.SetActive(true);
+
+                if(player.equippedItem.isUsable()){
+                    Debug.Log("ooooooo");
+                    //equippedItem.SetActive(true);
                     Sprite sprite = Resources.Load("Images/" + player.equippedItem.item.imagePath, typeof(Sprite)) as Sprite;
                     equippedItemImage.sprite = sprite;
                     equippedItemImage.enabled = true;
+                    
                     if(player.equippedItem.item.durability == 0){
                         equippedText.SetText("\u221E");
                     } else {
                         equippedText.SetText((player.equippedItem.item.durability - player.equippedItem.numUses).ToString());
                     }
                     equippedText.enabled = true;
-                } 
+                }
             } else {
-                equippedItem.SetActive(false);
+                //equippedItem.SetActive(false);
+                equippedItemImage.enabled = false;
+                equippedText.enabled = false;
             }
         } catch (UnassignedReferenceException e){
             Debug.LogWarning(e.Message);
