@@ -25,9 +25,10 @@ namespace QuantumTek.QuantumTravel
             Debug.Log(Name);
         }
 
-        public void Update(){
+        public bool isToShow(){
             if(!gameObject.activeSelf)
                 show = false;
+            return show;
         }
 
     }

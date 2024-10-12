@@ -22,6 +22,8 @@ public class MissionItemUI: MonoBehaviour
     float diff;
     float itemSpacing = 5.5f;
 
+    public List<String> itemsOnCompass = new List<string>();
+
 
     public void Awake(){
         CreateRequiredItemPanel();
@@ -81,6 +83,7 @@ public class MissionItemUI: MonoBehaviour
             Debug.Log("item.tag: " + item.tag);
             ItemRequiredUI itemUI = Instantiate(itemPrefab, itemRequiredPanel.transform).GetComponent<ItemRequiredUI>();
             itemUI.gameObject.SetActive(true);
+            itemUI.itemsOnCompass = this.itemsOnCompass;
             itemUI.SetImage(item.item.imagePath);
             int quantity;
             List<InventoryItem> items = new List<InventoryItem>();

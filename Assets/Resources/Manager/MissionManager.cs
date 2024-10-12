@@ -6,6 +6,7 @@ using UnityEngine;
 using JetBrains.Annotations;
 using UnityEditor;
 using Unity.VisualScripting;
+using QuantumTek.QuantumTravel;
 
 public class MissionManager : MonoBehaviour, InteractableObject
 {
@@ -74,6 +75,8 @@ public class MissionManager : MonoBehaviour, InteractableObject
             {
                 spaceshipParts.Find(obj => obj.name.Equals(actualMission.spaceshipPart)).SetActive(true);
             }
+
+            FindObjectOfType<QT_CompassBar>().HideAll();
 
             UpdateMissions();
         }

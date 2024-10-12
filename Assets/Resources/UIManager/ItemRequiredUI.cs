@@ -17,6 +17,8 @@ public class ItemRequiredUI : MonoBehaviour
 
     string tag;
 
+    public List<string> itemsOnCompass;
+
     QT_CompassBar bussola;
     
     PlacedObjectManager placedObjectManager;
@@ -51,10 +53,16 @@ public class ItemRequiredUI : MonoBehaviour
 
     public void SearchItem(){
         
-        bussola.HideAll();
-        Debug.Log("OOOOOOOOOOOO" + tag);
-        foreach(String objectName in placedObjectManager.getObjects(tag))
-            bussola.ShowObject(objectName);
+        if(itemsOnCompass.Contains(tag)){
+            foreach(String objectName in placedObjectManager.getObjects(tag))
+                bussola.HideObject(objectName);
+            itemsOnCompass.Remove(tag);
+        }
+        else{
+            foreach(String objectName in placedObjectManager.getObjects(tag))
+                bussola.ShowObject(objectName);
+            itemsOnCompass.Add(tag);
+        }
         
     }
 

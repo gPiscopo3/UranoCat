@@ -13,8 +13,6 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
     //PlacedObject placedObject;
     List<PlacedObjectStatus> statusList;
     public string Name;
-    public bool active;
-
     GameLoader gameLoader;
 
     MissingItemManager missingItemManager;
@@ -61,11 +59,6 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
                 
     }
 
-    void Update()
-    {
-        active = gameObject.activeSelf;
-       
-    }
 
     public void Interact()
     {   
@@ -97,11 +90,14 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
             Debug.Log("ottenuto " + receivedItem.name);
 
             statusList.Add(new PlacedObjectStatus{name = Name, obtained = true});
-
             gameObject.SetActive(false);
         }
 
 
+    }
+
+    public bool isActive(){
+        return gameObject.activeSelf;
     }
 
     

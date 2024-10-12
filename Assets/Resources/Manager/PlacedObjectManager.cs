@@ -16,7 +16,7 @@ public class PlacedObjectManager: MonoBehaviour{
     public void Update(){
         
         foreach(PlacedObjectController placedObjectController in FindObjectsOfType<PlacedObjectController>())
-            if(placedObjectController.active)
+            if(placedObjectController.isActive())
                 Register(placedObjectController.recivedItemTag, placedObjectController.Name);
             else
                 UnRegister(placedObjectController.recivedItemTag, placedObjectController.Name);

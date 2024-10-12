@@ -63,11 +63,8 @@ namespace QuantumTek.QuantumTravel
             }
 
 
-            foreach(QT_MapObject obj in Objects.Values){
-                if(obj.alwaysOnMap){
-                    Debug.Log(obj.Name);
-                    AddMarker(obj);
-                }
+            foreach(QT_MapObject obj in Objects.Values){   
+                CreateMarker(obj);
             }
 
         }
@@ -85,15 +82,10 @@ namespace QuantumTek.QuantumTravel
                 }
             }*/
 
-            foreach(QT_MapObject mapObject in Objects.Values){
-                if(!mapObject.alwaysOnMap){
-                    if(mapObject.show)
-                        AddMarker(mapObject);
-                    else 
-                        RemoveMarker(mapObject);
-                
-                }
-            }
+            foreach(QT_MapObject mapObject in Objects.Values)
+                SetMarker(mapObject);
+    
+            
 
 
             foreach (var marker in Markers)
@@ -127,11 +119,8 @@ namespace QuantumTek.QuantumTravel
             return new Vector2(scale, scale);
         }
 
-        /// <summary>
-        /// Creates a new marker on the compass bar, based on the given object.
-        /// </summary>
-        /// <param name="obj">The GameObject with a QT_MapObject on it.</param>
-        public void AddMarker(QT_MapObject obj)
+ 
+        public void CreateMarker(QT_MapObject obj)
         {
 
             QT_MapMarker marker;
@@ -141,18 +130,15 @@ namespace QuantumTek.QuantumTravel
                 marker.Initialize(obj, MarkerSize);
                 Markers.Add(marker);
             }
-            marker = Markers.Find(x => x.Object.Name.Equals(obj.Name));
-            marker.SetActive(true);
+
     
         }
 
-        public void RemoveMarker(QT_MapObject obj){
+        public void SetMarker(QT_MapObject obj){
 
             QT_MapMarker marker = Markers.Find(x => x.Object.Name.Equals(obj.Name));
             if(marker != null)
-
-                marker.SetScale(new Vector2(0,0));
-                //marker.SetActive(false);
+                marker.SetActive(obj.isToShow());
 
                 
         }

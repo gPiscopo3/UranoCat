@@ -36,8 +36,8 @@ namespace QuantumTek.QuantumTravel
         { rectTransform.localScale = scale; }
 
         public void SetActive(bool active){
-           //gameObject.SetActive(active);
-            SetScale(new Vector2(0,0));
+           Debug.Log("OOOOOOOOOOOOOO " + active + Object.Name);
+           gameObject.SetActive(active);
         }
     
 
