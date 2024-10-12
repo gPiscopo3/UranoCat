@@ -12,6 +12,8 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
     Player player;
     //PlacedObject placedObject;
     List<PlacedObjectStatus> statusList;
+    public string Name;
+    public bool active;
 
     GameLoader gameLoader;
 
@@ -25,7 +27,7 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
 
     public PlacedObjectStatus status; 
     void Awake(){
-        
+        Name = gameObject.name;
     }
 
 
@@ -39,7 +41,7 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
         
         this.statusList = gameLoader.placedObjectsStatus;
 
-        status = this.statusList.FirstOrDefault(x => x.name == gameObject.name);
+        status = this.statusList.FirstOrDefault(x => x.name == Name);
         Debug.Log(status);
 
         if(status != null && status.obtained)
@@ -61,7 +63,7 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
 
     void Update()
     {
-        
+        active = gameObject.activeSelf;
        
     }
 
@@ -94,7 +96,7 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
             player.inventory.addItem(receivedItem);
             Debug.Log("ottenuto " + receivedItem.name);
 
-            statusList.Add(new PlacedObjectStatus{name = gameObject.name, obtained = true});
+            statusList.Add(new PlacedObjectStatus{name = Name, obtained = true});
 
             gameObject.SetActive(false);
         }

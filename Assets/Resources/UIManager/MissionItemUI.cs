@@ -95,7 +95,7 @@ public class MissionItemUI: MonoBehaviour
 
 
             //if (FindObjectOfType<PlacedObjectController>().recivedItemTag.Equals(item.tag)){
-                itemUI.SetSearchButton(item.tag);
+            itemUI.SetSearchButton(item.tag);
            // }
             itemUI.SetPositionItem(Vector2.right * i * (itemWidth + itemSpacing));
             itemUI.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0.065f, 170f);

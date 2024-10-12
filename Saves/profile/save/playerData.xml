@@ -5,11 +5,81 @@
   <money>13884</money>
   <pension>10</pension>
   <experience>686</experience>
-  <x>328.4566</x>
+  <x>335.36554</x>
   <y>20.09</y>
-  <z>155.068832</z>
+  <z>152.71933</z>
   <inventory>
     <items>
+      <InventoryItem>
+        <ID>8f9e09fc-1183-48a3-ac5b-71a81c72941d</ID>
+        <tag>SPACESHIP003</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>d5e2247d-c0f5-41fd-a631-8e18a211b529</ID>
+        <tag>SPACESHIP001</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>bb28a88a-9a4d-4783-a065-1f45471e5356</ID>
+        <tag>SPACESHIP002</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>e9993bd9-8b98-45ae-a5b0-efacfb9b1ba4</ID>
+        <tag>SPACESHIP004</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>4fa99079-0c63-4c4a-a071-453aec915cbc</ID>
+        <tag>SPACESHIP004</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>abfe7814-7d5c-4733-838f-ea9ae75afacc</ID>
+        <tag>SPACESHIP004</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>c83fc557-be24-4626-b5a2-905cfe3659b3</ID>
+        <tag>SPACESHIP002</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>b13d098b-101c-4e41-977d-6ac478aaf4b4</ID>
+        <tag>SPACESHIP001</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>dceb546c-fe63-4491-96f3-fed9a677896c</ID>
+        <tag>SPACESHIP004</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>8ba83bb6-d575-463e-bfee-c30075acaf24</ID>
+        <tag>SPACESHIP001</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>1c5d1e98-087b-49b5-8c6c-73c4da7b5570</ID>
+        <tag>SPACESHIP002</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>0691e14b-c694-4789-85ab-d9aa59aa9ae9</ID>
+        <tag>SPACESHIP003</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>5f8376f9-2fdb-48bc-809f-fb77012fd67d</ID>
+        <tag>SPACESHIP001</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>f10ad4e0-fb33-421e-af08-ee6e19f3d458</ID>
+        <tag>SPACESHIP002</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
     </items>
   </inventory>
 </Player>

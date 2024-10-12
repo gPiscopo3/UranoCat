@@ -1,35 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfPlacedObjectStatus xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <PlacedObjectStatus>
-    <name>Wing4</name>
-    <obtained>false</obtained>
-  </PlacedObjectStatus>
-  <PlacedObjectStatus>
-    <name>Wing2</name>
-    <obtained>false</obtained>
-  </PlacedObjectStatus>
-  <PlacedObjectStatus>
-    <name>Wing1</name>
-    <obtained>false</obtained>
-  </PlacedObjectStatus>
-  <PlacedObjectStatus>
-    <name>Wing3</name>
-    <obtained>false</obtained>
-  </PlacedObjectStatus>
-  <PlacedObjectStatus>
-    <name>Wing5</name>
-    <obtained>false</obtained>
-  </PlacedObjectStatus>
-  <PlacedObjectStatus>
-    <name>Wing6</name>
-    <obtained>false</obtained>
-  </PlacedObjectStatus>
-  <PlacedObjectStatus>
-    <name>Thruster</name>
-    <obtained>false</obtained>
-  </PlacedObjectStatus>
-  <PlacedObjectStatus>
-    <name>Engine</name>
-    <obtained>false</obtained>
-  </PlacedObjectStatus>
+ 
 </ArrayOfPlacedObjectStatus>

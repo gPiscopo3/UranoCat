@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using QuantumTek.QuantumTravel;
+using System.Linq;
+using System;
 
 public class ItemRequiredUI : MonoBehaviour
 {
@@ -16,12 +18,13 @@ public class ItemRequiredUI : MonoBehaviour
     string tag;
 
     QT_CompassBar bussola;
-    List<QT_MapObject> mapObjects;
+    
+    PlacedObjectManager placedObjectManager;
+
 
     public void Start(){
         bussola = FindObjectOfType<QT_CompassBar>();
-        mapObjects = bussola.Objects;
-      //  searchItemButton.enabled = false;
+        placedObjectManager = FindObjectOfType<PlacedObjectManager>();
     }
 
     public void SetImage(string imagePath){
@@ -41,19 +44,17 @@ public class ItemRequiredUI : MonoBehaviour
     public void SetSearchButton(string tag){
         this.tag = tag;
         searchItemButton.enabled = true;
-        
         searchItemButton.onClick.AddListener(SearchItem);
         
     }
 
+
     public void SearchItem(){
-        Debug.Log("Cerco l'oggetto con tag: " + tag);
-        //List<> obj = FindObjectsByType<PlacedObjectController>(obj => obj.GetComponent<PlacedObjectController>().recivedItemTag.Equals(tag));
-        foreach(QT_MapObject o in obj){
-            o.Data.ShowOnCompass = true;
-            Debug.Log(o.Data.ShowOnCompass);
-            
-        }
+        
+        bussola.HideAll();
+        Debug.Log("OOOOOOOOOOOO" + tag);
+        foreach(String objectName in placedObjectManager.getObjects(tag))
+            bussola.ShowObject(objectName);
         
     }
 
