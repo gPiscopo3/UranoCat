@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Threading;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -76,12 +77,14 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] GameObject playerToMove;
 
+    CameraController cameraController;
+    float previusSens;
 
     private void Awake()
     {
         characterController = GetComponent<CharacterController>(); 
         status = GetComponent<CharacterStatus>();
-        //missionManagerUI = FindObjectOfType<MissionItemUIManager>();
+        cameraController = FindAnyObjectByType<CameraController>();
         anim = GetComponent<Animator>();
         
 
@@ -131,6 +134,7 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
         setPauseFlag(false);
+        previusSens = cameraController.sens;
 
     }
 
@@ -279,6 +283,8 @@ public class PlayerController : MonoBehaviour
 
     private void ToggleMissionBoard(InputAction.CallbackContext context)
     {
+
+       
         //missionManagerUI.GenerateMissionItemUI();
         missionBoard.SetActive(!missionBoard.activeSelf);
         isMissionBoardActive = !isMissionBoardActive;
@@ -289,10 +295,12 @@ public class PlayerController : MonoBehaviour
             viewsBoard.SetActive(false);
             newDayPanel.SetActive(false);
             musicPanel.SetActive(false);
-            Time.timeScale = 0;
+            Time.timeScale = 1;
+            cameraController.sens = 0;
             Cursor.lockState = CursorLockMode.None;
             
         } else {
+            cameraController.sens= previusSens;
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
         }
@@ -415,6 +423,7 @@ public class PlayerController : MonoBehaviour
             newDayPanel.SetActive(false);
             musicPanel.SetActive(false);
             commandsPanel.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
         }
         else if(summaryBoard.activeSelf)    
             summaryBoard.SetActive(false);

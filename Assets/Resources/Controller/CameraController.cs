@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class CameraController : MonoBehaviour
 {
 
-    [SerializeField] private float sens = 1.0f;
+    [SerializeField] public float sens = 1.0f;
     [SerializeField] private Transform player;
 
     private CameraControls cameraControls;

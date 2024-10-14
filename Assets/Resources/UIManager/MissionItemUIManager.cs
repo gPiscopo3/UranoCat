@@ -90,9 +90,9 @@ public class MissionItemUIManager: MonoBehaviour
 
     }
 
-   void Update()
+   void FixedUpdate()
     {
-     //  GenerateMissionItemUI();
+      GenerateMissionItemUI();
     }
 
 }

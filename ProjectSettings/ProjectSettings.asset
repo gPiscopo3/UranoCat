@@ -771,11 +771,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 5e861532-7f5a-4cd5-9a71-ae5e8e242426
+  cloudProjectId: c1f2b402-3512-4197-9555-c47412cfa2ef
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: UranoCat
-  organizationId: gpiscopo3
+  organizationId: alsalierno
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
