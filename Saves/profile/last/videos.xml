@@ -54,4 +54,22 @@
     <quality>0.70199990844726567</quality>
     <timestamp_seconds>2413</timestamp_seconds>
   </Video>
+  <Video>
+    <day>2</day>
+    <views>500</views>
+    <quality>0.70199990844726567</quality>
+    <timestamp_seconds>4630</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>2</day>
+    <views>500</views>
+    <quality>0.70199990844726567</quality>
+    <timestamp_seconds>4646</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>3</day>
+    <views>500</views>
+    <quality>0.70199990844726567</quality>
+    <timestamp_seconds>4684</timestamp_seconds>
+  </Video>
 </ArrayOfVideo>

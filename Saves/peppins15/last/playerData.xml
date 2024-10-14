@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <level>1</level>
+  <followers>1000</followers>
+  <money>0</money>
+  <pension>10</pension>
+  <experience>0</experience>
+  <x>334.5723</x>
+  <y>20.09</y>
+  <z>149.857986</z>
+  <inventory>
+    <items>
+      <InventoryItem>
+        <ID>fb99862b-f7b0-4cbc-b6ec-bb3f765f0726</ID>
+        <tag>KEY001</tag>
+        <numUses>1</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>16c93f5e-5689-44cc-81ec-fc698740fc4b</ID>
+        <tag>KEY001</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+    </items>
+  </inventory>
+</Player>

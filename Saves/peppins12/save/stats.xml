@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SavedStats xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <day>1</day>
+  <update_cat_timer>150.648865</update_cat_timer>
+  <interaction_cat_timer>9.876817</interaction_cat_timer>
+  <interactions_cat>17</interactions_cat>
+  <day_timer>9484</day_timer>
+  <timestamp_seconds>195</timestamp_seconds>
+  <dayTime>EVENING</dayTime>
+  <videoStatus>AVAILABLE</videoStatus>
+  <sleepStatus>AVAILABLE</sleepStatus>
+  <autosave>5</autosave>
+</SavedStats>

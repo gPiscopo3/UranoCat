@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <level>1</level>
+  <followers>1000</followers>
+  <money>4</money>
+  <pension>10</pension>
+  <experience>102</experience>
+  <x>338.682953</x>
+  <y>20.08371</y>
+  <z>152.993256</z>
+  <inventory>
+    <items>
+      <InventoryItem>
+        <ID>fb99862b-f7b0-4cbc-b6ec-bb3f765f0726</ID>
+        <tag>KEY001</tag>
+        <numUses>2</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>16c93f5e-5689-44cc-81ec-fc698740fc4b</ID>
+        <tag>KEY001</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>7f4c2303-7422-4716-9e9c-9bf750116c13</ID>
+        <tag>KEY010</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>3af0b7fe-88fb-4b12-9352-a8a66303e2ff</ID>
+        <tag>SPACESHIP004</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+    </items>
+  </inventory>
+</Player>

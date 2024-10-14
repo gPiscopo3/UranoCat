@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <level>1</level>
+  <followers>1000</followers>
+  <money>100</money>
+  <pension>10</pension>
+  <experience>0</experience>
+  <x>337.027222</x>
+  <y>20.09</y>
+  <z>151.585373</z>
+  <inventory>
+    <items />
+  </inventory>
+</Player>
