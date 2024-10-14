@@ -1,5 +1,9 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Timeline;
 using UnityEngine.UI;
 
 namespace QuantumTek.QuantumTravel
@@ -16,9 +20,14 @@ namespace QuantumTek.QuantumTravel
         [SerializeField] private RectTransform markersTransform = null;
         [SerializeField] private RawImage image = null;
 
+        
+        public Dictionary<string, QT_MapObject> Objects = new Dictionary<string, QT_MapObject>();
+
+        [HideInInspector] public QT_MapObject ReferenceObject;
+       
         [Header("Object References")]
-        public QT_MapObject ReferenceObject;
-        public List<QT_MapObject> Objects = new List<QT_MapObject>();
+
+        public String playerName;
         public QT_MapMarker MarkerPrefab;
         public List<QT_MapMarker> Markers { get; set; } = new List<QT_MapMarker>();
 
@@ -29,44 +38,60 @@ namespace QuantumTek.QuantumTravel
         public float MarkerSize = 20;
         public float MinScale = 0.5f;
         public float MaxScale = 2f;
-        private GameLoader loader;
-        private string itemTag;
 
         private void Awake()
         {
-            foreach (var obj in Objects)
-                if (obj.Data.ShowOnCompass)
-                    AddMarker(obj);
+           
 
             rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, ShownCompassSize.x);
             rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, ShownCompassSize.y);
             barBackground.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, CompassSize.x);
             barBackground.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, CompassSize.y);
 
-            this.loader = FindObjectOfType<GameLoader>();
-            this.itemTag = null;
+
         }
+
+
+
+        public void Start(){
+            
+            foreach(QT_MapObject mapObject in FindObjectsOfType<QT_MapObject>()){
+                if(mapObject.Name.Equals(playerName))
+                    ReferenceObject = mapObject;
+                else
+                    Objects.Add(mapObject.Name, mapObject);
+            }
+
+
+            foreach(QT_MapObject obj in Objects.Values){   
+                CreateMarker(obj);
+            }
+
+        }
+
+
 
         private void Update()
         {
             image.uvRect = new Rect(ReferenceObject.transform.localEulerAngles.y / 360, 0, 1, 1);
-
+/*
             foreach(QT_MapObject obj in Objects){
                 if(!obj.GetComponent<GameObject>().activeSelf)
                 {
                     
                 }
-            }
+            }*/
+
+            foreach(QT_MapObject mapObject in Objects.Values)
+                SetMarker(mapObject);
+    
+            
+
 
             foreach (var marker in Markers)
             {
-                GameObject obj = marker.GetComponent<GameObject>();
-                if(obj.activeSelf){
-                    marker.SetPosition(CalculatePosition(marker));
-                    marker.SetScale(CalculateScale(marker));
-                } else {
-                    Markers.Remove(marker);
-                }
+                marker.SetPosition(CalculatePosition(marker));
+                marker.SetScale(CalculateScale(marker));
                 
             }
         }
@@ -78,6 +103,8 @@ namespace QuantumTek.QuantumTravel
             Vector2 referenceForward = new Vector2(ReferenceObject.transform.forward.x, ReferenceObject.transform.forward.z);
             float angle = Vector2.SignedAngle(marker.Object.Position(QT_MapType.Map3D) - referencePosition, referenceForward);
 
+            
+            //Debug.Log("Oooooooooooooooooooooooooooooo"+referencePosition + angle);
             return new Vector2(compassDegree * angle, 0);
         }
 
@@ -92,15 +119,46 @@ namespace QuantumTek.QuantumTravel
             return new Vector2(scale, scale);
         }
 
-        /// <summary>
-        /// Creates a new marker on the compass bar, based on the given object.
-        /// </summary>
-        /// <param name="obj">The GameObject with a QT_MapObject on it.</param>
-        public void AddMarker(QT_MapObject obj)
+ 
+        public void CreateMarker(QT_MapObject obj)
         {
-            QT_MapMarker marker = Instantiate(MarkerPrefab, markersTransform);
-            marker.Initialize(obj, MarkerSize);
-            Markers.Add(marker);
+
+            QT_MapMarker marker;
+
+            if (Markers.Find(x => x.Object.Name.Equals(obj.Name)) == null){
+                marker = Instantiate(MarkerPrefab, markersTransform);
+                marker.Initialize(obj, MarkerSize);
+                Markers.Add(marker);
+            }
+
+    
+        }
+
+        public void SetMarker(QT_MapObject obj){
+
+            QT_MapMarker marker = Markers.Find(x => x.Object.Name.Equals(obj.Name));
+            if(marker != null)
+                marker.SetActive(obj.isToShow());
+
+                
+        }
+
+
+        public void ShowObject(String name){
+            if(Objects.ContainsKey(name))
+                Objects[name].show = true;
+        }
+
+        public void HideObject(string name){
+             if(Objects.ContainsKey(name))
+                Objects[name].show = false;
+        }
+
+        public void HideAll(){
+            foreach(QT_MapObject mapObject in Objects.Values){
+                if(!mapObject.alwaysOnMap)
+                    mapObject.show = false;
+            }
         }
 
     }

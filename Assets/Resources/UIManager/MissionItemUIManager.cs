@@ -21,6 +21,8 @@ public class MissionItemUIManager: MonoBehaviour
     List<Item> keyItems;
     public Player player;
 
+    float timerUpdate = 0f;
+
     void Start()
     {   
         Debug.Log("MissionItemUIManager Start");
@@ -91,7 +93,13 @@ public class MissionItemUIManager: MonoBehaviour
 
    void Update()
     {
-        GenerateMissionItemUI();
+
+        timerUpdate += Time.deltaTime;
+        if(timerUpdate > 1f){
+            GenerateMissionItemUI();
+            timerUpdate = 0f;
+        }
+        
     }
 
 }

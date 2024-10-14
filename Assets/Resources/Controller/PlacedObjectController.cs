@@ -12,19 +12,20 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
     Player player;
     //PlacedObject placedObject;
     List<PlacedObjectStatus> statusList;
-
+    [HideInInspector] public string Name;
     GameLoader gameLoader;
 
     MissingItemManager missingItemManager;
 
     [SerializeField] List<String> requiredItemTags;
-    [SerializeField] String recivedItemTag;
+    [SerializeField] public String recivedItemTag;
 
     Item receivedItem;
     List<ItemRequirement> requirements;
 
+    public PlacedObjectStatus status; 
     void Awake(){
-        
+        Name = gameObject.name;
     }
 
 
@@ -38,7 +39,7 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
         
         this.statusList = gameLoader.placedObjectsStatus;
 
-        PlacedObjectStatus status = this.statusList.FirstOrDefault(x => x.name == gameObject.name);
+        status = this.statusList.FirstOrDefault(x => x.name == Name);
         Debug.Log(status);
 
         if(status != null && status.obtained)
@@ -58,11 +59,6 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
                 
     }
 
-    void Update()
-    {
-        
-       
-    }
 
     public void Interact()
     {   
@@ -93,12 +89,15 @@ public class PlacedObjectController : MonoBehaviour, InteractableObject
             player.inventory.addItem(receivedItem);
             Debug.Log("ottenuto " + receivedItem.name);
 
-            statusList.Add(new PlacedObjectStatus{name = gameObject.name, obtained = true});
-
+            statusList.Add(new PlacedObjectStatus{name = Name, obtained = true});
             gameObject.SetActive(false);
         }
 
 
+    }
+
+    public bool isActive(){
+        return gameObject.activeSelf;
     }
 
     

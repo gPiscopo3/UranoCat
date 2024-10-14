@@ -13,16 +13,18 @@ namespace QuantumTek.QuantumTravel
         [SerializeField] private RectTransform rectTransform = null;
         [SerializeField] private Image image = null;
 
-        [HideInInspector] public QT_MapMarkerData Data;
+
         [HideInInspector] public QT_MapObject Object;
 
         public void Initialize(QT_MapObject obj, float size)
         {
-            Data = obj.Data;
+
             Object = obj;
-            image.sprite = Data.Icon;
-            if (Data.Icon == null)
+            image.sprite = obj.Icon;
+            if (obj.Icon == null)
                 image.enabled = false;
+            else
+                image.enabled = true;
             rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, size);
             rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, size);
         }
@@ -33,10 +35,11 @@ namespace QuantumTek.QuantumTravel
         public void SetScale(Vector2 scale)
         { rectTransform.localScale = scale; }
 
-        public void SetFalse(){
-            this.Data.ShowOnCompass = false;
-            this.Data.ShowRotation = false;
+        public void SetActive(bool active){
+           Debug.Log("OOOOOOOOOOOOOO " + active + Object.Name);
+           gameObject.SetActive(active);
         }
+    
 
     }
 }

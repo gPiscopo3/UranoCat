@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Unity.VisualScripting;
 using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -76,6 +77,10 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] GameObject playerToMove;
 
+    private float previusSense; 
+
+    private CameraController cameraController;
+
 
     private void Awake()
     {
@@ -127,7 +132,8 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         player = FindObjectOfType<GameLoader>().player;
-        
+        cameraController = FindObjectOfType<CameraController>();
+        this.previusSense = cameraController.sens;
         Cursor.lockState = CursorLockMode.Locked;
         Time.timeScale = 1;
         setPauseFlag(false);
@@ -289,12 +295,14 @@ public class PlayerController : MonoBehaviour
             viewsBoard.SetActive(false);
             newDayPanel.SetActive(false);
             musicPanel.SetActive(false);
-            Time.timeScale = 0;
+            Time.timeScale = 1;
+            cameraController.sens = 0;
             Cursor.lockState = CursorLockMode.None;
             
         } else {
             Time.timeScale = 1;
             Cursor.lockState = CursorLockMode.Locked;
+            cameraController.sens = previusSense;
         }
     }
 
@@ -415,6 +423,7 @@ public class PlayerController : MonoBehaviour
             newDayPanel.SetActive(false);
             musicPanel.SetActive(false);
             commandsPanel.SetActive(false);
+            cameraController.sens = this.previusSense;
         }
         else if(summaryBoard.activeSelf)    
             summaryBoard.SetActive(false);

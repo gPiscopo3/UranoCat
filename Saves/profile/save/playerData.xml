@@ -2,52 +2,52 @@
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <level>1</level>
   <followers>1000</followers>
-  <money>13895</money>
+  <money>13485</money>
   <pension>10</pension>
   <experience>728</experience>
-  <x>336.944336</x>
-  <y>20.2001247</y>
-  <z>140.8122</z>
+  <x>332.964233</x>
+  <y>20.09</y>
+  <z>150.86795</z>
   <inventory>
     <items>
       <InventoryItem>
-        <ID>969cad16-bb01-45dc-afa2-511b74fce8f6</ID>
-        <tag>SPACESHIP004</tag>
+        <ID>1fc4e6b7-4202-4ea4-a49c-98c2bc3db728</ID>
+        <tag>KEY001</tag>
+        <numUses>1</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>9775c05a-44dd-4e60-8563-6b3244ca13a3</ID>
+        <tag>KEY001</tag>
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>f86979b1-222d-47a5-b778-34c5c0e09fe5</ID>
-        <tag>SPACESHIP004</tag>
+        <ID>cbca53c5-6b6e-4092-ab2f-381448687b74</ID>
+        <tag>KEY009</tag>
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>3d90d06e-fa6f-4fb5-bdaf-a5fe83f9741b</ID>
-        <tag>SPACESHIP004</tag>
+        <ID>7330fafe-d41d-410d-aaa1-b7a1da3ccc2f</ID>
+        <tag>KEY010</tag>
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>a7efefad-f391-45b6-a824-17cc10ad1b79</ID>
-        <tag>SPACESHIP004</tag>
+        <ID>457d0aac-655a-4641-b5df-f7089c75d17b</ID>
+        <tag>KEY011</tag>
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>7cb3f6c1-ca97-44ff-8934-ad1b3f1cebd2</ID>
-        <tag>SPACESHIP004</tag>
+        <ID>57b6f77a-5e49-4cbe-858d-70e3a3f1b12d</ID>
+        <tag>KEY011</tag>
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>a727ccb6-45e4-40b1-bc74-89c9162432d4</ID>
-        <tag>SPACESHIP004</tag>
+        <ID>0a949f8d-4346-4b86-bcf6-7b3aad40f29d</ID>
+        <tag>KEY001</tag>
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>eb77b28d-91b5-4757-95d8-c0edb2312a28</ID>
-        <tag>SPACESHIP005</tag>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>a98bb95b-f4d3-4d01-92d9-b0547c3b1ce2</ID>
-        <tag>SPACESHIP006</tag>
+        <ID>9214eb3d-745c-4593-98b1-d96c209e3d19</ID>
+        <tag>KEY001</tag>
         <numUses>0</numUses>
       </InventoryItem>
     </items>

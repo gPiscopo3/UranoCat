@@ -47,12 +47,11 @@ namespace QuantumTek.QuantumTravel
             foreach (var marker in Markers)
             {
                 marker.SetPosition(CalculatePosition(marker));
-                if (marker.Data.ShowRotation)
-                    marker.transform.localEulerAngles = new Vector3(0, 0, Type == QT_MapType.Map3D ? -marker.Object.transform.eulerAngles.y : marker.Object.transform.eulerAngles.z);
+                marker.transform.localEulerAngles = new Vector3(0, 0, Type == QT_MapType.Map3D ? -marker.Object.transform.eulerAngles.y : marker.Object.transform.eulerAngles.z);
             }
 
-            if (ReferenceMarker.Data.ShowRotation)
-                ReferenceMarker.transform.localEulerAngles = new Vector3(0, 0, Type == QT_MapType.Map3D ? -ReferenceMarker.Object.transform.eulerAngles.y : ReferenceMarker.Object.transform.eulerAngles.z);
+            
+            ReferenceMarker.transform.localEulerAngles = new Vector3(0, 0, Type == QT_MapType.Map3D ? -ReferenceMarker.Object.transform.eulerAngles.y : ReferenceMarker.Object.transform.eulerAngles.z);
         }
 
         protected virtual Vector2 CalculatePosition(QT_MapMarker marker)

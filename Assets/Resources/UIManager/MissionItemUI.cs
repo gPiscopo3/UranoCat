@@ -20,7 +20,7 @@ public class MissionItemUI: MonoBehaviour
     float itemHeight;
     float itemWidth;
     float diff;
-    float itemSpacing = 5.5f;
+    float itemSpacing = 200.5f;
 
 
     public void Awake(){
@@ -89,7 +89,7 @@ public class MissionItemUI: MonoBehaviour
             
             quantity = items.Count;
             
-            
+            itemUI.SetSearchButton(item.tag);
           //  Debug.Log("quantity: " + quantity);
             itemUI.SetQuantity(quantity.ToString() + "/" + item.quantity.ToString());
             itemUI.SetPositionItem(Vector2.right * i * (itemWidth + itemSpacing));
