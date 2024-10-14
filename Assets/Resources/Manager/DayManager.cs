@@ -38,7 +38,7 @@ public class DayManager: MonoBehaviour{
 
         if(savedStats.dayTime.Equals(DayTime.MORNING))
             Morning_Cycle();
-        else if(savedStats.dayTime.Equals(DayTime.EVENING))
+        else if(savedStats.dayTime.Equals(DayTime.AFTERNOON) || savedStats.dayTime.Equals(DayTime.EVENING))
             Afternoon_Cycle();
     }
 
@@ -68,13 +68,18 @@ public class DayManager: MonoBehaviour{
     public void Afternoon_Cycle(){
 
         savedStats.day_timer ++;
-
+        
         if(savedStats.day_timer >= rules.time_to_sleep){
-            if(savedStats.sleepStatus == EventStatus.NOT_AVAILABLE)
+            if(savedStats.sleepStatus == EventStatus.NOT_AVAILABLE){
                 savedStats.sleepStatus = EventStatus.AVAILABLE;
+               
+            }
             savedStats.dayTime = DayTime.EVENING;
         }
 
+        if(savedStats.sleepStatus == EventStatus.DONE){
+            NuovaGiornata();
+        }
         
         
 

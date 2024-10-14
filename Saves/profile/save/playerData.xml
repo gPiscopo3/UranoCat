@@ -2,7 +2,7 @@
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <level>1</level>
   <followers>1000</followers>
-  <money>13884</money>
+  <money>13895</money>
   <pension>10</pension>
   <experience>686</experience>
   <x>335.36554</x>
