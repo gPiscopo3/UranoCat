@@ -19,7 +19,11 @@ public class SaveManager : MonoBehaviour
     private float timer_timestamp = 0f;
     private int autosave;
    
+  public void Awake(){
 
+   
+
+   }
     
     void Start()
     {

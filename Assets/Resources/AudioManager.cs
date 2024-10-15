@@ -21,9 +21,8 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("interazioni: " + savedStats.interactions_cat);
 
-        if(CatSource.isPlaying == false && savedStats.interactions_cat > 0)
+        if(CatSource.isPlaying == false && FindObjectOfType<DayManager>().isInteractionAvailable(InteractionType.CAT_ITERACTION))
 
         {
             //Debug.Log("il verro mi fa incazzare ");

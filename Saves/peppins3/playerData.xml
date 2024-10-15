@@ -4,10 +4,10 @@
   <followers>1000</followers>
   <money>13392</money>
   <pension>10</pension>
-  <experience>1148</experience>
-  <x>333.0903</x>
+  <experience>808</experience>
+  <x>326.30307</x>
   <y>20.2001247</y>
-  <z>140.365219</z>
+  <z>137.769318</z>
   <inventory>
     <items>
       <InventoryItem>
@@ -43,7 +43,7 @@
       <InventoryItem>
         <ID>d3ee0411-7d1b-4ebe-a938-d7a9d7f39602</ID>
         <tag>ITEM003</tag>
-        <numUses>14</numUses>
+        <numUses>12</numUses>
       </InventoryItem>
       <InventoryItem>
         <ID>80ea3592-7d12-468b-bd8f-638a1b08535d</ID>

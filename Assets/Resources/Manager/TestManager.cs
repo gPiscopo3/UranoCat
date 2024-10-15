@@ -19,6 +19,34 @@ public class TestManager : MonoBehaviour
     private DayManager dayManager;
 
    
+   public void Awake(){
+
+    
+
+    List<InteractionType> interactionToComplete = new List<InteractionType>
+    {
+        InteractionType.SLEEP
+    };
+
+    List<Interaction> interactions = new List<Interaction>{
+
+        new Interaction{interactionType = InteractionType.CAT_ITERACTION, dayTime = 60},
+        new Interaction{interactionType = InteractionType.VIDEO, dayTime = 120},
+        new Interaction{interactionType = InteractionType.CAT_ITERACTION, dayTime = 180},
+        new Interaction{interactionType = InteractionType.SLEEP, dayTime = 240}
+
+    };
+
+    Rules rules = new Rules(){
+        interactionsTimes = interactions,
+        interactionsToComplete = interactionToComplete,
+    };
+
+    XMLHelper.SaveToXml(rules, "rules1.xml");
+
+    
+
+   }
 
     
     void Start()
@@ -114,14 +142,14 @@ public class TestManager : MonoBehaviour
 
         }
 
-        if(timer > 0.5f){
-            if(savedStats.videoStatus.Equals(EventStatus.AVAILABLE)){
+        /*if(timer > 0.5f){
+            if(savedStats.videoStatus.Equals(InteractionStatus.AVAILABLE)){
                 Video video = VideoUtilis.createVideo(player.followers, cat, rules.social_rules, savedStats);   
                 videos.Add(video);
                 dayManager.VideoRegistrato();
             }
         timer = 0f;
-        }
+        }*/
 
     
 

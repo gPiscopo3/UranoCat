@@ -72,7 +72,7 @@ public class MissionItemUIManager: MonoBehaviour
             MissionItemUI missionItemUI = Instantiate(ItemPrefab, contentPanel.transform).GetComponent<MissionItemUI>();
             missionItemUI.gameObject.SetActive(true);
 
-            Debug.Log("spacing: " + Vector2.down * i * (itemHeight + itemSpacing));
+            //Debug.Log("spacing: " + Vector2.down * i * (itemHeight + itemSpacing));
             missionItemUI.SetMissionPosition(Vector2.down * i * (itemHeight + itemSpacing));
             missionItemUI.setToggle(mission);
             missionItemUI.setMissionName(mission);
@@ -86,7 +86,7 @@ public class MissionItemUIManager: MonoBehaviour
                 requirements = requirements + " " + $"{item.name} x{itemRequirement.quantity}, ";
             }*/
 
-            Debug.Log("mission.RequiredItems: " + mission.RequiredItems.Count);
+            //Debug.Log("mission.RequiredItems: " + mission.RequiredItems.Count);
             missionItemUI.setRequirements(mission, player.inventory.items);
 
             //missionItemUI.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, diff, itemWidth);

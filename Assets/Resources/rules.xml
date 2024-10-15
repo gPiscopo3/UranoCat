@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Rules xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <update_cat_time>100000</update_cat_time>
-  <interaction_cat_time>10</interaction_cat_time>
-  <max_interactions_stackables>10</max_interactions_stackables>
-  <time_to_video>0</time_to_video>
-  <time_to_sleep>1</time_to_sleep>
   <money_for_view>0.002</money_for_view>
   <xp_for_view>0.005</xp_for_view>
   <autosave_number>10</autosave_number>
-  <autosave_time>30</autosave_time>
+  <autosave_time>10</autosave_time>
+
+
+<interactionsTimes>
+    <Interaction>
+      <interactionType>CAT_ITERACTION</interactionType>
+      <dayTime>5</dayTime>
+    </Interaction>
+    <Interaction>
+      <interactionType>VIDEO</interactionType>
+      <dayTime>10</dayTime>
+    </Interaction>
+    <Interaction>
+      <interactionType>CAT_ITERACTION</interactionType>
+      <dayTime>15</dayTime>
+    </Interaction>
+    <Interaction>
+      <interactionType>SLEEP</interactionType>
+      <dayTime>20</dayTime>
+    </Interaction>
+  </interactionsTimes>
+
+  <interactionsToComplete>
+    <InteractionType>SLEEP</InteractionType>
+	<InteractionType>VIDEO</InteractionType>
+  </interactionsToComplete>
+
   
   <cat_stats_rules>
 	  <rules>
@@ -65,14 +87,14 @@
 		<followers_rules>
 			<FollowersRule>
 				<followers>1000</followers>
-				<rif_quality_views>0.5</rif_quality_views>
-				<min_quality_followers>0.3</min_quality_followers>
+				<rif_quality_views>0.4</rif_quality_views>
+				<min_quality_followers>0.25</min_quality_followers>
 				<max_quality_followers>0.5</max_quality_followers>
 				<followers_factor>0.5</followers_factor>
 			</FollowersRule>
 			<FollowersRule>
 				<followers>10000</followers>
-				<rif_quality_views>0.65</rif_quality_views>
+				<rif_quality_views>0.6</rif_quality_views>
 				<min_quality_followers>0.5</min_quality_followers>
 				<max_quality_followers>0.75</max_quality_followers>
 				<followers_factor>0.3</followers_factor>
@@ -80,7 +102,7 @@
 			<FollowersRule>
 				<followers>100000</followers>
 				<rif_quality_views>0.8</rif_quality_views>
-				<min_quality_followers>0.7</min_quality_followers>
+				<min_quality_followers>0.75</min_quality_followers>
 				<max_quality_followers>1.0</max_quality_followers>
 				<followers_factor>0.1</followers_factor>
 			</FollowersRule>

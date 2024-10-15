@@ -18,9 +18,9 @@ public class SleppingController : MonoBehaviour, InteractableObject
 
         Debug.Log("Interacting with bed");
 
-        if (savedStats.sleepStatus == EventStatus.AVAILABLE)
+        if (dayManager.isInteractionAvailable(InteractionType.SLEEP) && dayManager.areInteractionsDone(InteractionType.VIDEO))
         {
-            dayManager.Dormi();
+            dayManager.consumeInteraction(InteractionType.SLEEP);
             
         }
     }

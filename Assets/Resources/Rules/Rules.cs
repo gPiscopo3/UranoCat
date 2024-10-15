@@ -2,13 +2,9 @@ using System.Collections.Generic;
 
 public class Rules{
 
-
-
     public int update_cat_time;
-    public int interaction_cat_time;
-    public int max_interactions_stackables;
-    public int time_to_video;
-    public int time_to_sleep;
+    public List<Interaction> interactionsTimes;
+    public List<InteractionType> interactionsToComplete;
     public CatStatsRules cat_stats_rules;
     public SocialRules social_rules;
 

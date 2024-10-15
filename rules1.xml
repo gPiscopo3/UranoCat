@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Rules xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <update_cat_time>0</update_cat_time>
+  <interactionsTimes>
+    <Interaction>
+      <interactionType>CAT_ITERACTION</interactionType>
+      <dayTime>60</dayTime>
+      <interactionStatus>NOT_AVAILABLE</interactionStatus>
+    </Interaction>
+    <Interaction>
+      <interactionType>VIDEO</interactionType>
+      <dayTime>120</dayTime>
+      <interactionStatus>NOT_AVAILABLE</interactionStatus>
+    </Interaction>
+    <Interaction>
+      <interactionType>CAT_ITERACTION</interactionType>
+      <dayTime>180</dayTime>
+      <interactionStatus>NOT_AVAILABLE</interactionStatus>
+    </Interaction>
+    <Interaction>
+      <interactionType>SLEEP</interactionType>
+      <dayTime>240</dayTime>
+      <interactionStatus>NOT_AVAILABLE</interactionStatus>
+    </Interaction>
+  </interactionsTimes>
+  <interactionsToComplete>
+    <InteractionType>SLEEP</InteractionType>
+  </interactionsToComplete>
+  <money_for_view>0</money_for_view>
+  <xp_for_view>0</xp_for_view>
+  <autosave_time>0</autosave_time>
+  <autosave_number>0</autosave_number>
+</Rules>

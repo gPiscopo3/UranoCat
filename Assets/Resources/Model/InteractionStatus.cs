@@ -1,4 +1,4 @@
-public enum EventStatus{
+public enum InteractionStatus{
 
     NOT_AVAILABLE,
     AVAILABLE,

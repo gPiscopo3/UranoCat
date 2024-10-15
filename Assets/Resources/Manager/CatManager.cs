@@ -40,10 +40,6 @@ public class CatManager : MonoBehaviour
     {
         savedStats.update_cat_timer += Time.deltaTime;
 
-        
-        if(savedStats.interactions_cat < rules.max_interactions_stackables)
-            Debug.Log("aggiornamento timer ");
-            savedStats.interaction_cat_timer += Time.deltaTime;
 
         if (savedStats.update_cat_timer > rules.update_cat_time)
         {
@@ -54,12 +50,6 @@ public class CatManager : MonoBehaviour
             
         }
 
-        if(savedStats.interaction_cat_timer > rules.interaction_cat_time){
-
-            savedStats.interaction_cat_timer = 0f;
-            savedStats.interactions_cat ++;
-
-        }
 
         while(modifiers.Count > 0){
             CatModifier catModifier = modifiers.Pop();
@@ -80,34 +70,29 @@ public class CatManager : MonoBehaviour
         InventoryItem item = player.equippedItem;
         player.experience += 10;
         Debug.Log("equippedItame " +player.equippedItem);
-        Debug.Log("int" + savedStats.interactions_cat);
+     
 
-        if(savedStats.interactions_cat > 0 && item != null){
-            Debug.Log(player.equippedItem.item.GetType() == typeof(Smartphone));
+        if(dayManager.isInteractionAvailable(InteractionType.CAT_ITERACTION) && item != null && item.item.GetType() == typeof(CatItem)){
 
-            if(item.item.GetType() == typeof(CatItem)){
-                CatItem catItem = (CatItem)item.item;
-                foreach(CatModifier modifier in catItem.catModifiers)
-                    ApplyModifier(modifier);
+            CatItem catItem = (CatItem)item.item;
+            foreach(CatModifier modifier in catItem.catModifiers)
+                ApplyModifier(modifier);
                     
-                player.inventory.useItem(item);
-                if(!item.isUsable())
-                     player.unequip();
+            player.inventory.useItem(item);
+            if(!item.isUsable())
+                 player.unequip();
+            
+            dayManager.consumeInteraction(InteractionType.CAT_ITERACTION);
+        }
 
-                savedStats.interactions_cat--;
-            }
 
-            else if(item.item.GetType() == typeof(Smartphone) && savedStats.videoStatus == EventStatus.AVAILABLE)
-            {
-                Debug.Log("Creo video");
-                savedStats.interactions_cat--;
+        if(dayManager.isInteractionAvailable(InteractionType.VIDEO) && item!=null && item.item.GetType() == typeof(Smartphone)){
                 CreateVideo();
                 player.equippedItem = null;
+                dayManager.consumeInteraction(InteractionType.VIDEO);
 
             }
 
-
-        }
 
 
             
@@ -129,12 +114,7 @@ public class CatManager : MonoBehaviour
         
 
         Video video = VideoUtilis.createVideo(player.followers, cat, rules.social_rules, savedStats);
-
-        Debug.Log(VideoUtilis.GetFollowersRules(player.followers,rules.social_rules.followers_rules));
-
         videos.Add(video);
-        
-        dayManager.VideoRegistrato();
 
 
 

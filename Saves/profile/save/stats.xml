@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SavedStats xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <day>3</day>
-  <update_cat_timer>6094.25537</update_cat_timer>
-  <interaction_cat_timer>7.49312258</interaction_cat_timer>
-  <interactions_cat>654</interactions_cat>
-  <day_timer>78562</day_timer>
-  <timestamp_seconds>5960</timestamp_seconds>
-  <dayTime>EVENING</dayTime>
-  <videoStatus>DONE</videoStatus>
-  <sleepStatus>AVAILABLE</sleepStatus>
-  <autosave>4</autosave>
+  <day>1</day>
+  <update_cat_timer>149.995819</update_cat_timer>
+  <day_timer>20.0061817</day_timer>
+  <timestamp_seconds>144</timestamp_seconds>
+  <interactions>
+    <Interaction>
+      <interactionType>CAT_ITERACTION</interactionType>
+      <dayTime>5</dayTime>
+      <interactionStatus>AVAILABLE</interactionStatus>
+    </Interaction>
+    <Interaction>
+      <interactionType>VIDEO</interactionType>
+      <dayTime>10</dayTime>
+      <interactionStatus>DONE</interactionStatus>
+    </Interaction>
+    <Interaction>
+      <interactionType>CAT_ITERACTION</interactionType>
+      <dayTime>15</dayTime>
+      <interactionStatus>AVAILABLE</interactionStatus>
+    </Interaction>
+    <Interaction>
+      <interactionType>SLEEP</interactionType>
+      <dayTime>20</dayTime>
+      <interactionStatus>AVAILABLE</interactionStatus>
+    </Interaction>
+  </interactions>
+  <autosave>7</autosave>
 </SavedStats>

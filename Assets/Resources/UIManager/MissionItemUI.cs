@@ -82,7 +82,7 @@ public class MissionItemUI: MonoBehaviour
         foreach (ItemRequirement item in mission.RequiredItems)
         {
 
-            Debug.Log("item.tag: " + item.tag);
+            //Debug.Log("item.tag: " + item.tag);
             ItemRequiredUI itemUI = Instantiate(itemPrefab, itemRequiredPanel.transform).GetComponent<ItemRequiredUI>();
             itemUI.gameObject.SetActive(true);
             itemUI.SetImage(item.item.imagePath);

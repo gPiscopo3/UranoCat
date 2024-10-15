@@ -151,6 +151,7 @@ public class FenceLayoutEditor : Editor
 				}
 			}
 		}
+		
 
 		ShowPoints = EditorGUILayout.Foldout(ShowPoints, "Manually edit points");
 
@@ -239,7 +240,7 @@ public class FenceLayoutEditor : Editor
 
 	void InputUpdate(SceneView sceneview)
 	{
-		Event e = Event.current;
+        UnityEngine.Event e = UnityEngine.Event.current;
 		int controlID = GUIUtility.GetControlID(GetHashCode(), FocusType.Passive);
 
 		if (e.control)

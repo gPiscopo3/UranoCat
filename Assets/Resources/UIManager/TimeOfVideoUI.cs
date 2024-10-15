@@ -16,18 +16,23 @@ public class TimeOfVideoUI : MonoBehaviour
 
     SavedStats savedStats;
 
+    DayManager dayManager;
+
     bool is_video_available;
+    bool was_video_available;
     void Start()
     {
         savedStats = FindObjectOfType<GameLoader>().savedStats;
+        dayManager = FindObjectOfType<DayManager>();
         is_video_available = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (savedStats.videoStatus == EventStatus.AVAILABLE && !is_video_available){
+        if (dayManager.isInteractionAvailable(InteractionType.VIDEO) && !is_video_available){
             is_video_available = true; 
+            was_video_available = true;
             timer = 0;
             timeOfVideoUI.SetActive(true);
             this.icon.SetActive(false);
@@ -35,9 +40,9 @@ public class TimeOfVideoUI : MonoBehaviour
             this.videoOK.SetActive(false);
             timerok = 0;
         }
-
-        if (savedStats.videoStatus == EventStatus.DONE){
+        else if(dayManager.areInteractionsDone(InteractionType.VIDEO) && was_video_available){
             is_video_available = false;
+            was_video_available = false;
             this.icon.SetActive(false);
             if(timerok<4){
                 timerok += Time.deltaTime;
@@ -48,7 +53,6 @@ public class TimeOfVideoUI : MonoBehaviour
                 timeOfVideoUI.SetActive(false);
             }
             
-
         }
 
         if (is_video_available){

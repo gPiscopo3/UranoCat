@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class DayManager: MonoBehaviour{
@@ -37,74 +39,70 @@ public class DayManager: MonoBehaviour{
 
     public void Update(){
 
-        if(savedStats.dayTime.Equals(DayTime.MORNING))
-            Morning_Cycle();
-        else if(savedStats.dayTime.Equals(DayTime.AFTERNOON) || savedStats.dayTime.Equals(DayTime.EVENING))
-            Afternoon_Cycle();
-    }
-
-
-    public void Morning_Cycle(){
-        newDay = false;
-        //Debug.Log("Giorno:"+savedStats.day);
-        savedStats.day_timer ++;
-
-        if(savedStats.day_timer >= rules.time_to_video){
-            if(savedStats.videoStatus == EventStatus.NOT_AVAILABLE){
-                savedStats.videoStatus = EventStatus.AVAILABLE;
-                Debug.Log("Video disponibile");
-                savedStats.dayTime = DayTime.AFTERNOON;
-                savedStats.day_timer = 0;
+        if(savedStats.day_timer == 0){
+            savedStats.interactions = rules.interactionsTimes;
+            foreach(Interaction interaction in savedStats.interactions){
+                interaction.interactionStatus = InteractionStatus.NOT_AVAILABLE;
             }
         }
 
-        // per prova 
-        //VideoRegistrato();
-        if(savedStats.videoStatus == EventStatus.DONE){
+        savedStats.day_timer+=Time.deltaTime;
+
+        foreach(Interaction interaction in savedStats.interactions){
+            if(savedStats.day_timer >= interaction.dayTime && interaction.interactionStatus.Equals(InteractionStatus.NOT_AVAILABLE))
+                interaction.interactionStatus = InteractionStatus.AVAILABLE;
+        }
+
+        if(CheckDayComplete()){
+            NuovaGiornata();
             
         }
 
     }
 
-    public void Afternoon_Cycle(){
+    private bool CheckDayComplete(){
 
-        savedStats.day_timer ++;
-        
-        if(savedStats.day_timer >= rules.time_to_sleep){
-            if(savedStats.sleepStatus == EventStatus.NOT_AVAILABLE){
-                savedStats.sleepStatus = EventStatus.AVAILABLE;
-               
-            }
-            savedStats.dayTime = DayTime.EVENING;
-        }
+        bool isCompletable = true;
 
-        if(savedStats.sleepStatus == EventStatus.DONE){
-            NuovaGiornata();
+        foreach(InteractionType interactionType in rules.interactionsToComplete){
+            if(!(savedStats.interactions.FindAll(x => x.interactionType.Equals(interactionType) && x.interactionStatus.Equals(InteractionStatus.DONE)).Count >=
+                rules.interactionsToComplete.FindAll(x => x.Equals(interactionType)).Count)){
+                    isCompletable = false;
+                    break;
+                }
+        
         }
-        
-        
+        return isCompletable;
+
 
     }
 
-    public void VideoRegistrato(){
-        
-        savedStats.videoStatus = EventStatus.DONE;
-        Debug.Log("Video registrato");
+
+
+    public bool isInteractionAvailable(InteractionType interactionType){
+        if(savedStats.interactions.FirstOrDefault(x => x.interactionStatus.Equals(InteractionStatus.AVAILABLE) && x.interactionType.Equals(interactionType)) == null)
+            return false;
+        return true;
     }
-    public void Dormi(){
-        if(savedStats.sleepStatus== EventStatus.AVAILABLE){
-            savedStats.sleepStatus = EventStatus.DONE;
-            Debug.Log("Sleeping");
-        }
+
+    public bool areInteractionsDone(InteractionType interactionType){
+        return savedStats.interactions.FindAll(x => x.interactionStatus.Equals(InteractionStatus.DONE) && x.interactionType.Equals(interactionType)).Count ==
+            savedStats.interactions.FindAll(x => x.interactionType.Equals(interactionType)).Count;
+        
+    }
+
+    public void consumeInteraction(InteractionType interactionType){
+
+        Interaction interaction = savedStats.interactions.FirstOrDefault(x => x.interactionStatus.Equals(InteractionStatus.AVAILABLE) && x.interactionType.Equals(interactionType));
+        if(interaction!=null)
+            interaction.interactionStatus = InteractionStatus.DONE;
+
     }
 
     public void NuovaGiornata(){
         Debug.Log("Nuova giornata");
         ProfitOfDay();
-        savedStats.sleepStatus = EventStatus.NOT_AVAILABLE;
-        savedStats.videoStatus = EventStatus.NOT_AVAILABLE;
-        savedStats.dayTime = DayTime.MORNING;
-        savedStats.day_timer = 0;
+
         clockManager.currentTime = new ClockManager.Time(clockManager.startHour,0);
         clockManager.scaleFactor = 1;
 
@@ -112,14 +110,17 @@ public class DayManager: MonoBehaviour{
         player.experience += experienceGain;
         player.followers += followersGain;
 
+        savedStats.day_timer = 0;
         savedStats.day ++;
+
+        
         newDay = true;
     }
 
 
     private void ProfitOfDay(){
         Video video = videos.Find(video => video.day == savedStats.day);
-        views_yesterday = video.views ;
+        views_yesterday = video.views;
         moneyGain = views_yesterday * rules.money_for_view;
         moneyGain += player.pension;
         experienceGain = (long)(views_yesterday * rules.xp_for_view);

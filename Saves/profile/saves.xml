@@ -2,8 +2,8 @@
 <ArrayOfSaveInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SaveInfo>
     <name>save</name>
-    <seconds>5960</seconds>
-    <time>2024-10-15T16:42:19.6542204+02:00</time>
+    <seconds>144</seconds>
+    <time>2024-10-15T20:09:20.420544+02:00</time>
     <level>1</level>
     <money>13392</money>
   </SaveInfo>
