@@ -16,14 +16,16 @@ public class MissionItemUI: MonoBehaviour
 
     [SerializeField] GameObject itemPrefab;
 
+    Mission mission; 
+
+    PlacedObjectManager placedObjectManager;
 
     float itemHeight;
     float itemWidth;
     float diff;
-    float itemSpacing = 200.5f;
+    float itemSpacing2 = 150.5f;
 
-
-    public void Awake(){
+    public void Start(){
         CreateRequiredItemPanel();
     }
     public void SetMissionPosition(Vector2 pos){
@@ -47,11 +49,11 @@ public class MissionItemUI: MonoBehaviour
 
     } 
 
-    public void setRequirements(List<ItemRequirement> requiredItems, List<InventoryItem> inventoryItems){
+    public void setRequirements(Mission mission, List<InventoryItem> inventoryItems){
 
-        
+        this.mission = mission;
 
-        GenerateItemRequiredPanel(requiredItems, inventoryItems);
+        GenerateItemRequiredPanel(inventoryItems);
 
     } 
     public void CreateRequiredItemPanel(){
@@ -65,7 +67,9 @@ public class MissionItemUI: MonoBehaviour
         
     }
 
-    public void GenerateItemRequiredPanel(List<ItemRequirement> requiredItems, List<InventoryItem> inventoryItems){
+    public void GenerateItemRequiredPanel(List<InventoryItem> inventoryItems){
+
+        placedObjectManager = FindObjectOfType<PlacedObjectManager>();
 
         for(int j=1; j<itemRequiredPanel.transform.childCount; j++){
         
@@ -75,7 +79,7 @@ public class MissionItemUI: MonoBehaviour
         itemRequiredPanel.transform.GetChild(0).gameObject.SetActive(false);
 
         int i = 0;
-        foreach (ItemRequirement item in requiredItems)
+        foreach (ItemRequirement item in mission.RequiredItems)
         {
 
             Debug.Log("item.tag: " + item.tag);
@@ -84,15 +88,24 @@ public class MissionItemUI: MonoBehaviour
             itemUI.SetImage(item.item.imagePath);
             int quantity;
             List<InventoryItem> items = new List<InventoryItem>();
-           // Debug.Log("plyer" + this.player.level);
-            items = inventoryItems.FindAll(obj => obj.EqualsByTag(item.tag));
-            
-            quantity = items.Count;
-            
-            itemUI.SetSearchButton(item.tag);
-          //  Debug.Log("quantity: " + quantity);
-            itemUI.SetQuantity(quantity.ToString() + "/" + item.quantity.ToString());
-            itemUI.SetPositionItem(Vector2.right * i * (itemWidth + itemSpacing));
+            List<string> objects = new List<string>();
+
+            if (mission.MissionState == MissionState.ATTIVO){
+                // Debug.Log("plyer" + this.player.level);
+                items = inventoryItems.FindAll(obj => obj.EqualsByTag(item.tag));
+                
+                quantity = items.Count;
+                
+            //  Debug.Log("quantity: " + quantity);
+                itemUI.SetQuantity(quantity.ToString() + "/" + item.quantity.ToString());
+                
+                objects = placedObjectManager.getObjects(item.tag);
+                if (objects.Count > 0){
+                    itemUI.SetSearchButton(item.tag);
+                }
+            }
+           
+            itemUI.SetPositionItem(Vector2.right * i * (itemWidth + itemSpacing2));
             itemUI.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, 0.065f, 170f);
             i++;
         }

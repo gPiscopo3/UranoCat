@@ -59,7 +59,14 @@ public class MissionItemUIManager: MonoBehaviour
 
         //contentPanel.GetComponent<RectTransform>().sizeDelta = Vector2.up * (itemHeight + itemSpacing) * missions.Count;
 
-        foreach (Mission mission in this.missions.Where(x => x.MissionState == MissionState.ATTIVO || x.MissionState == MissionState.COMPLETATO))
+        List<Mission> missionCA = this.missions.Where(x => x.MissionState == MissionState.ATTIVO || x.MissionState == MissionState.COMPLETATO).ToList();
+        List<Mission> missionOrdered = new List<Mission>();
+
+        for(int z = missionCA.Count-1; z >= 0; z--){
+            missionOrdered.Add(missionCA[z]);
+        }
+
+        foreach (Mission mission in missionOrdered)
         {
             
             MissionItemUI missionItemUI = Instantiate(ItemPrefab, contentPanel.transform).GetComponent<MissionItemUI>();
@@ -80,7 +87,7 @@ public class MissionItemUIManager: MonoBehaviour
             }*/
 
             Debug.Log("mission.RequiredItems: " + mission.RequiredItems.Count);
-            missionItemUI.setRequirements(mission.RequiredItems, player.inventory.items);
+            missionItemUI.setRequirements(mission, player.inventory.items);
 
             //missionItemUI.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, diff, itemWidth);
             contentPanel.GetComponent<RectTransform>().sizeDelta= Vector2.up * (itemHeight + itemSpacing) * missions.Count;

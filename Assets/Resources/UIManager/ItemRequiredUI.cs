@@ -40,6 +40,7 @@ public class ItemRequiredUI : MonoBehaviour
     public void SetSearchButton(string tag){
         this.tag = tag;
         searchItemButton.enabled = true;
+        searchItemButton.gameObject.SetActive(true);
         searchItemButton.onClick.AddListener(SearchItem);
         
     }

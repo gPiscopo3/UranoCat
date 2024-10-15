@@ -37,7 +37,7 @@ public class PlacedObjectManager: MonoBehaviour{
             dictionary[itemTag].Remove(objectName);
     }
 
-    public List<String> getObjects(string itemTag){
+    public List<string> getObjects(string itemTag){
         if(dictionary.ContainsKey(itemTag))
             return dictionary[itemTag];
         return new List<string>();
