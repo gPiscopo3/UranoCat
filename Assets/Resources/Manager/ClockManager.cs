@@ -65,4 +65,15 @@ public class ClockManager : MonoBehaviour
        
     }
 
+    public float getDayCompletionPercentage()
+    {
+        //return ((float)(currentTime.hour - startHour)) / ((float)(endHour - startHour));
+        return ((float)getCurrentTotalMinutes()) / ((float)(endHour - startHour) * 60);
+    }
+
+    public int getCurrentTotalMinutes()
+    {
+        return (currentTime.hour - startHour)*60 + (int)currentTime.minute;
+    }
+
 }
