@@ -9,6 +9,7 @@ public class DayManager: MonoBehaviour{
     Player player;
     private SavedStats savedStats;
     List<Video> videos;
+    private ClockManager clockManager;
 
     private float timer_update_video = 0f;
     public bool is_video_available;
@@ -29,7 +30,7 @@ public class DayManager: MonoBehaviour{
         cat = FindObjectOfType<GameLoader>().cat;
         player = FindObjectOfType<GameLoader>().player;
         videos = FindObjectOfType<GameLoader>().videos;
-
+        clockManager = FindObjectOfType<ClockManager>();
 
 
     }
@@ -104,6 +105,8 @@ public class DayManager: MonoBehaviour{
         savedStats.videoStatus = EventStatus.NOT_AVAILABLE;
         savedStats.dayTime = DayTime.MORNING;
         savedStats.day_timer = 0;
+        clockManager.currentTime = new ClockManager.Time(clockManager.startHour,0);
+        clockManager.scaleFactor = 1;
 
         player.money += moneyGain;
         player.experience += experienceGain;

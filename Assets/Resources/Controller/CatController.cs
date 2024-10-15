@@ -14,7 +14,7 @@ public class CatController : MonoBehaviour, InteractableObject
     //import da navScript
     [SerializeField] protected Transform[] points;
     private int destPoint = 0;
-    [SerializeField] protected float speed = 2.0f;
+    [SerializeField] protected float speed;
 
     Animator catAnimator;
 
