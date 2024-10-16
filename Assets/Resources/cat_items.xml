@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfCatItem xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <CatItem>
-    <tag>ITEM001</tag>
-    <name>Crocchette Piccole</name>
-    <descrizione>Piccola porzione di crocchette. Utilizzabile 10 volte</descrizione>
-    <durability>10</durability>
+    <tag>CROCC01</tag>
+    <name>Crocchette Xeles</name>
+    <descrizione>5 porzioni di crocchette economiche</descrizione>
+    <durability>5</durability>
     <imagePath>crocchette</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
-      <value>5</value>
+      <value>4</value>
     </CatModifier>
     <CatModifier>
       <targetStat>FELICITA</targetStat>
@@ -16,18 +16,29 @@
     </CatModifier>
   </CatItem>
   <CatItem>
-    <tag>ITEM002</tag>
-    <name>Merluzzo</name>
-    <descrizione>Un bel merluzzo da mangiare</descrizione>
-    <durability>1</durability>
-    <imagePath>pesce</imagePath>
+    <tag>CROCC02</tag>
+    <name>Crocchette Zielina</name>
+    <descrizione>5 porzioni di crocchette standard</descrizione>
+    <durability>5</durability>
+    <imagePath>crocchette</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
-      <value>8</value>
+      <value>5</value>
     </CatModifier>
     <CatModifier>
-      <targetStat>DIVERTIMENTO</targetStat>
-      <value>1</value>
+      <targetStat>FELICITA</targetStat>
+      <value>0.3</value>
+    </CatModifier>
+  </CatItem>
+  <CatItem>
+    <tag>CROCC03</tag>
+    <name>Crocchette Blue Morgan</name>
+    <descrizione>5 porzioni di crocchette di buona qualità</descrizione>
+    <durability>5</durability>
+    <imagePath>crocchette</imagePath>
+    <CatModifier>
+      <targetStat>SAZIETA</targetStat>
+      <value>6</value>
     </CatModifier>
     <CatModifier>
       <targetStat>FELICITA</targetStat>
@@ -35,14 +46,121 @@
     </CatModifier>
   </CatItem>
   <CatItem>
-    <tag>ITEM003</tag>
+    <tag>CROCC04</tag>
+    <name>Crocchette Golden Crocchi</name>
+    <descrizione>5 porzioni di crocchette di alta qualità</descrizione>
+    <durability>5</durability>
+    <imagePath>crocchette</imagePath>
+    <CatModifier>
+      <targetStat>SAZIETA</targetStat>
+      <value>7</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>FELICITA</targetStat>
+      <value>1</value>
+    </CatModifier>
+  </CatItem>
+
+  <CatItem>
+    <tag>FISH001</tag>
+    <name>Alice</name>
+    <descrizione>2 porzioni di alici</descrizione>
+    <durability>2</durability>
+    <imagePath>pesce</imagePath>
+    <CatModifier>
+      <targetStat>SAZIETA</targetStat>
+      <value>5</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>FELICITA</targetStat>
+      <value>2</value>
+    </CatModifier>
+  </CatItem>
+  <CatItem>
+    <tag>FISH02</tag>
+    <name>Trota</name>
+    <descrizione>Una trota</descrizione>
+    <durability>1</durability>
+    <imagePath>pesce</imagePath>
+    <CatModifier>
+      <targetStat>SAZIETA</targetStat>
+      <value>6</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>FELICITA</targetStat>
+      <value>2.5</value>
+    </CatModifier>
+  </CatItem>
+  <CatItem>
+    <tag>FISH03</tag>
+    <name>Spigola</name>
+    <descrizione>Una spigola</descrizione>
+    <durability>1</durability>
+    <imagePath>pesce</imagePath>
+    <CatModifier>
+      <targetStat>SAZIETA</targetStat>
+      <value>7</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>FELICITA</targetStat>
+      <value>3.2</value>
+    </CatModifier>
+  </CatItem>
+  <CatItem>
+    <tag>FISH04</tag>
+    <name>Merluzzo</name>
+    <descrizione>Un merluzzo</descrizione>
+    <durability>1</durability>
+    <imagePath>pesce</imagePath>
+    <CatModifier>
+      <targetStat>SAZIETA</targetStat>
+      <value>8</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>FELICITA</targetStat>
+      <value>3.8</value>
+    </CatModifier>
+  </CatItem>
+  <CatItem>
+    <tag>FISH05</tag>
+    <name>Tonno</name>
+    <descrizione>Un filetto di tonno</descrizione>
+    <durability>1</durability>
+    <imagePath>pesce</imagePath>
+    <CatModifier>
+      <targetStat>SAZIETA</targetStat>
+      <value>9</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>FELICITA</targetStat>
+      <value>4.3</value>
+    </CatModifier>
+  </CatItem>
+  <CatItem>
+    <tag>FISH06</tag>
+    <name>Salmone</name>
+    <descrizione>Un filetto di salmone</descrizione>
+    <durability>1</durability>
+    <imagePath>pesce</imagePath>
+    <CatModifier>
+      <targetStat>SAZIETA</targetStat>
+      <value>10</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>FELICITA</targetStat>
+      <value>5</value>
+    </CatModifier>
+  </CatItem>
+
+  <CatItem>
+    <tag>DIV01</tag>
     <name>Topo di gomma</name>
     <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
     <durability>30</durability>
     <imagePath>topo</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
-      <value>-2</value>
+      <value>-1.5</value>
     </CatModifier>
     <CatModifier>
       <targetStat>DIVERTIMENTO</targetStat>
@@ -53,4 +171,158 @@
       <value>0.5</value>
     </CatModifier>
   </CatItem>
+  <CatItem>
+    <tag>DIV02</tag>
+    <name>Topo di gomma profumato</name>
+    <descrizione>Un topo quasi saporita con cui giocare. Attenzione, fa venire molta fame!</descrizione>
+    <durability>30</durability>
+    <imagePath>topo</imagePath>
+    <CatModifier>
+      <targetStat>SAZIETA</targetStat>
+      <value>-3</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>DIVERTIMENTO</targetStat>
+      <value>7</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>FELICITA</targetStat>
+      <value>1</value>
+    </CatModifier>
+  </CatItem>
+  <CatItem>
+    <tag>DIV03</tag>
+    <name>Gomitolo piccolo</name>
+    <descrizione>Un gomitolo piccolo con cui giocare</descrizione>
+    <durability>30</durability>
+    <imagePath>topo</imagePath>
+    <CatModifier>
+      <targetStat>SAZIETA</targetStat>
+      <value>0</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>DIVERTIMENTO</targetStat>
+      <value>5</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>FELICITA</targetStat>
+      <value>0.5</value>
+    </CatModifier>
+  </CatItem>
+  <CatItem>
+    <tag>DIV04</tag>
+    <name>Gomitolo medio</name>
+    <descrizione>Un gomitolo medio con cui giocare</descrizione>
+    <durability>30</durability>
+    <imagePath>topo</imagePath>
+    <CatModifier>
+      <targetStat>SAZIETA</targetStat>
+      <value>0</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>DIVERTIMENTO</targetStat>
+      <value>6.5</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>FELICITA</targetStat>
+      <value>1</value>
+    </CatModifier>
+  </CatItem>
+  <CatItem>
+    <tag>DIV05</tag>
+    <name>Gomitolo grande</name>
+    <descrizione>Un gomitolo grande con cui giocare</descrizione>
+    <durability>30</durability>
+    <imagePath>topo</imagePath>
+    <CatModifier>
+      <targetStat>SAZIETA</targetStat>
+      <value>0</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>DIVERTIMENTO</targetStat>
+      <value>8</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>FELICITA</targetStat>
+      <value>1.5</value>
+    </CatModifier>
+  </CatItem>
+  <CatItem>
+    <tag>DIV06</tag>
+    <name>Tiragraffi Marcello</name>
+    <descrizione>Un tiragraffi con cui giocare</descrizione>
+    <durability>30</durability>
+    <imagePath>topo</imagePath>
+    <CatModifier>
+      <targetStat>SAZIETA</targetStat>
+      <value>0</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>DIVERTIMENTO</targetStat>
+      <value>5</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>FELICITA</targetStat>
+      <value>1</value>
+    </CatModifier>
+  </CatItem>
+  <CatItem>
+    <tag>DIV07</tag>
+    <name>Tiragraffi Margherita</name>
+    <descrizione>Un tiragraffi colorato</descrizione>
+    <durability>30</durability>
+    <imagePath>topo</imagePath>
+    <CatModifier>
+      <targetStat>SAZIETA</targetStat>
+      <value>0</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>DIVERTIMENTO</targetStat>
+      <value>7</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>FELICITA</targetStat>
+      <value>2</value>
+    </CatModifier>
+  </CatItem>
+  <CatItem>
+    <tag>DIV08</tag>
+    <name>Pollo di gomma</name>
+    <descrizione>Un pollo di gomma che fa divertire tantissimo il gatto, Attenzione...</descrizione>
+    <durability>30</durability>
+    <imagePath>topo</imagePath>
+    <CatModifier>
+      <targetStat>SAZIETA</targetStat>
+      <value>-7</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>DIVERTIMENTO</targetStat>
+      <value>12</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>FELICITA</targetStat>
+      <value>5</value>
+    </CatModifier>
+  </CatItem>
+  <CatItem>
+    <tag>DIV09</tag>
+    <name>Verro</name>
+    <descrizione>Il figlio di Zio Agosto</descrizione>
+    <imagePath>topo</imagePath>
+    <CatModifier>
+      <targetStat>SAZIETA</targetStat>
+      <value>0</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>DIVERTIMENTO</targetStat>
+      <value>10</value>
+    </CatModifier>
+    <CatModifier>
+      <targetStat>FELICITA</targetStat>
+      <value>3</value>
+    </CatModifier>
+  </CatItem>
+
+
+
 </ArrayOfCatItem>

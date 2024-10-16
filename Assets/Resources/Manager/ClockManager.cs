@@ -10,6 +10,8 @@ public class ClockManager : MonoBehaviour
     [SerializeField] public int startHour;
     [SerializeField] public int endHour;
 
+    private SavedStats savedStats;
+
     public Time startTime;
     public Time endTime;
     public struct Time
@@ -30,11 +32,27 @@ public class ClockManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        savedStats = FindObjectOfType<GameLoader>().savedStats;
         startTime.hour = startHour;
         startTime.minute = 0;
         endTime.hour = endHour;
         endTime.minute = 0;
-        currentTime = startTime;
+        //currentTime = startTime;
+
+
+        float cumulativeElapsedMinutes = savedStats.day_timer * scaleFactor;
+        int elapsedHours = (int)cumulativeElapsedMinutes / 60;
+        int elapsedMinutes = ((int)cumulativeElapsedMinutes) % 60;
+
+        if (elapsedHours > endHour - startHour)
+        {
+            currentTime = endTime; 
+        }
+        else
+        {
+            currentTime.hour = startHour + elapsedHours;
+            currentTime.minute = elapsedMinutes;
+        }
     }
 
     // Update is called once per frame
@@ -67,8 +85,8 @@ public class ClockManager : MonoBehaviour
 
     public float getDayCompletionPercentage()
     {
-        //return ((float)(currentTime.hour - startHour)) / ((float)(endHour - startHour));
-        return ((float)getCurrentTotalMinutes()) / ((float)(endHour - startHour) * 60);
+        return ((float)(currentTime.hour - startHour)) / ((float)(endHour - startHour));
+        //return ((float)getCurrentTotalMinutes()) / ((float)(endHour - startHour) * 60);
     }
 
     public int getCurrentTotalMinutes()
