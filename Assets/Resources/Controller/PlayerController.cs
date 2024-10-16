@@ -410,11 +410,8 @@ public class PlayerController : MonoBehaviour
 
     private void ToggleBack(InputAction.CallbackContext context)
     {
-
-        
-
         if(shop.activeSelf || inventory.activeSelf || missionBoard.activeSelf || viewsBoard.activeSelf || 
-        newDayPanel.activeSelf || musicPanel.activeSelf ||commandsPanel.activeSelf || pausePanel.activeSelf)
+            newDayPanel.activeSelf || musicPanel.activeSelf ||commandsPanel.activeSelf || pausePanel.activeSelf)
         {
             shop.SetActive(false);
             inventory.SetActive(false);

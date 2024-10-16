@@ -18,4 +18,10 @@
     <quality>0.31799999999999995</quality>
     <timestamp_seconds>141</timestamp_seconds>
   </Video>
+  <Video>
+    <day>2</day>
+    <views>382</views>
+    <quality>0.35</quality>
+    <timestamp_seconds>715</timestamp_seconds>
+  </Video>
 </ArrayOfVideo>

@@ -38,6 +38,7 @@ public class NewDayIU : MonoBehaviour
             followersText.text = dayManager.followersGain.ToString();
 
             newDayPanel.SetActive(true);
+            dayManager.newDay = false;
         }
         
         if (newDayPanel.activeSelf){
