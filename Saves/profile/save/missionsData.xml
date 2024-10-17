@@ -19,7 +19,7 @@
     <experience>100</experience>
     <name>Trova la prima ala</name>
     <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
-    <MissionState>ATTIVO</MissionState>
+    <MissionState>COMPLETATO</MissionState>
     <enableSpaceshipModification>false</enableSpaceshipModification>
     <spaceshipPart />
     <tag>FIND001</tag>
@@ -34,7 +34,7 @@
     <experience>100</experience>
     <name>Ripara la prima ala</name>
     <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
-    <MissionState>NON_ATTIVO</MissionState>
+    <MissionState>COMPLETATO</MissionState>
     <enableSpaceshipModification>true</enableSpaceshipModification>
     <spaceshipPart>StarSparrow_Wing1</spaceshipPart>
     <tag>MISSION001</tag>
@@ -57,7 +57,7 @@
     <experience>100</experience>
     <name>Trova la seconda ala</name>
     <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
-    <MissionState>NON_ATTIVO</MissionState>
+    <MissionState>COMPLETATO</MissionState>
     <enableSpaceshipModification>false</enableSpaceshipModification>
     <spaceshipPart />
     <tag>FIND002</tag>
@@ -72,7 +72,7 @@
     <experience>120</experience>
     <name>Ripara la seconda ala</name>
     <description>Trova gli strumenti necessari per costruire l'ala sinistra dell'astronave.</description>
-    <MissionState>NON_ATTIVO</MissionState>
+    <MissionState>COMPLETATO</MissionState>
     <enableSpaceshipModification>true</enableSpaceshipModification>
     <spaceshipPart>StarSparrow_Wing2</spaceshipPart>
     <tag>MISSION002</tag>
@@ -95,7 +95,7 @@
     <experience>100</experience>
     <name>Trova la terza ala</name>
     <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
-    <MissionState>NON_ATTIVO</MissionState>
+    <MissionState>ATTIVO</MissionState>
     <enableSpaceshipModification>false</enableSpaceshipModification>
     <spaceshipPart />
     <tag>FIND003</tag>

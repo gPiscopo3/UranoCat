@@ -67,7 +67,7 @@ public class ClockManager : MonoBehaviour
             if (currentTime.hour < endHour)
                 currentTime.hour++;
         }
-        if(currentTime.minute <= 9)
+        if(currentTime.minute < 10)
         {
             text.SetText("" + currentTime.hour + ":0" + (int)currentTime.minute);
         }

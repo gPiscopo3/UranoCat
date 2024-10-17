@@ -2,12 +2,12 @@
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <level>2</level>
   <followers>1000</followers>
-  <money>13521.720000000001</money>
+  <money>13507.720000000001</money>
   <pension>11</pension>
-  <experience>3034</experience>
-  <x>338.4586</x>
-  <y>20.08</y>
-  <z>115.282875</z>
+  <experience>3066</experience>
+  <x>326.800079</x>
+  <y>20.33139</y>
+  <z>153.6018</z>
   <inventory>
     <items>
       <InventoryItem>
@@ -58,6 +58,61 @@
       <InventoryItem>
         <ID>e86af47f-ba82-4610-ba19-7975aa6a8d21</ID>
         <tag>FISH05</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>2a8c74b7-4e4e-4940-bf04-4b3733589202</ID>
+        <tag>KEY001</tag>
+        <numUses>2</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>6239c4de-62c7-4d9e-bd87-cbb71b297ce6</ID>
+        <tag>KEY011</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>e2a5fe82-6f96-4877-b3bf-05ceb9f96d8e</ID>
+        <tag>KEY010</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>187edbfd-a209-416f-9cee-5cded51ad18e</ID>
+        <tag>KEY010</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>e1dcfa81-95b7-421c-a89c-c3a6b43d24bb</ID>
+        <tag>KEY010</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>17ee4932-fc0c-4c7a-a901-e1faf4e762cc</ID>
+        <tag>KEY009</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>f0347397-825b-4dde-9709-a67df2581567</ID>
+        <tag>KEY009</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>c02adf84-9363-4a00-ac26-9ecd2fa7d600</ID>
+        <tag>KEY009</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>b7973ba6-c6eb-4b1d-adbf-b1134002ff91</ID>
+        <tag>KEY009</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>f5152dff-7b00-4cb9-a15d-bc76d2cc3eb8</ID>
+        <tag>KEY009</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>a064884b-f6ce-4ccc-84aa-c4a42009ded8</ID>
+        <tag>KEY009</tag>
         <numUses>0</numUses>
       </InventoryItem>
     </items>

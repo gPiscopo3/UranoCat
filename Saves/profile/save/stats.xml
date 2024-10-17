@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SavedStats xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <day>8</day>
-  <update_cat_timer>1840.87183</update_cat_timer>
-  <day_timer>126.5962</day_timer>
-  <timestamp_seconds>1809</timestamp_seconds>
+  <day>9</day>
+  <update_cat_timer>3542.19873</update_cat_timer>
+  <day_timer>259.103577</day_timer>
+  <timestamp_seconds>3479</timestamp_seconds>
   <interactions>
     <Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
@@ -13,7 +13,7 @@
     <Interaction>
       <interactionType>VIDEO</interactionType>
       <dayTime>10</dayTime>
-      <interactionStatus>DONE</interactionStatus>
+      <interactionStatus>AVAILABLE</interactionStatus>
     </Interaction>
     <Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
