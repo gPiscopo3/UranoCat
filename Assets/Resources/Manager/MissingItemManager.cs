@@ -11,13 +11,6 @@ public class MissingItemManager : MonoBehaviour
     private float timer = 0;
     private bool startTimer = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (startTimer)

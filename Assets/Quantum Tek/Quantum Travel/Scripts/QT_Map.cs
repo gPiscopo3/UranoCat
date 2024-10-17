@@ -49,8 +49,6 @@ namespace QuantumTek.QuantumTravel
                 marker.SetPosition(CalculatePosition(marker));
                 marker.transform.localEulerAngles = new Vector3(0, 0, Type == QT_MapType.Map3D ? -marker.Object.transform.eulerAngles.y : marker.Object.transform.eulerAngles.z);
             }
-
-            
             ReferenceMarker.transform.localEulerAngles = new Vector3(0, 0, Type == QT_MapType.Map3D ? -ReferenceMarker.Object.transform.eulerAngles.y : ReferenceMarker.Object.transform.eulerAngles.z);
         }
 

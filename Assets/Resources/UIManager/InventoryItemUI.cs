@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,16 +13,12 @@ public class InventoryItemUI : MonoBehaviour
     [SerializeField] TMP_Text quantity;
     InventoryItem itemToUse;
 
-    
-
-
     public void setItem(InventoryItem item){
         this.itemToUse = item;
     }
 
     public void SetItemPosition(Vector2 pos){
 
-    
         GetComponent<RectTransform>().anchoredPosition += pos;
 
     }
@@ -73,20 +65,11 @@ public class InventoryItemUI : MonoBehaviour
         useButton.onClick.AddListener(Usa);
     }
 
-    
-
-
-
     private void Usa(){
         
         Player player = FindObjectOfType<GameLoader>().player;
         player.equip(itemToUse);
-        
-        
+                
     }
 
-
-
-
-  
 }

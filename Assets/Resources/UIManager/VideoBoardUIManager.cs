@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,7 +20,6 @@ public class VideoBoardUIManager : MonoBehaviour
 
     void Start()
     {   
-        Debug.Log("VideoBoardUIManager Start");
         videos = FindObjectOfType<GameLoader>().videos;
         CreateVideoBoard();
         GenerateVideoItemUI();
@@ -42,7 +40,6 @@ public class VideoBoardUIManager : MonoBehaviour
 
         for(int j=1; j<contentPanel.transform.childCount; j++)
         {
-        
             Destroy(contentPanel.transform.GetChild(j).gameObject);
            
         }

@@ -1,15 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-
-
-public class SaveManager : MonoBehaviour
-{
-
-
-    
+public class SaveManager : MonoBehaviour{
 
     GameLoader loader;
     SavedStats savedStats;
@@ -17,14 +9,8 @@ public class SaveManager : MonoBehaviour
 
     private float timer_save = 0f;
     private float timer_timestamp = 0f;
-    private int autosave;
-   
-  public void Awake(){
-
    
 
-   }
-    
     void Start()
     {
         this.loader = FindObjectOfType<GameLoader>();
@@ -55,23 +41,10 @@ public class SaveManager : MonoBehaviour
             
             timer_save = 0f;
             
-
-            
-    
         }
-
-        
-
     }
 
     public void SaveGame(String save){
         loader.SaveData("save");
     }
-
-        
-
-       
-
-
-
 }

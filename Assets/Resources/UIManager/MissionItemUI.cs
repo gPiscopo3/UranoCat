@@ -1,8 +1,5 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,7 +7,6 @@ public class MissionItemUI: MonoBehaviour
 {
     [SerializeField] Image toggle;
     [SerializeField] TMP_Text missionName;
-    //[SerializeField] TMP_Text requirements;
 
     [SerializeField] GameObject itemRequiredPanel;
 
@@ -82,7 +78,6 @@ public class MissionItemUI: MonoBehaviour
         foreach (ItemRequirement item in mission.RequiredItems)
         {
 
-            //Debug.Log("item.tag: " + item.tag);
             ItemRequiredUI itemUI = Instantiate(itemPrefab, itemRequiredPanel.transform).GetComponent<ItemRequiredUI>();
             itemUI.gameObject.SetActive(true);
             itemUI.SetImage(item.item.imagePath);
@@ -91,12 +86,10 @@ public class MissionItemUI: MonoBehaviour
             List<string> objects = new List<string>();
 
             if (mission.MissionState == MissionState.ATTIVO){
-                // Debug.Log("plyer" + this.player.level);
                 items = inventoryItems.FindAll(obj => obj.EqualsByTag(item.tag));
                 
                 quantity = items.Count;
                 
-            //  Debug.Log("quantity: " + quantity);
                 itemUI.SetQuantity(quantity.ToString() + "/" + item.quantity.ToString());
                 
                 objects = placedObjectManager.getObjects(item.tag);

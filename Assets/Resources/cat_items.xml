@@ -5,7 +5,7 @@
     <name>Crocchette Xeles</name>
     <descrizione>5 porzioni di crocchette economiche</descrizione>
     <durability>5</durability>
-    <imagePath>crocchette</imagePath>
+    <imagePath>xelex</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
       <value>4</value>
@@ -20,7 +20,7 @@
     <name>Crocchette Zielina</name>
     <descrizione>5 porzioni di crocchette standard</descrizione>
     <durability>5</durability>
-    <imagePath>crocchette</imagePath>
+    <imagePath>zielina</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
       <value>5</value>
@@ -35,7 +35,7 @@
     <name>Crocchette Blue Morgan</name>
     <descrizione>5 porzioni di crocchette di buona qualità</descrizione>
     <durability>5</durability>
-    <imagePath>crocchette</imagePath>
+    <imagePath>morgan</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
       <value>6</value>
@@ -50,7 +50,7 @@
     <name>Crocchette Golden Crocchi</name>
     <descrizione>5 porzioni di crocchette di alta qualità</descrizione>
     <durability>5</durability>
-    <imagePath>crocchette</imagePath>
+    <imagePath>crocchi</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
       <value>7</value>
@@ -62,11 +62,11 @@
   </CatItem>
 
   <CatItem>
-    <tag>FISH001</tag>
+    <tag>FISH01</tag>
     <name>Alice</name>
     <descrizione>2 porzioni di alici</descrizione>
     <durability>2</durability>
-    <imagePath>pesce</imagePath>
+    <imagePath>alici</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
       <value>5</value>
@@ -81,7 +81,7 @@
     <name>Trota</name>
     <descrizione>Una trota</descrizione>
     <durability>1</durability>
-    <imagePath>pesce</imagePath>
+    <imagePath>trota</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
       <value>6</value>
@@ -107,26 +107,11 @@
     </CatModifier>
   </CatItem>
   <CatItem>
-    <tag>FISH04</tag>
-    <name>Merluzzo</name>
-    <descrizione>Un merluzzo</descrizione>
-    <durability>1</durability>
-    <imagePath>pesce</imagePath>
-    <CatModifier>
-      <targetStat>SAZIETA</targetStat>
-      <value>8</value>
-    </CatModifier>
-    <CatModifier>
-      <targetStat>FELICITA</targetStat>
-      <value>3.8</value>
-    </CatModifier>
-  </CatItem>
-  <CatItem>
     <tag>FISH05</tag>
     <name>Tonno</name>
     <descrizione>Un filetto di tonno</descrizione>
     <durability>1</durability>
-    <imagePath>pesce</imagePath>
+    <imagePath>tonno</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
       <value>9</value>
@@ -141,7 +126,7 @@
     <name>Salmone</name>
     <descrizione>Un filetto di salmone</descrizione>
     <durability>1</durability>
-    <imagePath>pesce</imagePath>
+    <imagePath>salmon</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
       <value>10</value>
@@ -176,7 +161,7 @@
     <name>Topo di gomma profumato</name>
     <descrizione>Un topo quasi saporita con cui giocare. Attenzione, fa venire molta fame!</descrizione>
     <durability>30</durability>
-    <imagePath>topo</imagePath>
+    <imagePath>topoProfumato</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
       <value>-3</value>
@@ -195,7 +180,7 @@
     <name>Gomitolo piccolo</name>
     <descrizione>Un gomitolo piccolo con cui giocare</descrizione>
     <durability>30</durability>
-    <imagePath>topo</imagePath>
+    <imagePath>gomitololana</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
       <value>0</value>
@@ -214,7 +199,7 @@
     <name>Gomitolo medio</name>
     <descrizione>Un gomitolo medio con cui giocare</descrizione>
     <durability>30</durability>
-    <imagePath>topo</imagePath>
+    <imagePath>gomitoloMedio</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
       <value>0</value>
@@ -233,7 +218,7 @@
     <name>Gomitolo grande</name>
     <descrizione>Un gomitolo grande con cui giocare</descrizione>
     <durability>30</durability>
-    <imagePath>topo</imagePath>
+    <imagePath>gomitoloGrande</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
       <value>0</value>
@@ -252,7 +237,7 @@
     <name>Tiragraffi Marcello</name>
     <descrizione>Un tiragraffi con cui giocare</descrizione>
     <durability>30</durability>
-    <imagePath>topo</imagePath>
+    <imagePath>tiragraffiMarcello</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
       <value>0</value>
@@ -271,7 +256,7 @@
     <name>Tiragraffi Margherita</name>
     <descrizione>Un tiragraffi colorato</descrizione>
     <durability>30</durability>
-    <imagePath>topo</imagePath>
+    <imagePath>tiragraffiMargherita</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
       <value>0</value>
@@ -290,7 +275,7 @@
     <name>Pollo di gomma</name>
     <descrizione>Un pollo di gomma che fa divertire tantissimo il gatto, Attenzione...</descrizione>
     <durability>30</durability>
-    <imagePath>topo</imagePath>
+    <imagePath>pollodigomma</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
       <value>-7</value>

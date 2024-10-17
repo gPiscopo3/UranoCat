@@ -1,108 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <level>1</level>
+  <level>2</level>
   <followers>1000</followers>
-  <money>13411.168</money>
-  <pension>10</pension>
-  <experience>1190</experience>
-  <x>342.041382</x>
-  <y>20.2001247</y>
-  <z>143.094345</z>
+  <money>13521.720000000001</money>
+  <pension>11</pension>
+  <experience>3034</experience>
+  <x>338.4586</x>
+  <y>20.08</y>
+  <z>115.282875</z>
   <inventory>
     <items>
       <InventoryItem>
-        <ID>1fc4e6b7-4202-4ea4-a49c-98c2bc3db728</ID>
-        <tag>KEY001</tag>
-        <numUses>4</numUses>
+        <ID>3035a012-8fb0-440e-98dd-c43b9882760b</ID>
+        <tag>CROCC04</tag>
+        <numUses>3</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>9775c05a-44dd-4e60-8563-6b3244ca13a3</ID>
-        <tag>KEY001</tag>
+        <ID>9c628946-321b-410f-8826-374a61318f5f</ID>
+        <tag>DIV02</tag>
+        <numUses>3</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>24af1534-11af-483a-bbec-4641dc0a2970</ID>
+        <tag>DIV02</tag>
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>457d0aac-655a-4641-b5df-f7089c75d17b</ID>
-        <tag>KEY011</tag>
+        <ID>3eb1ab7a-d032-4312-a725-7f2440a69837</ID>
+        <tag>DIV02</tag>
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>57b6f77a-5e49-4cbe-858d-70e3a3f1b12d</ID>
-        <tag>KEY011</tag>
+        <ID>98d1db9d-79fe-4881-b34c-0dfd17df8dd9</ID>
+        <tag>DIV05</tag>
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>0a949f8d-4346-4b86-bcf6-7b3aad40f29d</ID>
-        <tag>KEY001</tag>
+        <ID>0d01fd42-71c3-498c-a68d-0b179049ee2a</ID>
+        <tag>DIV05</tag>
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>9214eb3d-745c-4593-98b1-d96c209e3d19</ID>
-        <tag>KEY001</tag>
+        <ID>6f6a7a95-367b-4974-8c26-ac6d3153968e</ID>
+        <tag>DIV07</tag>
+        <numUses>3</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>4e14c301-bbb6-4095-a3ca-cbfd6ed0d834</ID>
+        <tag>CROCC04</tag>
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>d3ee0411-7d1b-4ebe-a938-d7a9d7f39602</ID>
-        <tag>ITEM003</tag>
-        <numUses>14</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>80ea3592-7d12-468b-bd8f-638a1b08535d</ID>
-        <tag>ITEM003</tag>
+        <ID>97c062cc-ab6c-427c-8973-024f1fc76e28</ID>
+        <tag>CROCC04</tag>
         <numUses>0</numUses>
       </InventoryItem>
       <InventoryItem>
-        <ID>45e7ce38-cb37-45bf-9508-8043913dc737</ID>
-        <tag>ITEM003</tag>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>fcb70d66-f9e6-4184-adbf-da62e5caf81d</ID>
-        <tag>KEY001</tag>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>68ee8225-1753-4ced-9467-eb40ee973e48</ID>
-        <tag>KEY001</tag>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>10b6e94b-91bd-43b9-a2c3-fa802ca26bdd</ID>
-        <tag>KEY016</tag>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>0ae78c11-6a1c-47f1-bfed-0eab21135510</ID>
-        <tag>KEY007</tag>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>b7926ba0-5371-4b8b-9a6c-e6e3e9be9832</ID>
-        <tag>KEY007</tag>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>5d111e0e-dec3-4271-b9e5-b10a8702a836</ID>
-        <tag>KEY007</tag>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>9f683759-8dbb-46f2-a2f1-0475c4735024</ID>
-        <tag>KEY007</tag>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>0040b331-d779-4fa5-af33-c04be3334ae8</ID>
-        <tag>KEY007</tag>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>60a6728b-d3ab-4a2b-8119-43c1d2533b7f</ID>
-        <tag>KEY007</tag>
-        <numUses>0</numUses>
-      </InventoryItem>
-      <InventoryItem>
-        <ID>6039a560-c421-4160-b537-6be8e205519d</ID>
-        <tag>KEY015</tag>
+        <ID>e86af47f-ba82-4610-ba19-7975aa6a8d21</ID>
+        <tag>FISH05</tag>
         <numUses>0</numUses>
       </InventoryItem>
     </items>

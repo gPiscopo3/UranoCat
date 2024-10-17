@@ -13,9 +13,6 @@ public class CatManager : MonoBehaviour
 
     Rules rules;
 
-   
-    bool lockUpdate = false;
-
     Stack<CatModifier> modifiers;
 
     private DayManager dayManager;    
@@ -56,11 +53,6 @@ public class CatManager : MonoBehaviour
             cat.setStat(catModifier.targetStat,cat.getStat(catModifier.targetStat).currentValue + catModifier.value);
         }
 
-
-
-   
-
-
     }
 
 
@@ -69,7 +61,6 @@ public class CatManager : MonoBehaviour
         
         InventoryItem item = player.equippedItem;
         player.experience += 10;
-        Debug.Log("equippedItame " +player.equippedItem);
      
 
         if(dayManager.isInteractionAvailable(InteractionType.CAT_ITERACTION) && item != null && item.item.GetType() == typeof(CatItem)){
@@ -87,37 +78,22 @@ public class CatManager : MonoBehaviour
 
 
         if(dayManager.isInteractionAvailable(InteractionType.VIDEO) && item!=null && item.item.GetType() == typeof(Smartphone)){
-                CreateVideo();
-                player.equippedItem = null;
-                dayManager.consumeInteraction(InteractionType.VIDEO);
+            CreateVideo();
+            player.equippedItem = null;
+            dayManager.consumeInteraction(InteractionType.VIDEO);
 
-            }
+        }
 
-
-
-            
     }
 
     public void ApplyModifier(CatModifier catModifier)
     {
-    
         cat.setStat(catModifier.targetStat,cat.getStat(catModifier.targetStat).currentValue + catModifier.value);
-
-        Debug.Log($"statistiche aggiornate: {cat.getStat(CatTag.SAZIETA).currentValue} {cat.getStat(CatTag.DIVERTIMENTO).currentValue} " + 
-            $"{cat.getStat(CatTag.FELICITA).currentValue}");
-        
-       
     }
 
-     public void CreateVideo(){
-
-        
-
+    public void CreateVideo(){
         Video video = VideoUtilis.createVideo(player.followers, cat, rules.social_rules, savedStats);
         videos.Add(video);
-
-
-
     }
 
     
@@ -139,7 +115,5 @@ public class CatManager : MonoBehaviour
 
         return newStats;
     }
-
-
 
 }

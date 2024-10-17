@@ -1,21 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 
-public class PlayerManager : MonoBehaviour
-{
+public class PlayerManager : MonoBehaviour{
 
-    Cat cat;    
     Player player;
     Rules rules;
 
-    private float timer = 0f;
-
-    bool lockUpdate = false;
 
     public bool newLevel = false;
 

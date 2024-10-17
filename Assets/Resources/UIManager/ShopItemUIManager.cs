@@ -1,9 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class ShopItemUIManager : MonoBehaviour
@@ -36,15 +34,9 @@ public class ShopItemUIManager : MonoBehaviour
     bool shop_active = false;
     bool shop_active_before = false;
 
-
-    
-
-
-    // Start is called before the first frame update
     void Start()
     {
 
-        
         this.shopItems = FindObjectOfType<GameLoader>().shopItems;
         
         this.player = FindObjectOfType<GameLoader>().player;
@@ -54,8 +46,6 @@ public class ShopItemUIManager : MonoBehaviour
         keyItemButton.onClick.AddListener(FilteringKeyItem);
         catItemButton.onClick.AddListener(FilteringCatItem);
       
-
-
     }
 
     public void CreateShopUI(){
@@ -66,7 +56,6 @@ public class ShopItemUIManager : MonoBehaviour
 
         // recupero la differenza tra l'altezza del contentPanel e l'altezza dello shop item
         diff = (contentPanel.GetComponent<RectTransform>().sizeDelta.y - contentPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.y)/2;
-        Debug.Log("differenza " + diff);
         
     }
 
@@ -84,11 +73,8 @@ public class ShopItemUIManager : MonoBehaviour
         }
         contentPanel.transform.GetChild(0).gameObject.SetActive(false);
         
-        //contentPanel.transform.DetachChildren();
-        
 
         int i = 0;
-        Debug.Log("shopItems.Count: " + shopItems.Count);
         foreach(ShopItem shopItem in shopItems)
         {
         
@@ -110,11 +96,6 @@ public class ShopItemUIManager : MonoBehaviour
                 shopItemUI.SetShopItemPrice(shopItem.Price);
                 shopItemUI.SetShopItemImage("Images/" + shopItem.item.imagePath);
 
-                
-                
-                //shopItemUI.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, diff, itemHeight);
-                
-                
                 shopItemUI.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, diff, itemHeight);
                 contentPanel.GetComponent<RectTransform>().sizeDelta= Vector2.right * (itemWidth + itemSpacing) * shopItems.Count;
                 
@@ -122,12 +103,7 @@ public class ShopItemUIManager : MonoBehaviour
             }
             
         }
-        
-        
-
     }
-
-    
 
     public void Update(){
 
@@ -140,22 +116,15 @@ public class ShopItemUIManager : MonoBehaviour
 
         moneyBar.SetText(player.money.ToString());
 
-
-
     }
 
 
     public void FilteringKeyItem(){
         GenerateShopItemUI(typeof(KeyItem));
-
     }
     
     public void FilteringCatItem(){
         GenerateShopItemUI(typeof(CatItem));
 
     }
-    
-
-
-
 }

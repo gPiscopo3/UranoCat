@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,18 +13,12 @@ public class ShopItemUI : MonoBehaviour
     long priceValue;
     string tag;
 
-    
-
-
     public void setTag(string tag){
         this.tag = tag;
     }
 
     public void SetShopItemPosition(Vector2 pos){
-
-    
         GetComponent<RectTransform>().anchoredPosition += pos;
-
     }
 
     public void SetShopItemImage (string imagePath){
@@ -66,8 +56,6 @@ public class ShopItemUI : MonoBehaviour
         this.price.text = "Liv " + level.ToString();
     }
 
-
-
     private void Acquista(){
         
         long price = this.priceValue;
@@ -76,8 +64,6 @@ public class ShopItemUI : MonoBehaviour
         if(player.money >= price && item!=null){
             player.money = player.money - price;
             player.inventory.addItem(item);
-            Debug.Log(this.itemName.text + " comprato!");
-            
         }
         
     }

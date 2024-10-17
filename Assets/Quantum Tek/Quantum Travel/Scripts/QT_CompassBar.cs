@@ -42,16 +42,12 @@ namespace QuantumTek.QuantumTravel
         private void Awake()
         {
            
-
             rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, ShownCompassSize.x);
             rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, ShownCompassSize.y);
             barBackground.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, CompassSize.x);
             barBackground.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, CompassSize.y);
 
-
         }
-
-
 
         public void Start(){
             
@@ -62,32 +58,19 @@ namespace QuantumTek.QuantumTravel
                     Objects.Add(mapObject.Name, mapObject);
             }
 
-
             foreach(QT_MapObject obj in Objects.Values){   
                 CreateMarker(obj);
             }
 
         }
 
-
-
         private void Update()
         {
             image.uvRect = new Rect(ReferenceObject.transform.localEulerAngles.y / 360, 0, 1, 1);
-/*
-            foreach(QT_MapObject obj in Objects){
-                if(!obj.GetComponent<GameObject>().activeSelf)
-                {
-                    
-                }
-            }*/
 
             foreach(QT_MapObject mapObject in Objects.Values)
                 SetMarker(mapObject);
     
-            
-
-
             foreach (var marker in Markers)
             {
                 marker.SetPosition(CalculatePosition(marker));
@@ -103,8 +86,6 @@ namespace QuantumTek.QuantumTravel
             Vector2 referenceForward = new Vector2(ReferenceObject.transform.forward.x, ReferenceObject.transform.forward.z);
             float angle = Vector2.SignedAngle(marker.Object.Position(QT_MapType.Map3D) - referencePosition, referenceForward);
 
-            
-            //Debug.Log("Oooooooooooooooooooooooooooooo"+referencePosition + angle);
             return new Vector2(compassDegree * angle, 0);
         }
 
@@ -118,7 +99,6 @@ namespace QuantumTek.QuantumTravel
 
             return new Vector2(scale, scale);
         }
-
  
         public void CreateMarker(QT_MapObject obj)
         {
@@ -131,7 +111,6 @@ namespace QuantumTek.QuantumTravel
                 Markers.Add(marker);
             }
 
-    
         }
 
         public void SetMarker(QT_MapObject obj){
@@ -140,7 +119,6 @@ namespace QuantumTek.QuantumTravel
             if(marker != null)
                 marker.SetActive(obj.isToShow());
 
-                
         }
 
 

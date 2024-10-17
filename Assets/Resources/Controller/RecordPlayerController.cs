@@ -20,7 +20,6 @@ public class RecordPlayerController : MonoBehaviour, InteractableObject
     public void Interact()
     {
         
-        Debug.Log("ALEXA METTI UNA CANZONE");
         isShown = !isShown;
 
         songUIManager.AvviaGiradischi(isShown);

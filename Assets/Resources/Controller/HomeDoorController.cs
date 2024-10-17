@@ -41,9 +41,5 @@ public class HomeDoorController : MonoBehaviour, InteractableObject
 
         Debug.Log("Interacting with door");
 
-        /*if(isOpen){
-            isOpen = !isOpen;
-            doorAnimator.SetBool("isOpen", isOpen); 
-        }*/
     }
 }

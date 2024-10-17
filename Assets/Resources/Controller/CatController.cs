@@ -71,13 +71,12 @@ public class CatController : MonoBehaviour, InteractableObject
     public void Interact()
     {
         
-        Debug.Log("Miao!");
 
         idle = true;
         catAnimator.SetBool("isIdle", idle);
         agent.speed = 0f;
         transform.LookAt(playerTransform.position);
-        Debug.Log("ooooooo");
+        
     
         catManager.Interact();
 
@@ -109,21 +108,3 @@ public class CatController : MonoBehaviour, InteractableObject
         destPoint = (destPoint + 1) % points.Length;
     }
 }
-
-/*
-    public bool collidoConAgosto()
-    {
-        if (!Physics.CheckSphere(transform.position, sphereRadius, mask))
-        {
-            return true;
-        }
-        return false;
-    }
-
-}
-
-
- * agent.speed = 3.5f;
-            idle = false;
-            isWalking = true;
-*/

@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,19 +14,12 @@ public class InventoryItemUIManager : MonoBehaviour
     
     float diff;
 
-
-
-
     [Header("UI Elements")]
     [SerializeField] GameObject contentPanel;
     [SerializeField] GameObject inventoryItemPrefab;
     Inventory inventory;
     Player player;
 
-    Sprite sprite1;
-
-    Vector3 vector3;
-    Quaternion qua;
 
     [SerializeField] GameObject inventoryPanel;
     bool inventory_active = false;
@@ -39,28 +31,16 @@ public class InventoryItemUIManager : MonoBehaviour
     [SerializeField] Button catItemButton;
 
 
-
-    
-
-
-
-    // Start is called before the first frame update
-
      void Start()
     {
-
-        
         this.player = FindObjectOfType<GameLoader>().player;
         
         this.inventory = player.inventory;
-
         
         keyItemButton.onClick.AddListener(FilteringKeyItem);
         catItemButton.onClick.AddListener(FilteringCatItem);
       
-
         CreateInventoryUI();
-
 
     }
     public void CreateInventoryUI(){
@@ -70,16 +50,9 @@ public class InventoryItemUIManager : MonoBehaviour
         itemHeight = contentPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.y;
 
         diff = (contentPanel.GetComponent<RectTransform>().sizeDelta.y - contentPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.y)/2;
-        Debug.Log("differenza " + diff);
-        
     }
 
-
-
     public void GenerateInventoryItemUI(Type type){
-
-
-
 
         for(int j=1; j<contentPanel.transform.childCount; j++){
         
@@ -87,16 +60,11 @@ public class InventoryItemUIManager : MonoBehaviour
            
         }
         contentPanel.transform.GetChild(0).gameObject.SetActive(false);
-        
-        //contentPanel.transform.DetachChildren();
-        
 
-        
         int i = 0;
 
         Dictionary<string, ItemGroup> itemsGroup = new Dictionary<string, ItemGroup>();
      
-
         foreach(InventoryItem item in inventory.items){
             if(item.item != null && item.item.GetType() == type){
                 if(itemsGroup.ContainsKey(item.item.tag)){
@@ -118,8 +86,6 @@ public class InventoryItemUIManager : MonoBehaviour
 
         }
 
-
-
         foreach (ItemGroup group in itemsGroup.Values)
         {
             
@@ -127,11 +93,7 @@ public class InventoryItemUIManager : MonoBehaviour
             inventoryItemUI.gameObject.SetActive(true);
             inventoryItemUI.GetComponent<Image>().enabled = true;
 
-            Debug.Log("creat");
-
-
             inventoryItemUI.SetItemPosition(Vector2.right * i * (itemWidth + itemSpacing));
-            //inventoryItemUI.SetItemPosition(new Vector2(i * (itemWidth + itemSpacing), 57));
 
             inventoryItemUI.setItem(group.itemToUse);
             inventoryItemUI.SetItemName(group.itemToUse.item.name);
@@ -144,7 +106,6 @@ public class InventoryItemUIManager : MonoBehaviour
 
             
             inventoryItemUI.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, diff, itemHeight);
-            //inventoryItemUI.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, diff, itemHeight);
 
             contentPanel.GetComponent<RectTransform>().sizeDelta= Vector2.right * (itemWidth + itemSpacing) * itemsGroup.Count;
 
@@ -173,21 +134,14 @@ public class InventoryItemUIManager : MonoBehaviour
 
     }
 
+    private class ItemGroup{
 
+        public InventoryItem itemToUse;
+        public int totalUses;
+        public int quantity;
 
-
-        private class ItemGroup{
-
-            public InventoryItem itemToUse;
-            public int totalUses;
-            public int quantity;
-
-            public ItemGroup(){}
-        }
-
-
-        
-        
-
+        public ItemGroup(){}
     }
+
+}
     

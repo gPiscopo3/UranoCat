@@ -2,26 +2,50 @@
 <ArrayOfVideo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Video>
     <day>1</day>
-    <views>202</views>
-    <quality>0.31799999999999995</quality>
-    <timestamp_seconds>55</timestamp_seconds>
-  </Video>
-  <Video>
-    <day>1</day>
-    <views>202</views>
-    <quality>0.31799999999999995</quality>
-    <timestamp_seconds>121</timestamp_seconds>
-  </Video>
-  <Video>
-    <day>1</day>
-    <views>202</views>
-    <quality>0.31799999999999995</quality>
-    <timestamp_seconds>141</timestamp_seconds>
+    <views>500</views>
+    <quality>0.40479994964599608</quality>
+    <timestamp_seconds>1399</timestamp_seconds>
   </Video>
   <Video>
     <day>2</day>
-    <views>382</views>
-    <quality>0.35</quality>
-    <timestamp_seconds>715</timestamp_seconds>
+    <views>500</views>
+    <quality>0.42199993133544922</quality>
+    <timestamp_seconds>1452</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>3</day>
+    <views>500</views>
+    <quality>0.42199993133544922</quality>
+    <timestamp_seconds>1479</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>4</day>
+    <views>500</views>
+    <quality>0.42199993133544922</quality>
+    <timestamp_seconds>1516</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>5</day>
+    <views>500</views>
+    <quality>0.48459992218017578</quality>
+    <timestamp_seconds>1580</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>6</day>
+    <views>500</views>
+    <quality>0.61059992218017578</quality>
+    <timestamp_seconds>1644</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>7</day>
+    <views>500</views>
+    <quality>1</quality>
+    <timestamp_seconds>1675</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>8</day>
+    <views>500</views>
+    <quality>1</quality>
+    <timestamp_seconds>1732</timestamp_seconds>
   </Video>
 </ArrayOfVideo>

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -13,7 +11,6 @@ public class ItemRequiredUI : MonoBehaviour
     [SerializeField] Button searchItemButton;
 
     string tag;
-
 
     QT_CompassBar bussola;
     
@@ -45,12 +42,9 @@ public class ItemRequiredUI : MonoBehaviour
         
     }
     public void SearchItem(){
-        Debug.Log("Cerco l'oggetto con tag: " + tag);
         bussola.HideAll();
         foreach(string objectName in placedObjectManager.getObjects(tag))
                 bussola.ShowObject(objectName);
-
-        
     }
 
 }

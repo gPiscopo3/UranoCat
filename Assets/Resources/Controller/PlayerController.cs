@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
     private InputAction toggleSprint;
     private InputAction toggleJump;
     private InputAction toggleCrouch;
-    private InputAction togglePause;
+    
 
     private bool isInventoryActive;
     private bool isShopActive;
@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private Player player;
 
-    private float sprintMultiplier = 1f;
+    
 
     [SerializeField] private float baseVelocity = 1f;
     [SerializeField] private float sprintVelocity = 1.5f;
@@ -441,7 +441,6 @@ public class PlayerController : MonoBehaviour
     private void ToggleSmartphone(InputAction.CallbackContext context)
     {
         
-        Debug.Log("Smartphone attivato");
         player.equip( new InventoryItem(new Smartphone(){
             name = "Smartphone"
         }));

@@ -1,13 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static CatStatsRules;
 
 public class TestManager : MonoBehaviour
 {
-
-    
-
     Player player;
     List<CatItem> items;
     private Cat cat;
@@ -19,33 +14,28 @@ public class TestManager : MonoBehaviour
     private DayManager dayManager;
 
    
-   public void Awake(){
+    public void Awake(){
 
-    
+        List<InteractionType> interactionToComplete = new List<InteractionType>
+        {
+            InteractionType.SLEEP
+        };
 
-    List<InteractionType> interactionToComplete = new List<InteractionType>
-    {
-        InteractionType.SLEEP
-    };
+        List<Interaction> interactions = new List<Interaction>{
 
-    List<Interaction> interactions = new List<Interaction>{
+            new Interaction{interactionType = InteractionType.CAT_ITERACTION, dayTime = 60},
+            new Interaction{interactionType = InteractionType.VIDEO, dayTime = 120},
+            new Interaction{interactionType = InteractionType.CAT_ITERACTION, dayTime = 180},
+            new Interaction{interactionType = InteractionType.SLEEP, dayTime = 240}
 
-        new Interaction{interactionType = InteractionType.CAT_ITERACTION, dayTime = 60},
-        new Interaction{interactionType = InteractionType.VIDEO, dayTime = 120},
-        new Interaction{interactionType = InteractionType.CAT_ITERACTION, dayTime = 180},
-        new Interaction{interactionType = InteractionType.SLEEP, dayTime = 240}
+        };
 
-    };
+        Rules rules = new Rules(){
+            interactionsTimes = interactions,
+            interactionsToComplete = interactionToComplete,
+        };
 
-    Rules rules = new Rules(){
-        interactionsTimes = interactions,
-        interactionsToComplete = interactionToComplete,
-    };
-
-    XMLHelper.SaveToXml(rules, "rules1.xml");
-
-    
-
+        XMLHelper.SaveToXml(rules, "rules1.xml");
    }
 
     

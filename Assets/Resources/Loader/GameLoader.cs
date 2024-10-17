@@ -27,7 +27,6 @@ public class GameLoader : MonoBehaviour
     public const string shopPath = "Assets/Resources/shop_items.xml";
     public const string keyPath = "Assets/Resources/key_items.xml";
     public const string RulesPath = "Assets/Resources/rules.xml";
-    public const string missionPath = "Assets/Resources/missions.xml";
     public const string songsPath = "Assets/Resources/songs.xml";
 
 
@@ -63,17 +62,15 @@ public class GameLoader : MonoBehaviour
 
          items = new List<Item>();
         List<CatItem> catItemList = XMLHelper.LoadFromXml<List<CatItem>>(catPath);
-        Debug.Log($"Lista di CatItem deserializzata con {catItemList.Count}");
+        
 
         items.AddRange(catItemList);
 
         List<KeyItem> keyItems = XMLHelper.LoadFromXml<List<KeyItem>>(keyPath);
-        Debug.Log($"Lista di KeyItem deserializzata con {keyItems.Count}");
         items.AddRange(keyItems);
         
 
         this.shopItems =  XMLHelper.LoadFromXml<List<ShopItem>>(shopPath);
-        Debug.Log($"Lista di ShopItem deserializzata. Numero di elementi: {this.shopItems.Count}");
         foreach(ShopItem shopItem in shopItems){
             shopItem.item = GetItem(shopItem.Tag);
         }
@@ -144,7 +141,7 @@ public class GameLoader : MonoBehaviour
         XMLHelper.SaveToXml<Player>(player, path + filePlayer);
         XMLHelper.SaveToXml<List<Mission>>(missions, path + fileMissions);
         XMLHelper.SaveToXml<List<Video>>(videos, path + fileVideo);
-        Debug.Log("video salvati" + videos.Count);
+        
         XMLHelper.SaveToXml<SavedStats>(savedStats, path + fileStats);
         XMLHelper.SaveToXml(placedObjectsStatus, path + placedObjectsFile);
 

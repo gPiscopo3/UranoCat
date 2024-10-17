@@ -4,8 +4,6 @@ using System.Linq;
 using UnityEngine;
 using static SocialRules;
 
-
-
 public class VideoUtilis{
 
     public static FollowersRule GetFollowersRules(long followers, List<FollowersRule> list){
@@ -40,7 +38,7 @@ public class VideoUtilis{
 
         double ratio = (Math.Log10(followers) - Math.Log10(lowerFollowers))/(Math.Log10(upperFollowers) - Math.Log10(lowerFollowers));
 
-        Debug.Log(ratio);
+        
 
         return new FollowersRule{
             followers = followers,
@@ -88,25 +86,15 @@ public class VideoUtilis{
     public static long calculateNewFollowers(long followers, Video video, SocialRules socialRules){
         
         FollowersRule followersRule = GetFollowersRules(followers, socialRules.followers_rules);
-        Debug.Log(followers);
-        Debug.Log(followersRule.ToString());
+        
         double Q = (video.quality - followersRule.min_quality_followers)/(followersRule.max_quality_followers - followersRule.min_quality_followers);
-        Debug.Log(Q);
         if(Q > 1)
             Q = 1;
         else if (Q < 0)
             Q = 0;
-
-        Debug.Log(Q);
-
-        
         
         return Math.Max((long)(followersRule.followers_factor * video.views * Q),0);
 
     }
-
-
-
-
 
 }

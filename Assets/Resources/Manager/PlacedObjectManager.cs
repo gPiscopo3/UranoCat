@@ -1,10 +1,7 @@
-
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlacedObjectManager: MonoBehaviour{
-
 
     public Dictionary<string,List<string>> dictionary;
 

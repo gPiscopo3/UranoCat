@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -21,18 +19,9 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
-
-        if(CatSource.isPlaying == false && FindObjectOfType<DayManager>().isInteractionAvailable(InteractionType.CAT_ITERACTION))
-
-        {
-            //Debug.Log("il verro mi fa incazzare ");
+        if(CatSource.isPlaying == false && FindObjectOfType<DayManager>().isInteractionAvailable(InteractionType.CAT_ITERACTION)){
             CatSource.Play();
         }
-        /*else{
-            CatSource.Stop();
-        }*/
-
+        
     }
-
-
 }

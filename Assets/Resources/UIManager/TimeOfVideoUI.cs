@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TimeOfVideoUI : MonoBehaviour
@@ -27,7 +25,6 @@ public class TimeOfVideoUI : MonoBehaviour
         is_video_available = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (dayManager.isInteractionAvailable(InteractionType.VIDEO) && !is_video_available){
@@ -42,15 +39,16 @@ public class TimeOfVideoUI : MonoBehaviour
         }
         else if(dayManager.areInteractionsDone(InteractionType.VIDEO) && was_video_available){
             is_video_available = false;
-            was_video_available = false;
             this.icon.SetActive(false);
             if(timerok<4){
                 timerok += Time.deltaTime;
+                this.message.SetActive(false);
                 this.videoOK.SetActive(true);
             }
             else{
                 this.videoOK.SetActive(false);
                 timeOfVideoUI.SetActive(false);
+                was_video_available = false;
             }
             
         }

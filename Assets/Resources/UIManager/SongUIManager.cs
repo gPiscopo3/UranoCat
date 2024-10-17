@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -75,52 +73,40 @@ public class SongUIManager: MonoBehaviour
         contentPanel.transform.GetChild(0).gameObject.SetActive(false);
         int i = 0;
 
-        //contentPanel.GetComponent<RectTransform>().sizeDelta = Vector2.up * (itemHeight + itemSpacing) * missions.Count;
-
         foreach (Song song in this.songs)
         {
 
             SongItemUI songItemUI = Instantiate(ItemPrefab, contentPanel.transform).GetComponent<SongItemUI>();
             songItemUI.gameObject.SetActive(true);
 
-            Debug.Log("spacing: " + Vector2.down * i * (itemHeight + itemSpacing));
             songItemUI.SetSongPosition(Vector2.down * i * (itemHeight + itemSpacing));
             songItemUI.setSongName(song.SongName);
             songItemUI.setAuthor(song.Author);
             songItemUI.setButtonsPlay();
 
-          
-           
-            //songItemUI.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, diff, itemWidth);
             contentPanel.GetComponent<RectTransform>().sizeDelta= Vector2.up * (itemHeight + itemSpacing) * songs.Count;
                 
             i++; 
-            
-
         }
-
-        
-
     }
     
     public void AvviaGiradischi(bool isShown){
 
-            songPanel.SetActive(isShown);
+        songPanel.SetActive(isShown);
 
-            if (songPanel.activeSelf){
-                Time.timeScale = 0;
-                Cursor.lockState = CursorLockMode.None;
-            }
-            else{
-                Time.timeScale = 1;
-                Cursor.lockState = CursorLockMode.Locked;
+        if (songPanel.activeSelf){
+            Time.timeScale = 0;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else{
+            Time.timeScale = 1;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 
     public void StopSong(){
 
         audioSource.Stop();
-      //  this.stopButton.gameObject.SetActive(false);
 
     }
 

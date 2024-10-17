@@ -1,17 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System;
-using System.Reflection;
 using TMPro;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
-
-
 
 public class MainMenu : MonoBehaviour
 {
@@ -19,8 +13,6 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField] private GameObject LoadScreenCanvas;
     [SerializeField] private string scene_name = "MainScene";
-
-
 
     [Header("Main Canvas")]
     [SerializeField] private GameObject MainCanvas;
@@ -72,7 +64,6 @@ public class MainMenu : MonoBehaviour
 
         DropDown.AddOptions(profile_names);
         
-
     }
 
     public void Start(){
@@ -93,8 +84,6 @@ public class MainMenu : MonoBehaviour
 
         CreateLoadBoard();
     }
-
-
 
     public void NewGame(){
         MainCanvas.SetActive(false);
@@ -138,8 +127,6 @@ public class MainMenu : MonoBehaviour
 
     public void Continue(){
 
-
-       
         string profile_name = DropDown.options[DropDown.value].text;
         string last_save = profiles.Find(profile => profile.name.Equals(profile_name)).last_save;
         GameLoader.loaded_profile = profile_name;
@@ -149,7 +136,6 @@ public class MainMenu : MonoBehaviour
         LoadScreenCanvas.SetActive(true);
 
         StartCoroutine(LoadNextLevel());
-
 
     }
 
@@ -174,7 +160,6 @@ public class MainMenu : MonoBehaviour
         itemHeight = contentPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.y;
 
         diff = (contentPanel.GetComponent<RectTransform>().sizeDelta.x - contentPanel.transform.GetChild(0).GetComponent<RectTransform>().sizeDelta.x)/ 2;
-        Debug.Log(contentPanel.GetComponent<RectTransform>().sizeDelta.x);
     }
 
     private void createScrollView(List<SaveInfo> infos)
@@ -188,18 +173,13 @@ public class MainMenu : MonoBehaviour
 
         contentPanel.transform.GetChild(0).gameObject.SetActive(false);
         
-
-        
-
         float y = 0;
         float delta = 35f;
         int i = 0;
 
 
-        foreach (SaveInfo info in infos)
-        {
+        foreach (SaveInfo info in infos){
            
-
             ButtonPanelUI buttonPan = Instantiate(buttonPrefab, contentPanel.transform).GetComponent<ButtonPanelUI>();
             buttonPan.gameObject.SetActive(true);
             
@@ -229,8 +209,6 @@ public class MainMenu : MonoBehaviour
         LoadScreenCanvas.SetActive(true);
 
         StartCoroutine(LoadNextLevel());
-
-       
     }
 
     IEnumerator LoadNextLevel()

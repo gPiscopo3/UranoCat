@@ -22,7 +22,6 @@ namespace QuantumTek.QuantumTravel
             Name = gameObject.name;
             if(alwaysOnMap)
                 show = true;
-            Debug.Log(Name);
         }
 
         public bool isToShow(){

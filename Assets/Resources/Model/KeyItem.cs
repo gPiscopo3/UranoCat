@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class KeyItem : Item
 {
     
-
     public KeyItem() {}
 
     public KeyItem(string tag, string name, string description, int durability, string imagePath)

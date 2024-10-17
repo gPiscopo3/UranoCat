@@ -13,7 +13,6 @@ public class DayManager: MonoBehaviour{
     List<Video> videos;
     private ClockManager clockManager;
 
-    private float timer_update_video = 0f;
     public bool is_video_available;
     public double moneyGain=0;
 
@@ -100,7 +99,6 @@ public class DayManager: MonoBehaviour{
     }
 
     public void NuovaGiornata(){
-        Debug.Log("Nuova giornata");
         ProfitOfDay();
 
         clockManager.currentTime = new ClockManager.Time(clockManager.startHour,0);
@@ -113,7 +111,6 @@ public class DayManager: MonoBehaviour{
         savedStats.day_timer = 0;
         savedStats.day ++;
 
-        
         newDay = true;
     }
 
@@ -127,30 +124,5 @@ public class DayManager: MonoBehaviour{
         followersGain = VideoUtilis.calculateNewFollowers(player.followers, video, rules.social_rules);
 
     }
-/*
-    public void CreateVideo(){
-
-        double quality = 0;
-        foreach(SocialRules.QualityRule qualityRule in rules.social_rules.quality_rules){
-
-            quality += qualityRule.factor * cat.getStat(qualityRule.stat).currentValue / 100;
-        }
-
-        Video video = new Video{
-            day = savedStats.day, 
-            quality = quality,
-            views = (long)(rules.social_rules.a_factor*player.followers*quality),
-            today_views = 0,
-            timestamp_seconds = savedStats.timestamp_seconds
-        };
-
-
-
-    }
-*/
-
-
-
-
 
 }

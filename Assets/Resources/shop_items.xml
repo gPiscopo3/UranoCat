@@ -1,21 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfShopItem xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <ShopItem>
-    <Tag>ITEM001</Tag>
-    <Price>5</Price>
-    <MinLevelRequired>1</MinLevelRequired>
-  </ShopItem>
-  <ShopItem>
-    <Tag>ITEM002</Tag>
-    <Price>5</Price>
-    <MinLevelRequired>1</MinLevelRequired>
-  </ShopItem>
-  <ShopItem>
-    <Tag>ITEM003</Tag>
-    <Price>10</Price>
-    <MinLevelRequired>10</MinLevelRequired>
-  </ShopItem>
-
+ 
   <ShopItem>
     <Tag>KEY001</Tag>
     <Price>100</Price>
@@ -110,6 +95,98 @@
   </ShopItem>
   <ShopItem>
     <Tag>KEY019</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+
+  <ShopItem>
+    <Tag>CROCC01</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+
+  <ShopItem>
+    <Tag>CROCC02</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>CROCC03</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>CROCC04</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>FISH01</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>FISH02</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>FISH03</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>FISH05</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>FISH06</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>DIV01</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>DIV02</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>DIV03</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>DIV04</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>DIV05</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>DIV06</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>DIV07</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>DIV08</Tag>
+    <Price>1</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>DIV09</Tag>
     <Price>1</Price>
     <MinLevelRequired>1</MinLevelRequired>
   </ShopItem>

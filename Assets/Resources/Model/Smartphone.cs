@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 public class Smartphone:Item{
 
@@ -10,8 +7,6 @@ public class Smartphone:Item{
         this.descrizione = "A smartphone";
         this.durability = 0;
         this.imagePath = "smartphone";
-
-        
     }
     
 }

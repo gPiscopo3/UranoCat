@@ -1,14 +1,9 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
-using UnityEngine;
+
 
 public class CatItem : Item
 {
-    
-   
-
     [XmlElement("CatModifier")]
     public List<CatModifier> catModifiers;
 

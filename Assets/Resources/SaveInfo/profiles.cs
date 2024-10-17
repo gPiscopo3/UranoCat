@@ -1,12 +1,8 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 
-public class Profile
-    {
-        //public string id { get; set; }
+
+public class Profile{
         public string name;
         public string last_save;
         public DateTime dateTime;
@@ -22,7 +18,6 @@ public class Profile
             }
 
             return this.name.Equals(((Profile)obj).name);
-
 
     }
     

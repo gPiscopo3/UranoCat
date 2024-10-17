@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -15,7 +13,6 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] private TMP_Text levelText;
     [SerializeField] private TMP_Text moneyText;
- //   [SerializeField] private GameObject equippedItem;
     [SerializeField] private TMP_Text equippedText;
     [SerializeField] private Image equippedItemImage;
     Cat cat;
@@ -46,11 +43,9 @@ public class UIManager : MonoBehaviour
 
         try{
             if(player.equippedItem!=null){
-            //equippedText.SetText("Oggetto equipaggiato: " + player.equippedItem.item.name);
 
                 if(player.equippedItem.isUsable()){
-                    Debug.Log("ooooooo");
-                    //equippedItem.SetActive(true);
+                    
                     Sprite sprite = Resources.Load("Images/" + player.equippedItem.item.imagePath, typeof(Sprite)) as Sprite;
                     equippedItemImage.sprite = sprite;
                     equippedItemImage.enabled = true;
@@ -63,16 +58,12 @@ public class UIManager : MonoBehaviour
                     equippedText.enabled = true;
                 }
             } else {
-                //equippedItem.SetActive(false);
                 equippedItemImage.enabled = false;
                 equippedText.enabled = false;
             }
         } catch (UnassignedReferenceException e){
             Debug.LogWarning(e.Message);
         }
-
-        
-
     }
 
     public float getExperiencePercentage(){
@@ -84,7 +75,6 @@ public class UIManager : MonoBehaviour
             return 100f; 
         else
             return ((float)(player.experience - lastLevel.experience))/(nextLevel.experience - lastLevel.experience)*100;
-        
     }
 
 }
