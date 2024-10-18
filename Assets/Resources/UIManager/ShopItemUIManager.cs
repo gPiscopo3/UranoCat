@@ -114,7 +114,7 @@ public class ShopItemUIManager : MonoBehaviour
             GenerateShopItemUI(type);
         }
 
-        moneyBar.SetText(player.money.ToString());
+        moneyBar.SetText(((int)player.money).ToString());
 
     }
 
