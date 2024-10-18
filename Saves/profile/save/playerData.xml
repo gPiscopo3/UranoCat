@@ -2,12 +2,12 @@
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <level>2</level>
   <followers>1000</followers>
-  <money>13507.720000000001</money>
+  <money>13516.720000000001</money>
   <pension>11</pension>
-  <experience>3066</experience>
-  <x>326.800079</x>
-  <y>20.33139</y>
-  <z>153.6018</z>
+  <experience>3218</experience>
+  <x>334.690735</x>
+  <y>20.2001247</y>
+  <z>140.797745</z>
   <inventory>
     <items>
       <InventoryItem>
@@ -18,7 +18,7 @@
       <InventoryItem>
         <ID>9c628946-321b-410f-8826-374a61318f5f</ID>
         <tag>DIV02</tag>
-        <numUses>3</numUses>
+        <numUses>5</numUses>
       </InventoryItem>
       <InventoryItem>
         <ID>24af1534-11af-483a-bbec-4641dc0a2970</ID>
@@ -113,6 +113,21 @@
       <InventoryItem>
         <ID>a064884b-f6ce-4ccc-84aa-c4a42009ded8</ID>
         <tag>KEY009</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>e656b71f-f72e-454c-8c31-7bd81b59d86c</ID>
+        <tag>DIV02</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>d3a12476-a5a6-4b7e-8696-d729711a3da5</ID>
+        <tag>DIV02</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>206d37eb-2918-45d9-9d4d-f70c71c742ad</ID>
+        <tag>DIV02</tag>
         <numUses>0</numUses>
       </InventoryItem>
     </items>

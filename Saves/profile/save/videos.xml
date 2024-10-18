@@ -48,4 +48,16 @@
     <quality>1</quality>
     <timestamp_seconds>1732</timestamp_seconds>
   </Video>
+  <Video>
+    <day>9</day>
+    <views>500</views>
+    <quality>0.97273872375488279</quality>
+    <timestamp_seconds>3616</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>10</day>
+    <views>500</views>
+    <quality>0.97272741699218757</quality>
+    <timestamp_seconds>3662</timestamp_seconds>
+  </Video>
 </ArrayOfVideo>

@@ -33,7 +33,7 @@ void Update()
     //Perform raycast from the object's position downwards
     if (Physics.Raycast(origin + originOffset, Vector3.down, out slopeHit, maxRayDist, layerMask))
     {
-        Debug.Log("True");
+     
         //Drawline to show the hit point
         Debug.DrawLine(origin + originOffset, slopeHit.point, Color.red);
 

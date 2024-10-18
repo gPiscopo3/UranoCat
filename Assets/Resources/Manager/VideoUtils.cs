@@ -44,6 +44,7 @@ public class VideoUtilis{
             followers = followers,
             max_quality_followers = lower.max_quality_followers + ratio * (upper.max_quality_followers - lower.max_quality_followers),
             min_quality_followers = lower.min_quality_followers + ratio * (upper.min_quality_followers - lower.min_quality_followers),
+            followers_factor = lower.followers_factor + ratio * (upper.followers_factor - lower.followers_factor),
             rif_quality_views = lower.rif_quality_views + ratio * (upper.rif_quality_views - lower.rif_quality_views),
         };
 
@@ -86,7 +87,8 @@ public class VideoUtilis{
     public static long calculateNewFollowers(long followers, Video video, SocialRules socialRules){
         
         FollowersRule followersRule = GetFollowersRules(followers, socialRules.followers_rules);
-        
+
+             
         double Q = (video.quality - followersRule.min_quality_followers)/(followersRule.max_quality_followers - followersRule.min_quality_followers);
         if(Q > 1)
             Q = 1;

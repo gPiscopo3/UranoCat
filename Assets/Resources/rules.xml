@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Rules xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <update_cat_time>100000</update_cat_time>
+  <update_cat_time>10</update_cat_time>
   <money_for_view>0.002</money_for_view>
   <xp_for_view>0.005</xp_for_view>
   <autosave_number>10</autosave_number>
@@ -39,7 +39,7 @@
 		  <modifiers>
 			<StatModifierRule>
 			  <tag>SAZIETA</tag>
-			  <value>0.9</value>
+			  <value>0.95</value>
 			</StatModifierRule>
 			<StatModifierRule>
 			  <tag>FELICITA</tag>
@@ -52,7 +52,7 @@
 		  <modifiers>
 			<StatModifierRule>
 			  <tag>DIVERTIMENTO</tag>
-			  <value>0.9</value>
+			  <value>0.95</value>
 			</StatModifierRule>
 			<StatModifierRule>
 			  <tag>FELICITA</tag>
