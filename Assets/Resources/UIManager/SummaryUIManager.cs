@@ -60,9 +60,9 @@ public class SummaryUIManager : MonoBehaviour
     {
         
         levelValue.SetText(player.level.ToString());
-        experienceValue.SetText(uiManager.getExperiencePercentage().ToString() + " %");
+        experienceValue.SetText(((int)uiManager.getExperiencePercentage()).ToString() + " %");
         followersValue.SetText(player.followers.ToString());
-        moneyValue.SetText(player.money.ToString());
+        moneyValue.SetText(((int)player.money).ToString());
 
     }
 

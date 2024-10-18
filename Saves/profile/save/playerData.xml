@@ -2,12 +2,12 @@
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <level>2</level>
   <followers>1000</followers>
-  <money>13516.720000000001</money>
+  <money>13511.720000000001</money>
   <pension>11</pension>
-  <experience>3218</experience>
-  <x>334.690735</x>
-  <y>20.2001247</y>
-  <z>140.797745</z>
+  <experience>3318</experience>
+  <x>304.963684</x>
+  <y>18.69405</y>
+  <z>108.194946</z>
   <inventory>
     <items>
       <InventoryItem>
@@ -18,7 +18,7 @@
       <InventoryItem>
         <ID>9c628946-321b-410f-8826-374a61318f5f</ID>
         <tag>DIV02</tag>
-        <numUses>5</numUses>
+        <numUses>7</numUses>
       </InventoryItem>
       <InventoryItem>
         <ID>24af1534-11af-483a-bbec-4641dc0a2970</ID>
@@ -128,6 +128,31 @@
       <InventoryItem>
         <ID>206d37eb-2918-45d9-9d4d-f70c71c742ad</ID>
         <tag>DIV02</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>97dad233-d3fb-46d6-a23e-23db19d945de</ID>
+        <tag>CROCC02</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>5b9d5717-3060-41f4-bad3-bccea6294fa3</ID>
+        <tag>CROCC02</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>126078ff-567f-452a-acfc-98c828e0a613</ID>
+        <tag>CROCC02</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>2c47e3b0-0488-43e1-8ce2-6315fceb3722</ID>
+        <tag>CROCC02</tag>
+        <numUses>0</numUses>
+      </InventoryItem>
+      <InventoryItem>
+        <ID>a796e620-b86c-4244-aa8f-95ab242806e0</ID>
+        <tag>CROCC02</tag>
         <numUses>0</numUses>
       </InventoryItem>
     </items>

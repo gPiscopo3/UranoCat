@@ -39,7 +39,7 @@ public class UIManager : MonoBehaviour
         experienceSlider.value = getExperiencePercentage();
 
         levelText.SetText(player.level.ToString());
-        moneyText.SetText(player.money.ToString());
+        moneyText.SetText(((int)player.money).ToString());
 
         try{
             if(player.equippedItem!=null){
