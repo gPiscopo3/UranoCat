@@ -115,6 +115,7 @@ public class DayManager: MonoBehaviour{
 
     private void ProfitOfDay(){
         Video video = videos.Find(video => video.day == savedStats.day);
+        VideoUtilis.uploadVideo(video, player.followers, cat, rules.social_rules, savedStats);
         views_yesterday = video.views;
         moneyGain = views_yesterday * rules.money_for_view;
         moneyGain += player.pension;

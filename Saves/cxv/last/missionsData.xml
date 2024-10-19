@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfMission xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Mission>
-    <experience>100</experience>
-    <name>Compra il giravite</name>
+    <experience>10</experience>
+    <name>Trova il giravite</name>
     <description>Missione del tutorial</description>
     <MissionState>ATTIVO</MissionState>
     <enableSpaceshipModification>false</enableSpaceshipModification>
@@ -16,7 +16,7 @@
     </RequiredItems>
   </Mission>
   <Mission>
-    <experience>100</experience>
+    <experience>10</experience>
     <name>Trova la prima ala</name>
     <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
     <MissionState>NON_ATTIVO</MissionState>
@@ -31,7 +31,7 @@
     </RequiredItems>
   </Mission>
   <Mission>
-    <experience>100</experience>
+    <experience>30</experience>
     <name>Ripara la prima ala</name>
     <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
     <MissionState>NON_ATTIVO</MissionState>
@@ -54,7 +54,7 @@
     </RequiredItems>
   </Mission>
   <Mission>
-    <experience>100</experience>
+    <experience>30</experience>
     <name>Trova la seconda ala</name>
     <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
     <MissionState>NON_ATTIVO</MissionState>
@@ -69,7 +69,7 @@
     </RequiredItems>
   </Mission>
   <Mission>
-    <experience>120</experience>
+    <experience>50</experience>
     <name>Ripara la seconda ala</name>
     <description>Trova gli strumenti necessari per costruire l'ala sinistra dell'astronave.</description>
     <MissionState>NON_ATTIVO</MissionState>
@@ -92,7 +92,7 @@
     </RequiredItems>
   </Mission>
   <Mission>
-    <experience>100</experience>
+    <experience>50</experience>
     <name>Trova la terza ala</name>
     <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
     <MissionState>NON_ATTIVO</MissionState>
@@ -107,7 +107,7 @@
     </RequiredItems>
   </Mission>
   <Mission>
-    <experience>150</experience>
+    <experience>100</experience>
     <name>Ripara la terza ala</name>
     <description>Trova le componenti necessarie per l'ala posteriore dell'astronave.</description>
     <MissionState>NON_ATTIVO</MissionState>
@@ -125,11 +125,7 @@
       </ItemRequirement>
       <ItemRequirement>
         <tag>KEY009</tag>
-        <quantity>5</quantity>
-      </ItemRequirement>
-      <ItemRequirement>
-        <tag>KEY010</tag>
-        <quantity>5</quantity>
+        <quantity>10</quantity>
       </ItemRequirement>
       <ItemRequirement>
         <tag>KEY015</tag>
@@ -153,7 +149,7 @@
     </RequiredItems>
   </Mission>
   <Mission>
-    <experience>130</experience>
+    <experience>250</experience>
     <name>Ripara la quarta ala</name>
     <description>Trova gli attrezzi per montare l'ala superiore dell'astronave.</description>
     <MissionState>NON_ATTIVO</MissionState>
@@ -171,11 +167,11 @@
       </ItemRequirement>
       <ItemRequirement>
         <tag>KEY009</tag>
-        <quantity>10</quantity>
+        <quantity>15</quantity>
       </ItemRequirement>
       <ItemRequirement>
         <tag>KEY010</tag>
-        <quantity>10</quantity>
+        <quantity>2</quantity>
       </ItemRequirement>
       <ItemRequirement>
         <tag>KEY015</tag>
@@ -184,7 +180,7 @@
     </RequiredItems>
   </Mission>
   <Mission>
-    <experience>100</experience>
+    <experience>250</experience>
     <name>Trova la quinta ala</name>
     <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
     <MissionState>NON_ATTIVO</MissionState>
@@ -199,7 +195,7 @@
     </RequiredItems>
   </Mission>
   <Mission>
-    <experience>140</experience>
+    <experience>500</experience>
     <name>Ripara la quinta ala</name>
     <description>Recupera i pezzi per l'ala inferiore dell'astronave.</description>
     <MissionState>NON_ATTIVO</MissionState>
@@ -233,12 +229,12 @@
       </ItemRequirement>
       <ItemRequirement>
         <tag>KEY011</tag>
-        <quantity>10</quantity>
+        <quantity>5</quantity>
       </ItemRequirement>
     </RequiredItems>
   </Mission>
   <Mission>
-    <experience>100</experience>
+    <experience>500</experience>
     <name>Trova la sesta ala</name>
     <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
     <MissionState>NON_ATTIVO</MissionState>
@@ -253,7 +249,7 @@
     </RequiredItems>
   </Mission>
   <Mission>
-    <experience>160</experience>
+    <experience>1000</experience>
     <name>Ripara la sesta ala</name>
     <description>Trova gli strumenti necessari per costruire l'ala centrale dell'astronave.</description>
     <MissionState>NON_ATTIVO</MissionState>
@@ -296,7 +292,7 @@
     </RequiredItems>
   </Mission>
   <Mission>
-    <experience>100</experience>
+    <experience>1000</experience>
     <name>Trova il propulsore</name>
     <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
     <MissionState>NON_ATTIVO</MissionState>
@@ -311,7 +307,7 @@
     </RequiredItems>
   </Mission>
   <Mission>
-    <experience>200</experience>
+    <experience>2000</experience>
     <name>Ripara il propulsore</name>
     <description>Raccogli i pezzi necessari per montare il motore dell'astronave.</description>
     <MissionState>NON_ATTIVO</MissionState>
@@ -350,7 +346,7 @@
     </RequiredItems>
   </Mission>
   <Mission>
-    <experience>100</experience>
+    <experience>2000</experience>
     <name>Trova il motore</name>
     <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
     <MissionState>NON_ATTIVO</MissionState>
@@ -365,7 +361,7 @@
     </RequiredItems>
   </Mission>
   <Mission>
-    <experience>250</experience>
+    <experience>5000</experience>
     <name>Ripara il motore</name>
     <description>Trova le componenti necessarie per la turbina dell'astronave.</description>
     <MissionState>NON_ATTIVO</MissionState>

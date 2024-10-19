@@ -73,7 +73,8 @@ public class VideoUtilis{
         return (int)(socialRules.views_factor * followers * Q);
     }
 
-    public static Video createVideo(long followers, Cat cat, SocialRules socialRules, SavedStats savedStats){
+
+     public static Video createVideo(long followers, Cat cat, SocialRules socialRules, SavedStats savedStats){
         
 
         return new Video{
@@ -83,6 +84,26 @@ public class VideoUtilis{
             timestamp_seconds = savedStats.timestamp_seconds
         };
     }
+
+
+    public static Video createVideo(SavedStats savedStats){
+        
+
+        return new Video{
+            day = savedStats.day, 
+            timestamp_seconds = savedStats.timestamp_seconds
+        };
+    }
+
+    public static Video uploadVideo(Video video, long followers, Cat cat, SocialRules socialRules, SavedStats savedStats){
+        
+        video.quality = getQuality(cat, socialRules);
+        video.views = Calculate_views(followers, getQuality(cat, socialRules), socialRules);
+        
+        return video;
+    }
+
+
 
     public static long calculateNewFollowers(long followers, Video video, SocialRules socialRules){
         

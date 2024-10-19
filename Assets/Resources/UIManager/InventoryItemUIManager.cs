@@ -99,9 +99,14 @@ public class InventoryItemUIManager : MonoBehaviour
             inventoryItemUI.SetItemName(group.itemToUse.item.name);
             inventoryItemUI.SetItemDescription(group.itemToUse.item.descrizione);
             inventoryItemUI.SetItemQuantity(group.quantity);
-            inventoryItemUI.SetRemainingUses(group.itemToUse.item.durability  - group.itemToUse.numUses, group.itemToUse.item.durability);
+            if(group.itemToUse.item.durability >0)
+                inventoryItemUI.SetRemainingUses(group.itemToUse.item.durability  - group.itemToUse.numUses, group.itemToUse.item.durability);
+            else
+                inventoryItemUI.SetNotUsurable();
+                
             if(group.itemToUse.item.GetType() == typeof(CatItem))
                 inventoryItemUI.setUsable();
+
             inventoryItemUI.SetItemImage("Images/" + group.itemToUse.item.imagePath);
 
             

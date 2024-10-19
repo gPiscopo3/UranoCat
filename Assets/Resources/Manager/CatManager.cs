@@ -91,7 +91,7 @@ public class CatManager : MonoBehaviour
     }
 
     public void CreateVideo(){
-        Video video = VideoUtilis.createVideo(player.followers, cat, rules.social_rules, savedStats);
+        Video video = VideoUtilis.createVideo(savedStats);
         videos.Add(video);
     }
 

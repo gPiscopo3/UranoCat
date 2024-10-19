@@ -5,7 +5,6 @@
         <tag>KEY001</tag>
         <name>Giravite</name>
         <descrizione>Immancabile strumento di Zio Agosto</descrizione>
-        <durability>100</durability>
         <imagePath>giravite</imagePath>
     </KeyItem>
     <KeyItem>

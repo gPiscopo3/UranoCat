@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Rules xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <update_cat_time>10</update_cat_time>
+
   <money_for_view>0.001</money_for_view>
   <xp_for_view>0.03</xp_for_view>
   <autosave_number>10</autosave_number>
   <autosave_time>10</autosave_time>
-  <start_day_hour>9</start_day_hour>
+  <start_day_hour>7</start_day_hour>
   <end_day_hour>21</end_day_hour>
-  <day_duration>100</day_duration>
+  <day_duration>120</day_duration>
 
 
 <interactionsTimes>
     <Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>21</dayTime>
+      <dayTime>30</dayTime>
     </Interaction>
 	<Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>22</dayTime>
+      <dayTime>31</dayTime>
     </Interaction>
 	<Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>23</dayTime>
+      <dayTime>32</dayTime>
     </Interaction>
     <Interaction>
       <interactionType>VIDEO</interactionType>
-      <dayTime>45</dayTime>
+      <dayTime>60</dayTime>
     </Interaction>
     <Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>67</dayTime>
+      <dayTime>90</dayTime>
     </Interaction>
 	<Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>68</dayTime>
+      <dayTime>91</dayTime>
     </Interaction>
 	<Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>69</dayTime>
+      <dayTime>92</dayTime>
     </Interaction>
     <Interaction>
       <interactionType>SLEEP</interactionType>
-      <dayTime>90</dayTime>
+      <dayTime>120</dayTime>
     </Interaction>
   </interactionsTimes>
 
@@ -50,7 +50,9 @@
 	<InteractionType>VIDEO</InteractionType>
   </interactionsToComplete>
 
-  
+
+  <update_cat_time>10</update_cat_time>
+
   <cat_stats_rules>
 	  <rules>
 		<StatRule>
@@ -58,11 +60,11 @@
 		  <modifiers>
 			<StatModifierRule>
 			  <tag>SAZIETA</tag>
-			  <value>0.95</value>
+			  <value>0.9707</value>
 			</StatModifierRule>
 			<StatModifierRule>
 			  <tag>FELICITA</tag>
-			  <value>0.05</value>
+			  <value>0.00976</value>
 			</StatModifierRule>
 		  </modifiers>
 		</StatRule>
@@ -71,11 +73,11 @@
 		  <modifiers>
 			<StatModifierRule>
 			  <tag>DIVERTIMENTO</tag>
-			  <value>0.95</value>
+			  <value>0.9707</value>
 			</StatModifierRule>
 			<StatModifierRule>
 			  <tag>FELICITA</tag>
-			  <value>0.05</value>
+			  <value>0.00976</value>
 			</StatModifierRule>
 		  </modifiers>
 		</StatRule>
@@ -84,15 +86,15 @@
 		  <modifiers>
 			<StatModifierRule>
 			  <tag>SAZIETA</tag>
-			  <value>0.25</value>
+			  <value>0.0281</value>
 			</StatModifierRule>
 			<StatModifierRule>
 			  <tag>DIVERTIMENTO</tag>
-			  <value>0.25</value>
+			  <value>0.0281</value>
 			</StatModifierRule>
 			<StatModifierRule>
 			  <tag>FELICITA</tag>
-			  <value>0.5</value>
+			  <value>0.9438</value>
 			</StatModifierRule>
 		  </modifiers>
 		</StatRule>
@@ -108,14 +110,14 @@
 				<followers>1000</followers>
 				<rif_quality_views>0.4</rif_quality_views>
 				<min_quality_followers>0.25</min_quality_followers>
-				<max_quality_followers>0.6</max_quality_followers>
+				<max_quality_followers>0.5</max_quality_followers>
 				<followers_factor>0.5</followers_factor>
 			</FollowersRule>
 			<FollowersRule>
 				<followers>10000</followers>
 				<rif_quality_views>0.6</rif_quality_views>
 				<min_quality_followers>0.5</min_quality_followers>
-				<max_quality_followers>0.8</max_quality_followers>
+				<max_quality_followers>0.75</max_quality_followers>
 				<followers_factor>0.3</followers_factor>
 			</FollowersRule>
 			<FollowersRule>

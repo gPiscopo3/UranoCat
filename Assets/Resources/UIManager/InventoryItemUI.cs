@@ -58,6 +58,11 @@ public class InventoryItemUI : MonoBehaviour
         
     }
 
+    public void SetNotUsurable(){
+
+        this.usesRemaining.enabled = false;
+        
+    }
     public void setUsable(){
         this.useButton.gameObject.SetActive(true);
         this.useButton.GetComponent<Image>().enabled = true;

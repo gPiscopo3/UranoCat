@@ -16,10 +16,10 @@ public class GameLoader : MonoBehaviour
     public const string fileStats = "stats.xml";
     public const string placedObjectsFile = "placedObjects.xml";
 
-
-    public string profiles_path = Environment.ExpandEnvironmentVariables("%USERPROFILE%/Saved Games/UranoCat/profiles.xml");
+    public const string profiles_path = "Saves/profiles.xml";
     public const string infos_file_name = "saves.xml";
-    public string savePath = Environment.ExpandEnvironmentVariables("%USERPROFILE%/Saved Games/UranoCat/");
+   
+    public const string savePath = "Saves/";
     public const string pathDefault = "Assets/Resources/Saves/";
 
 
@@ -91,7 +91,7 @@ public class GameLoader : MonoBehaviour
             path = pathDefault;
         else
             path = savePath + profile + "/" + save + "/";
-    
+
 
         this.cat = XMLHelper.LoadFromXml<Cat>(path + fileCat);
         this.player = XMLHelper.LoadFromXml<Player>(path + filePlayer);

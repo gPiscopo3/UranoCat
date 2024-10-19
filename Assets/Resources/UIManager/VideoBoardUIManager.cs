@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class VideoBoardUIManager : MonoBehaviour
@@ -16,11 +17,16 @@ public class VideoBoardUIManager : MonoBehaviour
 
 
     List<Video> videos;
+    SavedStats savedStats;
+
+    float timerUpdate = 0f;
+
 
 
     void Start()
     {   
         videos = FindObjectOfType<GameLoader>().videos;
+        savedStats = FindObjectOfType<GameLoader>().savedStats;
         CreateVideoBoard();
         GenerateVideoItemUI();
     }
@@ -47,17 +53,38 @@ public class VideoBoardUIManager : MonoBehaviour
         contentPanel.transform.GetChild(0).gameObject.SetActive(false);
         int i = 0;
 
-        foreach(Video video in videos)
+
+
+        foreach(Video video in videos.OrderByDescending(x=> x.day))
         {
             GameObject item = Instantiate(ItemPrefab, contentPanel.transform);
             item.gameObject.SetActive(true);
+
             item.GetComponent<VideoItemUI>().SetDayValue(video.day);
-            item.GetComponent<VideoItemUI>().SetViewValue(video.views);
+
+            if(video.day == savedStats.day)
+                item.GetComponent<VideoItemUI>().setUploading();
+            else
+                item.GetComponent<VideoItemUI>().SetViewValue(video.views);
+
+            
             item.GetComponent<VideoItemUI>().SetVideoItemPosition(Vector2.down * (itemHeight + itemSpacing) * i);
 
             contentPanel.GetComponent<RectTransform>().sizeDelta= Vector2.up * (itemHeight + itemSpacing) * videos.Count;
                 
             i++;
         }
+    }
+
+
+    void Update()
+    {
+
+        timerUpdate += Time.deltaTime;
+        if(timerUpdate > 1f){
+            GenerateVideoItemUI();
+            timerUpdate = 0f;
+        }
+        
     }
 }

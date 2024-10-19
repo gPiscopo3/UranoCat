@@ -65,6 +65,8 @@ public class MissionManager : MonoBehaviour, InteractableObject
             Instantiate(VFX_MissionComplete, VFX_SpawnPoint.position, VFX_SpawnPoint.rotation);
             audioSource.Play();
 
+            player.experience += actualMission.experience;
+
             if(actualMission.enableSpaceshipModification)
             {
                 spaceshipParts.Find(obj => obj.name.Equals(actualMission.spaceshipPart)).SetActive(true);

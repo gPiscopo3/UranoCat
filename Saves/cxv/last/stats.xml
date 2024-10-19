@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SavedStats xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <day>1</day>
-  <update_cat_timer>9.999223</update_cat_timer>
-  <day_timer>20.006609</day_timer>
-  <timestamp_seconds>19</timestamp_seconds>
+  <update_cat_timer>9.322758</update_cat_timer>
+  <day_timer>9.322758</day_timer>
+  <timestamp_seconds>9</timestamp_seconds>
   <interactions>
     <Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>21</dayTime>
+      <dayTime>30</dayTime>
       <interactionStatus>NOT_AVAILABLE</interactionStatus>
     </Interaction>
     <Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>22</dayTime>
+      <dayTime>31</dayTime>
       <interactionStatus>NOT_AVAILABLE</interactionStatus>
     </Interaction>
     <Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>23</dayTime>
+      <dayTime>32</dayTime>
       <interactionStatus>NOT_AVAILABLE</interactionStatus>
     </Interaction>
     <Interaction>
       <interactionType>VIDEO</interactionType>
-      <dayTime>45</dayTime>
+      <dayTime>60</dayTime>
       <interactionStatus>NOT_AVAILABLE</interactionStatus>
     </Interaction>
     <Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>67</dayTime>
+      <dayTime>90</dayTime>
       <interactionStatus>NOT_AVAILABLE</interactionStatus>
     </Interaction>
     <Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>68</dayTime>
+      <dayTime>91</dayTime>
       <interactionStatus>NOT_AVAILABLE</interactionStatus>
     </Interaction>
     <Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>69</dayTime>
+      <dayTime>92</dayTime>
       <interactionStatus>NOT_AVAILABLE</interactionStatus>
     </Interaction>
     <Interaction>
       <interactionType>SLEEP</interactionType>
-      <dayTime>90</dayTime>
+      <dayTime>120</dayTime>
       <interactionStatus>NOT_AVAILABLE</interactionStatus>
     </Interaction>
   </interactions>
-  <autosave>2</autosave>
+  <autosave>0</autosave>
 </SavedStats>

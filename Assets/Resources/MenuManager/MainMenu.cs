@@ -36,7 +36,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button backHomeButton1;
     
 
-    private string path =  Environment.ExpandEnvironmentVariables("%USERPROFILE%/Saved Games/UranoCat/");
+    //private string path =  Environment.ExpandEnvironmentVariables("%USERPROFILE%/Saved Games/UranoCat/");
+    public string path = "Saves/";
 
     private List<Profile> profiles;
 

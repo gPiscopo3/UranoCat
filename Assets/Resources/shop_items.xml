@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfShopItem xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
  
-  <ShopItem>
-    <Tag>KEY001</Tag>
-    <Price>100</Price>
-    <MinLevelRequired>1</MinLevelRequired>
-  </ShopItem>
+
 
   <ShopItem>
     <Tag>KEY002</Tag>

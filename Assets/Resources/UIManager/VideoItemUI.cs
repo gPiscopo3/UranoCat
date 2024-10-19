@@ -5,6 +5,7 @@ public class VideoItemUI : MonoBehaviour
 {
     
     [SerializeField] TMP_Text dayValue; 
+    [SerializeField] TMP_Text viewText;
     [SerializeField] TMP_Text viewValue; 
 
     public void SetDayValue(int day){
@@ -18,6 +19,12 @@ public class VideoItemUI : MonoBehaviour
 
     public void SetViewValue(long view){
         this.viewValue.text = view.ToString();
+        this.viewValue.enabled = true;
+    }
+
+    public void setUploading(){
+        this.viewValue.text = "Uploading...";
+        this.viewText.enabled = false;
         this.viewValue.enabled = true;
     }
 }
