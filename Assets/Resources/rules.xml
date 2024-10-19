@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Rules xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <update_cat_time>10</update_cat_time>
-  <money_for_view>0.002</money_for_view>
-  <xp_for_view>0.005</xp_for_view>
+  <money_for_view>0.001</money_for_view>
+  <xp_for_view>0.03</xp_for_view>
   <autosave_number>10</autosave_number>
   <autosave_time>10</autosave_time>
 
@@ -10,19 +10,35 @@
 <interactionsTimes>
     <Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>5</dayTime>
+      <dayTime>21</dayTime>
+    </Interaction>
+	<Interaction>
+      <interactionType>CAT_ITERACTION</interactionType>
+      <dayTime>22</dayTime>
+    </Interaction>
+	<Interaction>
+      <interactionType>CAT_ITERACTION</interactionType>
+      <dayTime>23</dayTime>
     </Interaction>
     <Interaction>
       <interactionType>VIDEO</interactionType>
-      <dayTime>10</dayTime>
+      <dayTime>45</dayTime>
     </Interaction>
     <Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>15</dayTime>
+      <dayTime>67</dayTime>
+    </Interaction>
+	<Interaction>
+      <interactionType>CAT_ITERACTION</interactionType>
+      <dayTime>68</dayTime>
+    </Interaction>
+	<Interaction>
+      <interactionType>CAT_ITERACTION</interactionType>
+      <dayTime>69</dayTime>
     </Interaction>
     <Interaction>
       <interactionType>SLEEP</interactionType>
-      <dayTime>20</dayTime>
+      <dayTime>90</dayTime>
     </Interaction>
   </interactionsTimes>
 
@@ -81,7 +97,7 @@
 	</cat_stats_rules>
 	
 	<social_rules>
-		<views_factor>0.5</views_factor>
+		<views_factor>1</views_factor>
 		<views_quality_power_factor>2</views_quality_power_factor>
 
 		<followers_rules>
@@ -89,14 +105,14 @@
 				<followers>1000</followers>
 				<rif_quality_views>0.4</rif_quality_views>
 				<min_quality_followers>0.25</min_quality_followers>
-				<max_quality_followers>0.5</max_quality_followers>
+				<max_quality_followers>0.6</max_quality_followers>
 				<followers_factor>0.5</followers_factor>
 			</FollowersRule>
 			<FollowersRule>
 				<followers>10000</followers>
 				<rif_quality_views>0.6</rif_quality_views>
 				<min_quality_followers>0.5</min_quality_followers>
-				<max_quality_followers>0.75</max_quality_followers>
+				<max_quality_followers>0.8</max_quality_followers>
 				<followers_factor>0.3</followers_factor>
 			</FollowersRule>
 			<FollowersRule>
@@ -143,27 +159,57 @@
 		</Level>
 		<Level>
 			<level>2</level>
-			<experience>3000</experience>
+			<experience>100</experience>
 			<pension>11</pension>
-			<reward>100</reward>
+			<reward>20</reward>
 		</Level>
 		<Level>
 			<level>3</level>
-			<experience>5000</experience>
+			<experience>300</experience>
 			<pension>12</pension>
-			<reward>200</reward>
+			<reward>30</reward>
 		</Level>
 		<Level>
 			<level>4</level>
-			<experience>1500</experience>
+			<experience>600</experience>
 			<pension>13</pension>
-			<reward>400</reward>
+			<reward>50</reward>
 		</Level>
 		<Level>
 			<level>5</level>
-			<experience>20000</experience>
+			<experience>1000</experience>
 			<pension>15</pension>
-			<reward>600</reward>
+			<reward>100</reward>
+		</Level>
+		<Level>
+			<level>6</level>
+			<experience>2000</experience>
+			<pension>17</pension>
+			<reward>150</reward>
+		</Level>
+		<Level>
+			<level>7</level>
+			<experience>5000</experience>
+			<pension>18</pension>
+			<reward>200</reward>
+		</Level>
+		<Level>
+			<level>8</level>
+			<experience>10000</experience>
+			<pension>20</pension>
+			<reward>300</reward>
+		</Level>
+		<Level>
+			<level>9</level>
+			<experience>25000</experience>
+			<pension>25</pension>
+			<reward>500</reward>
+		</Level>
+		<Level>
+			<level>10</level>
+			<experience>50000</experience>
+			<pension>30</pension>
+			<reward>1000</reward>
 		</Level>
 	</levels>
 	

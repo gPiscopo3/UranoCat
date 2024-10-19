@@ -3,8 +3,8 @@
   <CatItem>
     <tag>CROCC01</tag>
     <name>Crocchette Xeles</name>
-    <descrizione>5 porzioni di crocchette economiche</descrizione>
-    <durability>5</durability>
+    <descrizione>10 porzioni di crocchette economiche</descrizione>
+    <durability>10</durability>
     <imagePath>xelex</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
@@ -18,8 +18,8 @@
   <CatItem>
     <tag>CROCC02</tag>
     <name>Crocchette Zielina</name>
-    <descrizione>5 porzioni di crocchette standard</descrizione>
-    <durability>5</durability>
+    <descrizione>10 porzioni di crocchette standard</descrizione>
+    <durability>10</durability>
     <imagePath>zielina</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
@@ -33,8 +33,8 @@
   <CatItem>
     <tag>CROCC03</tag>
     <name>Crocchette Blue Morgan</name>
-    <descrizione>5 porzioni di crocchette di buona qualità</descrizione>
-    <durability>5</durability>
+    <descrizione>10 porzioni di crocchette di buona qualità</descrizione>
+    <durability>10</durability>
     <imagePath>morgan</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
@@ -48,8 +48,8 @@
   <CatItem>
     <tag>CROCC04</tag>
     <name>Crocchette Golden Crocchi</name>
-    <descrizione>5 porzioni di crocchette di alta qualità</descrizione>
-    <durability>5</durability>
+    <descrizione>10 porzioni di crocchette di alta qualità</descrizione>
+    <durability>10</durability>
     <imagePath>crocchi</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
@@ -63,7 +63,7 @@
 
   <CatItem>
     <tag>FISH01</tag>
-    <name>Alice</name>
+    <name>Alici</name>
     <descrizione>2 porzioni di alici</descrizione>
     <durability>2</durability>
     <imagePath>alici</imagePath>
@@ -107,14 +107,14 @@
     </CatModifier>
   </CatItem>
   <CatItem>
-    <tag>FISH05</tag>
+    <tag>FISH04</tag>
     <name>Tonno</name>
     <descrizione>Un filetto di tonno</descrizione>
     <durability>1</durability>
     <imagePath>tonno</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
-      <value>9</value>
+      <value>8</value>
     </CatModifier>
     <CatModifier>
       <targetStat>FELICITA</targetStat>
@@ -122,14 +122,14 @@
     </CatModifier>
   </CatItem>
   <CatItem>
-    <tag>FISH06</tag>
+    <tag>FISH05</tag>
     <name>Salmone</name>
     <descrizione>Un filetto di salmone</descrizione>
     <durability>1</durability>
     <imagePath>salmon</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
-      <value>10</value>
+      <value>9</value>
     </CatModifier>
     <CatModifier>
       <targetStat>FELICITA</targetStat>
@@ -141,7 +141,7 @@
     <tag>DIV01</tag>
     <name>Topo di gomma</name>
     <descrizione>Un topo con cui giocare. Attenzione, fa venire fame!</descrizione>
-    <durability>30</durability>
+    <durability>20</durability>
     <imagePath>topo</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
@@ -159,7 +159,7 @@
   <CatItem>
     <tag>DIV02</tag>
     <name>Topo di gomma profumato</name>
-    <descrizione>Un topo quasi saporita con cui giocare. Attenzione, fa venire molta fame!</descrizione>
+    <descrizione>Un topo quasi saporito con cui giocare. Attenzione, fa venire molta fame!</descrizione>
     <durability>30</durability>
     <imagePath>topoProfumato</imagePath>
     <CatModifier>
@@ -290,7 +290,7 @@
     </CatModifier>
   </CatItem>
   <CatItem>
-    <tag>DIV09</tag>
+    <tag>VERRO</tag>
     <name>Verro</name>
     <descrizione>Il figlio di Zio Agosto</descrizione>
     <imagePath>topo</imagePath>

@@ -60,8 +60,7 @@ public class CatManager : MonoBehaviour
     public void Interact(){
         
         InventoryItem item = player.equippedItem;
-        player.experience += 10;
-     
+   
 
         if(dayManager.isInteractionAvailable(InteractionType.CAT_ITERACTION) && item != null && item.item.GetType() == typeof(CatItem)){
 

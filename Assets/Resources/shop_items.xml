@@ -101,94 +101,91 @@
 
   <ShopItem>
     <Tag>CROCC01</Tag>
-    <Price>1</Price>
+    <Price>12</Price>
     <MinLevelRequired>1</MinLevelRequired>
   </ShopItem>
-
   <ShopItem>
     <Tag>CROCC02</Tag>
-    <Price>1</Price>
+    <Price>20</Price>
     <MinLevelRequired>1</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>CROCC03</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
+    <Price>30</Price>
+    <MinLevelRequired>3</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>CROCC04</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
+    <Price>50</Price>
+    <MinLevelRequired>5</MinLevelRequired>
   </ShopItem>
+
   <ShopItem>
     <Tag>FISH01</Tag>
-    <Price>1</Price>
+    <Price>5</Price>
     <MinLevelRequired>1</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>FISH02</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
+    <Price>5</Price>
+    <MinLevelRequired>2</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>FISH03</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
+    <Price>8</Price>
+    <MinLevelRequired>3</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>FISH04</Tag>
+    <Price>12</Price>
+    <MinLevelRequired>6</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>FISH05</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
+    <Price>20</Price>
+    <MinLevelRequired>7</MinLevelRequired>
   </ShopItem>
-  <ShopItem>
-    <Tag>FISH06</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
-  </ShopItem>
+
   <ShopItem>
     <Tag>DIV01</Tag>
-    <Price>1</Price>
+    <Price>20</Price>
     <MinLevelRequired>1</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>DIV02</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
+    <Price>50</Price>
+    <MinLevelRequired>2</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>DIV03</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
+    <Price>50</Price>
+    <MinLevelRequired>2</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>DIV04</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
+    <Price>120</Price>
+    <MinLevelRequired>4</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>DIV05</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
+    <Price>300</Price>
+    <MinLevelRequired>6</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>DIV06</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
+    <Price>50</Price>
+    <MinLevelRequired>3</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>DIV07</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
+    <Price>150</Price>
+    <MinLevelRequired>5</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>DIV08</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
+    <Price>200</Price>
+    <MinLevelRequired>8</MinLevelRequired>
   </ShopItem>
-  <ShopItem>
-    <Tag>DIV09</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
-  </ShopItem>
+  
 
 </ArrayOfShopItem>

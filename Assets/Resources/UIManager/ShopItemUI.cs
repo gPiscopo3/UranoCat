@@ -10,6 +10,8 @@ public class ShopItemUI : MonoBehaviour
     [SerializeField] TMP_Text description;
     [SerializeField] Button priceButton;
     [SerializeField] TMP_Text price;
+    [SerializeField] Image moneyImage;
+
     long priceValue;
     string tag;
 
@@ -47,12 +49,18 @@ public class ShopItemUI : MonoBehaviour
         this.priceValue = price;
         this.price.text = price.ToString();
         this.priceButton.GetComponent<Image>().enabled = true;
-        this.priceButton.enabled = true;
+        Player player = FindObjectOfType<GameLoader>().player;
+        if(player.money < price)
+            SetNotAvailable();
+        else
+            this.priceButton.enabled = true;
         priceButton.onClick.AddListener(Acquista);
         
     }
 
     public void SetShopItemLevelNotEoungh(int level){
+        SetNotAvailable();
+        this.moneyImage.enabled = false;
         this.price.text = "Liv " + level.ToString();
     }
 
@@ -66,6 +74,18 @@ public class ShopItemUI : MonoBehaviour
             player.inventory.addItem(item);
         }
         
+    }
+
+    private void SetNotAvailable(){
+        this.price.color = Color.red;
+        this.priceButton.image.color = Color.gray;
+        this.priceButton.enabled = false;
+    }
+
+    void Update(){
+        Player player = FindObjectOfType<GameLoader>().player;
+        if(player.money < priceValue)
+            SetNotAvailable();
     }
 
 }

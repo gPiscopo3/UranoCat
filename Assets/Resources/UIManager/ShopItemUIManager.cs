@@ -93,7 +93,8 @@ public class ShopItemUIManager : MonoBehaviour
                 shopItemUI.SetShopItemDescription(shopItem.item.descrizione);
                 if(shopItem.MinLevelRequired > player.level)
                     shopItemUI.SetShopItemLevelNotEoungh(shopItem.MinLevelRequired);
-                shopItemUI.SetShopItemPrice(shopItem.Price);
+                else
+                    shopItemUI.SetShopItemPrice(shopItem.Price);
                 shopItemUI.SetShopItemImage("Images/" + shopItem.item.imagePath);
 
                 shopItemUI.GetComponent<RectTransform>().SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, diff, itemHeight);
