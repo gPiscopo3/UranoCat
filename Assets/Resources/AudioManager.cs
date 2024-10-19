@@ -19,8 +19,9 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
-        if(CatSource.isPlaying == false && FindObjectOfType<DayManager>().isInteractionAvailable(InteractionType.CAT_ITERACTION)){
+        if(!CatSource.isPlaying && FindObjectOfType<DayManager>().isInteractionAvailable(InteractionType.CAT_ITERACTION)){
             CatSource.Play();
+            Debug.Log("miao");
         }
         
     }

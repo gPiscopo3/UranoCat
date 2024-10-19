@@ -11,7 +11,7 @@ namespace QuantumTek.QuantumTravel
     public class QT_MapMarker : MonoBehaviour
     {
         [SerializeField] private RectTransform rectTransform = null;
-        [SerializeField] private Image image = null;
+        [SerializeField] public Image image = null;
 
 
         [HideInInspector] public QT_MapObject Object;

@@ -27,7 +27,9 @@ namespace QuantumTek.QuantumTravel
        
         [Header("Object References")]
 
+
         public String playerName;
+        public String cat;
         public QT_MapMarker MarkerPrefab;
         public List<QT_MapMarker> Markers { get; set; } = new List<QT_MapMarker>();
 
@@ -38,6 +40,8 @@ namespace QuantumTek.QuantumTravel
         public float MarkerSize = 20;
         public float MinScale = 0.5f;
         public float MaxScale = 2f;
+
+        DayManager dayManager;
 
         private void Awake()
         {
@@ -62,6 +66,8 @@ namespace QuantumTek.QuantumTravel
                 CreateMarker(obj);
             }
 
+            dayManager = FindObjectOfType<DayManager>();
+
         }
 
         private void Update()
@@ -75,6 +81,9 @@ namespace QuantumTek.QuantumTravel
             {
                 marker.SetPosition(CalculatePosition(marker));
                 marker.SetScale(CalculateScale(marker));
+                if(marker.Object.Name.Equals(cat))
+                    if(dayManager.isInteractionAvailable(InteractionType.CAT_ITERACTION));
+                        
                 
             }
         }
