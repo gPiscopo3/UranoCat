@@ -17,8 +17,9 @@ public class GameLoader : MonoBehaviour
     public const string placedObjectsFile = "placedObjects.xml";
 
 
-    public const string profiles_path = "Saves/profiles.xml";
+    public string profiles_path = Environment.ExpandEnvironmentVariables("%USERPROFILE%/Saved Games/UranoCat/profiles.xml");
     public const string infos_file_name = "saves.xml";
+    public string savePath = Environment.ExpandEnvironmentVariables("%USERPROFILE%/Saved Games/UranoCat/");
     public const string pathDefault = "Assets/Resources/Saves/";
 
 
@@ -89,7 +90,7 @@ public class GameLoader : MonoBehaviour
         if(save == null)
             path = pathDefault;
         else
-            path = "Saves/" + profile + "/" + save + "/";
+            path = savePath + profile + "/" + save + "/";
     
 
         this.cat = XMLHelper.LoadFromXml<Cat>(path + fileCat);
@@ -103,7 +104,7 @@ public class GameLoader : MonoBehaviour
         this.placedObjectsStatus = XMLHelper.LoadFromXml<List<PlacedObjectStatus>>(path + placedObjectsFile);
 
         this.profiles = XMLHelper.LoadFromXml<List<Profile>>(profiles_path);
-        this.infos = XMLHelper.LoadFromXml<List<SaveInfo>>("Saves/" + profile + "/" + infos_file_name);
+        this.infos = XMLHelper.LoadFromXml<List<SaveInfo>>(savePath + profile + "/" + infos_file_name);
 
 
        
@@ -131,7 +132,7 @@ public class GameLoader : MonoBehaviour
 
     public void SaveData(String save){
 
-        String path = "Saves/" + loaded_profile + "/" + save;
+        String path = savePath + loaded_profile + "/" + save;
         if(!System.IO.Directory.Exists(path))
             System.IO.Directory.CreateDirectory(path);
 
@@ -171,7 +172,7 @@ public class GameLoader : MonoBehaviour
             info.time = DateTime.Now;
         }
 
-        XMLHelper.SaveToXml<List<SaveInfo>>(infos, "Saves/" + loaded_profile + "/" + infos_file_name);
+        XMLHelper.SaveToXml<List<SaveInfo>>(infos, savePath + loaded_profile + "/" + infos_file_name);
 
 
 

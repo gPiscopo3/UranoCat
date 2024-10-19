@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class DayManager: MonoBehaviour{
@@ -101,8 +100,7 @@ public class DayManager: MonoBehaviour{
     public void NuovaGiornata(){
         ProfitOfDay();
 
-        clockManager.currentTime = new ClockManager.Time(clockManager.startHour,0);
-        clockManager.scaleFactor = 1;
+        clockManager.Reset();
 
         player.money += moneyGain;
         player.experience += experienceGain;

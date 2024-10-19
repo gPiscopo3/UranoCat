@@ -16,4 +16,8 @@ public class Rules{
 
     public double autosave_time;
     public int autosave_number;
+
+    public int start_day_hour;
+    public int end_day_hour;
+    public int day_duration;
 }

@@ -5,6 +5,9 @@
   <xp_for_view>0.03</xp_for_view>
   <autosave_number>10</autosave_number>
   <autosave_time>10</autosave_time>
+  <start_day_hour>9</start_day_hour>
+  <end_day_hour>21</end_day_hour>
+  <day_duration>100</day_duration>
 
 
 <interactionsTimes>

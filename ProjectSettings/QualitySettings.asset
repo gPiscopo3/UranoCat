@@ -308,9 +308,9 @@ QualitySettings:
     Nintendo Switch: 5
     PS4: 5
     PSP2: 2
-    Server: 2
+    Server: 5
     Stadia: 5
-    Standalone: 2
+    Standalone: 5
     WebGL: 2
     Windows Store Apps: 5
     XboxOne: 5

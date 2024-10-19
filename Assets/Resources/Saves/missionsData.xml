@@ -125,11 +125,7 @@
       </ItemRequirement>
       <ItemRequirement>
         <tag>KEY009</tag>
-        <quantity>5</quantity>
-      </ItemRequirement>
-      <ItemRequirement>
-        <tag>KEY010</tag>
-        <quantity>5</quantity>
+        <quantity>10</quantity>
       </ItemRequirement>
       <ItemRequirement>
         <tag>KEY015</tag>
@@ -171,11 +167,11 @@
       </ItemRequirement>
       <ItemRequirement>
         <tag>KEY009</tag>
-        <quantity>10</quantity>
+        <quantity>15</quantity>
       </ItemRequirement>
       <ItemRequirement>
         <tag>KEY010</tag>
-        <quantity>10</quantity>
+        <quantity>2</quantity>
       </ItemRequirement>
       <ItemRequirement>
         <tag>KEY015</tag>
@@ -233,7 +229,7 @@
       </ItemRequirement>
       <ItemRequirement>
         <tag>KEY011</tag>
-        <quantity>10</quantity>
+        <quantity>5</quantity>
       </ItemRequirement>
     </RequiredItems>
   </Mission>

@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ClockManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text text;
 
-    [SerializeField] public int startHour;
-    [SerializeField] public int endHour;
+    int startHour;
+    int endHour;
 
     private SavedStats savedStats;
 
@@ -27,12 +28,20 @@ public class ClockManager : MonoBehaviour
         }
     }
     public Time currentTime;
-    public float scaleFactor;
+    float scaleFactor;
+    Rules rules;
 
     // Start is called before the first frame update
     void Start()
     {
         savedStats = FindObjectOfType<GameLoader>().savedStats;
+        rules = FindAnyObjectByType<GameLoader>().rules;
+
+        startHour = rules.start_day_hour;
+        endHour = rules.end_day_hour;
+
+        scaleFactor = ((float)(endHour - startHour))*60/rules.day_duration;
+
         startTime.hour = startHour;
         startTime.minute = 0;
         endTime.hour = endHour;
@@ -55,10 +64,15 @@ public class ClockManager : MonoBehaviour
         }
     }
 
+    public void Reset(){
+        currentTime = new Time(startHour,0);
+        scaleFactor = ((float)(endHour - startHour))*60/rules.day_duration;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        currentTime.minute += (UnityEngine.Time.deltaTime*scaleFactor);
+        currentTime.minute += UnityEngine.Time.deltaTime*scaleFactor;
 
         if (currentTime.minute >= 60) 
         {

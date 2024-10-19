@@ -11,7 +11,7 @@
     <KeyItem>
         <tag>KEY002</tag>
         <name>Pozione Rara</name>
-        <descrizione>Immancabile strumento di Zio Agosto per curare i polli</descrizione>
+        <descrizione>Immancabile strumento di Zio Agosto per curare i polli (ma i polli sono morti nello schianto dell'astronave)</descrizione>
         <durability>100</durability>
         <imagePath>pozione</imagePath>
     </KeyItem>
@@ -24,8 +24,8 @@
     </KeyItem>
     <KeyItem>
         <tag>MASCHERA001</tag>
-        <name>Maschera protettiva</name>
-        <descrizione>Maschera protettiva per zio Agosto</descrizione>
+        <name>Maschera chirurgica</name>
+        <descrizione>Maschera protettiva per zio Agosto, spesso utilizzata durante il COVID, ora un lontano ricordo, ma non serviva a niente</descrizione>
         <durability>1</durability>
         <imagePath>mask</imagePath>
     </KeyItem>
@@ -40,14 +40,14 @@
         <tag>KEY006</tag>
         <name>Sega</name>
         <descrizione>Chiave per aprire la porta</descrizione>
-        <durability>27</durability>
+        <durability>10</durability>
         <imagePath>sega</imagePath>
     </KeyItem>
     <KeyItem>
         <tag>KEY007</tag>
         <name>Chiave Inglese</name>
-        <descrizione>Chiave per aprire la porta</descrizione>
-        <durability>1</durability>
+        <descrizione>Chiave per riparare l'astronave</descrizione>
+        <durability>3</durability>
         <imagePath>spanner</imagePath>
     </KeyItem>
     <KeyItem>
@@ -88,7 +88,7 @@
     <KeyItem>
         <tag>KEY013</tag>
         <name>Mascherina FFP2</name>
-        <descrizione>Mascherina FFP2, spesso utilizzata durante il COVID, ora un lontano ricordo</descrizione>
+        <descrizione>Mascherina FFP2, spesso utilizzata durante il COVID, ora un lontano ricordo, utile per la prossima pandemia</descrizione>
         <durability>1</durability>
         <imagePath>maskerina</imagePath>
     </KeyItem>

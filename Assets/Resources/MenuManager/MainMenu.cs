@@ -36,7 +36,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button backHomeButton1;
     
 
-    private string path = "Saves/";
+    private string path =  Environment.ExpandEnvironmentVariables("%USERPROFILE%/Saved Games/UranoCat/");
 
     private List<Profile> profiles;
 
@@ -51,6 +51,12 @@ public class MainMenu : MonoBehaviour
         MainCanvas.SetActive(true);
         LoadGameCanvas.SetActive(false);
         newGameCanvas.SetActive(false);
+
+        if(!System.IO.Directory.Exists(path)){
+            System.IO.Directory.CreateDirectory(path);
+            XMLHelper.SaveToXml(new List<Profile>(), path + "profiles.xml");
+        }
+
 
         profiles = XMLHelper.LoadFromXml<List<Profile>>(path + "profiles.xml");
         List<string> profile_names = new List<string>();

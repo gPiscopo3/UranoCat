@@ -9,93 +9,88 @@
 
   <ShopItem>
     <Tag>KEY002</Tag>
-    <Price>108</Price>
+    <Price>1</Price>
     <MinLevelRequired>1</MinLevelRequired>
   </ShopItem>
 
-  <ShopItem>
-    <Tag>KEY003</Tag>
-    <Price>50</Price>
-    <MinLevelRequired>1</MinLevelRequired>
-  </ShopItem>
-  <ShopItem>
-    <Tag>MASCHERA001</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
-  </ShopItem>
-  <ShopItem>
-    <Tag>KEY005</Tag>
-    <Price>10</Price>
-    <MinLevelRequired>1</MinLevelRequired>
-  </ShopItem>
-  <ShopItem>
-    <Tag>KEY006</Tag>
-    <Price>27</Price>
-    <MinLevelRequired>1</MinLevelRequired>
-  </ShopItem>
-  <ShopItem>
-    <Tag>KEY007</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
-  </ShopItem>
-  <ShopItem>
-    <Tag>KEY008</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
-  </ShopItem>
+
+  
+
   <ShopItem>
     <Tag>KEY009</Tag>
-    <Price>1</Price>
+    <Price>2</Price>
     <MinLevelRequired>1</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>KEY010</Tag>
-    <Price>1</Price>
+    <Price>5</Price>
     <MinLevelRequired>1</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>KEY011</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
-  </ShopItem>
-  <ShopItem>
-    <Tag>KEY012</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
-  </ShopItem>
-  <ShopItem>
-    <Tag>KEY013</Tag>
-    <Price>1</Price>
-    <MinLevelRequired>1</MinLevelRequired>
-  </ShopItem>
-  <ShopItem>
-    <Tag>KEY014</Tag>
-    <Price>1</Price>
+    <Price>15</Price>
     <MinLevelRequired>1</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>KEY015</Tag>
-    <Price>1</Price>
+    <Price>3</Price>
     <MinLevelRequired>1</MinLevelRequired>
   </ShopItem>
+   
+ 
+  <ShopItem>
+    <Tag>KEY007</Tag>
+    <Price>50</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>KEY008</Tag>
+    <Price>200</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>KEY012</Tag>
+    <Price>100</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  
+
+  <ShopItem>
+    <Tag>MASCHERA001</Tag>
+    <Price>5</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  <ShopItem>
+    <Tag>KEY013</Tag>
+    <Price>100</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+
+  <ShopItem>
+    <Tag>KEY014</Tag>
+    <Price>300</Price>
+    <MinLevelRequired>1</MinLevelRequired>
+  </ShopItem>
+  
   <ShopItem>
     <Tag>KEY016</Tag>
-    <Price>1</Price>
+    <Price>200</Price>
     <MinLevelRequired>1</MinLevelRequired>
   </ShopItem>
+
   <ShopItem>
     <Tag>KEY017</Tag>
-    <Price>1</Price>
+    <Price>500</Price>
     <MinLevelRequired>1</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>KEY018</Tag>
-    <Price>1</Price>
+    <Price>500</Price>
     <MinLevelRequired>1</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>KEY019</Tag>
-    <Price>1</Price>
+    <Price>200</Price>
     <MinLevelRequired>1</MinLevelRequired>
   </ShopItem>
 

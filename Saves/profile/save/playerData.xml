@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Player xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <level>2</level>
-  <followers>1000</followers>
-  <money>13511.720000000001</money>
-  <pension>11</pension>
-  <experience>3318</experience>
-  <x>304.963684</x>
-  <y>18.69405</y>
-  <z>108.194946</z>
+  <level>6</level>
+  <followers>1250</followers>
+  <money>13859.220000000001</money>
+  <pension>17</pension>
+  <experience>3333</experience>
+  <x>329.7026</x>
+  <y>20.2001247</y>
+  <z>139.776184</z>
   <inventory>
     <items>
       <InventoryItem>
@@ -18,7 +18,7 @@
       <InventoryItem>
         <ID>9c628946-321b-410f-8826-374a61318f5f</ID>
         <tag>DIV02</tag>
-        <numUses>7</numUses>
+        <numUses>13</numUses>
       </InventoryItem>
       <InventoryItem>
         <ID>24af1534-11af-483a-bbec-4641dc0a2970</ID>

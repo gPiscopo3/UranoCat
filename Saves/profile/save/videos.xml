@@ -60,4 +60,10 @@
     <quality>0.97272741699218757</quality>
     <timestamp_seconds>3662</timestamp_seconds>
   </Video>
+  <Video>
+    <day>11</day>
+    <views>1250</views>
+    <quality>0.89615447998046871</quality>
+    <timestamp_seconds>3979</timestamp_seconds>
+  </Video>
 </ArrayOfVideo>
