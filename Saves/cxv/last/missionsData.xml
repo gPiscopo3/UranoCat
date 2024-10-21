@@ -4,7 +4,7 @@
     <experience>10</experience>
     <name>Trova il giravite</name>
     <description>Missione del tutorial</description>
-    <MissionState>ATTIVO</MissionState>
+    <MissionState>COMPLETATO</MissionState>
     <enableSpaceshipModification>false</enableSpaceshipModification>
     <spaceshipPart />
     <tag>MISSION000</tag>
@@ -19,7 +19,7 @@
     <experience>10</experience>
     <name>Trova la prima ala</name>
     <description>Raccogli i pezzi necessari per costruire l'ala destra dell'astronave.</description>
-    <MissionState>NON_ATTIVO</MissionState>
+    <MissionState>ATTIVO</MissionState>
     <enableSpaceshipModification>false</enableSpaceshipModification>
     <spaceshipPart />
     <tag>FIND001</tag>

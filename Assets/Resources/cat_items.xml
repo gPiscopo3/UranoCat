@@ -179,7 +179,7 @@
     <tag>DIV03</tag>
     <name>Gomitolo piccolo</name>
     <descrizione>Un gomitolo piccolo con cui giocare</descrizione>
-    <durability>30</durability>
+    <durability>10</durability>
     <imagePath>gomitololana</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>
@@ -198,7 +198,7 @@
     <tag>DIV04</tag>
     <name>Gomitolo medio</name>
     <descrizione>Un gomitolo medio con cui giocare</descrizione>
-    <durability>30</durability>
+    <durability>20</durability>
     <imagePath>gomitoloMedio</imagePath>
     <CatModifier>
       <targetStat>SAZIETA</targetStat>

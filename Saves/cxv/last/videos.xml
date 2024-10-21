@@ -1,2 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ArrayOfVideo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" />
+<ArrayOfVideo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Video>
+    <day>1</day>
+    <views>874</views>
+    <quality>0.37396823120117184</quality>
+    <timestamp_seconds>65</timestamp_seconds>
+  </Video>
+  <Video>
+    <day>2</day>
+    <views>1216</views>
+    <quality>0.42653614425659181</quality>
+    <timestamp_seconds>189</timestamp_seconds>
+  </Video>
+</ArrayOfVideo>

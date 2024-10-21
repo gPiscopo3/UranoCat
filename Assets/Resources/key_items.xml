@@ -136,24 +136,24 @@
     
     <KeyItem>
         <tag>SPACESHIP001</tag>
-        <name>Faro destro</name>
-        <descrizione>Faro destro</descrizione>
+        <name>Ala Astronave</name>
+        <descrizione>Una delle 6 ali che compongono la navicella</descrizione>
         <durability>1</durability>
-        <imagePath>headlight</imagePath>
+        <imagePath>spaceship</imagePath>
     </KeyItem>
     <KeyItem>
         <tag>SPACESHIP002</tag>
-        <name>Faro sinistro</name>
-        <descrizione>Faro sinistro</descrizione>
+        <name>Ala Astronave</name>
+        <descrizione>Una delle 6 ali che compongono la navicella</descrizione>
         <durability>1</durability>
-        <imagePath>headlight</imagePath>
+        <imagePath>spaceship</imagePath>
     </KeyItem>
     <KeyItem>
         <tag>SPACESHIP003</tag>
-        <name>Faro centrale</name>
-        <descrizione>Faro centrale</descrizione>
+        <name>Ala Astronave</name>
+        <descrizione>Una delle 6 ali che compongono la navicella</descrizione>
         <durability>1</durability>
-        <imagePath>headlight</imagePath>
+        <imagePath>spaceship</imagePath>
     </KeyItem>
     <KeyItem>
         <tag>SPACESHIP004</tag>
@@ -162,15 +162,29 @@
         <durability>1</durability>
         <imagePath>spaceship</imagePath>
     </KeyItem>
-    <KeyItem>
+	<KeyItem>
         <tag>SPACESHIP005</tag>
+        <name>Ala Astronave</name>
+        <descrizione>Una delle 6 ali che compongono la navicella</descrizione>
+        <durability>1</durability>
+        <imagePath>spaceship</imagePath>
+    </KeyItem>
+	<KeyItem>
+        <tag>SPACESHIP006</tag>
+        <name>Ala Astronave</name>
+        <descrizione>Una delle 6 ali che compongono la navicella</descrizione>
+        <durability>1</durability>
+        <imagePath>spaceship</imagePath>
+    </KeyItem>
+    <KeyItem>
+        <tag>SPACESHIP007</tag>
         <name>Propulsore</name>
         <descrizione>Propulsore dell'astronave, essenziale per la partenza</descrizione>
         <durability>1</durability>
         <imagePath>spaceship</imagePath>
     </KeyItem>
     <KeyItem>
-        <tag>SPACESHIP006</tag>
+        <tag>SPACESHIP008</tag>
         <name>Motore</name>
         <descrizione>Motore dell'astronave, senza di lui non si torna a casa</descrizione>
         <durability>1</durability>

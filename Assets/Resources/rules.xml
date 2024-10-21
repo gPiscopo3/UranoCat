@@ -7,41 +7,41 @@
   <autosave_time>10</autosave_time>
   <start_day_hour>7</start_day_hour>
   <end_day_hour>21</end_day_hour>
-  <day_duration>120</day_duration>
+  <day_duration>90</day_duration>
 
 
 <interactionsTimes>
     <Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>30</dayTime>
+      <dayTime>20</dayTime>
     </Interaction>
 	<Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>31</dayTime>
+      <dayTime>20</dayTime>
     </Interaction>
 	<Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>32</dayTime>
+      <dayTime>20</dayTime>
     </Interaction>
     <Interaction>
       <interactionType>VIDEO</interactionType>
-      <dayTime>60</dayTime>
+      <dayTime>45</dayTime>
     </Interaction>
     <Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>90</dayTime>
+      <dayTime>65</dayTime>
     </Interaction>
 	<Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>91</dayTime>
+      <dayTime>65</dayTime>
     </Interaction>
 	<Interaction>
       <interactionType>CAT_ITERACTION</interactionType>
-      <dayTime>92</dayTime>
+      <dayTime>65</dayTime>
     </Interaction>
     <Interaction>
       <interactionType>SLEEP</interactionType>
-      <dayTime>120</dayTime>
+      <dayTime>90</dayTime>
     </Interaction>
   </interactionsTimes>
 

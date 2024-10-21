@@ -98,7 +98,7 @@
   <ShopItem>
     <Tag>CROCC02</Tag>
     <Price>20</Price>
-    <MinLevelRequired>1</MinLevelRequired>
+    <MinLevelRequired>2</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>CROCC03</Tag>
@@ -113,27 +113,27 @@
 
   <ShopItem>
     <Tag>FISH01</Tag>
-    <Price>5</Price>
+    <Price>7</Price>
     <MinLevelRequired>1</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>FISH02</Tag>
-    <Price>5</Price>
+    <Price>7</Price>
     <MinLevelRequired>2</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>FISH03</Tag>
-    <Price>8</Price>
+    <Price>12</Price>
     <MinLevelRequired>3</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>FISH04</Tag>
-    <Price>12</Price>
-    <MinLevelRequired>6</MinLevelRequired>
+    <Price>20</Price>
+    <MinLevelRequired>5</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>FISH05</Tag>
-    <Price>20</Price>
+    <Price>35</Price>
     <MinLevelRequired>7</MinLevelRequired>
   </ShopItem>
 
@@ -149,12 +149,12 @@
   </ShopItem>
   <ShopItem>
     <Tag>DIV03</Tag>
-    <Price>50</Price>
+    <Price>20</Price>
     <MinLevelRequired>2</MinLevelRequired>
   </ShopItem>
   <ShopItem>
     <Tag>DIV04</Tag>
-    <Price>120</Price>
+    <Price>60</Price>
     <MinLevelRequired>4</MinLevelRequired>
   </ShopItem>
   <ShopItem>
@@ -175,7 +175,7 @@
   <ShopItem>
     <Tag>DIV08</Tag>
     <Price>200</Price>
-    <MinLevelRequired>8</MinLevelRequired>
+    <MinLevelRequired>7</MinLevelRequired>
   </ShopItem>
   
 

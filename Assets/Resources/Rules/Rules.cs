@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 public class Rules{
 
-    public int update_cat_time;
+    public float update_cat_time;
     public List<Interaction> interactionsTimes;
     public List<InteractionType> interactionsToComplete;
     public CatStatsRules cat_stats_rules;
